@@ -25,7 +25,7 @@ int main()
 	//
 	// Environment : Title
 	//
-	r2utility::ChangeWindowTitle( L"r2bix" );
+	r2utility::ChangeWindowTitle( L"2048mini" );
 
 	//
 	// Environment : Size

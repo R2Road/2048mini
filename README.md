@@ -31,3 +31,9 @@
 
 ## License
 2048 is licensed under the [MIT license.]( https://github.com/R2Road/2048mini/blob/main/LICENSE )
+
+
+## ( '_')y-~
+<p float:left;">
+<img src="https://github.com/R2Road/2048mini/blob/main/wiki/20220506_game_over_01.png"></img>
+<p>

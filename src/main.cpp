@@ -6,7 +6,7 @@
 
 #include "r2bix/r2utility_WindowUtil.h"
 
-#define DEVELOPMENT_2048MINI 0
+#define DEVELOPMENT_2048MINI 1
 
 #if defined( DEVELOPMENT_2048MINI ) && ( DEVELOPMENT_2048MINI == 1 )
 

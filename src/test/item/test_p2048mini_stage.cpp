@@ -5,8 +5,8 @@
 #include <iomanip>
 
 #include "r2bix/r2base_Director.h"
-#include "r2/r2_Inspector.h"
-#include "r2cm/r2cm_eTestEndAction.h"
+#include "r2cm/r2cm_Inspector.h"
+#include "r2cm/r2cm_constant.h"
 
 #include "p2048mini/p2048mini_GameProcessor.h"
 #include "p2048mini/p2048mini_Stage.h"
@@ -43,7 +43,7 @@ namespace test_p2048mini_stage
 	}
 	r2cm::iItem::DoFuncT Basic::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()() << " #" << r2::linefeed;
 
@@ -78,7 +78,7 @@ namespace test_p2048mini_stage
 
 			std::cout << r2::split;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 
@@ -93,7 +93,7 @@ namespace test_p2048mini_stage
 	}
 	r2cm::iItem::DoFuncT MoveReadyTest::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -197,7 +197,7 @@ namespace test_p2048mini_stage
 
 			std::cout << r2::split;
 
-			return r2cm::eTestEndAction::None;
+			return r2cm::eItemLeaveAction::None;
 		};
 	}
 
@@ -212,7 +212,7 @@ namespace test_p2048mini_stage
 	}
 	r2cm::iItem::DoFuncT MoveTest::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -278,7 +278,7 @@ namespace test_p2048mini_stage
 
 			std::cout << r2::split;
 
-			return r2cm::eTestEndAction::None;
+			return r2cm::eItemLeaveAction::None;
 		};
 	}
 
@@ -293,7 +293,7 @@ namespace test_p2048mini_stage
 	}
 	r2cm::iItem::DoFuncT MergeTest::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -367,7 +367,7 @@ namespace test_p2048mini_stage
 
 			std::cout << r2::split;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 
@@ -382,7 +382,7 @@ namespace test_p2048mini_stage
 	}
 	r2cm::iItem::DoFuncT EmptyCheck::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -447,7 +447,7 @@ namespace test_p2048mini_stage
 
 			std::cout << r2::split;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 
@@ -462,7 +462,7 @@ namespace test_p2048mini_stage
 	}
 	r2cm::iItem::DoFuncT MovableCheck::GetDoFunction()
 	{
-		return []()->r2cm::eTestEndAction
+		return []()->r2cm::eItemLeaveAction
 		{
 			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
 
@@ -532,7 +532,7 @@ namespace test_p2048mini_stage
 
 			std::cout << r2::split;
 
-			return r2cm::eTestEndAction::Pause;
+			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
 }

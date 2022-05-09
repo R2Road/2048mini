@@ -2,7 +2,7 @@
 #include "TestMenu.h"
 
 #include "r2cm/r2cm_Director.h"
-#include "r2cm/r2cm_eTestEndAction.h"
+#include "r2cm/r2cm_constant.h"
 
 #include "test/item/test_p2048mini_stage.h"
 #include "test/item/test_p2048mini_stageviewnode.h"
@@ -35,9 +35,9 @@ r2cm::MenuUp TestMenu::Create( r2cm::Director& director )
 		ret->AddItem(
 			27
 			, []()->const char* { return "Exit"; }
-			, [&director]()->r2cm::eTestEndAction
+			, [&director]()->r2cm::eItemLeaveAction
 			{
-				return r2cm::eTestEndAction::Exit;
+				return r2cm::eItemLeaveAction::Exit;
 			}
 		);
 	}

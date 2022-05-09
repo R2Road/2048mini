@@ -7,7 +7,7 @@
 
 namespace r2cm
 {
-	enum class eTestEndAction; 
+	enum class eItemLeaveAction; 
 
 	class iItem;
 	class Director;
@@ -21,7 +21,7 @@ namespace r2cm
 			ItemInfo(
 				const char key_code
 				, const std::function<const char*( )> name_function
-				, const std::function<const r2cm::eTestEndAction()> do_function
+				, const std::function<const r2cm::eItemLeaveAction()> do_function
 			) :
 				KeyCode( key_code )
 				, NameFunction( name_function )
@@ -30,7 +30,7 @@ namespace r2cm
 
 			char KeyCode;
 			std::function<const char*()> NameFunction;
-			std::function<const r2cm::eTestEndAction()> DoFunction;
+			std::function<const r2cm::eItemLeaveAction()> DoFunction;
 		};
 
 		using ItemContainerT = std::vector<ItemInfo>;
@@ -43,12 +43,14 @@ namespace r2cm
 		void ShowDescription() const;
 		void ShowMenu() const;
 
-		eTestEndAction Do( const int key_code );
+		eItemLeaveAction Do( const int key_code );
 
 		void AddItem( const char key_code, iItem& item_obj );
-		void AddItem( const char key_code, const std::function<const char*()> func_title, const std::function<const r2cm::eTestEndAction()> func_do );
+		void AddItem( const char key_code, const std::function<const char*()> func_title, const std::function<const r2cm::eItemLeaveAction()> func_do );
+
 		void AddLineFeed();
 		void AddSplit();
+		void AddMessage( const char* const message );
 
 	protected:
 		Director& mDirector;

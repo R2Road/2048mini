@@ -1,6 +1,6 @@
 #pragma once
 
-namespace r2
+namespace r2cm
 {
 	template<typename T>
 	class SingleTon

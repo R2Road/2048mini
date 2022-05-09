@@ -4,13 +4,13 @@
 
 namespace r2cm
 {
-	enum class eTestEndAction;
+	enum class eItemLeaveAction;
 
 	class iItem
 	{
 	public:
 		using TitleFuncT = std::function<const char*()>;
-		using DoFuncT = std::function<eTestEndAction()>;
+		using DoFuncT = std::function<eItemLeaveAction()>;
 
 		virtual ~iItem() {}
 

@@ -12,9 +12,7 @@ r2cm::MenuUp DevelopmentMenu::Create( r2cm::Director& director )
 {
 	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu(
 		director
-		, GetTitle(),
-				"> Inprogress : p2048"
-		"\n"	"> To do : Texture Editor 가 필요하다."
+		, GetTitle()
 	) );
 
 	{
@@ -42,7 +40,7 @@ r2cm::MenuUp DevelopmentMenu::Create( r2cm::Director& director )
 		);
 		ret->AddItem(
 			'2'
-			, []()->const char* { return "Game : 2048mini( In Progress )"; }
+			, []()->const char* { return "Game : 2048mini"; }
 			, []()->r2cm::eItemLeaveAction
 			{
 				//

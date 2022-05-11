@@ -225,9 +225,6 @@
     <ClCompile Include="src\r2bix\r2utility_StringBuilder.cpp">
       <Filter>r2bix\utility</Filter>
     </ClCompile>
-    <ClCompile Include="src\r2bix\r2utility_WindowUtil.cpp">
-      <Filter>r2bix\utility</Filter>
-    </ClCompile>
     <ClCompile Include="src\test\TestMenu.cpp">
       <Filter>test</Filter>
     </ClCompile>
@@ -244,6 +241,9 @@
       <Filter>r2cm</Filter>
     </ClCompile>
     <ClCompile Include="src\r2cm\r2cm_Menu.cpp">
+      <Filter>r2cm</Filter>
+    </ClCompile>
+    <ClCompile Include="src\r2cm\r2utility_WindowUtil.cpp">
       <Filter>r2cm</Filter>
     </ClCompile>
   </ItemGroup>
@@ -457,9 +457,6 @@
     <ClInclude Include="src\r2bix\r2utility_StringBuilder.h">
       <Filter>r2bix\utility</Filter>
     </ClInclude>
-    <ClInclude Include="src\r2bix\r2utility_WindowUtil.h">
-      <Filter>r2bix\utility</Filter>
-    </ClInclude>
     <ClInclude Include="src\r2\r2_Assert.h">
       <Filter>r2</Filter>
     </ClInclude>
@@ -488,6 +485,9 @@
       <Filter>r2cm</Filter>
     </ClInclude>
     <ClInclude Include="src\r2cm\r2cm_Singleton.h">
+      <Filter>r2cm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\r2cm\r2utility_WindowUtil.h">
       <Filter>r2cm</Filter>
     </ClInclude>
   </ItemGroup>

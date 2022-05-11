@@ -4,7 +4,7 @@
 	#include <vld.h>
 #endif
 
-#include "r2bix/r2utility_WindowUtil.h"
+#include "r2cm/r2utility_WindowUtil.h"
 
 #define DEVELOPMENT_2048MINI 1
 

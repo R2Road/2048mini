@@ -2,9 +2,10 @@
 #include "test_p2048mini_stageviewnode.h"
 
 #include "r2bix/r2base_Director.h"
+#include "r2bix/r2render_Camera.h"
 #include "r2cm/r2cm_constant.h"
 #include "r2cm/r2cm_Inspector.h"
-#include "r2bix/r2render_Camera.h"
+#include "r2cm/r2utility_WindowUtil.h"
 
 #include "p2048mini/p2048mini_Stage.h"
 #include "p2048mini/p2048mini_StageViewComponent.h"
@@ -12,7 +13,6 @@
 #include "p2048mini/p2048minitable_TextureTable.h"
 
 #include "test/Utility4Test.h"
-#include "r2bix/r2utility_WindowUtil.h"
 
 namespace test_p2048mini_stageviewnode
 {

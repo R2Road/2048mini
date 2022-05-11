@@ -25,17 +25,17 @@ int main()
 	//
 	// Environment : Title
 	//
-	r2utility::ChangeWindowTitle( L"2048mini" );
+	r2cm::WindowUtility::ChangeTitle( L"2048mini" );
 
 	//
 	// Environment : Size
 	//
-	r2utility::ResizeWindow( 960, 960 );
+	r2cm::WindowUtility::Resize( 960, 960 );
 
 	//
 	// Environment : Position
 	//
-	r2utility::MoveWindow( 0, 0 );
+	r2cm::WindowUtility::Move( 0, 0 );
 
 	//
 	// Setup & Run

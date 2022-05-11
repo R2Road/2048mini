@@ -79,7 +79,7 @@
     <ClCompile Include="src\r2cm\r2cm_Director.cpp" />
     <ClCompile Include="src\r2cm\r2cm_Inspector.cpp" />
     <ClCompile Include="src\r2cm\r2cm_Menu.cpp" />
-    <ClCompile Include="src\r2cm\r2utility_WindowUtil.cpp" />
+    <ClCompile Include="src\r2cm\r2cm_WindowUtility.cpp" />
     <ClCompile Include="src\r2\r2_Direction4.cpp" />
     <ClCompile Include="src\r2\r2_FPSTimer.cpp" />
     <ClCompile Include="src\r2\r2_GridIndexConverter.cpp" />
@@ -157,7 +157,7 @@
     <ClInclude Include="src\r2cm\r2cm_Inspector.h" />
     <ClInclude Include="src\r2cm\r2cm_Menu.h" />
     <ClInclude Include="src\r2cm\r2cm_Singleton.h" />
-    <ClInclude Include="src\r2cm\r2utility_WindowUtil.h" />
+    <ClInclude Include="src\r2cm\r2cm_WindowUtility.h" />
     <ClInclude Include="src\r2\r2_Assert.h" />
     <ClInclude Include="src\r2\r2_Direction4.h" />
     <ClInclude Include="src\r2\r2_FPSTimer.h" />

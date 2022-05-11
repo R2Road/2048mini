@@ -7,7 +7,7 @@
 #include "r2bix/r2base_Director.h"
 #include "r2cm/r2cm_constant.h"
 #include "r2cm/r2cm_Inspector.h"
-#include "r2cm/r2utility_WindowUtil.h"
+#include "r2cm/r2cm_WindowUtility.h"
 
 #include "p2048mini/p2048mini_GameProcessor.h"
 #include "p2048mini/p2048mini_Stage.h"

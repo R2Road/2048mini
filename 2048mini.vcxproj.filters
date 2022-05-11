@@ -243,7 +243,7 @@
     <ClCompile Include="src\r2cm\r2cm_Menu.cpp">
       <Filter>r2cm</Filter>
     </ClCompile>
-    <ClCompile Include="src\r2cm\r2utility_WindowUtil.cpp">
+    <ClCompile Include="src\r2cm\r2cm_WindowUtility.cpp">
       <Filter>r2cm</Filter>
     </ClCompile>
   </ItemGroup>
@@ -487,7 +487,7 @@
     <ClInclude Include="src\r2cm\r2cm_Singleton.h">
       <Filter>r2cm</Filter>
     </ClInclude>
-    <ClInclude Include="src\r2cm\r2utility_WindowUtil.h">
+    <ClInclude Include="src\r2cm\r2cm_WindowUtility.h">
       <Filter>r2cm</Filter>
     </ClInclude>
   </ItemGroup>

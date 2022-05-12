@@ -1,4 +1,3 @@
-#include "pch.h"
 #include "r2_Direction4.h"
 
 namespace r2

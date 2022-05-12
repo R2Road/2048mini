@@ -1,4 +1,3 @@
-#include "pch.h"
 #include "r2render_Texture.h"
 
 #include <algorithm>

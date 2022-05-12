@@ -1,4 +1,3 @@
-#include "pch.h"
 #include "r2component_TransformComponent.h"
 
 namespace r2component

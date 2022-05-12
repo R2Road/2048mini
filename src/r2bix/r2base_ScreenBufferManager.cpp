@@ -1,7 +1,7 @@
-#include "pch.h"
 #include "r2base_ScreenBufferManager.h"
 
 #include <cassert>
+#include <iostream>
 #include <Windows.h>
 
 #include "r2render_Texture.h"

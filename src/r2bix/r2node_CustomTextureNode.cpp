@@ -1,4 +1,3 @@
-#include "pch.h"
 #include "r2node_CustomTextureNode.h"
 
 #include <numeric>

@@ -1,4 +1,3 @@
-#include "pch.h"
 #include "r2cm_Inspector.h"
 
 #include <fstream>

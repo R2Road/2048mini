@@ -1,4 +1,3 @@
-#include "pch.h"
 #include "p2048minitable_TextureTable.h"
 
 #include "r2bix/r2render_Texture.h"

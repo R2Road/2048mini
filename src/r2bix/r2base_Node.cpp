@@ -1,4 +1,3 @@
-#include "pch.h"
 #include "r2base_Node.h"
 
 namespace r2base

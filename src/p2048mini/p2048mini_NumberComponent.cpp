@@ -1,4 +1,3 @@
-#include "pch.h"
 #include "p2048mini_NumberComponent.h"
 
 #include "r2bix/r2component_LabelComponent.h"

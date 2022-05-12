@@ -1,4 +1,3 @@
-#include "pch.h"
 #include "r2component_TextureRenderComponent.h"
 
 #include "r2base_DebugConfig.h"

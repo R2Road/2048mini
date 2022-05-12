@@ -1,8 +1,8 @@
-#include "pch.h"
 #include "Utility4Test.h"
 
 #include <Windows.h>
 
+#include "r2cm/r2cm_constant.h"
 #include "r2bix/r2render_TextureFrame.h"
 
 void Utility4Test::DrawRect( const int offset_y, const r2::RectInt& rect, const char c )
@@ -22,7 +22,7 @@ void Utility4Test::DrawRect( const int offset_y, const r2::RectInt& rect, const 
 
 void Utility4Test::DrawRectInfo_Min_Max( const r2::RectInt& rect )
 {
-	std::cout << r2::tab << "rect min, max :" << " " << rect.GetMinX() << " " << rect.GetMinY() << " " << rect.GetMaxX() << " " << rect.GetMaxY() << r2::linefeed;
+	std::cout << r2cm::tab << "rect min, max :" << " " << rect.GetMinX() << " " << rect.GetMinY() << " " << rect.GetMaxX() << " " << rect.GetMaxY() << r2cm::linefeed;
 }
 
 void Utility4Test::DrawTexture( const r2render::Texture& texture )
@@ -36,12 +36,12 @@ void Utility4Test::DrawTexture( const r2render::Texture& texture )
 		if( texture.GetWidth() <= x )
 		{
 			x = 0u;
-			std::cout << r2::linefeed;
+			std::cout << r2cm::linefeed;
 		}
 	}
 	if( 0u != x )
 	{
-		std::cout << r2::linefeed;
+		std::cout << r2cm::linefeed;
 	}
 }
 void Utility4Test::DrawTextureFrame( const r2render::TextureFrame& frame )
@@ -53,6 +53,6 @@ void Utility4Test::DrawTextureFrame( const r2render::TextureFrame& frame )
 			std::cout << frame.Get( x, y );
 		}
 
-		std::cout << r2::linefeed;
+		std::cout << r2cm::linefeed;
 	}
 }

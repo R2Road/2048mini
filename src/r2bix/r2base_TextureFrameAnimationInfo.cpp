@@ -1,4 +1,3 @@
-#include "pch.h"
 #include "r2base_TextureFrameAnimationInfo.h"
 
 #include <utility>

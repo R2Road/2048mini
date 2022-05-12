@@ -1,4 +1,3 @@
-#include "pch.h"
 #include "r2cm_Menu.h"
 
 #include <cctype> // std::toupper

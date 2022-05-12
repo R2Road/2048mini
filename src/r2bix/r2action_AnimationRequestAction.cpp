@@ -1,4 +1,3 @@
-#include "pch.h"
 #include "r2action_AnimationRequestAction.h"
 
 #include <cassert>

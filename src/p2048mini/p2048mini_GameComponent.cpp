@@ -1,4 +1,3 @@
-#include "pch.h"
 #include "p2048mini_GameComponent.h"
 
 #include "r2bix/r2base_Director.h"

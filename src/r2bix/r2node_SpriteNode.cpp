@@ -1,4 +1,3 @@
-#include "pch.h"
 #include "r2node_SpriteNode.h"
 
 #include "r2base_Director.h"

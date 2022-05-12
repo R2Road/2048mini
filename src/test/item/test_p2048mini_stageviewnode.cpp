@@ -1,4 +1,3 @@
-#include "pch.h"
 #include "test_p2048mini_stageviewnode.h"
 
 #include "r2bix/r2base_Director.h"
@@ -27,30 +26,30 @@ namespace test_p2048mini_stageviewnode
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			DECLARATION_SUB( r2render::Camera camera( { 0, 0 }, { 41, 21 } ) );
 			DECLARATION_SUB( r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
 			DECLARATION_SUB( r2base::Director dummy_director );
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			DECLARATION_MAIN( auto stage_view_node = p2048mini::StageViewNode::Create( dummy_director ) );
 			EXPECT_NE( nullptr, stage_view_node->GetComponent<p2048mini::StageViewComponent>() );
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				PROCESS_MAIN( stage_view_node->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
 				Utility4Test::DrawTexture( render_target );
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			return r2cm::eItemLeaveAction::Pause;
 		};
@@ -71,15 +70,15 @@ namespace test_p2048mini_stageviewnode
 		{
 			p2048minitable::TextureTable::GetInstance().Load();
 
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			DECLARATION_SUB( r2render::Camera camera( { 0, 0 }, { 41, 21 } ) );
 			DECLARATION_SUB( r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
 			DECLARATION_SUB( r2base::Director dummy_director );
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			DECLARATION_MAIN( p2048mini::Stage stage( 4, 4 ) );
 			PROCESS_MAIN( stage.Add( 0, 0, 32 ) );
@@ -88,24 +87,24 @@ namespace test_p2048mini_stageviewnode
 			PROCESS_MAIN( stage.Add( 0, 3, 1024 ) );
 			PROCESS_MAIN( stage.Add( 3, 3, 2048 ) );
 
-			std::cout << r2::linefeed;
+			std::cout << r2cm::linefeed;
 
 			DECLARATION_MAIN( auto svn = p2048mini::StageViewNode::Create( dummy_director ) );
 			DECLARATION_MAIN( auto svc = svn->GetComponent<p2048mini::StageViewComponent>() );
 			PROCESS_MAIN( svc->Setup( stage ) );
 			PROCESS_MAIN( svn->GetComponent<r2component::TransformComponent>()->SetPosition( -svc->GetWidth() * 0.5f, -svc->GetHeight() * 0.5f ) );
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				PROCESS_MAIN( svn->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
 				Utility4Test::DrawTexture( render_target );
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			return r2cm::eItemLeaveAction::Pause;
 		};
@@ -126,15 +125,15 @@ namespace test_p2048mini_stageviewnode
 		{
 			p2048minitable::TextureTable::GetInstance().Load();
 
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2::linefeed;
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			DECLARATION_SUB( r2render::Camera camera( { 0, 0 }, { 41, 21 } ) );
 			DECLARATION_SUB( r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
 			DECLARATION_SUB( r2base::Director dummy_director );
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			DECLARATION_MAIN( p2048mini::Stage stage( 4, 4 ) );
 			PROCESS_MAIN( stage.Add( 0, 0, 32 ) );
@@ -143,7 +142,7 @@ namespace test_p2048mini_stageviewnode
 			PROCESS_MAIN( stage.Add( 0, 3, 1024 ) );
 			PROCESS_MAIN( stage.Add( 3, 3, 2048 ) );
 
-			std::cout << r2::linefeed;
+			std::cout << r2cm::linefeed;
 
 			DECLARATION_MAIN( auto svn = p2048mini::StageViewNode::Create( dummy_director ) );
 			DECLARATION_MAIN( auto svc = svn->GetComponent<p2048mini::StageViewComponent>() );
@@ -151,17 +150,17 @@ namespace test_p2048mini_stageviewnode
 			PROCESS_MAIN( svc->UpdateView() );
 			PROCESS_MAIN( svn->GetComponent<r2component::TransformComponent>()->SetPosition( -svc->GetWidth() * 0.5f, -svc->GetHeight() * 0.5f ) );
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			{
 				PROCESS_MAIN( svn->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );
 
-				std::cout << r2::linefeed;
+				std::cout << r2cm::linefeed;
 
 				Utility4Test::DrawTexture( render_target );
 			}
 
-			std::cout << r2::split;
+			std::cout << r2cm::split;
 
 			return r2cm::eItemLeaveAction::Pause;
 		};

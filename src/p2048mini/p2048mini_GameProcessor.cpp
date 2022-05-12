@@ -1,4 +1,3 @@
-#include "pch.h"
 #include "p2048mini_GameProcessor.h"
 
 #include "p2048mini_Stage.h"

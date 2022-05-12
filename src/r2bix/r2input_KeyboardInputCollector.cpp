@@ -1,4 +1,3 @@
-#include "pch.h"
 #include "r2input_KeyboardInputCollector.h"
 
 #include <numeric>

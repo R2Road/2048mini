@@ -1,4 +1,3 @@
-#include "pch.h"
 #include "r2utility_InputUtil.h"
 
 #include <conio.h>

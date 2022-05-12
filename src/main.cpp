@@ -1,6 +1,4 @@
-﻿#include "pch.h"
-
-#if defined( DEBUG ) || defined( _DEBUG )
+﻿#if defined( DEBUG ) || defined( _DEBUG )
 	#include <vld.h>
 #endif
 

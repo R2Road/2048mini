@@ -1,6 +1,6 @@
-#include "pch.h"
 #include "p2048mini_StageViewComponent.h"
 
+#include "r2/r2_Assert.h"
 #include "r2bix/r2component_LabelComponent.h"
 #include "r2bix/r2component_TextureRenderComponent.h"
 

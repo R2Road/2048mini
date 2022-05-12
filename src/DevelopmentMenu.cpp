@@ -1,4 +1,3 @@
-#include "pch.h"
 #include "DevelopmentMenu.h"
 
 #include "r2bix/r2base_Director.h"

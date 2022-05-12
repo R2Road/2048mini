@@ -1,4 +1,3 @@
-#include "pch.h"
 #include "p2048mini_NumberNode.h"
 
 #include <numeric>

@@ -1,4 +1,3 @@
-#include "pch.h"
 #include "r2node_SceneNode.h"
 
 #include "r2base_Director.h"

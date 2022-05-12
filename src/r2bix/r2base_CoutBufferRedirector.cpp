@@ -1,4 +1,3 @@
-#include "pch.h"
 #include "r2base_CoutBufferRedirector.h"
 
 #include <Windows.h>

@@ -236,43 +236,46 @@ namespace test_p2048mini_stage
 
 			{
 				const auto pivot_coord = r2cm::WindowUtility::GetCursorPoint();
-				bool bRun = true;
+				bool has_moved = false;
+				bool input_processed = false;
+				char input = ' ';
 				do
 				{
-					r2cm::WindowUtility::MoveCursorPoint( pivot_coord );
-
-					std::cout << "Press [W, A, S, D]" << r2::linefeed2;
-
-					bool has_moved = false;
-					switch( _getch() )
+					r2cm::WindowUtility::MoveCursorPointWithClearBuffer( pivot_coord );
+					
+					if( 97 == input || 100 == input || 119 == input || 115 == input )
 					{
-					case 97: // L
-						PROCESS_MAIN( has_moved = game_processor.Move( r2::Direction4::eState::Left ).has_moved );
-						break;
-					case 100: // R
-						PROCESS_MAIN( has_moved = game_processor.Move( r2::Direction4::eState::Right ).has_moved );
-						break;
-					case 119: // U
-						PROCESS_MAIN( has_moved = game_processor.Move( r2::Direction4::eState::Down ).has_moved ); // swap D 4 ez look
-						break;
-					case 115: // D
-						PROCESS_MAIN( has_moved = game_processor.Move( r2::Direction4::eState::Up ).has_moved ); // swap U 4 ez look
-						break;
+						switch( input )
+						{
+						case 97: // L
+							PROCESS_MAIN( has_moved = game_processor.Move( r2::Direction4::eState::Left ).has_moved );
+							break;
+						case 100: // R
+							PROCESS_MAIN( has_moved = game_processor.Move( r2::Direction4::eState::Right ).has_moved );
+							break;
+						case 119: // U
+							PROCESS_MAIN( has_moved = game_processor.Move( r2::Direction4::eState::Down ).has_moved ); // swap D 4 ez look
+							break;
+						case 115: // D
+							PROCESS_MAIN( has_moved = game_processor.Move( r2::Direction4::eState::Up ).has_moved ); // swap U 4 ez look
+							break;
+						}
 
-					case 27: // ESC
-						bRun = false;
-						break;
-
-					default:
-						continue;
+						std::cout << ( has_moved ? "Move Success" : "Move Failed" ) << r2::linefeed2;
+					}
+					else
+					{
+						std::cout << "Input Wait" << r2::linefeed3;
 					}
 
+					PROCESS_MAIN( PrintStage( stage ) );
+					
 					std::cout << r2::linefeed;
 
-					PROCESS_MAIN( PrintStage( stage ) );
-					std::cout << ( has_moved ? "Move Success" : "Move Failed" ) << r2::linefeed;
+					std::cout << "Press [W, A, S, D]";
+					input = _getch();
 
-				} while( bRun );
+				} while( 27 != input );
 			}
 
 			std::cout << r2::split;

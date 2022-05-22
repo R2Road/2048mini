@@ -6,6 +6,7 @@
 #include "r2base_Component.h"
 #include "r2base_ComponentStaticID.h"
 
+#include "r2base_ColorValue.h"
 #include "r2render_Texture.h"
 
 namespace r2render
@@ -47,10 +48,13 @@ namespace r2component
 			mTextureRenderComponent = texture_render_component;
 		}
 		void SetString( const std::string_view str );
+		void SetColor( const r2base::ColorValue color_value );
 
 	private:
 		std::string mText;
 		CustomTextureComponent* mCustomTextureComponent;
 		TextureRenderComponent* mTextureRenderComponent;
+
+		r2base::ColorValue mColorValue;
 	};
 }

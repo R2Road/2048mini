@@ -34,6 +34,7 @@ namespace p2048mini
 				if( required_jump_count <= current_jump_count )
 				{
 					mStage->Add( i, ( r2::Random::GetInt_0To100() <= 90 ? min : max ) );
+					mStage->SetNewcomer( i );
 					break;
 				}
 

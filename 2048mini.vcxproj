@@ -40,6 +40,7 @@
     <ClCompile Include="src\r2bix\r2action_SequenceAction.cpp" />
     <ClCompile Include="src\r2bix\r2action_TickAction.cpp" />
     <ClCompile Include="src\r2bix\r2animation_constant.cpp" />
+    <ClCompile Include="src\r2bix\r2base_ColorValue.cpp" />
     <ClCompile Include="src\r2bix\r2base_CoutBufferRedirector.cpp" />
     <ClCompile Include="src\r2bix\r2base_DebugConfig.cpp" />
     <ClCompile Include="src\r2bix\r2base_Director.cpp" />
@@ -111,6 +112,7 @@
     <ClInclude Include="src\r2bix\r2action_TickAction.h" />
     <ClInclude Include="src\r2bix\r2animation_constant.h" />
     <ClInclude Include="src\r2bix\r2base_Action.h" />
+    <ClInclude Include="src\r2bix\r2base_ColorValue.h" />
     <ClInclude Include="src\r2bix\r2base_Component.h" />
     <ClInclude Include="src\r2bix\r2base_ComponentStaticID.h" />
     <ClInclude Include="src\r2bix\r2base_CoutBufferRedirector.h" />
@@ -121,6 +123,7 @@
     <ClInclude Include="src\r2bix\r2base_TextureFrameAnimationInfo.h" />
     <ClInclude Include="src\r2bix\r2base_TextureFrameAnimationTableBase.h" />
     <ClInclude Include="src\r2bix\r2base_TextureTableBase.h" />
+    <ClInclude Include="src\r2bix\r2base_VersionInfo.h" />
     <ClInclude Include="src\r2bix\r2component_ActionProcessComponent.h" />
     <ClInclude Include="src\r2bix\r2component_CustomTextureComponent.h" />
     <ClInclude Include="src\r2bix\r2component_LabelComponent.h" />

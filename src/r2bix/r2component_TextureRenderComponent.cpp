@@ -72,9 +72,14 @@ namespace r2component
 		{
 			for( int x = render_target_space_intersect_rect.GetMinX(), tx = 0; render_target_space_intersect_rect.GetMaxX() >= x; ++x, ++tx )
 			{
-				render_target->Fill(
+				render_target->FillCharacter(
 					x, y
 					, mTexture->Get( off_set_point.GetX() + tx, off_set_point.GetY() + ty )
+				);
+
+				render_target->FillColor(
+					x, y
+					, mTexture->GetColor( off_set_point.GetX() + tx, off_set_point.GetY() + ty )
 				);
 			}
 		}
@@ -84,7 +89,7 @@ namespace r2component
 		//
 		if( r2base::DebugConfig::GetLabelConfig().bShowPositionPivot )
 		{
-			render_target->Fill( render_target_space_my_position.GetX(), render_target_space_my_position.GetY(), '+' );
+			render_target->FillCharacter( render_target_space_my_position.GetX(), render_target_space_my_position.GetY(), '+' );
 		}
 	}
 

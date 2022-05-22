@@ -14,6 +14,7 @@ namespace p2048mini
 		{
 			uint32_t number = 0;
 			bool merge_lock = false;
+			bool newcomer = false;
 		};
 		using ContainerT = std::vector<Cell>;
 		using ConstIteratorT = typename ContainerT::const_iterator;
@@ -56,6 +57,8 @@ namespace p2048mini
 		void Remove( const uint32_t x, const uint32_t y );
 		void ClearAllLocks();
 		void Lock( const uint32_t x, const uint32_t y );
+		void SetNewcomer( const uint32_t linear_index );
+		void SetNewcomer( const uint32_t x, const uint32_t y );
 
 	private:
 		r2::GridIndexConverter mGridIndexConverter;

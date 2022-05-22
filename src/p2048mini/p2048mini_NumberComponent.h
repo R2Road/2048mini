@@ -5,6 +5,7 @@
 
 namespace r2component
 {
+	class CustomTextureComponent;
 	class LabelComponent;
 }
 
@@ -23,9 +24,14 @@ namespace p2048mini
 		{
 			mLabelComponent = label_component;
 		}
-		void SetNumber( const int new_number );
+		void SetCustomTextureComponent( r2component::CustomTextureComponent* const custom_texture_component )
+		{
+			mCustomTextureComponent = custom_texture_component;
+		}
+		void SetNumber( const int new_number, const bool merged, const bool newcomer );
 
 	private:
 		r2component::LabelComponent* mLabelComponent;
+		r2component::CustomTextureComponent* mCustomTextureComponent;
 	};
 }

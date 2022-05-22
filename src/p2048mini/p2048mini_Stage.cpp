@@ -80,10 +80,19 @@ namespace p2048mini
 		for( auto& cell : mContainer )
 		{
 			cell.merge_lock = false;
+			cell.newcomer = false;
 		}
 	}
 	void Stage::Lock( const uint32_t x, const uint32_t y )
 	{
 		Get( mGridIndexConverter.To_Linear( x, y ) ).merge_lock = true;
+	}
+	void Stage::SetNewcomer( const uint32_t linear_index )
+	{
+		Get( linear_index ).newcomer = true;
+	}
+	void Stage::SetNewcomer( const uint32_t x, const uint32_t y )
+	{
+		SetNewcomer( mGridIndexConverter.To_Linear( x, y ) );
 	}
 }

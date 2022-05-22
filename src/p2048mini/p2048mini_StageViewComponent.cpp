@@ -61,7 +61,7 @@ namespace p2048mini
 				auto node = mOwnerNode.AddChild<p2048mini::NumberNode>();
 
 				auto number_component = node->GetComponent<p2048mini::NumberComponent>();
-				number_component->SetNumber( 2048 );
+				number_component->SetNumber( 2048, false, false );
 				mLabelContainer.push_back( number_component );
 
 				node->GetComponent<r2component::TransformComponent>()->SetPosition(
@@ -78,7 +78,7 @@ namespace p2048mini
 		for( const auto cell : *mStage )
 		{
 			mLabelContainer[label_index]->GetOwnerNode().SetVisible( ( 0 < cell.number ) );
-			mLabelContainer[label_index]->SetNumber( cell.number );
+			mLabelContainer[label_index]->SetNumber( cell.number, cell.merge_lock, cell.newcomer );
 			++label_index;
 		}
 	}

@@ -20,13 +20,6 @@ namespace p2048mini
 			ret->AddComponent<p2048mini::StageViewComponent>();
 
 			//
-			// Background
-			//
-			{
-				ret->AddChild<r2node::CustomTextureNode>();
-			}
-
-			//
 			// Debug
 			//
 			if( p2048mini::Config::GetNodeConfig().pivot )

@@ -161,12 +161,23 @@ namespace r2base
 		DWORD out_result;
 
 		std::string_view output_line;
+		const r2base::ColorValue* color_line;
 		for( SHORT y = 0, end_y = static_cast<SHORT>( texture->GetHeight() ); end_y > y; ++y )
 		{
 			current_write_coord = write_offset_coord;
 			current_write_coord.Y += y;
+
+			//
+			// Character
+			//
 			output_line = texture->GetLine( static_cast<uint32_t>( y ) );
 			WriteConsoleOutputCharacterA( back_buffer_handle, output_line.data(), static_cast<DWORD>( output_line.length() ), current_write_coord, &out_result );
+
+			//
+			// Color
+			//
+			color_line = texture->GetColorLine( static_cast<uint32_t>( y ) );
+			WriteConsoleOutputAttribute( back_buffer_handle, (WORD*)( color_line ), static_cast<DWORD>( output_line.length() ), current_write_coord, &out_result );
 		}
 	}
 

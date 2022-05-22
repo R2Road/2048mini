@@ -8,4 +8,8 @@ namespace r2input
 	{
 		return GetAsyncKeyState( key_code );
 	}
+	bool HasWindowFocus()
+	{
+		return GetConsoleWindow() == GetForegroundWindow();
+	}
 }

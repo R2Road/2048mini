@@ -11,6 +11,11 @@ namespace r2input
 
 	void KeyboardInputCollector::Collect()
 	{
+		if( !HasWindowFocus() )
+		{
+			return;
+		}
+
 		if( nullptr == mKeyboardInputListener )
 		{
 			return;

@@ -11,4 +11,11 @@ namespace test_p2048mini_numbernode
 		TitleFuncT GetTitleFunction() const override;
 		DoFuncT GetDoFunction() override;
 	};
+
+	class SetNumber : public r2cm::iItem, public r2cm::SingleTon<SetNumber>
+	{
+	public:
+		TitleFuncT GetTitleFunction() const override;
+		DoFuncT GetDoFunction() override;
+	};
 }

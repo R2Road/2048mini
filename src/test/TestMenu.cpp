@@ -25,6 +25,7 @@ r2cm::MenuUp TestMenu::Create( r2cm::Director& director )
 		ret->AddLineFeed();
 
 		ret->AddItem( 'q', test_p2048mini_numbernode::Generate::GetInstance() );
+		ret->AddItem( 'w', test_p2048mini_numbernode::SetNumber::GetInstance() );
 
 		ret->AddLineFeed();
 

@@ -3,6 +3,7 @@
 #include "r2cm/r2cm_Director.h"
 #include "r2cm/r2cm_constant.h"
 
+#include "test/item/test_p2048mini_numbernode.h"
 #include "test/item/test_p2048mini_stage.h"
 #include "test/item/test_p2048mini_stageviewnode.h"
 
@@ -23,9 +24,13 @@ r2cm::MenuUp TestMenu::Create( r2cm::Director& director )
 
 		ret->AddLineFeed();
 
-		ret->AddItem( 'q', test_p2048mini_stageviewnode::Generate::GetInstance() );
-		ret->AddItem( 'w', test_p2048mini_stageviewnode::Setup_Render::GetInstance() );
-		ret->AddItem( 'e', test_p2048mini_stageviewnode::UpdateView::GetInstance() );
+		ret->AddItem( 'q', test_p2048mini_numbernode::Generate::GetInstance() );
+
+		ret->AddLineFeed();
+
+		ret->AddItem( 'a', test_p2048mini_stageviewnode::Generate::GetInstance() );
+		ret->AddItem( 's', test_p2048mini_stageviewnode::Setup_Render::GetInstance() );
+		ret->AddItem( 'd', test_p2048mini_stageviewnode::UpdateView::GetInstance() );
 
 
 		ret->AddSplit();

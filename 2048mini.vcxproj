@@ -84,6 +84,7 @@
     <ClCompile Include="src\r2\r2_Rect_Int.cpp" />
     <ClCompile Include="src\r2\r2_Size_Int.cpp" />
     <ClCompile Include="src\r2\r2_Timer_Float.cpp" />
+    <ClCompile Include="src\test\item\test_p2048mini_numbernode.cpp" />
     <ClCompile Include="src\test\item\test_p2048mini_stage.cpp" />
     <ClCompile Include="src\test\item\test_p2048mini_stageviewnode.cpp" />
     <ClCompile Include="src\test\TestMenu.cpp" />
@@ -169,6 +170,7 @@
     <ClInclude Include="src\r2\r2_Timer.h" />
     <ClInclude Include="src\r2\r2_Timer_Float.h" />
     <ClInclude Include="src\r2\r2_UniqueIndex.h" />
+    <ClInclude Include="src\test\item\test_p2048mini_numbernode.h" />
     <ClInclude Include="src\test\item\test_p2048mini_stage.h" />
     <ClInclude Include="src\test\item\test_p2048mini_stageviewnode.h" />
     <ClInclude Include="src\test\TestMenu.h" />

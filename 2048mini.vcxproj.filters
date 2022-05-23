@@ -248,6 +248,9 @@
     <ClCompile Include="src\r2bix\r2base_ColorValue.cpp">
       <Filter>r2bix\base</Filter>
     </ClCompile>
+    <ClCompile Include="src\test\item\test_p2048mini_numbernode.cpp">
+      <Filter>test\item</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\r2\r2_Point.h">
@@ -496,6 +499,9 @@
     </ClInclude>
     <ClInclude Include="src\r2bix\r2base_VersionInfo.h">
       <Filter>r2bix\base</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test\item\test_p2048mini_numbernode.h">
+      <Filter>test\item</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

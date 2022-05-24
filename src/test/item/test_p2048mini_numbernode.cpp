@@ -28,7 +28,7 @@ namespace test_p2048mini_numbernode
 
 			std::cout << r2cm::split;
 
-			DECLARATION_SUB( r2render::Camera camera( { 0, 0 }, { 41, 21 } ) );
+			DECLARATION_SUB( r2render::Camera camera( { 0, 0 }, { 21, 11 } ) );
 			DECLARATION_SUB( r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
 			DECLARATION_SUB( r2base::Director dummy_director );
 

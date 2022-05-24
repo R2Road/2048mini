@@ -27,20 +27,13 @@ void Utility4Test::DrawRectInfo_Min_Max( const r2::RectInt& rect )
 
 void Utility4Test::DrawTexture( const r2render::Texture& texture )
 {
-	std::size_t x = 0;
-	for( const char element : texture )
+	for( int y = 0; y < texture.GetHeight(); ++y )
 	{
-		std::cout << element;
-
-		++x;
-		if( texture.GetWidth() <= x )
+		for( int x = 0; x < texture.GetWidth(); ++x )
 		{
-			x = 0u;
-			std::cout << r2cm::linefeed;
+			std::cout << texture.Get( x, y );
 		}
-	}
-	if( 0u != x )
-	{
+
 		std::cout << r2cm::linefeed;
 	}
 }

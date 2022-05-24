@@ -251,6 +251,9 @@
     <ClCompile Include="src\test\item\test_p2048mini_numbernode.cpp">
       <Filter>test\item</Filter>
     </ClCompile>
+    <ClCompile Include="src\test\item\test_p2048mini_gameprocessor.cpp">
+      <Filter>test\item</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\r2\r2_Point.h">
@@ -501,6 +504,9 @@
       <Filter>r2bix\base</Filter>
     </ClInclude>
     <ClInclude Include="src\test\item\test_p2048mini_numbernode.h">
+      <Filter>test\item</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test\item\test_p2048mini_gameprocessor.h">
       <Filter>test\item</Filter>
     </ClInclude>
   </ItemGroup>

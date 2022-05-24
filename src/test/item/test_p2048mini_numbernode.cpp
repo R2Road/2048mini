@@ -34,13 +34,13 @@ namespace test_p2048mini_numbernode
 
 			std::cout << r2cm::split;
 
-			DECLARATION_MAIN( auto stage_view_node = p2048mini::NumberNode::Create( dummy_director ) );
-			EXPECT_NE( nullptr, stage_view_node->GetComponent<p2048mini::NumberComponent>() );
+			DECLARATION_MAIN( auto number_node = p2048mini::NumberNode::Create( dummy_director ) );
+			EXPECT_NE( nullptr, number_node->GetComponent<p2048mini::NumberComponent>() );
 
 			std::cout << r2cm::split;
 
 			{
-				PROCESS_MAIN( stage_view_node->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );
+				PROCESS_MAIN( number_node->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );
 
 				std::cout << r2cm::linefeed;
 

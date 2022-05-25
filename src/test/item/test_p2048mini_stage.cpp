@@ -116,6 +116,27 @@ namespace test_p2048mini_stage
 
 			std::cout << r2cm::split;
 
+			{
+				PROCESS_MAIN( stage.Add( 1, 1, 1 ) );
+				PROCESS_MAIN( stage.Add( 1, 2, 1 ) );
+				PROCESS_MAIN( stage.Add( 1, 3, 1 ) );
+
+				PROCESS_MAIN( PrintStage( stage ) );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				PROCESS_MAIN( stage.ClearAll() );
+				EXPECT_EQ( 0, stage.GetNumber( 1, 1 ) );
+				EXPECT_EQ( 0, stage.GetNumber( 1, 2 ) );
+				EXPECT_EQ( 0, stage.GetNumber( 1, 3 ) );
+
+				PROCESS_MAIN( PrintStage( stage ) );
+			}
+
+			std::cout << r2cm::split;
+
 			return r2cm::eItemLeaveAction::Pause;
 		};
 	}

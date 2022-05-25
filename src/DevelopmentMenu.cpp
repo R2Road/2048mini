@@ -1,8 +1,9 @@
 #include "DevelopmentMenu.h"
 
 #include "r2bix/r2base_Director.h"
-#include "r2cm/r2cm_Director.h"
 #include "r2cm/r2cm_constant.h"
+#include "r2cm/r2cm_Director.h"
+#include "r2cm/r2cm_WindowUtility.h"
 
 #include "test/TestMenu.h"
 #include "p2048mini/p2048mini_GameScene.h"
@@ -42,16 +43,24 @@ r2cm::MenuUp DevelopmentMenu::Create( r2cm::Director& director )
 			, []()->const char* { return "Game : 2048mini"; }
 			, []()->r2cm::eItemLeaveAction
 			{
-				//
-				// Setup
-				//
-				r2base::Director director;
-				director.Setup( p2048mini::GameScene::Create( director ) );
+				r2cm::WindowUtility::Resize( 590, 960 );
+				r2cm::WindowUtility::Move( 0, 0 );
 
-				//
-				// Process
-				//
-				director.Run();
+				{
+					//
+					// Setup
+					//
+					r2base::Director director;
+					director.Setup( p2048mini::GameScene::Create( director ) );
+
+					//
+					// Process
+					//
+					director.Run();
+				}
+
+				r2cm::WindowUtility::Resize( 960, 960 );
+				r2cm::WindowUtility::Move( 0, 0 );
 
 				return r2cm::eItemLeaveAction::None;
 			}

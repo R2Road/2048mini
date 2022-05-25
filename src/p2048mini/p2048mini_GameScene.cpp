@@ -262,7 +262,7 @@ namespace p2048mini
 				//
 				game_component->SetStageViewComponent4Debug( stage_view_component_4debug );
 			}
-			//if( p2048mini::Config::GetNodeConfig().pivot )
+			if( p2048mini::Config::GetNodeConfig().pivot )
 			{
 				//
 				//

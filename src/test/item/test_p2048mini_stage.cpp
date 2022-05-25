@@ -33,14 +33,14 @@ namespace test_p2048mini_stage
 
 
 
-	r2cm::iItem::TitleFuncT Basic::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT Generate::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Stage : Basic";
+			return "Stage : Generate";
 		};
 	}
-	r2cm::iItem::DoFuncT Basic::GetDoFunction()
+	r2cm::iItem::DoFuncT Generate::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

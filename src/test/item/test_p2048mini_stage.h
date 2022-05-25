@@ -5,7 +5,7 @@
 
 namespace test_p2048mini_stage
 {
-	class Basic : public r2cm::iItem, public r2cm::SingleTon<Basic>
+	class Generate : public r2cm::iItem, public r2cm::SingleTon<Generate>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;

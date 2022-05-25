@@ -199,14 +199,14 @@ namespace test_p2048mini_stage
 
 
 
-	r2cm::iItem::TitleFuncT EmptyCheck::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT NumberCount_EmptyCount_IsFull::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Stage : Empty Check";
+			return "Stage : NumberCount, EmptyCount, IsFull";
 		};
 	}
-	r2cm::iItem::DoFuncT EmptyCheck::GetDoFunction()
+	r2cm::iItem::DoFuncT NumberCount_EmptyCount_IsFull::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

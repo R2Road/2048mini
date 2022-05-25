@@ -19,7 +19,7 @@ r2cm::MenuUp TestMenu::Create( r2cm::Director& director )
 		ret->AddItem( '1', test_p2048mini_stage::Generate::GetInstance() );
 		ret->AddItem( '2', test_p2048mini_stage::Add_And_Remove::GetInstance() );
 		ret->AddItem( '3', test_p2048mini_stage::IsIn::GetInstance() );
-		ret->AddItem( '4', test_p2048mini_stage::EmptyCheck::GetInstance() );
+		ret->AddItem( '4', test_p2048mini_stage::NumberCount_EmptyCount_IsFull::GetInstance() );
 
 		ret->AddLineFeed();
 

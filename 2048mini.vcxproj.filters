@@ -167,9 +167,6 @@
     <ClCompile Include="src\r2bix\r2component_LabelComponent.cpp">
       <Filter>r2bix\component</Filter>
     </ClCompile>
-    <ClCompile Include="src\r2bix\r2component_PivotComponent.cpp">
-      <Filter>r2bix\component</Filter>
-    </ClCompile>
     <ClCompile Include="src\r2bix\r2component_TextureFrameAnimationComponent.cpp">
       <Filter>r2bix\component</Filter>
     </ClCompile>
@@ -402,9 +399,6 @@
       <Filter>r2bix\component</Filter>
     </ClInclude>
     <ClInclude Include="src\r2bix\r2component_LabelComponent.h">
-      <Filter>r2bix\component</Filter>
-    </ClInclude>
-    <ClInclude Include="src\r2bix\r2component_PivotComponent.h">
       <Filter>r2bix\component</Filter>
     </ClInclude>
     <ClInclude Include="src\r2bix\r2component_TextureFrameAnimationComponent.h">

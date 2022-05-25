@@ -281,4 +281,90 @@ namespace test_p2048mini_stage
 			return r2cm::eItemLeaveAction::Pause;
 		};
 	}
+
+
+
+	r2cm::iItem::TitleFuncT Lock_Newcomer::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Stage : Lock, Newcomer";
+		};
+	}
+	r2cm::iItem::DoFuncT Lock_Newcomer::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
+
+			std::cout << r2cm::split;
+
+			DECLARATION_MAIN( p2048mini::Stage stage( 2, 2 ) );
+
+			std::cout << r2cm::split;
+
+			{
+				std::cout << r2cm::tab << "+ Lock" << r2cm::linefeed2;
+
+				PROCESS_MAIN( stage.Lock( 0, 0 ) );
+
+				std::cout << r2cm::linefeed;
+
+				EXPECT_TRUE( stage.IsLock( 0, 0 ) );
+				EXPECT_FALSE( stage.IsLock( 1, 0 ) );
+				EXPECT_FALSE( stage.IsLock( 1, 1 ) );
+				EXPECT_FALSE( stage.IsLock( 0, 1 ) );
+
+				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( stage.Lock( 0, 1 ) );
+				PROCESS_MAIN( stage.Lock( 1, 1 ) );
+				PROCESS_MAIN( stage.Lock( 1, 0 ) );
+
+				std::cout << r2cm::linefeed;
+
+				EXPECT_TRUE( stage.IsLock( 0, 1 ) );
+				EXPECT_TRUE( stage.IsLock( 1, 1 ) );
+				EXPECT_TRUE( stage.IsLock( 1, 0 ) );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				std::cout << r2cm::tab << "+ ClearAllLocks" << r2cm::linefeed2;
+
+				PROCESS_MAIN( stage.ClearAllLocks() );
+
+				std::cout << r2cm::linefeed;
+
+				EXPECT_FALSE( stage.IsLock( 0, 0 ) );
+				EXPECT_FALSE( stage.IsLock( 1, 0 ) );
+				EXPECT_FALSE( stage.IsLock( 1, 1 ) );
+				EXPECT_FALSE( stage.IsLock( 0, 1 ) );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				std::cout << r2cm::tab << "+ ClearAll" << r2cm::linefeed2;
+
+				PROCESS_MAIN( stage.Lock( 0, 0 ) );
+				PROCESS_MAIN( stage.Lock( 0, 1 ) );
+				PROCESS_MAIN( stage.Lock( 1, 1 ) );
+				PROCESS_MAIN( stage.Lock( 1, 0 ) );
+				PROCESS_MAIN( stage.ClearAll() );
+
+				std::cout << r2cm::linefeed;
+
+				EXPECT_FALSE( stage.IsLock( 0, 0 ) );
+				EXPECT_FALSE( stage.IsLock( 1, 0 ) );
+				EXPECT_FALSE( stage.IsLock( 1, 1 ) );
+				EXPECT_FALSE( stage.IsLock( 0, 1 ) );
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
 }

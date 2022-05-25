@@ -215,7 +215,7 @@ namespace test_p2048mini_stage
 			std::cout << r2cm::split;
 
 			DECLARATION_MAIN( p2048mini::Stage stage( 2, 2 ) );
-			EXPECT_EQ( 0, stage.GetCurrentNumberCount() );
+			EXPECT_EQ( 0, stage.GetNumberSpaceCount() );
 
 			std::cout << r2cm::split;
 
@@ -223,14 +223,14 @@ namespace test_p2048mini_stage
 				std::cout << r2cm::tab << "+ Add New" << r2cm::linefeed2;
 
 				PROCESS_MAIN( stage.Add( 0, 0, 7 ) );
-				EXPECT_EQ( 1, stage.GetCurrentNumberCount() );
+				EXPECT_EQ( 1, stage.GetNumberSpaceCount() );
 				EXPECT_EQ( 3, stage.GetEmptySpaceCount() );
 
 				std::cout << r2cm::linefeed;
 
 				PROCESS_MAIN( stage.Add( 0, 1, 7 ) );
 				PROCESS_MAIN( stage.Add( 1, 0, 7 ) );
-				EXPECT_EQ( 3, stage.GetCurrentNumberCount() );
+				EXPECT_EQ( 3, stage.GetNumberSpaceCount() );
 				EXPECT_EQ( 1, stage.GetEmptySpaceCount() );
 			}
 
@@ -240,7 +240,7 @@ namespace test_p2048mini_stage
 				std::cout << r2cm::tab << "+ Over Write" << r2cm::linefeed2;
 
 				PROCESS_MAIN( stage.Add( 0, 1, 7 ) );
-				EXPECT_EQ( 3, stage.GetCurrentNumberCount() );
+				EXPECT_EQ( 3, stage.GetNumberSpaceCount() );
 				EXPECT_EQ( 1, stage.GetEmptySpaceCount() );
 			}
 
@@ -250,7 +250,7 @@ namespace test_p2048mini_stage
 				std::cout << r2cm::tab << "+ Remove" << r2cm::linefeed2;
 
 				PROCESS_MAIN( stage.Remove( 0, 1 ) );
-				EXPECT_EQ( 2, stage.GetCurrentNumberCount() );
+				EXPECT_EQ( 2, stage.GetNumberSpaceCount() );
 				EXPECT_EQ( 2, stage.GetEmptySpaceCount() );
 			}
 
@@ -261,7 +261,7 @@ namespace test_p2048mini_stage
 
 				PROCESS_MAIN( stage.Add( 0, 1, 7 ) );
 				PROCESS_MAIN( stage.Add( 1, 1, 7 ) );
-				EXPECT_EQ( 4, stage.GetCurrentNumberCount() );
+				EXPECT_EQ( 4, stage.GetNumberSpaceCount() );
 				EXPECT_EQ( 0, stage.GetEmptySpaceCount() );
 
 				std::cout << r2cm::linefeed;

@@ -288,7 +288,7 @@ namespace test_p2048mini_stage
 	{
 		return []()->const char*
 		{
-			return "Stage : Lock, Newcomer";
+			return "Stage : Lock";
 		};
 	}
 	r2cm::iItem::DoFuncT Lock::GetDoFunction()
@@ -331,9 +331,9 @@ namespace test_p2048mini_stage
 			std::cout << r2cm::split;
 
 			{
-				std::cout << r2cm::tab << "+ ClearAllLocks" << r2cm::linefeed2;
+				std::cout << r2cm::tab << "+ ClearAllFlags" << r2cm::linefeed2;
 
-				PROCESS_MAIN( stage.ClearAllLocks() );
+				PROCESS_MAIN( stage.ClearAllFlags() );
 
 				std::cout << r2cm::linefeed;
 
@@ -417,9 +417,9 @@ namespace test_p2048mini_stage
 			std::cout << r2cm::split;
 
 			{
-				std::cout << r2cm::tab << "+ ClearAllLocks" << r2cm::linefeed2;
+				std::cout << r2cm::tab << "+ ClearAllFlags" << r2cm::linefeed2;
 
-				PROCESS_MAIN( stage.ClearAllLocks() );
+				PROCESS_MAIN( stage.ClearAllFlags() );
 
 				std::cout << r2cm::linefeed;
 

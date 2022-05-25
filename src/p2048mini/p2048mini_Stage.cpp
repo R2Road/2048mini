@@ -71,7 +71,7 @@ namespace p2048mini
 		Get( linear_index ).number = 0;
 	}
 
-	void Stage::ClearAllLocks()
+	void Stage::ClearAllFlags()
 	{
 		for( auto& cell : mContainer )
 		{

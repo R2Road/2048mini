@@ -50,7 +50,7 @@ namespace p2048mini
 	//
 	GameProcessor::MoveResult GameProcessor::Move( const r2::Direction4::eState direction_state )
 	{
-		mStage->ClearAllLocks();
+		mStage->ClearAllFlags();
 		mSum4Merged = 0;
 
 

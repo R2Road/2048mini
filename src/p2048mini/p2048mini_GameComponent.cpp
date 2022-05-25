@@ -73,6 +73,8 @@ namespace p2048mini
 
 		case eStep::GameReady:
 		{
+			mStageViewComponent4History->UpdateView();
+
 			// Make 2 Number
 			for( int i = 0; 2 > i; ++i )
 			{

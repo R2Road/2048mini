@@ -33,6 +33,7 @@ namespace p2048mini
 			, 0x53		// s - down
 			, 0x57		// w - up
 			, 0x52		// r - reset
+			, 0x09		// tab - history
 		} )
 	{
 		GetOwnerNode().GetDirector().AddInputListener( &mKeyboardInputListener );

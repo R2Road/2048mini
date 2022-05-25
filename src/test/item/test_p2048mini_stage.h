@@ -19,6 +19,13 @@ namespace test_p2048mini_stage
 		DoFuncT GetDoFunction() override;
 	};
 
+	class IsIn : public r2cm::iItem, public r2cm::SingleTon<IsIn>
+	{
+	public:
+		TitleFuncT GetTitleFunction() const override;
+		DoFuncT GetDoFunction() override;
+	};
+
 	class EmptyCheck : public r2cm::iItem, public r2cm::SingleTon<EmptyCheck>
 	{
 	public:

@@ -150,6 +150,55 @@ namespace test_p2048mini_stage
 
 
 
+	r2cm::iItem::TitleFuncT IsIn::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Stage : IsIn";
+		};
+	}
+	r2cm::iItem::DoFuncT IsIn::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
+
+			std::cout << r2cm::split;
+
+			DECLARATION_MAIN( p2048mini::Stage stage( 2, 2 ) );
+
+			std::cout << r2cm::split;
+
+			{
+				EXPECT_TRUE( stage.IsIn( 0, 0 ) );
+				EXPECT_TRUE( stage.IsIn( 1, 0 ) );
+				EXPECT_TRUE( stage.IsIn( 1, 1 ) );
+				EXPECT_TRUE( stage.IsIn( 0, 1 ) );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				EXPECT_FALSE( stage.IsIn( -1, -1 ) );
+				EXPECT_FALSE( stage.IsIn( -1, 2 ) );
+				EXPECT_FALSE( stage.IsIn( 2, -1 ) );
+				EXPECT_FALSE( stage.IsIn( 2, 2 ) );
+
+				std::cout << r2cm::linefeed;
+
+				EXPECT_FALSE( stage.IsIn( -1, 0 ) );
+				EXPECT_FALSE( stage.IsIn( 2, 0 ) );
+				EXPECT_FALSE( stage.IsIn( 0, 2 ) );
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+
+
+
 	r2cm::iItem::TitleFuncT EmptyCheck::GetTitleFunction() const
 	{
 		return []()->const char*

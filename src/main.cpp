@@ -25,6 +25,8 @@ int main()
 	//
 	r2cm::WindowUtility::ChangeTitle( L"2048mini" );
 
+#if defined( DEVELOPMENT_2048MINI ) && ( DEVELOPMENT_2048MINI == 1 )
+
 	//
 	// Environment : Size
 	//
@@ -38,14 +40,25 @@ int main()
 	//
 	// Setup & Run
 	//
-#if defined( DEVELOPMENT_2048MINI ) && ( DEVELOPMENT_2048MINI == 1 )
-
 	r2cm::Director director;
 	director.Setup( DevelopmentMenu::Create( director ) );
 	director.Run();
 
 #else
 
+	//
+	// Environment : Size
+	//
+	r2cm::WindowUtility::Resize( 590, 800 );
+
+	//
+	// Environment : Position
+	//
+	r2cm::WindowUtility::Move( 0, 0 );
+
+	//
+	// Setup & Run
+	//
 	r2base::Director director;
 	director.Setup( p2048mini::GameScene::Create( director ) );
 	director.Run();

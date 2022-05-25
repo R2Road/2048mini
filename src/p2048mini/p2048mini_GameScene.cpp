@@ -92,7 +92,7 @@ namespace p2048mini
 				//
 				//
 				//
-				game_component->SetStageViewComponent4Debug( stage_view_component_4debug );
+				game_component->SetStageViewComponent4History( stage_view_component_4debug );
 			}
 
 			const int score_label_x = 39;

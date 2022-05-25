@@ -17,7 +17,7 @@ namespace p2048mini
 		, mStage( 4u, 4u )
 		, mGameProcessor( &mStage )
 		, mStageViewComponent( nullptr )
-		, mStageViewComponent4Debug( nullptr )
+		, mStageViewComponent4History( nullptr )
 
 		, mMaxNumberLabel( nullptr )
 		, mTotalScoreLabel( nullptr )
@@ -113,7 +113,7 @@ namespace p2048mini
 
 			if( r2::Direction4::eState::None != input_direction )
 			{
-				mStageViewComponent4Debug->UpdateView();
+				mStageViewComponent4History->UpdateView();
 
 				if( !MoveNumber( input_direction ) )
 				{
@@ -145,11 +145,11 @@ namespace p2048mini
 
 		if( mKeyboardInputListener.IsPushed( 6 ) )
 		{
-			mStageViewComponent4Debug->GetOwnerNode().SetVisible( true );
+			mStageViewComponent4History->GetOwnerNode().SetVisible( true );
 		}
 		else if( mKeyboardInputListener.IsRelease( 6 ) )
 		{
-			mStageViewComponent4Debug->GetOwnerNode().SetVisible( false );
+			mStageViewComponent4History->GetOwnerNode().SetVisible( false );
 		}
 
 		if( mKeyboardInputListener.IsPushed( 5 ) )

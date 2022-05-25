@@ -48,8 +48,8 @@ namespace test_p2048mini_stage
 
 			std::cout << r2cm::split;
 
-			DECLARATION_MAIN( const uint32_t width = 6 );
-			DECLARATION_MAIN( const uint32_t height = 5 );
+			DECLARATION_MAIN( const uint32_t width = 4 );
+			DECLARATION_MAIN( const uint32_t height = 3 );
 			DECLARATION_MAIN( p2048mini::Stage stage( width, height ) );
 
 			std::cout << r2cm::split;
@@ -95,7 +95,7 @@ namespace test_p2048mini_stage
 
 			std::cout << r2cm::split;
 
-			DECLARATION_MAIN( p2048mini::Stage stage( 6, 5 ) );
+			DECLARATION_MAIN( p2048mini::Stage stage( 4, 3 ) );
 
 			std::cout << r2cm::split;
 

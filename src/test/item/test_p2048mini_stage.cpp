@@ -60,6 +60,31 @@ namespace test_p2048mini_stage
 
 			std::cout << r2cm::split;
 
+			return r2cm::eItemLeaveAction::Pause;
+		};
+	}
+
+
+
+	r2cm::iItem::TitleFuncT Add_And_Remove::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Stage : Add, Remove";
+		};
+	}
+	r2cm::iItem::DoFuncT Add_And_Remove::GetDoFunction()
+	{
+		return []()->r2cm::eItemLeaveAction
+		{
+			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
+
+			std::cout << r2cm::split;
+
+			DECLARATION_MAIN( p2048mini::Stage stage( 6, 5 ) );
+
+			std::cout << r2cm::split;
+
 			{
 				PROCESS_MAIN( stage.Add( 2, 2, 64 ) );
 				EXPECT_EQ( 64, stage.GetNumber( 2, 2 ) );

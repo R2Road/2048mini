@@ -17,25 +17,26 @@ r2cm::MenuUp TestMenu::Create( r2cm::Director& director )
 
 	{
 		ret->AddItem( '1', test_p2048mini_stage::Generate::GetInstance() );
-		ret->AddItem( '2', test_p2048mini_stage::EmptyCheck::GetInstance() );
+		ret->AddItem( '2', test_p2048mini_stage::Add_And_Remove::GetInstance() );
+		ret->AddItem( '3', test_p2048mini_stage::EmptyCheck::GetInstance() );
 
 		ret->AddLineFeed();
 
-		ret->AddItem( '3', test_p2048mini_gameprocessor::MoveReadyTest::GetInstance() );
-		ret->AddItem( '4', test_p2048mini_gameprocessor::MoveTest::GetInstance() );
-		ret->AddItem( '5', test_p2048mini_gameprocessor::MergeTest::GetInstance() );
-		ret->AddItem( '6', test_p2048mini_gameprocessor::MovableCheck::GetInstance() );
+		ret->AddItem( 'q', test_p2048mini_gameprocessor::MoveReadyTest::GetInstance() );
+		ret->AddItem( 'w', test_p2048mini_gameprocessor::MoveTest::GetInstance() );
+		ret->AddItem( 'e', test_p2048mini_gameprocessor::MergeTest::GetInstance() );
+		ret->AddItem( 'r', test_p2048mini_gameprocessor::MovableCheck::GetInstance() );
 
 		ret->AddLineFeed();
 
-		ret->AddItem( 'q', test_p2048mini_numbernode::Generate::GetInstance() );
-		ret->AddItem( 'w', test_p2048mini_numbernode::SetNumber::GetInstance() );
+		ret->AddItem( 'a', test_p2048mini_numbernode::Generate::GetInstance() );
+		ret->AddItem( 's', test_p2048mini_numbernode::SetNumber::GetInstance() );
 
 		ret->AddLineFeed();
 
-		ret->AddItem( 'a', test_p2048mini_stageviewnode::Generate::GetInstance() );
-		ret->AddItem( 's', test_p2048mini_stageviewnode::Setup_Render::GetInstance() );
-		ret->AddItem( 'd', test_p2048mini_stageviewnode::UpdateView::GetInstance() );
+		ret->AddItem( 'z', test_p2048mini_stageviewnode::Generate::GetInstance() );
+		ret->AddItem( 'x', test_p2048mini_stageviewnode::Setup_Render::GetInstance() );
+		ret->AddItem( 'c', test_p2048mini_stageviewnode::UpdateView::GetInstance() );
 
 
 		ret->AddSplit();

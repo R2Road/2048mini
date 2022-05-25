@@ -37,29 +37,6 @@ namespace p2048mini
 			p2048minitable::TextureTable::GetInstance().Load();
 
 			//
-			// Background
-			//
-			{
-				auto node = ret->AddChild<r2node::CustomTextureNode>( std::numeric_limits<int>::min() );
-				node->GetComponent<r2component::CustomTextureComponent>()->GetTexture()->Reset( 37, 17, '=' );
-				node->GetComponent<r2component::TextureRenderComponent>()->SetPivotPoint( 0.f, 0.f );
-				node->GetComponent<r2component::TextureRenderComponent>()->ResetVisibleRect();
-
-				node->mTransformComponent->SetPosition(
-					( director.GetScreenBufferSize().GetWidth() * 0.5f ) - ( node->GetComponent<r2component::CustomTextureComponent>()->GetTexture()->GetWidth() * 0.5f )
-					, ( director.GetScreenBufferSize().GetHeight() * 0.5f ) - ( node->GetComponent<r2component::CustomTextureComponent>()->GetTexture()->GetHeight() * 0.5f )
-				);
-
-				//
-				// Debug
-				//
-				if( p2048mini::Config::GetNodeConfig().pivot )
-				{
-					node->AddChild<r2node::PivotNode>( std::numeric_limits<int>::max() );
-				}
-			}
-
-			//
 			// Game Component
 			//
 			auto game_component = ret->AddComponent<p2048mini::GameComponent>();

@@ -4,6 +4,8 @@
 
 #include "r2bix/r2base_Director.h"
 
+#include "r2bix/r2component_CustomTextureComponent.h"
+#include "r2bix/r2component_TextureRenderComponent.h"
 #include "r2bix/r2node_CustomTextureNode.h"
 #include "r2bix/r2node_PivotNode.h"
 
@@ -18,6 +20,26 @@ namespace p2048mini
 		if( ret )
 		{
 			ret->AddComponent<p2048mini::StageViewComponent>();
+
+			//
+			// Background
+			//
+			{
+				auto node = ret->AddChild<r2node::CustomTextureNode>( std::numeric_limits<int>::min() );
+				node->GetComponent<r2component::CustomTextureComponent>()->GetTexture()->Reset( 37, 17, '=' );
+				node->GetComponent<r2component::TextureRenderComponent>()->SetPivotPoint( 0.f, 0.f );
+				node->GetComponent<r2component::TextureRenderComponent>()->ResetVisibleRect();
+
+				node->mTransformComponent->SetPosition( -1, -1 );
+
+				//
+				// Debug
+				//
+				if( p2048mini::Config::GetNodeConfig().pivot )
+				{
+					node->AddChild<r2node::PivotNode>( std::numeric_limits<int>::max() );
+				}
+			}
 
 			//
 			// Debug

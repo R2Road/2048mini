@@ -19,18 +19,17 @@ namespace p2048mini
 		auto ret( r2base::Node::Create( director ) );
 		if( ret )
 		{
-			ret->AddComponent<p2048mini::StageViewComponent>();
+			auto stage_view_component = ret->AddComponent<p2048mini::StageViewComponent>();
 
 			//
 			// Background
 			//
 			{
 				auto node = ret->AddChild<r2node::CustomTextureNode>( std::numeric_limits<int>::min() );
-				node->GetComponent<r2component::CustomTextureComponent>()->GetTexture()->Reset( 37, 17, '=' );
 				node->GetComponent<r2component::TextureRenderComponent>()->SetPivotPoint( 0.f, 0.f );
-				node->GetComponent<r2component::TextureRenderComponent>()->ResetVisibleRect();
-
 				node->mTransformComponent->SetPosition( -1, -1 );
+
+				stage_view_component->SetBackgroundNode( node );
 
 				//
 				// Debug

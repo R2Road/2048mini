@@ -1,6 +1,7 @@
 #include "p2048mini_StageViewComponent.h"
 
 #include "r2/r2_Assert.h"
+#include "r2bix/r2component_CustomTextureComponent.h"
 #include "r2bix/r2component_LabelComponent.h"
 #include "r2bix/r2component_TextureRenderComponent.h"
 
@@ -15,6 +16,7 @@ namespace p2048mini
 		, mWidth( 0u )
 		, mHeight( 0u )
 		, mNumberComponentContainer()
+		, mBackgroundNode( nullptr )
 	{}
 
 	std::unique_ptr<StageViewComponent> StageViewComponent::Create( r2base::Node& owner_node )
@@ -70,6 +72,13 @@ namespace p2048mini
 				);
 			}
 		}
+
+		//
+		// Background
+		//
+		R2ASSERT( nullptr != mBackgroundNode, "WTF" );
+		mBackgroundNode->GetComponent<r2component::CustomTextureComponent>()->GetTexture()->Reset( mWidth + 2u, mHeight + 2u, '=' );
+		mBackgroundNode->GetComponent<r2component::TextureRenderComponent>()->ResetVisibleRect();
 	}
 
 	void StageViewComponent::UpdateView()

@@ -20,6 +20,10 @@ namespace p2048mini
 		static std::unique_ptr<StageViewComponent> Create( r2base::Node& owner_node );
 
 		void Setup( const p2048mini::Stage& stage );
+		void SetBackgroundNode( r2base::Node* const background_node )
+		{
+			mBackgroundNode = background_node;
+		}
 		void UpdateView();
 
 		//
@@ -33,5 +37,7 @@ namespace p2048mini
 		int32_t mWidth;
 		int32_t mHeight;
 		std::vector<p2048mini::NumberComponent*> mNumberComponentContainer;
+
+		r2base::Node* mBackgroundNode;
 	};
 }

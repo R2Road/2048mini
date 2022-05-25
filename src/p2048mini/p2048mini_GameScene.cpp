@@ -55,7 +55,7 @@ namespace p2048mini
 			}
 
 			//
-			// Stage
+			// Stage View
 			//
 			{
 				auto stage_view_node = ret->AddChild<p2048mini::StageViewNode>( 1 );
@@ -73,6 +73,26 @@ namespace p2048mini
 				//
 				//
 				game_component->SetStageViewComponent( stage_view_component );
+			}
+			//
+			// History View
+			//
+			{
+				auto stage_view_node = ret->AddChild<p2048mini::StageViewNode>( 2 );
+				stage_view_node->SetVisible( false );
+
+				auto stage_view_component_4debug = stage_view_node->GetComponent<p2048mini::StageViewComponent>();
+				stage_view_component_4debug->Setup( game_component->GetStage() );
+
+				stage_view_node->GetComponent<r2component::TransformComponent>()->SetPosition(
+					( director.GetScreenBufferSize().GetWidth() * 0.5f ) - ( stage_view_component_4debug->GetWidth() * 0.5f )
+					, ( director.GetScreenBufferSize().GetHeight() * 0.5f ) - ( stage_view_component_4debug->GetHeight() * 0.5f )
+				);
+
+				//
+				//
+				//
+				game_component->SetStageViewComponent4Debug( stage_view_component_4debug );
 			}
 
 			const int score_label_x = 39;
@@ -220,25 +240,8 @@ namespace p2048mini
 			}
 
 			//
-			// History
+			// Debug
 			//
-			{
-				auto stage_view_node = ret->AddChild<p2048mini::StageViewNode>( 2 );
-				stage_view_node->SetVisible( false );
-
-				auto stage_view_component_4debug = stage_view_node->GetComponent<p2048mini::StageViewComponent>();
-				stage_view_component_4debug->Setup( game_component->GetStage() );
-
-				stage_view_node->GetComponent<r2component::TransformComponent>()->SetPosition(
-					( director.GetScreenBufferSize().GetWidth() * 0.5f ) - ( stage_view_component_4debug->GetWidth() * 0.5f )
-					, ( director.GetScreenBufferSize().GetHeight() * 0.5f ) - ( stage_view_component_4debug->GetHeight() * 0.5f )
-				);
-
-				//
-				//
-				//
-				game_component->SetStageViewComponent4Debug( stage_view_component_4debug );
-			}
 			if( p2048mini::Config::GetNodeConfig().pivot )
 			{
 				//

@@ -34,10 +34,6 @@ namespace p2048mini
 	{
 		return GetNumber( mGridIndexConverter.To_Linear( x, y ) );
 	}
-	bool Stage::IsLock( const uint32_t x, const uint32_t y ) const
-	{
-		return Get( mGridIndexConverter.To_Linear( x, y ) ).merge_lock;
-	}
 
 	void Stage::ClearAll()
 	{
@@ -86,6 +82,10 @@ namespace p2048mini
 	void Stage::Lock( const uint32_t x, const uint32_t y )
 	{
 		Get( mGridIndexConverter.To_Linear( x, y ) ).merge_lock = true;
+	}
+	bool Stage::IsLock( const uint32_t x, const uint32_t y ) const
+	{
+		return Get( mGridIndexConverter.To_Linear( x, y ) ).merge_lock;
 	}
 	void Stage::SetNewcomer( const uint32_t linear_index )
 	{

@@ -113,10 +113,7 @@ namespace p2048mini
 
 			if( r2::Direction4::eState::None != input_direction )
 			{
-				if( p2048mini::Config::GetDebugConfig().bLastStage )
-				{
-					mStageViewComponent4Debug->UpdateView();
-				}
+				mStageViewComponent4Debug->UpdateView();
 
 				if( !MoveNumber( input_direction ) )
 				{
@@ -144,6 +141,15 @@ namespace p2048mini
 			mYouWinNode->GetComponent<r2component::ActionProcessComponent>()->StartAction();
 			mStep = eStep::GameStop;
 			break;
+		}
+
+		if( mKeyboardInputListener.IsPushed( 6 ) )
+		{
+			mStageViewComponent4Debug->GetOwnerNode().SetVisible( true );
+		}
+		else if( mKeyboardInputListener.IsRelease( 6 ) )
+		{
+			mStageViewComponent4Debug->GetOwnerNode().SetVisible( false );
 		}
 
 		if( mKeyboardInputListener.IsPushed( 5 ) )

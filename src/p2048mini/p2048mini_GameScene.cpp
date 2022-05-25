@@ -220,17 +220,17 @@ namespace p2048mini
 			}
 
 			//
-			// Debug
+			// History
 			//
-			if( p2048mini::Config::GetDebugConfig().bLastStage )
 			{
-				auto stage_view_node = ret->AddChild<p2048mini::StageViewNode>( 1 );
+				auto stage_view_node = ret->AddChild<p2048mini::StageViewNode>( 2 );
+				stage_view_node->SetVisible( false );
 
 				auto stage_view_component_4debug = stage_view_node->GetComponent<p2048mini::StageViewComponent>();
 				stage_view_component_4debug->Setup( game_component->GetStage() );
 
 				stage_view_node->GetComponent<r2component::TransformComponent>()->SetPosition(
-					0.f
+					( director.GetScreenBufferSize().GetWidth() * 0.5f ) - ( stage_view_component_4debug->GetWidth() * 0.5f )
 					, ( director.GetScreenBufferSize().GetHeight() * 0.5f ) - ( stage_view_component_4debug->GetHeight() * 0.5f )
 				);
 

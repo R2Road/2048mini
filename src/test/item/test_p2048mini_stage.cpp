@@ -49,13 +49,25 @@ namespace test_p2048mini_stage
 			std::cout << r2cm::split;
 
 			DECLARATION_MAIN( p2048mini::Stage stage( 6, 5 ) );
-			EXPECT_EQ( 6, stage.GetWidth() );
-			EXPECT_EQ( 5, stage.GetHeight() );
+
+			std::cout << r2cm::split;
+			{
+				EXPECT_EQ( 6, stage.GetWidth() );
+				EXPECT_EQ( 5, stage.GetHeight() );
+			}
 
 			std::cout << r2cm::split;
 
 			{
 				PROCESS_MAIN( PrintStage( stage ) );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				EXPECT_EQ( 5, stage.GetMaxX() );
+				EXPECT_EQ( 4, stage.GetMaxY() );
+				EXPECT_EQ( stage.GetWidth() * stage.GetHeight(), stage.Size() );
 			}
 
 			std::cout << r2cm::split;

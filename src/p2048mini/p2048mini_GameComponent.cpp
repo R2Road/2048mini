@@ -61,14 +61,16 @@ namespace p2048mini
 		switch( mStep )
 		{
 		case eStep::GameReset:
-			mStageViewComponent->GetOwnerNode().SetVisible( false );
-			mGameProcessor.Reset();
 			mStep = eStep::GameReady;
+			mGameProcessor.Reset();
+
+			mStageViewComponent->GetOwnerNode().SetVisible( false );
 			mMaxNumberLabel->GetComponent<r2component::LabelComponent>()->SetString( r2utility::StringBuilder::Build( "0" ) );
 			mTotalScoreLabel->GetComponent<r2component::LabelComponent>()->SetString( r2utility::StringBuilder::Build( "0" ) );
 			mRecentScoreLabel->GetComponent<r2component::LabelComponent>()->SetString( r2utility::StringBuilder::Build( "0" ) );
-			mGameOverNode->SetVisible( false );
+
 			mYouWinNode->SetVisible( false );
+			mGameOverNode->SetVisible( false );
 			break;
 
 		case eStep::GameReady:

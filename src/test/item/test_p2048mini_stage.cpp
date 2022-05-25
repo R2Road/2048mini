@@ -284,14 +284,14 @@ namespace test_p2048mini_stage
 
 
 
-	r2cm::iItem::TitleFuncT Lock_Newcomer::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT Lock::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Stage : Lock, Newcomer";
 		};
 	}
-	r2cm::iItem::DoFuncT Lock_Newcomer::GetDoFunction()
+	r2cm::iItem::DoFuncT Lock::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

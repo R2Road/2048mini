@@ -33,7 +33,7 @@ namespace test_p2048mini_stage
 		DoFuncT GetDoFunction() override;
 	};
 
-	class Lock_Newcomer : public r2cm::iItem, public r2cm::SingleTon<Lock_Newcomer>
+	class Lock : public r2cm::iItem, public r2cm::SingleTon<Lock>
 	{
 	public:
 		TitleFuncT GetTitleFunction() const override;

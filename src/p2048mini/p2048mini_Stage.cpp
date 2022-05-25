@@ -95,4 +95,8 @@ namespace p2048mini
 	{
 		SetNewcomer( mGridIndexConverter.To_Linear( x, y ) );
 	}
+	bool Stage::IsNewcomer( const uint32_t x, const uint32_t y ) const
+	{
+		return Get( mGridIndexConverter.To_Linear( x, y ) ).newcomer;
+	}
 }

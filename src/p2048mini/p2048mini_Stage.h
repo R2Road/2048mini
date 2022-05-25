@@ -63,6 +63,7 @@ namespace p2048mini
 		bool IsLock( const uint32_t x, const uint32_t y ) const;
 		void SetNewcomer( const uint32_t linear_index );
 		void SetNewcomer( const uint32_t x, const uint32_t y );
+		bool IsNewcomer( const uint32_t x, const uint32_t y ) const;
 
 	private:
 		r2::GridIndexConverter mGridIndexConverter;

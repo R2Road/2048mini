@@ -39,4 +39,11 @@ namespace test_p2048mini_stage
 		TitleFuncT GetTitleFunction() const override;
 		DoFuncT GetDoFunction() override;
 	};
+
+	class Newcomer : public r2cm::iItem, public r2cm::SingleTon<Newcomer>
+	{
+	public:
+		TitleFuncT GetTitleFunction() const override;
+		DoFuncT GetDoFunction() override;
+	};
 }

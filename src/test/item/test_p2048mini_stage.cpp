@@ -80,14 +80,14 @@ namespace test_p2048mini_stage
 
 
 
-	r2cm::iItem::TitleFuncT Add_And_Remove::GetTitleFunction() const
+	r2cm::iItem::TitleFuncT Add_Remove_ClearAll::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Stage : Add, Remove";
+			return "Stage : Add, Remove, ClearAll";
 		};
 	}
-	r2cm::iItem::DoFuncT Add_And_Remove::GetDoFunction()
+	r2cm::iItem::DoFuncT Add_Remove_ClearAll::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

@@ -33,13 +33,14 @@ namespace p2048minitable
 				/* 3 */ "[   ESC   ] Exit                                            "
 				/* 4 */ "[ W,A,S,D ] Move Number                                     "
 				/* 5 */ "[    R    ] Restart                                         "
-				/* 6 */ "                                                            "
-				/* 7 */ "  #   #   ###   #   #    #   #   #####  #   #   B           "
-				/* 8 */ "  #   #  #   #  #   #    # # #     #    ##  #   B           "
-				/* 9 */ "   # #   #   #  #   #    # # #     #    # # #   B           "
-				/* 0 */ "    #    #   #  #   #    # # #     #    #  ##   B           "
-				/* 1 */ "    #     ###    ###      # #    #####  #   #   B           "
-				/* 2 */ "                                                            "
+				/* 6 */ "[   TAB   ] History                                         "
+				/* 7 */ "                                                            "
+				/* 8 */ "  #   #   ###   #   #    #   #   #####  #   #   B           "
+				/* 9 */ "  #   #  #   #  #   #    # # #     #    ##  #   B           "
+				/* 0 */ "   # #   #   #  #   #    # # #     #    # # #   B           "
+				/* 1 */ "    #    #   #  #   #    # # #     #    #  ##   B           "
+				/* 2 */ "    #     ###    ###      # #    #####  #   #   B           "
+				/* 3 */ "                                                            "
 			) ) );
 
 			{
@@ -55,7 +56,7 @@ namespace p2048minitable
 					"keyinfo_0"
 					, TextureFrameValueT( new ( std::nothrow ) r2render::TextureFrame( result.first->second.get() ) )
 				);
-				frame_result.first->second->SetVisibleRect( r2::RectInt( 0, 13, 22, 2 ) );
+				frame_result.first->second->SetVisibleRect( r2::RectInt( 0, 13, 22, 3 ) );
 			}
 
 			{
@@ -71,7 +72,7 @@ namespace p2048minitable
 					"you_win_0"
 					, TextureFrameValueT( new ( std::nothrow ) r2render::TextureFrame( result.first->second.get() ) )
 				);
-				frame_result.first->second->SetVisibleRect( 0, 16, 47, 22 );
+				frame_result.first->second->SetVisibleRect( 0, 17, 47, 22 );
 			}
 		}
 	}

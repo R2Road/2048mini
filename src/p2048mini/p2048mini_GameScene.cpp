@@ -73,7 +73,7 @@ namespace p2048mini
 				sprite_node->GetComponent<r2component::TextureFrameRenderComponent>()->SetTextureFrame( p2048minitable::TextureTable::GetInstance().GetTextureFrame( "title_0" ) );
 				sprite_node->GetComponent<r2component::TransformComponent>()->SetPosition(
 					( director.GetScreenBufferSize().GetWidth() * 0.5f )
-					, ( director.GetScreenBufferSize().GetHeight() * 0.18f )
+					, ( director.GetScreenBufferSize().GetHeight() * 0.11f )
 				);
 			}
 
@@ -108,12 +108,12 @@ namespace p2048mini
 				auto label_node = ret->AddChild<r2node::LabelNode>();
 				label_node->GetComponent<r2component::LabelComponent>()->SetString( "Max : " );
 				label_node->GetComponent<r2component::TextureRenderComponent>()->SetPivotPoint( 1.f, 0.f );
-				label_node->GetComponent<r2component::TransformComponent>()->SetPosition( score_label_x, 14 );
+				label_node->GetComponent<r2component::TransformComponent>()->SetPosition( score_label_x, 9 );
 
 				auto max_number_label_node = ret->AddChild<r2node::LabelNode>( 1 );
 				max_number_label_node->GetComponent<r2component::LabelComponent>()->SetString( "0" );
 				max_number_label_node->GetComponent<r2component::TextureRenderComponent>()->SetPivotPoint( 1.f, 0.f );
-				max_number_label_node->GetComponent<r2component::TransformComponent>()->SetPosition( score_number_x, 14 );
+				max_number_label_node->GetComponent<r2component::TransformComponent>()->SetPosition( score_number_x, 9 );
 
 				//
 				//
@@ -128,12 +128,12 @@ namespace p2048mini
 				auto label_node = ret->AddChild<r2node::LabelNode>();
 				label_node->GetComponent<r2component::LabelComponent>()->SetString( "Score : " );
 				label_node->GetComponent<r2component::TextureRenderComponent>()->SetPivotPoint( 1.f, 0.f );
-				label_node->GetComponent<r2component::TransformComponent>()->SetPosition( score_label_x, 15 );
+				label_node->GetComponent<r2component::TransformComponent>()->SetPosition( score_label_x, 10 );
 
 				auto total_score_label_node = ret->AddChild<r2node::LabelNode>( 1 );
 				total_score_label_node->GetComponent<r2component::LabelComponent>()->SetString( "0" );
 				total_score_label_node->GetComponent<r2component::TextureRenderComponent>()->SetPivotPoint( 1.f, 0.f );
-				total_score_label_node->GetComponent<r2component::TransformComponent>()->SetPosition( score_number_x, 15 );
+				total_score_label_node->GetComponent<r2component::TransformComponent>()->SetPosition( score_number_x, 10 );
 
 				//
 				//
@@ -148,12 +148,12 @@ namespace p2048mini
 				auto label_node = ret->AddChild<r2node::LabelNode>();
 				label_node->GetComponent<r2component::LabelComponent>()->SetString( "Recent : " );
 				label_node->GetComponent<r2component::TextureRenderComponent>()->SetPivotPoint( 1.f, 0.f );
-				label_node->GetComponent<r2component::TransformComponent>()->SetPosition( score_label_x, 16 );
+				label_node->GetComponent<r2component::TransformComponent>()->SetPosition( score_label_x, 11 );
 
 				auto total_score_label_node = ret->AddChild<r2node::LabelNode>( 1 );
 				total_score_label_node->GetComponent<r2component::LabelComponent>()->SetString( "0" );
 				total_score_label_node->GetComponent<r2component::TextureRenderComponent>()->SetPivotPoint( 1.f, 0.f );
-				total_score_label_node->GetComponent<r2component::TransformComponent>()->SetPosition( score_number_x, 16 );
+				total_score_label_node->GetComponent<r2component::TransformComponent>()->SetPosition( score_number_x, 11 );
 
 				//
 				//
@@ -167,7 +167,7 @@ namespace p2048mini
 			{
 				auto sprite_node = ret->AddChild<r2node::SpriteNode>();
 				sprite_node->GetComponent<r2component::TextureFrameRenderComponent>()->SetTextureFrame( p2048minitable::TextureTable::GetInstance().GetTextureFrame( "keyinfo_0" ) );
-				sprite_node->GetComponent<r2component::TransformComponent>()->SetPosition( 23, 37 );
+				sprite_node->GetComponent<r2component::TransformComponent>()->SetPosition( 23, 32 );
 			}
 
 			//

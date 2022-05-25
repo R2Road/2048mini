@@ -14,7 +14,7 @@ namespace p2048mini
 		, mStage( nullptr )
 		, mWidth( 0u )
 		, mHeight( 0u )
-		, mLabelContainer()
+		, mNumberComponentContainer()
 	{}
 
 	std::unique_ptr<StageViewComponent> StageViewComponent::Create( r2base::Node& owner_node )
@@ -30,7 +30,7 @@ namespace p2048mini
 
 	void StageViewComponent::Setup( const p2048mini::Stage& stage )
 	{
-		if( !mLabelContainer.empty() )
+		if( !mNumberComponentContainer.empty() )
 		{
 			//
 			// # 2022.05.06 by R
@@ -53,7 +53,7 @@ namespace p2048mini
 		mWidth = ( mStage->GetWidth() * NUMBER_WIDTH ) + ( ( mStage->GetWidth() - 1 ) * SPACING_WIDTH );
 		mHeight = ( mStage->GetHeight() * NUMBER_HEIGHT ) + ( ( mStage->GetHeight() - 1 ) * SPACING_HEIGHT );
 
-		mLabelContainer.reserve( mStage->GetWidth() * mStage->GetHeight() );
+		mNumberComponentContainer.reserve( mStage->GetWidth() * mStage->GetHeight() );
 		for( uint32_t y = 0; mStage->GetHeight() > y; ++y )
 		{
 			for( uint32_t x = 0; mStage->GetWidth() > x; ++x )
@@ -62,7 +62,7 @@ namespace p2048mini
 
 				auto number_component = node->GetComponent<p2048mini::NumberComponent>();
 				number_component->SetNumber( 2048, false, false );
-				mLabelContainer.push_back( number_component );
+				mNumberComponentContainer.push_back( number_component );
 
 				node->GetComponent<r2component::TransformComponent>()->SetPosition(
 					4 + static_cast<int>( x * ( NUMBER_WIDTH + SPACING_WIDTH ) )
@@ -77,8 +77,8 @@ namespace p2048mini
 		uint32_t label_index = 0;
 		for( const auto cell : *mStage )
 		{
-			mLabelContainer[label_index]->GetOwnerNode().SetVisible( ( 0 < cell.number ) );
-			mLabelContainer[label_index]->SetNumber( cell.number, cell.merge_lock, cell.newcomer );
+			mNumberComponentContainer[label_index]->GetOwnerNode().SetVisible( ( 0 < cell.number ) );
+			mNumberComponentContainer[label_index]->SetNumber( cell.number, cell.merge_lock, cell.newcomer );
 			++label_index;
 		}
 	}

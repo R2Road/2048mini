@@ -32,6 +32,6 @@ namespace p2048mini
 		const p2048mini::Stage* mStage;
 		int32_t mWidth;
 		int32_t mHeight;
-		std::vector<p2048mini::NumberComponent*> mLabelContainer;
+		std::vector<p2048mini::NumberComponent*> mNumberComponentContainer;
 	};
 }

@@ -100,18 +100,23 @@ namespace test_p2048mini_stage
 			std::cout << r2cm::split;
 
 			{
+				std::cout << r2cm::tab << "+ Add" << r2cm::linefeed2;
+
 				PROCESS_MAIN( stage.Add( 2, 2, 64 ) );
 				EXPECT_EQ( 64, stage.GetNumber( 2, 2 ) );
-				PROCESS_MAIN( PrintStage( stage ) );
+
+				PrintStage( stage );
 			}
 
 			std::cout << r2cm::split;
 
-
 			{
+				std::cout << r2cm::tab << "+ Remove" << r2cm::linefeed2;
+
 				PROCESS_MAIN( stage.Remove( 2, 2 ) );
 				EXPECT_EQ( 0, stage.GetNumber( 2, 2 ) );
-				PROCESS_MAIN( PrintStage( stage ) );
+
+				PrintStage( stage );
 			}
 
 			std::cout << r2cm::split;
@@ -121,18 +126,20 @@ namespace test_p2048mini_stage
 				PROCESS_MAIN( stage.Add( 1, 2, 1 ) );
 				PROCESS_MAIN( stage.Add( 1, 3, 1 ) );
 
-				PROCESS_MAIN( PrintStage( stage ) );
+				PrintStage( stage );
 			}
 
 			std::cout << r2cm::split;
 
 			{
+				std::cout << r2cm::tab << "+ Clear All" << r2cm::linefeed2;
+
 				PROCESS_MAIN( stage.ClearAll() );
 				EXPECT_EQ( 0, stage.GetNumber( 1, 1 ) );
 				EXPECT_EQ( 0, stage.GetNumber( 1, 2 ) );
 				EXPECT_EQ( 0, stage.GetNumber( 1, 3 ) );
 
-				PROCESS_MAIN( PrintStage( stage ) );
+				PrintStage( stage );
 			}
 
 			std::cout << r2cm::split;

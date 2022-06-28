@@ -57,6 +57,11 @@ int main()
 	r2cm::WindowUtility::Move( 0, 0 );
 
 	//
+	// Environment : ScrollBar
+	//
+	r2cm::WindowUtility::ScrollBarVisible( false );
+
+	//
 	// Setup & Run
 	//
 	r2base::Director director;

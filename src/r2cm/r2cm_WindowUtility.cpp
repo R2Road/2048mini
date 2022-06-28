@@ -40,6 +40,11 @@ namespace r2cm
 		MoveWindow( hWnd, x + offset_x, y, rectClient.right - rectClient.left, rectClient.bottom - rectClient.top, TRUE );
 	}
 
+	void WindowUtility::ScrollBarVisible( const bool visible )
+	{
+		ShowScrollBar( GetConsoleWindow(), SB_VERT, visible );
+	}
+
 	WindowUtility::CursorPoint WindowUtility::GetCursorPoint()
 	{
 		CONSOLE_SCREEN_BUFFER_INFO csbi{};

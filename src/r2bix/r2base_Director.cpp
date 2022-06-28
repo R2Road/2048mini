@@ -10,7 +10,7 @@ namespace r2base
 		mScreenBufferManager()
 		, mFPSTimer()
 		, mbAbort( false )
-		, mScreenBufferSIze( 61, 43 )
+		, mScreenBufferSIze( 59, 43 )
 
 		, mKeyboardInputCollector()
 

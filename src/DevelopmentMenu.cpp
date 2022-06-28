@@ -43,7 +43,7 @@ r2cm::MenuUp DevelopmentMenu::Create( r2cm::Director& director )
 			, []()->const char* { return "Game : 2048mini"; }
 			, []()->r2cm::eItemLeaveAction
 			{
-				r2cm::WindowUtility::Resize( 590, 800 );
+				r2cm::WindowUtility::Resize( 562, 800 );
 				r2cm::WindowUtility::Move( 0, 0 );
 				r2cm::WindowUtility::ScrollBarVisible( false );
 

@@ -58,15 +58,19 @@ int main()
 	r2cm::WindowUtility::Move( 0, 0 );
 
 	//
+	// Setup
+	//
+	r2base::Director director;
+	director.Setup( p2048mini::GameScene::Create( director ) );
+
+	//
 	// Environment : ScrollBar
 	//
 	r2cm::WindowUtility::ScrollBarVisible( false );
 
 	//
-	// Setup & Run
+	// Run
 	//
-	r2base::Director director;
-	director.Setup( p2048mini::GameScene::Create( director ) );
 	director.Run();
 
 #endif

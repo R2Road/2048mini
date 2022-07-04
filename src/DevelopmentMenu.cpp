@@ -60,7 +60,6 @@ r2cm::MenuUp DevelopmentMenu::Create( r2cm::Director& director )
 			{
 				r2cm::WindowUtility::Resize( 562, 800 );
 				r2cm::WindowUtility::Move( 0, 0 );
-				r2cm::WindowUtility::ScrollBarVisible( false );
 
 				{
 					//
@@ -68,6 +67,8 @@ r2cm::MenuUp DevelopmentMenu::Create( r2cm::Director& director )
 					//
 					r2base::Director director;
 					director.Setup( p2048mini::GameScene::Create( director ) );
+
+					r2cm::WindowUtility::ScrollBarVisible( false );
 
 					//
 					// Process

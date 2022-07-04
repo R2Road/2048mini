@@ -3,6 +3,7 @@
 #endif
 
 #include "r2cm/r2cm_WindowUtility.h"
+#include "p2048mini/p2048mini_VersionInfo.h"
 
 #define DEVELOPMENT_2048MINI 1
 
@@ -23,7 +24,7 @@ int main()
 	//
 	// Environment : Title
 	//
-	r2cm::WindowUtility::ChangeTitle( "2048mini" );
+	r2cm::WindowUtility::ChangeTitle( p2048mini::VersionInfo.String4Version );
 
 #if defined( DEVELOPMENT_2048MINI ) && ( DEVELOPMENT_2048MINI == 1 )
 

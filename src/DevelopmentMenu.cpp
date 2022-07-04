@@ -1,12 +1,25 @@
 #include "DevelopmentMenu.h"
 
+#include <string>
+
 #include "r2bix/r2base_Director.h"
+#include "r2bix/r2base_VersionInfo.h"
 #include "r2cm/r2cm_constant.h"
 #include "r2cm/r2cm_Director.h"
+#include "r2cm/r2cm_VersionInfo.h"
 #include "r2cm/r2cm_WindowUtility.h"
 
 #include "test/TestMenu.h"
 #include "p2048mini/p2048mini_GameScene.h"
+
+const char* DevelopmentMenu::GetTitle()
+{
+	static const std::string ret =
+		std::string( "Development Menu" )
+		+ " : <" + r2cm::VersionInfo.String4Version + ">"
+		+ " : <" + "r2bix v" + r2base::VersionInfo.VersionNumber_1 + "." + r2base::VersionInfo.VersionNumber_2 + "." + r2base::VersionInfo.VersionNumber_3 + ">";
+	return ret.c_str();
+}
 
 r2cm::MenuUp DevelopmentMenu::Create( r2cm::Director& director )
 {

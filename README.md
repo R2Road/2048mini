@@ -1,5 +1,5 @@
 <p align="left">
-  <img src="https://img.shields.io/badge/version-0.0.4-green" alt="version">
+  <img src="https://img.shields.io/badge/version-0.0.5-green" alt="version">
   <a href="https://discord.gg/VSpW9FUSxX"><img src="https://img.shields.io/badge/Discord-R2Road-orange" alt="discord"></a>
 </p>
 
@@ -35,6 +35,6 @@
 
 ## ( '_')y-~
 <p float:left;">
-<img src="https://github.com/R2Road/2048mini/blob/main/wiki/20220628_game_start_01.png"></img>
-<img src="https://github.com/R2Road/2048mini/blob/main/wiki/20220628_game_over_01.png"></img>
+<img src="https://github.com/R2Road/2048mini/blob/main/wiki/20220704_game_start_01.png"></img>
+<img src="https://github.com/R2Road/2048mini/blob/main/wiki/20220704_game_over_01.png"></img>
 <p>

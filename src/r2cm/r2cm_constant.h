@@ -4,14 +4,6 @@
 
 namespace r2cm
 {
-	enum class eItemLeaveAction
-	{
-		None,
-		Pause,
-		Exit,
-	};
-
-
 	enum eColor
 	{
 		None = 0,
@@ -52,6 +44,10 @@ namespace r2cm
 		BG_LightAqua,
 		BG_BrightWhite,
 	};
+	//
+	// REF : https://stackoverflow.com/questions/2616906/how-do-i-output-coloured-text-to-a-linux-terminal
+	// 1과 2를 생각해 놓고 위 REF에 있는 3에 도달하지 못했다. Link를 남기는 것이 어떤 의미로는 굴욕이구만. - 2022.05.24 by R2Road
+	//
 	class ColorModifier
 	{
 	public:

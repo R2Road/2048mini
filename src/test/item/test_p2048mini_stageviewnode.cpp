@@ -15,14 +15,14 @@
 
 namespace test_p2048mini_stageviewnode
 {
-	r2cm::iItem::TitleFuncT Generate::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Generate::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "StageViewNode : Generate";
 		};
 	}
-	r2cm::iItem::DoFuncT Generate::GetDoFunction()
+	r2cm::iItem::DoFunctionT Generate::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -57,14 +57,14 @@ namespace test_p2048mini_stageviewnode
 
 
 
-	r2cm::iItem::TitleFuncT Setup_Render::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Setup_Render::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "StageViewNode : Setup And Render";
 		};
 	}
-	r2cm::iItem::DoFuncT Setup_Render::GetDoFunction()
+	r2cm::iItem::DoFunctionT Setup_Render::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -112,14 +112,14 @@ namespace test_p2048mini_stageviewnode
 
 
 
-	r2cm::iItem::TitleFuncT UpdateView::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT UpdateView::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "StageViewNode : UpdateView";
 		};
 	}
-	r2cm::iItem::DoFuncT UpdateView::GetDoFunction()
+	r2cm::iItem::DoFunctionT UpdateView::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

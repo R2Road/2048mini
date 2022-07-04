@@ -153,6 +153,7 @@
     <ClInclude Include="src\r2cm\r2cm_Inspector.h" />
     <ClInclude Include="src\r2cm\r2cm_Menu.h" />
     <ClInclude Include="src\r2cm\r2cm_Singleton.h" />
+    <ClInclude Include="src\r2cm\r2cm_VersionInfo.h" />
     <ClInclude Include="src\r2cm\r2cm_WindowUtility.h" />
     <ClInclude Include="src\r2\r2_Assert.h" />
     <ClInclude Include="src\r2\r2_Direction4.h" />

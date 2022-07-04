@@ -1,15 +1,13 @@
 #pragma once
 
-#include <functional>
 #include <memory>
 #include <string_view>
 #include <vector>
 
+#include "r2cm_iItem.h"
+
 namespace r2cm
 {
-	enum class eItemLeaveAction; 
-
-	class iItem;
 	class Director;
 
 	using MenuUp = std::unique_ptr<class Menu>;
@@ -20,17 +18,17 @@ namespace r2cm
 		{
 			ItemInfo(
 				const char key_code
-				, const std::function<const char*( )> name_function
-				, const std::function<const r2cm::eItemLeaveAction()> do_function
+				, const iItem::TitleFunctionT title_function
+				, const iItem::DoFunctionT do_function
 			) :
 				KeyCode( key_code )
-				, NameFunction( name_function )
+				, TitleFunction( title_function )
 				, DoFunction( do_function )
 			{}
 
 			char KeyCode;
-			std::function<const char*()> NameFunction;
-			std::function<const r2cm::eItemLeaveAction()> DoFunction;
+			iItem::TitleFunctionT TitleFunction;
+			iItem::DoFunctionT DoFunction;
 		};
 
 		using ItemContainerT = std::vector<ItemInfo>;
@@ -45,8 +43,22 @@ namespace r2cm
 
 		eItemLeaveAction Do( const int key_code );
 
+		void AddItem( const char key_code, const iItem::TitleFunctionT func_title, iItem::DoFunctionT func_do );
 		void AddItem( const char key_code, iItem& item_obj );
-		void AddItem( const char key_code, const std::function<const char*()> func_title, const std::function<const r2cm::eItemLeaveAction()> func_do );
+		
+		template<typename menu_T>
+		void AddMenu( const char key_code )
+		{
+			AddItem(
+				key_code
+				, []()->const char* { return menu_T::GetTitle(); }
+				, [&director = mDirector]()->r2cm::eItemLeaveAction
+				{
+					director.Setup( menu_T::Create( director ) );
+					return r2cm::eItemLeaveAction::None;
+				}
+			);
+		}
 
 		void AddLineFeed();
 		void AddSplit();

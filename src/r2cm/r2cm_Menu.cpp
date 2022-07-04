@@ -3,7 +3,6 @@
 #include <cctype> // std::toupper
 
 #include "r2cm_constant.h"
-#include "r2cm_iItem.h"
 
 namespace
 {
@@ -59,7 +58,7 @@ namespace r2cm
 			}
 			if( KeyCode4Message == t.KeyCode ) // (
 			{
-				std::cout << t.NameFunction() << r2cm::linefeed;
+				std::cout << t.TitleFunction() << r2cm::linefeed;
 				continue;
 			}
 
@@ -84,9 +83,9 @@ namespace r2cm
 			std::cout << "] ";
 			
 			//
-			// Name
+			// Title
 			//
-			std::cout << t.NameFunction() << r2cm::linefeed;
+			std::cout << t.TitleFunction() << r2cm::linefeed;
 		}
 
 		std::cout << r2cm::split << "Select Menu";
@@ -105,34 +104,34 @@ namespace r2cm
 		return eItemLeaveAction::Pause;
 	}
 
-	void Menu::AddItem( const char key_code, iItem& item_obj )
-	{
-		mItemContainer.emplace_back( key_code, item_obj.GetTitleFunction(), item_obj.GetDoFunction() );
-	}
-	void Menu::AddItem( const char key_code, const std::function<const char*()> func_title, const std::function<const r2cm::eItemLeaveAction()> func_do )
+	void Menu::AddItem( const char key_code, const iItem::TitleFunctionT func_title, const iItem::DoFunctionT func_do )
 	{
 		mItemContainer.emplace_back( key_code, func_title, func_do );
+	}
+	void Menu::AddItem( const char key_code, iItem& item_obj )
+	{
+		AddItem( key_code, item_obj.GetTitleFunction(), item_obj.GetDoFunction() );
 	}
 
 	void Menu::AddLineFeed()
 	{
-		static const std::function<const char*()> func_title = []()->const char* { return ""; };
-		static const std::function<const r2cm::eItemLeaveAction()> func_do = []()->const r2cm::eItemLeaveAction { return r2cm::eItemLeaveAction::Pause; };
+		static const iItem::TitleFunctionT func_title = []()->const char* { return ""; };
+		static const iItem::DoFunctionT func_do = []()->const r2cm::eItemLeaveAction { return r2cm::eItemLeaveAction::Pause; };
 
-		mItemContainer.push_back( { KeyCode4LineFeed, func_title, func_do } );
+		AddItem( KeyCode4LineFeed, func_title, func_do );
 	}
 	void Menu::AddSplit()
 	{
-		static const std::function<const char*( )> func_title = []()->const char* { return ""; };
-		static const std::function<const r2cm::eItemLeaveAction()> func_do = []()->const r2cm::eItemLeaveAction { return r2cm::eItemLeaveAction::Pause; };
+		static const iItem::TitleFunctionT func_title = []()->const char* { return ""; };
+		static const iItem::DoFunctionT func_do = []()->const r2cm::eItemLeaveAction { return r2cm::eItemLeaveAction::Pause; };
 
-		mItemContainer.push_back( { KeyCode4Split, func_title, func_do } );
+		AddItem( KeyCode4Split, func_title, func_do );
 	}
 	void Menu::AddMessage( const char* const message )
 	{
-		static const std::function<const char*()> func_title = [message]()->const char* { return message; };
-		static const std::function<const r2cm::eItemLeaveAction()> func_do = []()->const r2cm::eItemLeaveAction { return r2cm::eItemLeaveAction::Pause; };
+		const iItem::TitleFunctionT func_title = [message]()->const char* { return message; };
+		const iItem::DoFunctionT func_do = []()->const r2cm::eItemLeaveAction { return r2cm::eItemLeaveAction::Pause; };
 
-		mItemContainer.push_back( { KeyCode4Message, func_title, func_do } );
+		AddItem( KeyCode4Message, func_title, func_do );
 	}
 }

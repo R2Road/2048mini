@@ -8,21 +8,21 @@ namespace test_p2048mini_stageviewnode
 	class Generate : public r2cm::iItem, public r2cm::SingleTon<Generate>
 	{
 	public:
-		TitleFuncT GetTitleFunction() const override;
-		DoFuncT GetDoFunction() override;
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
 	};
 
 	class Setup_Render : public r2cm::iItem, public r2cm::SingleTon<Setup_Render>
 	{
 	public:
-		TitleFuncT GetTitleFunction() const override;
-		DoFuncT GetDoFunction() override;
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
 	};
 
 	class UpdateView : public r2cm::iItem, public r2cm::SingleTon<UpdateView>
 	{
 	public:
-		TitleFuncT GetTitleFunction() const override;
-		DoFuncT GetDoFunction() override;
+		TitleFunctionT GetTitleFunction() const override;
+		DoFunctionT GetDoFunction() override;
 	};
 }

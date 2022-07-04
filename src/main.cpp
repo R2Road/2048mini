@@ -23,7 +23,7 @@ int main()
 	//
 	// Environment : Title
 	//
-	r2cm::WindowUtility::ChangeTitle( L"2048mini" );
+	r2cm::WindowUtility::ChangeTitle( "2048mini" );
 
 #if defined( DEVELOPMENT_2048MINI ) && ( DEVELOPMENT_2048MINI == 1 )
 

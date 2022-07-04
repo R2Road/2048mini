@@ -33,14 +33,14 @@ namespace test_p2048mini_stage
 
 
 
-	r2cm::iItem::TitleFuncT Generate::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Generate::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Stage : Generate";
 		};
 	}
-	r2cm::iItem::DoFuncT Generate::GetDoFunction()
+	r2cm::iItem::DoFunctionT Generate::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -80,14 +80,14 @@ namespace test_p2048mini_stage
 
 
 
-	r2cm::iItem::TitleFuncT Add_Remove_ClearAll::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Add_Remove_ClearAll::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Stage : Add, Remove, ClearAll";
 		};
 	}
-	r2cm::iItem::DoFuncT Add_Remove_ClearAll::GetDoFunction()
+	r2cm::iItem::DoFunctionT Add_Remove_ClearAll::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -150,14 +150,14 @@ namespace test_p2048mini_stage
 
 
 
-	r2cm::iItem::TitleFuncT IsIn::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT IsIn::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Stage : IsIn";
 		};
 	}
-	r2cm::iItem::DoFuncT IsIn::GetDoFunction()
+	r2cm::iItem::DoFunctionT IsIn::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -199,14 +199,14 @@ namespace test_p2048mini_stage
 
 
 
-	r2cm::iItem::TitleFuncT NumberCount_EmptyCount_IsFull::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT NumberCount_EmptyCount_IsFull::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Stage : NumberCount, EmptyCount, IsFull";
 		};
 	}
-	r2cm::iItem::DoFuncT NumberCount_EmptyCount_IsFull::GetDoFunction()
+	r2cm::iItem::DoFunctionT NumberCount_EmptyCount_IsFull::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -284,14 +284,14 @@ namespace test_p2048mini_stage
 
 
 
-	r2cm::iItem::TitleFuncT Lock::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Lock::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Stage : Lock";
 		};
 	}
-	r2cm::iItem::DoFuncT Lock::GetDoFunction()
+	r2cm::iItem::DoFunctionT Lock::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -370,14 +370,14 @@ namespace test_p2048mini_stage
 
 
 
-	r2cm::iItem::TitleFuncT Newcomer::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Newcomer::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Stage : Newcomer";
 		};
 	}
-	r2cm::iItem::DoFuncT Newcomer::GetDoFunction()
+	r2cm::iItem::DoFunctionT Newcomer::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

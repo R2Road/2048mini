@@ -36,14 +36,14 @@ namespace test_p2048mini_gameprocessor
 
 
 
-	r2cm::iItem::TitleFuncT MoveReadyTest::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT MoveReadyTest::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "GameProcessor : Move Ready";
 		};
 	}
-	r2cm::iItem::DoFuncT MoveReadyTest::GetDoFunction()
+	r2cm::iItem::DoFunctionT MoveReadyTest::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -155,14 +155,14 @@ namespace test_p2048mini_gameprocessor
 
 
 
-	r2cm::iItem::TitleFuncT MoveTest::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT MoveTest::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "GameProcessor : Move";
 		};
 	}
-	r2cm::iItem::DoFuncT MoveTest::GetDoFunction()
+	r2cm::iItem::DoFunctionT MoveTest::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -236,14 +236,14 @@ namespace test_p2048mini_gameprocessor
 
 
 
-	r2cm::iItem::TitleFuncT MergeTest::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT MergeTest::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "GameProcessor : Merge";
 		};
 	}
-	r2cm::iItem::DoFuncT MergeTest::GetDoFunction()
+	r2cm::iItem::DoFunctionT MergeTest::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -325,14 +325,14 @@ namespace test_p2048mini_gameprocessor
 
 
 
-	r2cm::iItem::TitleFuncT MovableCheck::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT MovableCheck::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "GameProcessor : Movable Check";
 		};
 	}
-	r2cm::iItem::DoFuncT MovableCheck::GetDoFunction()
+	r2cm::iItem::DoFunctionT MovableCheck::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

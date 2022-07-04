@@ -12,14 +12,14 @@
 
 namespace test_p2048mini_numbernode
 {
-	r2cm::iItem::TitleFuncT Generate::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT Generate::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "NumberNode : Generate";
 		};
 	}
-	r2cm::iItem::DoFuncT Generate::GetDoFunction()
+	r2cm::iItem::DoFunctionT Generate::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -54,14 +54,14 @@ namespace test_p2048mini_numbernode
 
 
 
-	r2cm::iItem::TitleFuncT SetNumber::GetTitleFunction() const
+	r2cm::iItem::TitleFunctionT SetNumber::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "NumberNode : SetNumber";
 		};
 	}
-	r2cm::iItem::DoFuncT SetNumber::GetDoFunction()
+	r2cm::iItem::DoFunctionT SetNumber::GetDoFunction()
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

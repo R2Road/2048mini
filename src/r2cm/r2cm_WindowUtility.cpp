@@ -4,9 +4,9 @@
 
 namespace r2cm
 {
-	void WindowUtility::ChangeTitle( const wchar_t* title_string )
+	void WindowUtility::ChangeTitle( const char* title_string )
 	{
-		SetConsoleTitle( title_string );
+		SetConsoleTitleA( title_string );
 	}
 
 	void WindowUtility::Resize( const int w, const int h )
@@ -75,8 +75,29 @@ namespace r2cm
 			for( short i = 0, end = last_cursor_point.y - fixed_new_cursor_point.y; end > i; ++i )
 			{
 				FillConsoleOutputCharacterA( hStdout, ' ', cs_buffer_info.dwSize.X, COORD{ 0, fixed_new_cursor_point.y + i }, &out_result );
+				FillConsoleOutputAttribute( hStdout, eColor::BG_Black | eColor::FG_White, cs_buffer_info.dwSize.X, COORD{ 0, fixed_new_cursor_point.y + i }, &out_result );
 			}
 		}
+	}
+
+	void WindowUtility::FillCharacter( const CursorPoint point, const char c )
+	{
+		DWORD out_result;
+		FillConsoleOutputCharacterA( GetStdHandle( STD_OUTPUT_HANDLE ), c, 1, { point.x, point.y }, &out_result );
+	}
+	void WindowUtility::FillCharacter( const int x, const int y, const char c )
+	{
+		FillCharacter( { short( x ), short( y ) }, c );
+	}
+
+	void WindowUtility::FillColor( const CursorPoint point, const short c )
+	{
+		DWORD out_result;
+		FillConsoleOutputAttribute( GetStdHandle( STD_OUTPUT_HANDLE ), c, 1, { point.x, point.y }, &out_result );
+	}
+	void WindowUtility::FillColor( const int x, const int y, const short c )
+	{
+		FillColor( { short( x ), short( y ) }, c );
 	}
 
 	void WindowUtility::RequestSleep( const uint32_t m )

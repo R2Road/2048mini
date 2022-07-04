@@ -506,5 +506,8 @@
     <ClInclude Include="src\r2cm\r2cm_WindowUtility.h">
       <Filter>r2cm</Filter>
     </ClInclude>
+    <ClInclude Include="src\p2048mini\p2048mini_VersionInfo.h">
+      <Filter>project_2048mini</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

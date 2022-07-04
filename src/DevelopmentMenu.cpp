@@ -11,13 +11,15 @@
 
 #include "test/TestMenu.h"
 #include "p2048mini/p2048mini_GameScene.h"
+#include "p2048mini/p2048mini_VersionInfo.h"
 
 const char* DevelopmentMenu::GetTitle()
 {
 	static const std::string ret =
 		std::string( "Development Menu" )
 		+ " : <" + r2cm::VersionInfo.String4Version + ">"
-		+ " : <" + r2base::VersionInfo.String4Version + ">";
+		+ " : <" + r2base::VersionInfo.String4Version + ">"
+		+ " : <" + p2048mini::VersionInfo.String4Version + ">";
 	return ret.c_str();
 }
 

@@ -17,7 +17,7 @@ const char* DevelopmentMenu::GetTitle()
 	static const std::string ret =
 		std::string( "Development Menu" )
 		+ " : <" + r2cm::VersionInfo.String4Version + ">"
-		+ " : <" + "r2bix v" + r2base::VersionInfo.VersionNumber_1 + "." + r2base::VersionInfo.VersionNumber_2 + "." + r2base::VersionInfo.VersionNumber_3 + ">";
+		+ " : <" + r2base::VersionInfo.String4Version + ">";
 	return ret.c_str();
 }
 

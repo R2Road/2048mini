@@ -15,6 +15,8 @@ namespace r2base
 		const char VersionNumber_2 = '0';
 		const char VersionNumber_3 = '1';
 
+		const char String4Version[16] = { 'r', '2', 'b', 'i', 'x',' ', ':', ' ', 'v', VersionNumber_1, '.', VersionNumber_2, '.', VersionNumber_3, '\0' };
+
 		const char* const String4Version_0_0_1 =
 					"### Road 2 Version 0.0.1 ###"
 			"\n\n"	"[o] " "Double Buffering"

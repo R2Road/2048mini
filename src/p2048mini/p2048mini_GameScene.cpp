@@ -227,7 +227,7 @@ namespace p2048mini
 					delay_action->SetTimeLimit( 1.f );
 
 					auto moveby_action = sequence_action->AddAction<r2action::MoveByAction>();
-					moveby_action->SetMoveAmount( r2::PointInt( 0, 17 ) );
+					moveby_action->SetMoveAmount( r2::PointInt( 0, 18 ) );
 					moveby_action->SetTimeLimit( 1.2f );
 
 					action_process_component->SetAction( std::move( sequence_action ) );

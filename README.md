@@ -37,4 +37,5 @@
 <p float:left;">
 <img src="https://github.com/R2Road/2048mini/blob/main/wiki/20220704_game_start_01.png"></img>
 <img src="https://github.com/R2Road/2048mini/blob/main/wiki/20220704_game_over_01.png"></img>
+<img src="https://github.com/R2Road/2048mini/blob/main/wiki/20220705_game_clear_01.png"></img>
 <p>

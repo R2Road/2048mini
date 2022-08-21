@@ -2,7 +2,7 @@
 
 #include "r2bix/r2base_Director.h"
 #include "r2bix/r2render_Camera.h"
-#include "r2cm/r2cm_constant.h"
+#include "r2cm/r2cm_ostream.h"
 #include "r2cm/r2cm_Inspector.h"
 
 #include "p2048mini/p2048mini_NumberComponent.h"
@@ -23,8 +23,6 @@ namespace test_p2048mini_numbernode
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			DECLARATION_SUB( r2render::Camera camera( { 0, 0 }, { 21, 11 } ) );
@@ -65,8 +63,6 @@ namespace test_p2048mini_numbernode
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			DECLARATION_SUB( r2render::Camera camera( { 0, 0 }, { 11, 5 } ) );

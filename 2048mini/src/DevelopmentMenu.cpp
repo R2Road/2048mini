@@ -4,7 +4,7 @@
 
 #include "r2bix/r2base_Director.h"
 #include "r2bix/r2base_VersionInfo.h"
-#include "r2cm/r2cm_constant.h"
+#include "r2cm/r2cm_ostream.h"
 #include "r2cm/r2cm_Director.h"
 #include "r2cm/r2cm_VersionInfo.h"
 #include "r2cm/r2cm_WindowUtility.h"
@@ -33,6 +33,7 @@ r2cm::MenuUp DevelopmentMenu::Create( r2cm::Director& director )
 	{
 		ret->AddItem(
 			'1'
+			, r2cm::eColor::FG_White
 			, []()->const char* { return "Test"; }
 			, []()->r2cm::eItemLeaveAction
 			{
@@ -55,6 +56,7 @@ r2cm::MenuUp DevelopmentMenu::Create( r2cm::Director& director )
 		);
 		ret->AddItem(
 			'2'
+			, r2cm::eColor::FG_White
 			, []()->const char* { return "Game : 2048mini"; }
 			, []()->r2cm::eItemLeaveAction
 			{
@@ -90,6 +92,7 @@ r2cm::MenuUp DevelopmentMenu::Create( r2cm::Director& director )
 
 		ret->AddItem(
 			27
+			, r2cm::eColor::FG_White
 			, []()->const char* { return "Exit"; }
 			, []()->r2cm::eItemLeaveAction
 			{

@@ -227,6 +227,9 @@
     <ClCompile Include="external\r2cm\r2cm_Menu.cpp">
       <Filter>external\r2cm</Filter>
     </ClCompile>
+    <ClCompile Include="external\r2cm\r2cm_StopWatch.cpp">
+      <Filter>external\r2cm</Filter>
+    </ClCompile>
     <ClCompile Include="external\r2cm\r2cm_WindowUtility.cpp">
       <Filter>external\r2cm</Filter>
     </ClCompile>
@@ -464,9 +467,6 @@
     <ClInclude Include="external\r2bix\r2utility_StringBuilder.h">
       <Filter>external\r2bix</Filter>
     </ClInclude>
-    <ClInclude Include="external\r2cm\r2cm_constant.h">
-      <Filter>external\r2cm</Filter>
-    </ClInclude>
     <ClInclude Include="external\r2cm\r2cm_Director.h">
       <Filter>external\r2cm</Filter>
     </ClInclude>
@@ -479,7 +479,13 @@
     <ClInclude Include="external\r2cm\r2cm_Menu.h">
       <Filter>external\r2cm</Filter>
     </ClInclude>
+    <ClInclude Include="external\r2cm\r2cm_ostream.h">
+      <Filter>external\r2cm</Filter>
+    </ClInclude>
     <ClInclude Include="external\r2cm\r2cm_Singleton.h">
+      <Filter>external\r2cm</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2cm\r2cm_StopWatch.h">
       <Filter>external\r2cm</Filter>
     </ClInclude>
     <ClInclude Include="external\r2cm\r2cm_VersionInfo.h">

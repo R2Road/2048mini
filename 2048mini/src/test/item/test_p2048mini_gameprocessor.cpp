@@ -5,7 +5,7 @@
 
 #include "r2bix/r2base_Director.h"
 #include "r2cm/r2cm_Inspector.h"
-#include "r2cm/r2cm_constant.h"
+#include "r2cm/r2cm_ostream.h"
 
 #include "p2048mini/p2048mini_GameProcessor.h"
 #include "p2048mini/p2048mini_Stage.h"
@@ -47,8 +47,6 @@ namespace test_p2048mini_gameprocessor
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			DECLARATION_MAIN( p2048mini::Stage stage( 4, 4 ) );
@@ -166,8 +164,6 @@ namespace test_p2048mini_gameprocessor
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			DECLARATION_MAIN( p2048mini::Stage stage( 4, 4 ) );
@@ -247,8 +243,6 @@ namespace test_p2048mini_gameprocessor
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			DECLARATION_MAIN( p2048mini::Stage stage( 4, 1 ) );
@@ -336,8 +330,6 @@ namespace test_p2048mini_gameprocessor
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			std::cout << r2cm::tab << "+ Node : 주변의 숫자가 0 이거나 같다면 이동 한다." << r2cm::linefeed;

@@ -2,7 +2,7 @@
 
 #include "r2bix/r2base_Director.h"
 #include "r2cm/r2cm_Inspector.h"
-#include "r2cm/r2cm_constant.h"
+#include "r2cm/r2cm_ostream.h"
 #include "r2bix/r2render_Camera.h"
 
 #include "p2048mini/p2048mini_Stage.h"
@@ -26,8 +26,6 @@ namespace test_p2048mini_stageviewnode
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
 
 			DECLARATION_SUB( r2render::Camera camera( { 0, 0 }, { 41, 21 } ) );
@@ -68,11 +66,9 @@ namespace test_p2048mini_stageviewnode
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			p2048minitable::TextureTable::GetInstance().Load();
-
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
+
+			PROCESS_SUB( p2048minitable::TextureTable::GetInstance().Load() );
 
 			DECLARATION_SUB( r2render::Camera camera( { 0, 0 }, { 41, 21 } ) );
 			DECLARATION_SUB( r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '-' ) );
@@ -123,11 +119,9 @@ namespace test_p2048mini_stageviewnode
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
-			p2048minitable::TextureTable::GetInstance().Load();
-
-			std::cout << "# " << GetInstance().GetTitleFunction()( ) << " #" << r2cm::linefeed;
-
 			std::cout << r2cm::split;
+
+			PROCESS_SUB( p2048minitable::TextureTable::GetInstance().Load() );
 
 			DECLARATION_SUB( r2render::Camera camera( { 0, 0 }, { 41, 21 } ) );
 			DECLARATION_SUB( r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '-' ) );

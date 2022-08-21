@@ -62,6 +62,7 @@
     <ClCompile Include="external\r2cm\r2cm_Director.cpp" />
     <ClCompile Include="external\r2cm\r2cm_Inspector.cpp" />
     <ClCompile Include="external\r2cm\r2cm_Menu.cpp" />
+    <ClCompile Include="external\r2cm\r2cm_StopWatch.cpp" />
     <ClCompile Include="external\r2cm\r2cm_WindowUtility.cpp" />
     <ClCompile Include="external\r2\r2_Direction4.cpp" />
     <ClCompile Include="external\r2\r2_FPSTimer.cpp" />
@@ -136,12 +137,13 @@
     <ClInclude Include="external\r2bix\r2render_TextureFrame.h" />
     <ClInclude Include="external\r2bix\r2utility_InputUtil.h" />
     <ClInclude Include="external\r2bix\r2utility_StringBuilder.h" />
-    <ClInclude Include="external\r2cm\r2cm_constant.h" />
     <ClInclude Include="external\r2cm\r2cm_Director.h" />
     <ClInclude Include="external\r2cm\r2cm_iItem.h" />
     <ClInclude Include="external\r2cm\r2cm_Inspector.h" />
     <ClInclude Include="external\r2cm\r2cm_Menu.h" />
+    <ClInclude Include="external\r2cm\r2cm_ostream.h" />
     <ClInclude Include="external\r2cm\r2cm_Singleton.h" />
+    <ClInclude Include="external\r2cm\r2cm_StopWatch.h" />
     <ClInclude Include="external\r2cm\r2cm_VersionInfo.h" />
     <ClInclude Include="external\r2cm\r2cm_WindowUtility.h" />
     <ClInclude Include="external\r2\r2_Assert.h" />

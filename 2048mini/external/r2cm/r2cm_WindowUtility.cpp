@@ -45,6 +45,20 @@ namespace r2cm
 		ShowScrollBar( GetConsoleWindow(), SB_VERT, visible );
 	}
 
+	void WindowUtility::MaximizeButtonEnable( const bool enable )
+	{
+		LONG window_style = GetWindowLong( GetConsoleWindow(), GWL_STYLE );
+		window_style = ( enable ? window_style | ( WS_MAXIMIZEBOX ) : window_style & ~( WS_MAXIMIZEBOX ) );
+		SetWindowLong( GetConsoleWindow(), GWL_STYLE, window_style );
+	}
+
+	void WindowUtility::ResizingByDraggingEnable( const bool enable )
+	{
+		LONG window_style = GetWindowLong( GetConsoleWindow(), GWL_STYLE );
+		window_style = ( enable ? window_style | ( WS_SIZEBOX ) : window_style & ~( WS_SIZEBOX ) );
+		SetWindowLong( GetConsoleWindow(), GWL_STYLE, window_style );
+	}
+
 	WindowUtility::CursorPoint WindowUtility::GetCursorPoint()
 	{
 		CONSOLE_SCREEN_BUFFER_INFO csbi{};

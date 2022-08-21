@@ -1,7 +1,7 @@
 #include "TestMenu.h"
 
 #include "r2cm/r2cm_Director.h"
-#include "r2cm/r2cm_constant.h"
+#include "r2cm/r2cm_ostream.h"
 
 #include "test/item/test_p2048mini_gameprocessor.h"
 #include "test/item/test_p2048mini_numbernode.h"
@@ -47,6 +47,7 @@ r2cm::MenuUp TestMenu::Create( r2cm::Director& director )
 
 		ret->AddItem(
 			27
+			, r2cm::eColor::FG_White
 			, []()->const char* { return "Exit"; }
 			, [&director]()->r2cm::eItemLeaveAction
 			{

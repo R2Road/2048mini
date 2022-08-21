@@ -18,15 +18,18 @@ namespace r2cm
 		{
 			ItemInfo(
 				const char key_code
+				, const int color_code
 				, const iItem::TitleFunctionT title_function
 				, const iItem::DoFunctionT do_function
 			) :
 				KeyCode( key_code )
+				, ColorCode( color_code )
 				, TitleFunction( title_function )
 				, DoFunction( do_function )
 			{}
 
 			char KeyCode;
+			int ColorCode;
 			iItem::TitleFunctionT TitleFunction;
 			iItem::DoFunctionT DoFunction;
 		};
@@ -43,7 +46,7 @@ namespace r2cm
 
 		eItemLeaveAction Do( const int key_code );
 
-		void AddItem( const char key_code, const iItem::TitleFunctionT func_title, iItem::DoFunctionT func_do );
+		void AddItem( const char key_code, const int color_code, const iItem::TitleFunctionT func_title, iItem::DoFunctionT func_do );
 		void AddItem( const char key_code, iItem& item_obj );
 		
 		template<typename menu_T>
@@ -51,6 +54,7 @@ namespace r2cm
 		{
 			AddItem(
 				key_code
+				, 36
 				, []()->const char* { return menu_T::GetTitle(); }
 				, [&director = mDirector]()->r2cm::eItemLeaveAction
 				{

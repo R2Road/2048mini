@@ -56,6 +56,12 @@ namespace r2cm
 
 		friend std::ostream& operator<<( std::ostream& os, const ColorModifier& mf )
 		{
+			//
+			// 2022.07.10 by R
+			// - std::hex 등이 쓰이면 " << mf.mColor " 가 정상작동하지 않는다.
+			// - 문자 변환해서 기록하면 해결되지만 성능이 신경쓰이므로 방치하기로 하자.
+			//
+
 			static const char* header = "\033[";
 			static const char* tail = "m";
 			return os << header << mf.mColor << tail;

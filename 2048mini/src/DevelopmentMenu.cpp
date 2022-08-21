@@ -84,6 +84,7 @@ r2cm::MenuUp DevelopmentMenu::Create( r2cm::Director& director )
 					r2cm::WindowUtility::ScrollBarVisible( false );
 					r2cm::WindowUtility::MaximizeButtonEnable( false );
 					r2cm::WindowUtility::ResizingByDraggingEnable( false );
+					r2cm::WindowUtility::QuickEditEnable( false );
 
 					//
 					// Process
@@ -96,6 +97,7 @@ r2cm::MenuUp DevelopmentMenu::Create( r2cm::Director& director )
 				r2cm::WindowUtility::ScrollBarVisible( true );
 				r2cm::WindowUtility::MaximizeButtonEnable( true );
 				r2cm::WindowUtility::ResizingByDraggingEnable( true );
+				r2cm::WindowUtility::QuickEditEnable( true );
 
 				return r2cm::eItemLeaveAction::None;
 			}

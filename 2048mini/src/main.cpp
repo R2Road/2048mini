@@ -69,6 +69,7 @@ int main()
 	r2cm::WindowUtility::ScrollBarVisible( false );
 	r2cm::WindowUtility::MaximizeButtonEnable( false );
 	r2cm::WindowUtility::ResizingByDraggingEnable( false );
+	r2cm::WindowUtility::QuickEditEnable( false );
 
 	//
 	// Run

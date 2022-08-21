@@ -1,4 +1,4 @@
-/.vs/*
-/Debug/*
-/x64/*
-/Release/*
+/2048mini/.vs/*
+/2048mini/Debug/*
+/2048mini/x64/*
+/2048mini/Release/*

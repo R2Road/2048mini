@@ -19,6 +19,59 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="external\r2bix\r2action_AnimationRequestAction.cpp" />
+    <ClCompile Include="external\r2bix\r2action_BlinkAction.cpp" />
+    <ClCompile Include="external\r2bix\r2action_CallbackAction.cpp" />
+    <ClCompile Include="external\r2bix\r2action_DelayAction.cpp" />
+    <ClCompile Include="external\r2bix\r2action_MoveByAction.cpp" />
+    <ClCompile Include="external\r2bix\r2action_MoveToAction.cpp" />
+    <ClCompile Include="external\r2bix\r2action_RepeatAction.cpp" />
+    <ClCompile Include="external\r2bix\r2action_SequenceAction.cpp" />
+    <ClCompile Include="external\r2bix\r2action_TickAction.cpp" />
+    <ClCompile Include="external\r2bix\r2animation_constant.cpp" />
+    <ClCompile Include="external\r2bix\r2base_ColorValue.cpp" />
+    <ClCompile Include="external\r2bix\r2base_CoutBufferRedirector.cpp" />
+    <ClCompile Include="external\r2bix\r2base_DebugConfig.cpp" />
+    <ClCompile Include="external\r2bix\r2base_Director.cpp" />
+    <ClCompile Include="external\r2bix\r2base_Node.cpp" />
+    <ClCompile Include="external\r2bix\r2base_ScreenBufferManager.cpp" />
+    <ClCompile Include="external\r2bix\r2base_TextureFrameAnimationInfo.cpp" />
+    <ClCompile Include="external\r2bix\r2base_TextureFrameAnimationTableBase.cpp" />
+    <ClCompile Include="external\r2bix\r2base_TextureTableBase.cpp" />
+    <ClCompile Include="external\r2bix\r2component_ActionProcessComponent.cpp" />
+    <ClCompile Include="external\r2bix\r2component_CustomTextureComponent.cpp" />
+    <ClCompile Include="external\r2bix\r2component_LabelComponent.cpp" />
+    <ClCompile Include="external\r2bix\r2component_TextureFrameAnimationComponent.cpp" />
+    <ClCompile Include="external\r2bix\r2component_TextureFrameRenderComponent.cpp" />
+    <ClCompile Include="external\r2bix\r2component_TextureRenderComponent.cpp" />
+    <ClCompile Include="external\r2bix\r2component_TransformComponent.cpp" />
+    <ClCompile Include="external\r2bix\r2input_Constant.cpp" />
+    <ClCompile Include="external\r2bix\r2input_KeyboardInputCollector.cpp" />
+    <ClCompile Include="external\r2bix\r2input_KeyboardInputListener.cpp" />
+    <ClCompile Include="external\r2bix\r2node_CustomTextureNode.cpp" />
+    <ClCompile Include="external\r2bix\r2node_LabelNode.cpp" />
+    <ClCompile Include="external\r2bix\r2node_PivotNode.cpp" />
+    <ClCompile Include="external\r2bix\r2node_SceneNode.cpp" />
+    <ClCompile Include="external\r2bix\r2node_SpriteAnimationNode.cpp" />
+    <ClCompile Include="external\r2bix\r2node_SpriteNode.cpp" />
+    <ClCompile Include="external\r2bix\r2render_Camera.cpp" />
+    <ClCompile Include="external\r2bix\r2render_Texture.cpp" />
+    <ClCompile Include="external\r2bix\r2render_TextureFrame.cpp" />
+    <ClCompile Include="external\r2bix\r2utility_InputUtil.cpp" />
+    <ClCompile Include="external\r2bix\r2utility_StringBuilder.cpp" />
+    <ClCompile Include="external\r2cm\r2cm_Director.cpp" />
+    <ClCompile Include="external\r2cm\r2cm_Inspector.cpp" />
+    <ClCompile Include="external\r2cm\r2cm_Menu.cpp" />
+    <ClCompile Include="external\r2cm\r2cm_WindowUtility.cpp" />
+    <ClCompile Include="external\r2\r2_Direction4.cpp" />
+    <ClCompile Include="external\r2\r2_FPSTimer.cpp" />
+    <ClCompile Include="external\r2\r2_GridIndexConverter.cpp" />
+    <ClCompile Include="external\r2\r2_Point_Float.cpp" />
+    <ClCompile Include="external\r2\r2_Point_Int.cpp" />
+    <ClCompile Include="external\r2\r2_Random.cpp" />
+    <ClCompile Include="external\r2\r2_Rect_Int.cpp" />
+    <ClCompile Include="external\r2\r2_Size_Int.cpp" />
+    <ClCompile Include="external\r2\r2_Timer_Float.cpp" />
     <ClCompile Include="src\DevelopmentMenu.cpp" />
     <ClCompile Include="src\p2048mini\p2048minitable_TextureTable.cpp" />
     <ClCompile Include="src\p2048mini\p2048mini_GameComponent.cpp" />
@@ -30,59 +83,6 @@
     <ClCompile Include="src\p2048mini\p2048mini_StageViewNode.cpp" />
     <ClCompile Include="src\p2048mini\p2048mini_StageViewComponent.cpp" />
     <ClCompile Include="src\main.cpp" />
-    <ClCompile Include="src\r2bix\r2action_AnimationRequestAction.cpp" />
-    <ClCompile Include="src\r2bix\r2action_BlinkAction.cpp" />
-    <ClCompile Include="src\r2bix\r2action_CallbackAction.cpp" />
-    <ClCompile Include="src\r2bix\r2action_DelayAction.cpp" />
-    <ClCompile Include="src\r2bix\r2action_MoveByAction.cpp" />
-    <ClCompile Include="src\r2bix\r2action_MoveToAction.cpp" />
-    <ClCompile Include="src\r2bix\r2action_RepeatAction.cpp" />
-    <ClCompile Include="src\r2bix\r2action_SequenceAction.cpp" />
-    <ClCompile Include="src\r2bix\r2action_TickAction.cpp" />
-    <ClCompile Include="src\r2bix\r2animation_constant.cpp" />
-    <ClCompile Include="src\r2bix\r2base_ColorValue.cpp" />
-    <ClCompile Include="src\r2bix\r2base_CoutBufferRedirector.cpp" />
-    <ClCompile Include="src\r2bix\r2base_DebugConfig.cpp" />
-    <ClCompile Include="src\r2bix\r2base_Director.cpp" />
-    <ClCompile Include="src\r2bix\r2base_Node.cpp" />
-    <ClCompile Include="src\r2bix\r2base_ScreenBufferManager.cpp" />
-    <ClCompile Include="src\r2bix\r2base_TextureFrameAnimationInfo.cpp" />
-    <ClCompile Include="src\r2bix\r2base_TextureFrameAnimationTableBase.cpp" />
-    <ClCompile Include="src\r2bix\r2base_TextureTableBase.cpp" />
-    <ClCompile Include="src\r2bix\r2component_ActionProcessComponent.cpp" />
-    <ClCompile Include="src\r2bix\r2component_CustomTextureComponent.cpp" />
-    <ClCompile Include="src\r2bix\r2component_LabelComponent.cpp" />
-    <ClCompile Include="src\r2bix\r2component_TextureFrameAnimationComponent.cpp" />
-    <ClCompile Include="src\r2bix\r2component_TextureFrameRenderComponent.cpp" />
-    <ClCompile Include="src\r2bix\r2component_TextureRenderComponent.cpp" />
-    <ClCompile Include="src\r2bix\r2component_TransformComponent.cpp" />
-    <ClCompile Include="src\r2bix\r2input_Constant.cpp" />
-    <ClCompile Include="src\r2bix\r2input_KeyboardInputCollector.cpp" />
-    <ClCompile Include="src\r2bix\r2input_KeyboardInputListener.cpp" />
-    <ClCompile Include="src\r2bix\r2node_CustomTextureNode.cpp" />
-    <ClCompile Include="src\r2bix\r2node_LabelNode.cpp" />
-    <ClCompile Include="src\r2bix\r2node_PivotNode.cpp" />
-    <ClCompile Include="src\r2bix\r2node_SceneNode.cpp" />
-    <ClCompile Include="src\r2bix\r2node_SpriteAnimationNode.cpp" />
-    <ClCompile Include="src\r2bix\r2node_SpriteNode.cpp" />
-    <ClCompile Include="src\r2bix\r2render_Camera.cpp" />
-    <ClCompile Include="src\r2bix\r2render_Texture.cpp" />
-    <ClCompile Include="src\r2bix\r2render_TextureFrame.cpp" />
-    <ClCompile Include="src\r2bix\r2utility_InputUtil.cpp" />
-    <ClCompile Include="src\r2bix\r2utility_StringBuilder.cpp" />
-    <ClCompile Include="src\r2cm\r2cm_Director.cpp" />
-    <ClCompile Include="src\r2cm\r2cm_Inspector.cpp" />
-    <ClCompile Include="src\r2cm\r2cm_Menu.cpp" />
-    <ClCompile Include="src\r2cm\r2cm_WindowUtility.cpp" />
-    <ClCompile Include="src\r2\r2_Direction4.cpp" />
-    <ClCompile Include="src\r2\r2_FPSTimer.cpp" />
-    <ClCompile Include="src\r2\r2_GridIndexConverter.cpp" />
-    <ClCompile Include="src\r2\r2_Point_Float.cpp" />
-    <ClCompile Include="src\r2\r2_Point_Int.cpp" />
-    <ClCompile Include="src\r2\r2_Random.cpp" />
-    <ClCompile Include="src\r2\r2_Rect_Int.cpp" />
-    <ClCompile Include="src\r2\r2_Size_Int.cpp" />
-    <ClCompile Include="src\r2\r2_Timer_Float.cpp" />
     <ClCompile Include="src\test\item\test_p2048mini_gameprocessor.cpp" />
     <ClCompile Include="src\test\item\test_p2048mini_numbernode.cpp" />
     <ClCompile Include="src\test\item\test_p2048mini_stage.cpp" />
@@ -91,6 +91,74 @@
     <ClCompile Include="src\test\Utility4Test.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="external\r2bix\r2action_AnimationRequestAction.h" />
+    <ClInclude Include="external\r2bix\r2action_BlinkAction.h" />
+    <ClInclude Include="external\r2bix\r2action_CallbackAction.h" />
+    <ClInclude Include="external\r2bix\r2action_DelayAction.h" />
+    <ClInclude Include="external\r2bix\r2action_MoveByAction.h" />
+    <ClInclude Include="external\r2bix\r2action_MoveToAction.h" />
+    <ClInclude Include="external\r2bix\r2action_RepeatAction.h" />
+    <ClInclude Include="external\r2bix\r2action_SequenceAction.h" />
+    <ClInclude Include="external\r2bix\r2action_TickAction.h" />
+    <ClInclude Include="external\r2bix\r2animation_constant.h" />
+    <ClInclude Include="external\r2bix\r2base_Action.h" />
+    <ClInclude Include="external\r2bix\r2base_ColorValue.h" />
+    <ClInclude Include="external\r2bix\r2base_Component.h" />
+    <ClInclude Include="external\r2bix\r2base_ComponentStaticID.h" />
+    <ClInclude Include="external\r2bix\r2base_CoutBufferRedirector.h" />
+    <ClInclude Include="external\r2bix\r2base_DebugConfig.h" />
+    <ClInclude Include="external\r2bix\r2base_Director.h" />
+    <ClInclude Include="external\r2bix\r2base_Node.h" />
+    <ClInclude Include="external\r2bix\r2base_ScreenBufferManager.h" />
+    <ClInclude Include="external\r2bix\r2base_TextureFrameAnimationInfo.h" />
+    <ClInclude Include="external\r2bix\r2base_TextureFrameAnimationTableBase.h" />
+    <ClInclude Include="external\r2bix\r2base_TextureTableBase.h" />
+    <ClInclude Include="external\r2bix\r2base_VersionInfo.h" />
+    <ClInclude Include="external\r2bix\r2component_ActionProcessComponent.h" />
+    <ClInclude Include="external\r2bix\r2component_CustomTextureComponent.h" />
+    <ClInclude Include="external\r2bix\r2component_LabelComponent.h" />
+    <ClInclude Include="external\r2bix\r2component_TextureFrameAnimationComponent.h" />
+    <ClInclude Include="external\r2bix\r2component_TextureFrameRenderComponent.h" />
+    <ClInclude Include="external\r2bix\r2component_TextureRenderComponent.h" />
+    <ClInclude Include="external\r2bix\r2component_TransformComponent.h" />
+    <ClInclude Include="external\r2bix\r2input_Constant.h" />
+    <ClInclude Include="external\r2bix\r2input_KeyboardInputCollector.h" />
+    <ClInclude Include="external\r2bix\r2input_KeyboardInputListener.h" />
+    <ClInclude Include="external\r2bix\r2node_CustomTextureNode.h" />
+    <ClInclude Include="external\r2bix\r2node_LabelNode.h" />
+    <ClInclude Include="external\r2bix\r2node_PivotNode.h" />
+    <ClInclude Include="external\r2bix\r2node_SceneNode.h" />
+    <ClInclude Include="external\r2bix\r2node_SpriteAnimationNode.h" />
+    <ClInclude Include="external\r2bix\r2node_SpriteNode.h" />
+    <ClInclude Include="external\r2bix\r2render_Camera.h" />
+    <ClInclude Include="external\r2bix\r2render_iRenderTarget.h" />
+    <ClInclude Include="external\r2bix\r2render_Texture.h" />
+    <ClInclude Include="external\r2bix\r2render_TextureFrame.h" />
+    <ClInclude Include="external\r2bix\r2utility_InputUtil.h" />
+    <ClInclude Include="external\r2bix\r2utility_StringBuilder.h" />
+    <ClInclude Include="external\r2cm\r2cm_constant.h" />
+    <ClInclude Include="external\r2cm\r2cm_Director.h" />
+    <ClInclude Include="external\r2cm\r2cm_iItem.h" />
+    <ClInclude Include="external\r2cm\r2cm_Inspector.h" />
+    <ClInclude Include="external\r2cm\r2cm_Menu.h" />
+    <ClInclude Include="external\r2cm\r2cm_Singleton.h" />
+    <ClInclude Include="external\r2cm\r2cm_VersionInfo.h" />
+    <ClInclude Include="external\r2cm\r2cm_WindowUtility.h" />
+    <ClInclude Include="external\r2\r2_Assert.h" />
+    <ClInclude Include="external\r2\r2_Direction4.h" />
+    <ClInclude Include="external\r2\r2_FPSTimer.h" />
+    <ClInclude Include="external\r2\r2_GridIndexConverter.h" />
+    <ClInclude Include="external\r2\r2_Point.h" />
+    <ClInclude Include="external\r2\r2_Point_Float.h" />
+    <ClInclude Include="external\r2\r2_Point_Int.h" />
+    <ClInclude Include="external\r2\r2_Random.h" />
+    <ClInclude Include="external\r2\r2_Rect.h" />
+    <ClInclude Include="external\r2\r2_Rect_Int.h" />
+    <ClInclude Include="external\r2\r2_Size.h" />
+    <ClInclude Include="external\r2\r2_Size_Int.h" />
+    <ClInclude Include="external\r2\r2_Timer.h" />
+    <ClInclude Include="external\r2\r2_Timer_Float.h" />
+    <ClInclude Include="external\r2\r2_UniqueIndex.h" />
     <ClInclude Include="src\DevelopmentMenu.h" />
     <ClInclude Include="src\p2048mini\p2048minitable_TextureTable.h" />
     <ClInclude Include="src\p2048mini\p2048mini_Config.h" />
@@ -103,74 +171,6 @@
     <ClInclude Include="src\p2048mini\p2048mini_StageViewNode.h" />
     <ClInclude Include="src\p2048mini\p2048mini_StageViewComponent.h" />
     <ClInclude Include="src\p2048mini\p2048mini_VersionInfo.h" />
-    <ClInclude Include="src\r2bix\r2action_AnimationRequestAction.h" />
-    <ClInclude Include="src\r2bix\r2action_BlinkAction.h" />
-    <ClInclude Include="src\r2bix\r2action_CallbackAction.h" />
-    <ClInclude Include="src\r2bix\r2action_DelayAction.h" />
-    <ClInclude Include="src\r2bix\r2action_MoveByAction.h" />
-    <ClInclude Include="src\r2bix\r2action_MoveToAction.h" />
-    <ClInclude Include="src\r2bix\r2action_RepeatAction.h" />
-    <ClInclude Include="src\r2bix\r2action_SequenceAction.h" />
-    <ClInclude Include="src\r2bix\r2action_TickAction.h" />
-    <ClInclude Include="src\r2bix\r2animation_constant.h" />
-    <ClInclude Include="src\r2bix\r2base_Action.h" />
-    <ClInclude Include="src\r2bix\r2base_ColorValue.h" />
-    <ClInclude Include="src\r2bix\r2base_Component.h" />
-    <ClInclude Include="src\r2bix\r2base_ComponentStaticID.h" />
-    <ClInclude Include="src\r2bix\r2base_CoutBufferRedirector.h" />
-    <ClInclude Include="src\r2bix\r2base_DebugConfig.h" />
-    <ClInclude Include="src\r2bix\r2base_Director.h" />
-    <ClInclude Include="src\r2bix\r2base_Node.h" />
-    <ClInclude Include="src\r2bix\r2base_ScreenBufferManager.h" />
-    <ClInclude Include="src\r2bix\r2base_TextureFrameAnimationInfo.h" />
-    <ClInclude Include="src\r2bix\r2base_TextureFrameAnimationTableBase.h" />
-    <ClInclude Include="src\r2bix\r2base_TextureTableBase.h" />
-    <ClInclude Include="src\r2bix\r2base_VersionInfo.h" />
-    <ClInclude Include="src\r2bix\r2component_ActionProcessComponent.h" />
-    <ClInclude Include="src\r2bix\r2component_CustomTextureComponent.h" />
-    <ClInclude Include="src\r2bix\r2component_LabelComponent.h" />
-    <ClInclude Include="src\r2bix\r2component_TextureFrameAnimationComponent.h" />
-    <ClInclude Include="src\r2bix\r2component_TextureFrameRenderComponent.h" />
-    <ClInclude Include="src\r2bix\r2component_TextureRenderComponent.h" />
-    <ClInclude Include="src\r2bix\r2component_TransformComponent.h" />
-    <ClInclude Include="src\r2bix\r2input_Constant.h" />
-    <ClInclude Include="src\r2bix\r2input_KeyboardInputCollector.h" />
-    <ClInclude Include="src\r2bix\r2input_KeyboardInputListener.h" />
-    <ClInclude Include="src\r2bix\r2node_CustomTextureNode.h" />
-    <ClInclude Include="src\r2bix\r2node_LabelNode.h" />
-    <ClInclude Include="src\r2bix\r2node_PivotNode.h" />
-    <ClInclude Include="src\r2bix\r2node_SceneNode.h" />
-    <ClInclude Include="src\r2bix\r2node_SpriteAnimationNode.h" />
-    <ClInclude Include="src\r2bix\r2node_SpriteNode.h" />
-    <ClInclude Include="src\r2bix\r2render_Camera.h" />
-    <ClInclude Include="src\r2bix\r2render_iRenderTarget.h" />
-    <ClInclude Include="src\r2bix\r2render_Texture.h" />
-    <ClInclude Include="src\r2bix\r2render_TextureFrame.h" />
-    <ClInclude Include="src\r2bix\r2utility_InputUtil.h" />
-    <ClInclude Include="src\r2bix\r2utility_StringBuilder.h" />
-    <ClInclude Include="src\r2cm\r2cm_constant.h" />
-    <ClInclude Include="src\r2cm\r2cm_Director.h" />
-    <ClInclude Include="src\r2cm\r2cm_iItem.h" />
-    <ClInclude Include="src\r2cm\r2cm_Inspector.h" />
-    <ClInclude Include="src\r2cm\r2cm_Menu.h" />
-    <ClInclude Include="src\r2cm\r2cm_Singleton.h" />
-    <ClInclude Include="src\r2cm\r2cm_VersionInfo.h" />
-    <ClInclude Include="src\r2cm\r2cm_WindowUtility.h" />
-    <ClInclude Include="src\r2\r2_Assert.h" />
-    <ClInclude Include="src\r2\r2_Direction4.h" />
-    <ClInclude Include="src\r2\r2_FPSTimer.h" />
-    <ClInclude Include="src\r2\r2_GridIndexConverter.h" />
-    <ClInclude Include="src\r2\r2_Point.h" />
-    <ClInclude Include="src\r2\r2_Point_Float.h" />
-    <ClInclude Include="src\r2\r2_Point_Int.h" />
-    <ClInclude Include="src\r2\r2_Random.h" />
-    <ClInclude Include="src\r2\r2_Rect.h" />
-    <ClInclude Include="src\r2\r2_Rect_Int.h" />
-    <ClInclude Include="src\r2\r2_Size.h" />
-    <ClInclude Include="src\r2\r2_Size_Int.h" />
-    <ClInclude Include="src\r2\r2_Timer.h" />
-    <ClInclude Include="src\r2\r2_Timer_Float.h" />
-    <ClInclude Include="src\r2\r2_UniqueIndex.h" />
     <ClInclude Include="src\test\item\test_p2048mini_gameprocessor.h" />
     <ClInclude Include="src\test\item\test_p2048mini_numbernode.h" />
     <ClInclude Include="src\test\item\test_p2048mini_stage.h" />
@@ -251,14 +251,14 @@
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <AdditionalIncludeDirectories>vld\include;$(ProjectDir)\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)\external;$(ProjectDir)\src</AdditionalIncludeDirectories>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>vld\lib\Win32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>external\vld\lib\Win32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <CustomBuildStep>
       <Command>
@@ -266,7 +266,7 @@
     </CustomBuildStep>
     <PostBuildEvent>
       <Command>if not exist "$(OutDir)" mkdir "$(OutDir)"
-xcopy "$(ProjectDir)vld\bin\Win32\*.*" "$(OutDir)" /D /E /I /F /Y</Command>
+xcopy "$(ProjectDir)external\vld\bin\Win32\*.*" "$(OutDir)" /D /E /I /F /Y</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -278,18 +278,18 @@ xcopy "$(ProjectDir)vld\bin\Win32\*.*" "$(OutDir)" /D /E /I /F /Y</Command>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <AdditionalIncludeDirectories>vld\include;$(ProjectDir)\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)\external;$(ProjectDir)\src</AdditionalIncludeDirectories>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>vld\lib\Win64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>external\vld\lib\Win64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
       <Command>if not exist "$(OutDir)" mkdir "$(OutDir)"
-xcopy "$(ProjectDir)vld\bin\Win64\*.*" "$(OutDir)" /D /E /I /F /Y</Command>
+xcopy "$(ProjectDir)external\vld\bin\Win64\*.*" "$(OutDir)" /D /E /I /F /Y</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -305,7 +305,7 @@ xcopy "$(ProjectDir)vld\bin\Win64\*.*" "$(OutDir)" /D /E /I /F /Y</Command>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
-      <AdditionalIncludeDirectories>$(ProjectDir)\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)\external;$(ProjectDir)\src</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -327,7 +327,7 @@ xcopy "$(ProjectDir)vld\bin\Win64\*.*" "$(OutDir)" /D /E /I /F /Y</Command>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
-      <AdditionalIncludeDirectories>$(ProjectDir)\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)\external;$(ProjectDir)\src</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
     </ClCompile>
     <Link>

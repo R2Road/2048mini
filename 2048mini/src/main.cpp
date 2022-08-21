@@ -1,5 +1,5 @@
 ﻿#if defined( DEBUG ) || defined( _DEBUG )
-	#include <vld.h>
+	#include "vld/include/vld.h"
 #endif
 
 #include "r2cm/r2cm_WindowUtility.h"

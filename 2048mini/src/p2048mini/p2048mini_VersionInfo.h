@@ -12,9 +12,9 @@ namespace p2048mini
 	static struct
 	{
 
-		const char VersionNumber_1 = '0';
+		const char VersionNumber_1 = '1';
 		const char VersionNumber_2 = '0';
-		const char VersionNumber_3 = '5';
+		const char VersionNumber_3 = '0';
 
 		const char String4Version[18] = { '2', '0', '4', '8', 'm', 'i', 'n', 'i', ' ', ':', ' ', 'v', VersionNumber_1, '.', VersionNumber_2, '.', VersionNumber_3, '\0' };
 

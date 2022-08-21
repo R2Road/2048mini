@@ -9,9 +9,10 @@
 #include "r2cm/r2cm_VersionInfo.h"
 #include "r2cm/r2cm_WindowUtility.h"
 
-#include "test/TestMenu.h"
 #include "p2048mini/p2048mini_GameScene.h"
 #include "p2048mini/p2048mini_VersionInfo.h"
+
+#include "test/TestMenu.h"
 
 const char* DevelopmentMenu::GetTitle()
 {

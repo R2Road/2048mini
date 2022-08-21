@@ -95,7 +95,7 @@ namespace p2048mini
 				game_component->SetStageViewComponent4History( stage_view_component_4debug );
 			}
 
-			const int score_label_x = 39;
+			const int score_label_x = 38;
 			const int score_number_x = score_label_x + 10;
 
 			//
@@ -164,7 +164,7 @@ namespace p2048mini
 			{
 				auto sprite_node = ret->AddChild<r2node::SpriteNode>();
 				sprite_node->GetComponent<r2component::TextureFrameRenderComponent>()->SetTextureFrame( p2048minitable::TextureTable::GetInstance().GetTextureFrame( "keyinfo_0" ) );
-				sprite_node->GetComponent<r2component::TransformComponent>()->SetPosition( 23, 33 );
+				sprite_node->GetComponent<r2component::TransformComponent>()->SetPosition( 22, 33 );
 			}
 
 			//

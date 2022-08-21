@@ -64,9 +64,11 @@ int main()
 	director.Setup( p2048mini::GameScene::Create( director ) );
 
 	//
-	// Environment : ScrollBar
+	// Environment : ScrollBar | Maximize Button | Frame Lock
 	//
 	r2cm::WindowUtility::ScrollBarVisible( false );
+	r2cm::WindowUtility::MaximizeButtonEnable( false );
+	r2cm::WindowUtility::ResizingByDraggingEnable( false );
 
 	//
 	// Run

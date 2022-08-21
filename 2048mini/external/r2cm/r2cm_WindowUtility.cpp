@@ -59,6 +59,23 @@ namespace r2cm
 		SetWindowLong( GetConsoleWindow(), GWL_STYLE, window_style );
 	}
 
+	void WindowUtility::QuickEditEnable( const bool enable )
+	{
+		DWORD console_mode = 0;
+		GetConsoleMode( GetStdHandle( STD_INPUT_HANDLE ), &console_mode );
+		if( enable )
+		{
+			console_mode |= ENABLE_EXTENDED_FLAGS;
+			console_mode |= ENABLE_QUICK_EDIT_MODE;
+		}
+		else
+		{
+			console_mode &= ~( ENABLE_EXTENDED_FLAGS );
+			console_mode &= ~( ENABLE_QUICK_EDIT_MODE );
+		}
+		SetConsoleMode( GetStdHandle( STD_INPUT_HANDLE ), console_mode );
+	}
+
 	WindowUtility::CursorPoint WindowUtility::GetCursorPoint()
 	{
 		CONSOLE_SCREEN_BUFFER_INFO csbi{};

@@ -54,8 +54,15 @@ r2cm::MenuUp DevelopmentMenu::Create( r2cm::Director& director )
 				return r2cm::eItemLeaveAction::None;
 			}
 		);
+
+
+
+		ret->AddLineFeed();
+
+
+
 		ret->AddItem(
-			'2'
+			32
 			, r2cm::eColor::FG_White
 			, []()->const char* { return "Game : 2048mini"; }
 			, []()->r2cm::eItemLeaveAction

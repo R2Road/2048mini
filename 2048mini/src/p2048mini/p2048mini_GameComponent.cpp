@@ -12,7 +12,7 @@
 
 namespace p2048mini
 {
-	GameComponent::GameComponent( r2base::Node& owner_node ) : r2base::Component( owner_node )
+	GameSceneComponent::GameSceneComponent( r2base::Node& owner_node ) : r2base::Component( owner_node )
 		, mStep( eStep::GameReady )
 		, mStage( 4u, 4u )
 		, mGameProcessor( &mStage )
@@ -38,14 +38,14 @@ namespace p2048mini
 	{
 		GetOwnerNode().GetDirector().AddInputListener( &mKeyboardInputListener );
 	}
-	GameComponent::~GameComponent()
+	GameSceneComponent::~GameSceneComponent()
 	{
 		GetOwnerNode().GetDirector().RemoveInputListener( &mKeyboardInputListener );
 	}
 
-	std::unique_ptr<GameComponent> GameComponent::Create( r2base::Node& owner_node )
+	std::unique_ptr<GameSceneComponent> GameSceneComponent::Create( r2base::Node& owner_node )
 	{
-		std::unique_ptr<GameComponent> ret( new ( std::nothrow ) GameComponent( owner_node ) );
+		std::unique_ptr<GameSceneComponent> ret( new ( std::nothrow ) GameSceneComponent( owner_node ) );
 		if( !ret || !ret->Init() )
 		{
 			ret.reset();
@@ -54,7 +54,7 @@ namespace p2048mini
 		return ret;
 	}
 
-	void GameComponent::Update( const float delta_time )
+	void GameSceneComponent::Update( const float delta_time )
 	{
 		mKeyboardInputListener.Update();
 
@@ -169,7 +169,7 @@ namespace p2048mini
 		r2base::Component::Update( delta_time );
 	}
 
-	bool GameComponent::MoveNumber( const r2::Direction4::eState move_direction )
+	bool GameSceneComponent::MoveNumber( const r2::Direction4::eState move_direction )
 	{
 		const auto move_result = mGameProcessor.Move( move_direction );
 		if( move_result.has_moved )

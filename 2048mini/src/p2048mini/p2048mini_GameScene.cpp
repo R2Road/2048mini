@@ -38,7 +38,7 @@ namespace p2048mini
 			//
 			// Game Component
 			//
-			auto game_component = ret->AddComponent<p2048mini::GameComponent>();
+			auto game_scene_component = ret->AddComponent<p2048mini::GameSceneComponent>();
 
 
 			//
@@ -61,7 +61,7 @@ namespace p2048mini
 				node->SetVisible( false );
 
 				auto stage_view_component = node->GetComponent<p2048mini::StageViewComponent>();
-				stage_view_component->Setup( game_component->GetStage() );
+				stage_view_component->Setup( game_scene_component->GetStage() );
 
 				node->GetComponent<r2component::TransformComponent>()->SetPosition(
 					( director.GetScreenBufferSize().GetWidth() * 0.5f ) - ( stage_view_component->GetWidth() * 0.5f )
@@ -71,7 +71,7 @@ namespace p2048mini
 				//
 				//
 				//
-				game_component->SetStageViewComponent( stage_view_component );
+				game_scene_component->SetStageViewComponent( stage_view_component );
 			}
 			//
 			// History View
@@ -81,7 +81,7 @@ namespace p2048mini
 				node->SetVisible( false );
 
 				auto stage_view_component_4debug = node->GetComponent<p2048mini::StageViewComponent>();
-				stage_view_component_4debug->Setup( game_component->GetStage() );
+				stage_view_component_4debug->Setup( game_scene_component->GetStage() );
 
 				node->GetComponent<r2component::TransformComponent>()->SetPosition(
 					( director.GetScreenBufferSize().GetWidth() * 0.5f ) - ( stage_view_component_4debug->GetWidth() * 0.5f )
@@ -91,7 +91,7 @@ namespace p2048mini
 				//
 				//
 				//
-				game_component->SetStageViewComponent4History( stage_view_component_4debug );
+				game_scene_component->SetStageViewComponent4History( stage_view_component_4debug );
 			}
 
 			const int score_label_x = 38;
@@ -114,7 +114,7 @@ namespace p2048mini
 				//
 				//
 				//
-				game_component->SetMaxNumberLabel( max_number_label_node );
+				game_scene_component->SetMaxNumberLabel( max_number_label_node );
 			}
 
 			//
@@ -134,7 +134,7 @@ namespace p2048mini
 				//
 				//
 				//
-				game_component->SetTotalScoreLabel( total_score_label_node );
+				game_scene_component->SetTotalScoreLabel( total_score_label_node );
 			}
 
 			//
@@ -154,7 +154,7 @@ namespace p2048mini
 				//
 				//
 				//
-				game_component->SetRecentScoreLabel( total_score_label_node );
+				game_scene_component->SetRecentScoreLabel( total_score_label_node );
 			}
 
 			//
@@ -208,7 +208,7 @@ namespace p2048mini
 				//
 				//
 				//
-				game_component->SetYouWinNode( node );
+				game_scene_component->SetYouWinNode( node );
 			}
 
 			//
@@ -244,7 +244,7 @@ namespace p2048mini
 				//
 				//
 				//
-				game_component->SetGameOverNode( node );
+				game_scene_component->SetGameOverNode( node );
 			}
 
 			//

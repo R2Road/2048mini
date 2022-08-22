@@ -14,7 +14,7 @@ namespace p2048mini
 {
 	class StageViewComponent;
 
-	class GameComponent : public r2base::Component
+	class GameSceneComponent : public r2base::Component
 	{
 	private:
 		enum class eStep
@@ -28,12 +28,12 @@ namespace p2048mini
 			GameStop,
 		};
 
-		GameComponent( r2base::Node& owner_node );
+		GameSceneComponent( r2base::Node& owner_node );
 	public:
-		~GameComponent();
+		~GameSceneComponent();
 
-		int GetStaticID() const override { return r2base::ComponentStaticID<GameComponent>::Get(); }
-		static std::unique_ptr<GameComponent> Create( r2base::Node& owner_node );
+		int GetStaticID() const override { return r2base::ComponentStaticID<GameSceneComponent>::Get(); }
+		static std::unique_ptr<GameSceneComponent> Create( r2base::Node& owner_node );
 
 	public:
 		void Update( const float delta_time ) override;

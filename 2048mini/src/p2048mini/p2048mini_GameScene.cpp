@@ -45,9 +45,9 @@ namespace p2048mini
 			// Title
 			//
 			{
-				auto sprite_node = ret->AddChild<r2node::SpriteNode>();
-				sprite_node->GetComponent<r2component::TextureFrameRenderComponent>()->SetTextureFrame( p2048minitable::TextureTable::GetInstance().GetTextureFrame( "title_0" ) );
-				sprite_node->GetComponent<r2component::TransformComponent>()->SetPosition(
+				auto node = ret->AddChild<r2node::SpriteNode>();
+				node->GetComponent<r2component::TextureFrameRenderComponent>()->SetTextureFrame( p2048minitable::TextureTable::GetInstance().GetTextureFrame( "title_0" ) );
+				node->GetComponent<r2component::TransformComponent>()->SetPosition(
 					( director.GetScreenBufferSize().GetWidth() * 0.5f )
 					, ( director.GetScreenBufferSize().GetHeight() * 0.11f )
 				);
@@ -57,13 +57,13 @@ namespace p2048mini
 			// Stage View
 			//
 			{
-				auto stage_view_node = ret->AddChild<p2048mini::StageViewNode>( 1 );
-				stage_view_node->SetVisible( false );
+				auto node = ret->AddChild<p2048mini::StageViewNode>( 1 );
+				node->SetVisible( false );
 
-				auto stage_view_component = stage_view_node->GetComponent<p2048mini::StageViewComponent>();
+				auto stage_view_component = node->GetComponent<p2048mini::StageViewComponent>();
 				stage_view_component->Setup( game_component->GetStage() );
 
-				stage_view_node->GetComponent<r2component::TransformComponent>()->SetPosition(
+				node->GetComponent<r2component::TransformComponent>()->SetPosition(
 					( director.GetScreenBufferSize().GetWidth() * 0.5f ) - ( stage_view_component->GetWidth() * 0.5f )
 					, ( director.GetScreenBufferSize().GetHeight() * 0.5f ) - ( stage_view_component->GetHeight() * 0.5f )
 				);
@@ -77,13 +77,13 @@ namespace p2048mini
 			// History View
 			//
 			{
-				auto stage_view_node = ret->AddChild<p2048mini::StageViewNode>( 2 );
-				stage_view_node->SetVisible( false );
+				auto node = ret->AddChild<p2048mini::StageViewNode>( 2 );
+				node->SetVisible( false );
 
-				auto stage_view_component_4debug = stage_view_node->GetComponent<p2048mini::StageViewComponent>();
+				auto stage_view_component_4debug = node->GetComponent<p2048mini::StageViewComponent>();
 				stage_view_component_4debug->Setup( game_component->GetStage() );
 
-				stage_view_node->GetComponent<r2component::TransformComponent>()->SetPosition(
+				node->GetComponent<r2component::TransformComponent>()->SetPosition(
 					( director.GetScreenBufferSize().GetWidth() * 0.5f ) - ( stage_view_component_4debug->GetWidth() * 0.5f )
 					, ( director.GetScreenBufferSize().GetHeight() * 0.5f ) - ( stage_view_component_4debug->GetHeight() * 0.5f )
 				);
@@ -161,9 +161,9 @@ namespace p2048mini
 			// Key Info
 			//
 			{
-				auto sprite_node = ret->AddChild<r2node::SpriteNode>();
-				sprite_node->GetComponent<r2component::TextureFrameRenderComponent>()->SetTextureFrame( p2048minitable::TextureTable::GetInstance().GetTextureFrame( "keyinfo_0" ) );
-				sprite_node->GetComponent<r2component::TransformComponent>()->SetPosition( 22, 32 );
+				auto node = ret->AddChild<r2node::SpriteNode>();
+				node->GetComponent<r2component::TextureFrameRenderComponent>()->SetTextureFrame( p2048minitable::TextureTable::GetInstance().GetTextureFrame( "keyinfo_0" ) );
+				node->GetComponent<r2component::TransformComponent>()->SetPosition( 22, 32 );
 			}
 
 			//
@@ -179,20 +179,20 @@ namespace p2048mini
 			// You Win
 			//
 			{
-				auto you_win_node = ret->AddChild<r2node::SpriteNode>( 2 );
-				you_win_node->GetComponent<r2component::TextureFrameRenderComponent>()->SetTextureFrame( p2048minitable::TextureTable::GetInstance().GetTextureFrame( "you_win_0" ) );
-				you_win_node->GetComponent<r2component::TransformComponent>()->SetPosition(
+				auto node = ret->AddChild<r2node::SpriteNode>( 2 );
+				node->GetComponent<r2component::TextureFrameRenderComponent>()->SetTextureFrame( p2048minitable::TextureTable::GetInstance().GetTextureFrame( "you_win_0" ) );
+				node->GetComponent<r2component::TransformComponent>()->SetPosition(
 					( director.GetScreenBufferSize().GetWidth() * 0.5f )
 					, ( director.GetScreenBufferSize().GetHeight() * 0.5f )
 				);
-				you_win_node->SetVisible( false );
+				node->SetVisible( false );
 
-				auto action_process_component = you_win_node->AddComponent<r2component::ActionProcessComponent>();
+				auto action_process_component = node->AddComponent<r2component::ActionProcessComponent>();
 				{
 					auto sequence_action = r2action::SequenceAction::Create();
 
 					auto moveto_action = sequence_action->AddAction<r2action::MoveToAction>();
-					moveto_action->SetEndPoint( you_win_node->GetComponent<r2component::TransformComponent>()->GetPosition() );
+					moveto_action->SetEndPoint( node->GetComponent<r2component::TransformComponent>()->GetPosition() );
 					moveto_action->SetTimeLimit( 0.f );
 
 					auto delay_action = sequence_action->AddAction<r2action::DelayAction>();
@@ -208,27 +208,27 @@ namespace p2048mini
 				//
 				//
 				//
-				game_component->SetYouWinNode( you_win_node );
+				game_component->SetYouWinNode( node );
 			}
 
 			//
 			// Game Over
 			//
 			{
-				auto game_over_node = ret->AddChild<r2node::SpriteNode>( 2 );
-				game_over_node->GetComponent<r2component::TextureFrameRenderComponent>()->SetTextureFrame( p2048minitable::TextureTable::GetInstance().GetTextureFrame( "game_over_0" ) );
-				game_over_node->GetComponent<r2component::TransformComponent>()->SetPosition(
+				auto node = ret->AddChild<r2node::SpriteNode>( 2 );
+				node->GetComponent<r2component::TextureFrameRenderComponent>()->SetTextureFrame( p2048minitable::TextureTable::GetInstance().GetTextureFrame( "game_over_0" ) );
+				node->GetComponent<r2component::TransformComponent>()->SetPosition(
 					( director.GetScreenBufferSize().GetWidth() * 0.5f )
 					, ( director.GetScreenBufferSize().GetHeight() * 0.5f )
 				);
-				game_over_node->SetVisible( false );
+				node->SetVisible( false );
 
-				auto action_process_component = game_over_node->AddComponent<r2component::ActionProcessComponent>();
+				auto action_process_component = node->AddComponent<r2component::ActionProcessComponent>();
 				{
 					auto sequence_action = r2action::SequenceAction::Create();
 
 					auto moveto_action = sequence_action->AddAction<r2action::MoveToAction>();
-					moveto_action->SetEndPoint( game_over_node->GetComponent<r2component::TransformComponent>()->GetPosition() );
+					moveto_action->SetEndPoint( node->GetComponent<r2component::TransformComponent>()->GetPosition() );
 					moveto_action->SetTimeLimit( 0.f );
 
 					auto delay_action = sequence_action->AddAction<r2action::DelayAction>();
@@ -244,7 +244,7 @@ namespace p2048mini
 				//
 				//
 				//
-				game_component->SetGameOverNode( game_over_node );
+				game_component->SetGameOverNode( node );
 			}
 
 			//
@@ -252,9 +252,6 @@ namespace p2048mini
 			//
 			if( p2048mini::Config::GetNodeConfig().pivot )
 			{
-				//
-				//
-				//
 				ret->AddChild<r2node::PivotNode>( std::numeric_limits<int>::max() );
 				ret->AddChild<r2node::PivotNode>( std::numeric_limits<int>::max() )->mTransformComponent->SetPosition( director.GetScreenBufferSize().GetWidth() - 1, 0 );
 				ret->AddChild<r2node::PivotNode>( std::numeric_limits<int>::max() )->mTransformComponent->SetPosition( director.GetScreenBufferSize().GetWidth() - 1, director.GetScreenBufferSize().GetHeight() - 1 );

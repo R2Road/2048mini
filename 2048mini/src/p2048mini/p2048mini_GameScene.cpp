@@ -167,6 +167,15 @@ namespace p2048mini
 			}
 
 			//
+			// Exit
+			//
+			{
+				auto node = ret->AddChild<r2node::LabelNode>();
+				node->GetComponent<r2component::LabelComponent>()->SetString( "< ESC" );
+				node->GetComponent<r2component::TextureRenderComponent>()->SetPivotPoint( 0.f, 0.f );
+			}
+
+			//
 			// You Win
 			//
 			{

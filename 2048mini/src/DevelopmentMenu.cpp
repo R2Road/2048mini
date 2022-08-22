@@ -64,8 +64,8 @@ r2cm::MenuUp DevelopmentMenu::Create( r2cm::Director& director )
 
 		ret->AddItem(
 			32
-			, r2cm::eColor::FG_White
-			, []()->const char* { return "Game : 2048mini"; }
+			, r2cm::eColor::BG_Blue
+			, []()->const char* { return "2048mini"; }
 			, []()->r2cm::eItemLeaveAction
 			{
 				r2cm::WindowUtility::Resize( 562, 800 );

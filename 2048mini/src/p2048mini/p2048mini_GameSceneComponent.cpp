@@ -1,4 +1,4 @@
-#include "p2048mini_GameComponent.h"
+#include "p2048mini_GameSceneComponent.h"
 
 #include "r2bix/r2base_Director.h"
 #include "r2bix/r2base_Node.h"

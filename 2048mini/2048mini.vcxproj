@@ -75,7 +75,7 @@
     <ClCompile Include="external\r2\r2_Timer_Float.cpp" />
     <ClCompile Include="src\DevelopmentMenu.cpp" />
     <ClCompile Include="src\p2048mini\p2048minitable_TextureTable.cpp" />
-    <ClCompile Include="src\p2048mini\p2048mini_GameComponent.cpp" />
+    <ClCompile Include="src\p2048mini\p2048mini_GameSceneComponent.cpp" />
     <ClCompile Include="src\p2048mini\p2048mini_GameProcessor.cpp" />
     <ClCompile Include="src\p2048mini\p2048mini_GameScene.cpp" />
     <ClCompile Include="src\p2048mini\p2048mini_NumberComponent.cpp" />
@@ -164,7 +164,7 @@
     <ClInclude Include="src\DevelopmentMenu.h" />
     <ClInclude Include="src\p2048mini\p2048minitable_TextureTable.h" />
     <ClInclude Include="src\p2048mini\p2048mini_Config.h" />
-    <ClInclude Include="src\p2048mini\p2048mini_GameComponent.h" />
+    <ClInclude Include="src\p2048mini\p2048mini_GameSceneComponent.h" />
     <ClInclude Include="src\p2048mini\p2048mini_GameProcessor.h" />
     <ClInclude Include="src\p2048mini\p2048mini_GameScene.h" />
     <ClInclude Include="src\p2048mini\p2048mini_NumberComponent.h" />

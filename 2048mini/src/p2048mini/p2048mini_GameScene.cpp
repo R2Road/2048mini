@@ -18,7 +18,7 @@
 #include "r2bix/r2node_SpriteNode.h"
 
 #include "p2048mini_Config.h"
-#include "p2048mini_GameComponent.h"
+#include "p2048mini_GameSceneComponent.h"
 #include "p2048mini_StageViewComponent.h"
 #include "p2048mini_StageViewNode.h"
 #include "p2048minitable_TextureTable.h"

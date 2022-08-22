@@ -53,9 +53,6 @@
     <ClCompile Include="src\p2048mini\p2048mini_GameProcessor.cpp">
       <Filter>project_2048mini</Filter>
     </ClCompile>
-    <ClCompile Include="src\p2048mini\p2048mini_GameComponent.cpp">
-      <Filter>project_2048mini</Filter>
-    </ClCompile>
     <ClCompile Include="src\test\TestMenu.cpp">
       <Filter>test</Filter>
     </ClCompile>
@@ -233,6 +230,9 @@
     <ClCompile Include="external\r2cm\r2cm_WindowUtility.cpp">
       <Filter>external\r2cm</Filter>
     </ClCompile>
+    <ClCompile Include="src\p2048mini\p2048mini_GameSceneComponent.cpp">
+      <Filter>project_2048mini</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\test\Utility4Test.h">
@@ -264,9 +264,6 @@
       <Filter>project_2048mini</Filter>
     </ClInclude>
     <ClInclude Include="src\p2048mini\p2048mini_GameProcessor.h">
-      <Filter>project_2048mini</Filter>
-    </ClInclude>
-    <ClInclude Include="src\p2048mini\p2048mini_GameComponent.h">
       <Filter>project_2048mini</Filter>
     </ClInclude>
     <ClInclude Include="src\test\TestMenu.h">
@@ -493,6 +490,9 @@
     </ClInclude>
     <ClInclude Include="external\r2cm\r2cm_WindowUtility.h">
       <Filter>external\r2cm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\p2048mini\p2048mini_GameSceneComponent.h">
+      <Filter>project_2048mini</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

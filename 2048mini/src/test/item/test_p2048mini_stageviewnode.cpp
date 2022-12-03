@@ -22,7 +22,7 @@ namespace test_p2048mini_stageviewnode
 			return "StageViewNode : Generate";
 		};
 	}
-	r2cm::iItem::DoFunctionT Generate::GetDoFunction()
+	r2cm::iItem::DoFunctionT Generate::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -62,7 +62,7 @@ namespace test_p2048mini_stageviewnode
 			return "StageViewNode : Setup And Render";
 		};
 	}
-	r2cm::iItem::DoFunctionT Setup_Render::GetDoFunction()
+	r2cm::iItem::DoFunctionT Setup_Render::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -115,7 +115,7 @@ namespace test_p2048mini_stageviewnode
 			return "StageViewNode : UpdateView";
 		};
 	}
-	r2cm::iItem::DoFunctionT UpdateView::GetDoFunction()
+	r2cm::iItem::DoFunctionT UpdateView::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

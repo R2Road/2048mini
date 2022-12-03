@@ -20,6 +20,6 @@ namespace r2cm
 		virtual ~iItem() {}
 
 		virtual TitleFunctionT GetTitleFunction() const = 0;
-		virtual DoFunctionT GetDoFunction() = 0;
+		virtual DoFunctionT GetDoFunction() const = 0;
 	};
 }

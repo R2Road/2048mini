@@ -42,12 +42,13 @@ namespace r2cm
 
 		void ShowTitle() const;
 		void ShowDescription() const;
-		void ShowMenu() const;
+		void ShowItems() const;
 
 		eItemLeaveAction Do( const int key_code );
 
-		void AddItem( const char key_code, const int color_code, const iItem::TitleFunctionT func_title, iItem::DoFunctionT func_do );
-		void AddItem( const char key_code, iItem& item_obj );
+		void AddItem( const char key_code, const int color_code, const iItem::TitleFunctionT& func_title, const iItem::DoFunctionT& func_do );
+		void AddItem( const char key_code, const iItem::TitleFunctionT& func_title, const iItem::DoFunctionT& func_do );
+		void AddItem( const char key_code, const iItem& item_obj );
 		
 		template<typename menu_T>
 		void AddMenu( const char key_code )

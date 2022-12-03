@@ -215,13 +215,19 @@
     <ClCompile Include="external\r2bix\r2utility_StringBuilder.cpp">
       <Filter>external\r2bix</Filter>
     </ClCompile>
+    <ClCompile Include="src\p2048mini\p2048mini_GameSceneComponent.cpp">
+      <Filter>project_2048mini</Filter>
+    </ClCompile>
     <ClCompile Include="external\r2cm\r2cm_Director.cpp">
       <Filter>external\r2cm</Filter>
     </ClCompile>
-    <ClCompile Include="external\r2cm\r2cm_Inspector.cpp">
+    <ClCompile Include="external\r2cm\r2cm_Menu.cpp">
       <Filter>external\r2cm</Filter>
     </ClCompile>
-    <ClCompile Include="external\r2cm\r2cm_Menu.cpp">
+    <ClCompile Include="external\r2cm\r2cm_PrintBinary.cpp">
+      <Filter>external\r2cm</Filter>
+    </ClCompile>
+    <ClCompile Include="external\r2cm\r2cm_PrintFile.cpp">
       <Filter>external\r2cm</Filter>
     </ClCompile>
     <ClCompile Include="external\r2cm\r2cm_StopWatch.cpp">
@@ -229,9 +235,6 @@
     </ClCompile>
     <ClCompile Include="external\r2cm\r2cm_WindowUtility.cpp">
       <Filter>external\r2cm</Filter>
-    </ClCompile>
-    <ClCompile Include="src\p2048mini\p2048mini_GameSceneComponent.cpp">
-      <Filter>project_2048mini</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -464,6 +467,9 @@
     <ClInclude Include="external\r2bix\r2utility_StringBuilder.h">
       <Filter>external\r2bix</Filter>
     </ClInclude>
+    <ClInclude Include="src\p2048mini\p2048mini_GameSceneComponent.h">
+      <Filter>project_2048mini</Filter>
+    </ClInclude>
     <ClInclude Include="external\r2cm\r2cm_Director.h">
       <Filter>external\r2cm</Filter>
     </ClInclude>
@@ -479,7 +485,10 @@
     <ClInclude Include="external\r2cm\r2cm_ostream.h">
       <Filter>external\r2cm</Filter>
     </ClInclude>
-    <ClInclude Include="external\r2cm\r2cm_Singleton.h">
+    <ClInclude Include="external\r2cm\r2cm_PrintBinary.h">
+      <Filter>external\r2cm</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2cm\r2cm_PrintFile.h">
       <Filter>external\r2cm</Filter>
     </ClInclude>
     <ClInclude Include="external\r2cm\r2cm_StopWatch.h">
@@ -491,8 +500,11 @@
     <ClInclude Include="external\r2cm\r2cm_WindowUtility.h">
       <Filter>external\r2cm</Filter>
     </ClInclude>
-    <ClInclude Include="src\p2048mini\p2048mini_GameSceneComponent.h">
-      <Filter>project_2048mini</Filter>
+    <ClInclude Include="external\r2\r2_SingletonWithStaticVariable.h">
+      <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_NoneCopyable.h">
+      <Filter>external\r2</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

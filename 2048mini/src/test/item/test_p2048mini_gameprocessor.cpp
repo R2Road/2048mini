@@ -43,7 +43,7 @@ namespace test_p2048mini_gameprocessor
 			return "GameProcessor : Move Ready";
 		};
 	}
-	r2cm::iItem::DoFunctionT MoveReadyTest::GetDoFunction()
+	r2cm::iItem::DoFunctionT MoveReadyTest::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -160,7 +160,7 @@ namespace test_p2048mini_gameprocessor
 			return "GameProcessor : Move";
 		};
 	}
-	r2cm::iItem::DoFunctionT MoveTest::GetDoFunction()
+	r2cm::iItem::DoFunctionT MoveTest::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -239,7 +239,7 @@ namespace test_p2048mini_gameprocessor
 			return "GameProcessor : Merge";
 		};
 	}
-	r2cm::iItem::DoFunctionT MergeTest::GetDoFunction()
+	r2cm::iItem::DoFunctionT MergeTest::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -326,7 +326,7 @@ namespace test_p2048mini_gameprocessor
 			return "GameProcessor : Movable Check";
 		};
 	}
-	r2cm::iItem::DoFunctionT MovableCheck::GetDoFunction()
+	r2cm::iItem::DoFunctionT MovableCheck::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

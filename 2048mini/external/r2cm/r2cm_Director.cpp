@@ -25,7 +25,7 @@ namespace r2cm
 
 			mMenu->ShowTitle();
 			mMenu->ShowDescription();
-			mMenu->ShowMenu();
+			mMenu->ShowItems();
 			input = _getch();
 
 			system( "cls" );
@@ -35,7 +35,6 @@ namespace r2cm
 			//case eItemLeaveAction::None: break;
 
 			case eItemLeaveAction::Pause:
-				std::cout << r2cm::linefeed;
 				system( "pause" );				
 				break;
 

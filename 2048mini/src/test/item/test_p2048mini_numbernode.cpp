@@ -19,7 +19,7 @@ namespace test_p2048mini_numbernode
 			return "NumberNode : Generate";
 		};
 	}
-	r2cm::iItem::DoFunctionT Generate::GetDoFunction()
+	r2cm::iItem::DoFunctionT Generate::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -59,7 +59,7 @@ namespace test_p2048mini_numbernode
 			return "NumberNode : SetNumber";
 		};
 	}
-	r2cm::iItem::DoFunctionT SetNumber::GetDoFunction()
+	r2cm::iItem::DoFunctionT SetNumber::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

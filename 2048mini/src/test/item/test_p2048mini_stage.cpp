@@ -40,7 +40,7 @@ namespace test_p2048mini_stage
 			return "Stage : Generate";
 		};
 	}
-	r2cm::iItem::DoFunctionT Generate::GetDoFunction()
+	r2cm::iItem::DoFunctionT Generate::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -85,7 +85,7 @@ namespace test_p2048mini_stage
 			return "Stage : Add, Remove, ClearAll";
 		};
 	}
-	r2cm::iItem::DoFunctionT Add_Remove_ClearAll::GetDoFunction()
+	r2cm::iItem::DoFunctionT Add_Remove_ClearAll::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -153,7 +153,7 @@ namespace test_p2048mini_stage
 			return "Stage : IsIn";
 		};
 	}
-	r2cm::iItem::DoFunctionT IsIn::GetDoFunction()
+	r2cm::iItem::DoFunctionT IsIn::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -200,7 +200,7 @@ namespace test_p2048mini_stage
 			return "Stage : NumberCount, EmptyCount, IsFull";
 		};
 	}
-	r2cm::iItem::DoFunctionT NumberCount_EmptyCount_IsFull::GetDoFunction()
+	r2cm::iItem::DoFunctionT NumberCount_EmptyCount_IsFull::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -283,7 +283,7 @@ namespace test_p2048mini_stage
 			return "Stage : Lock";
 		};
 	}
-	r2cm::iItem::DoFunctionT Lock::GetDoFunction()
+	r2cm::iItem::DoFunctionT Lock::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{
@@ -367,7 +367,7 @@ namespace test_p2048mini_stage
 			return "Stage : Newcomer";
 		};
 	}
-	r2cm::iItem::DoFunctionT Newcomer::GetDoFunction()
+	r2cm::iItem::DoFunctionT Newcomer::GetDoFunction() const
 	{
 		return []()->r2cm::eItemLeaveAction
 		{

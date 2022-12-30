@@ -24,11 +24,12 @@ r2cm::WriteFunctionT TestMenu::GetWriteFunction() const
 	return []( r2cm::MenuProcessor* ret )
 	{
 		ret->AddItem( '1', test_p2048mini_stage::Generate() );
-		ret->AddItem( '2', test_p2048mini_stage::Add_Remove_ClearAll() );
+		ret->AddItem( '2', test_p2048mini_stage::Add_Remove() );
 		ret->AddItem( '3', test_p2048mini_stage::IsIn() );
 		ret->AddItem( '4', test_p2048mini_stage::NumberCount_EmptyCount_IsFull() );
 		ret->AddItem( '5', test_p2048mini_stage::Lock() );
 		ret->AddItem( '6', test_p2048mini_stage::Newcomer() );
+		ret->AddItem( '7', test_p2048mini_stage::Reset() );
 
 		ret->AddLineFeed();
 

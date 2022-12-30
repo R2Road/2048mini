@@ -78,14 +78,14 @@ namespace test_p2048mini_stage
 
 
 
-	r2cm::TitleFunctionT Add_Remove_ClearAll::GetTitleFunction() const
+	r2cm::TitleFunctionT Add_Remove::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Stage : Add, Remove, ClearAll";
+			return "Stage : Add, Remove";
 		};
 	}
-	r2cm::DoFunctionT Add_Remove_ClearAll::GetDoFunction() const
+	r2cm::DoFunctionT Add_Remove::GetDoFunction() const
 	{
 		return []()->r2cm::eDoLeaveAction
 		{
@@ -121,19 +121,6 @@ namespace test_p2048mini_stage
 				PROCESS_MAIN( stage.Add( 1, 1, 1 ) );
 				PROCESS_MAIN( stage.Add( 1, 2, 1 ) );
 				PROCESS_MAIN( stage.Add( 1, 3, 1 ) );
-
-				PrintStage( stage );
-			}
-
-			std::cout << r2cm::split;
-
-			{
-				std::cout << r2cm::tab << "+ Clear All" << r2cm::linefeed2;
-
-				PROCESS_MAIN( stage.Reset() );
-				EXPECT_EQ( 0, stage.GetNumber( 1, 1 ) );
-				EXPECT_EQ( 0, stage.GetNumber( 1, 2 ) );
-				EXPECT_EQ( 0, stage.GetNumber( 1, 3 ) );
 
 				PrintStage( stage );
 			}
@@ -335,25 +322,6 @@ namespace test_p2048mini_stage
 
 			std::cout << r2cm::split;
 
-			{
-				std::cout << r2cm::tab << "+ ClearAll" << r2cm::linefeed2;
-
-				PROCESS_MAIN( stage.Lock( 0, 0 ) );
-				PROCESS_MAIN( stage.Lock( 0, 1 ) );
-				PROCESS_MAIN( stage.Lock( 1, 1 ) );
-				PROCESS_MAIN( stage.Lock( 1, 0 ) );
-				PROCESS_MAIN( stage.Reset() );
-
-				std::cout << r2cm::linefeed;
-
-				EXPECT_FALSE( stage.IsLock( 0, 0 ) );
-				EXPECT_FALSE( stage.IsLock( 1, 0 ) );
-				EXPECT_FALSE( stage.IsLock( 1, 1 ) );
-				EXPECT_FALSE( stage.IsLock( 0, 1 ) );
-			}
-
-			std::cout << r2cm::split;
-
 			return r2cm::eDoLeaveAction::Pause;
 		};
 	}
@@ -415,6 +383,66 @@ namespace test_p2048mini_stage
 				EXPECT_FALSE( stage.IsNewcomer( 1, 0 ) );
 				EXPECT_FALSE( stage.IsNewcomer( 1, 1 ) );
 				EXPECT_FALSE( stage.IsNewcomer( 0, 1 ) );
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eDoLeaveAction::Pause;
+		};
+	}
+
+
+
+	r2cm::TitleFunctionT Reset::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Stage : Reset";
+		};
+	}
+	r2cm::DoFunctionT Reset::GetDoFunction() const
+	{
+		return []()->r2cm::eDoLeaveAction
+		{
+			std::cout << r2cm::split;
+
+			DECLARATION_MAIN( p2048mini::Stage stage( 3, 1 ) );
+
+			std::cout << r2cm::split;
+
+			{
+				PROCESS_MAIN( stage.Add( 0, 0, 7 ) );
+				EXPECT_EQ( 7, stage.GetNumber( 0, 0 ) );
+
+				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( stage.Lock( 1, 0 ) );
+				EXPECT_TRUE( stage.IsLock( 1, 0 ) );
+
+				std::cout << r2cm::linefeed;
+
+				PROCESS_MAIN( stage.SetNewcomer( 2, 0 ) );
+				EXPECT_TRUE( stage.IsNewcomer( 2, 0 ) );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				PROCESS_MAIN( stage.Reset() );
+			}
+
+			std::cout << r2cm::split;
+
+			{
+				EXPECT_NE( 7, stage.GetNumber( 0, 0 ) );
+
+				std::cout << r2cm::linefeed;
+
+				EXPECT_FALSE( stage.IsLock( 1, 0 ) );
+
+				std::cout << r2cm::linefeed;
+
+				EXPECT_FALSE( stage.IsNewcomer( 2, 0 ) );
 			}
 
 			std::cout << r2cm::split;

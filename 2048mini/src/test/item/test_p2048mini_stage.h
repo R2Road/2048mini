@@ -11,7 +11,7 @@ namespace test_p2048mini_stage
 		r2cm::DoFunctionT GetDoFunction() const override;
 	};
 
-	class Add_Remove_ClearAll : public r2cm::iItem
+	class Add_Remove : public r2cm::iItem
 	{
 	public:
 		r2cm::TitleFunctionT GetTitleFunction() const override;
@@ -40,6 +40,13 @@ namespace test_p2048mini_stage
 	};
 
 	class Newcomer : public r2cm::iItem
+	{
+	public:
+		r2cm::TitleFunctionT GetTitleFunction() const override;
+		r2cm::DoFunctionT GetDoFunction() const override;
+	};
+
+	class Reset : public r2cm::iItem
 	{
 	public:
 		r2cm::TitleFunctionT GetTitleFunction() const override;

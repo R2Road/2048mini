@@ -110,7 +110,7 @@ namespace test_p2048mini_gameprocessor
 
 						std::cout << r2cm::linefeed;
 
-						stage.ClearAll();
+						stage.Reset();
 						PROCESS_MAIN( stage.Add( pivot_point_1.GetX(), pivot_point_1.GetY(), 1 ) );
 						PROCESS_MAIN( stage.Add( pivot_point_2.GetX(), pivot_point_2.GetY(), 2 ) );
 						PROCESS_MAIN( stage.Add( center_point.GetX(), center_point.GetY(), 7 ) );
@@ -118,7 +118,7 @@ namespace test_p2048mini_gameprocessor
 
 						std::cout << r2cm::linefeed;
 
-						stage.ClearAll();
+						stage.Reset();
 
 						auto reverse_dir = move_dir;
 						reverse_dir.Rotate( true );

@@ -35,7 +35,7 @@ namespace p2048mini
 		return GetNumber( mGridIndexConverter.To_Linear( x, y ) );
 	}
 
-	void Stage::ClearAll()
+	void Stage::Reset()
 	{
 		mCurrentNumberCount = 0;
 		for( auto& cell : mContainer )

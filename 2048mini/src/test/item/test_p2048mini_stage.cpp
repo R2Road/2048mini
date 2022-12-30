@@ -130,7 +130,7 @@ namespace test_p2048mini_stage
 			{
 				std::cout << r2cm::tab << "+ Clear All" << r2cm::linefeed2;
 
-				PROCESS_MAIN( stage.ClearAll() );
+				PROCESS_MAIN( stage.Reset() );
 				EXPECT_EQ( 0, stage.GetNumber( 1, 1 ) );
 				EXPECT_EQ( 0, stage.GetNumber( 1, 2 ) );
 				EXPECT_EQ( 0, stage.GetNumber( 1, 3 ) );
@@ -342,7 +342,7 @@ namespace test_p2048mini_stage
 				PROCESS_MAIN( stage.Lock( 0, 1 ) );
 				PROCESS_MAIN( stage.Lock( 1, 1 ) );
 				PROCESS_MAIN( stage.Lock( 1, 0 ) );
-				PROCESS_MAIN( stage.ClearAll() );
+				PROCESS_MAIN( stage.Reset() );
 
 				std::cout << r2cm::linefeed;
 

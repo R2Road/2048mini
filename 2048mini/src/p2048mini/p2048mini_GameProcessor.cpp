@@ -15,7 +15,7 @@ namespace p2048mini
 
 	void GameProcessor::Reset()
 	{
-		mStage->ClearAll();
+		mStage->Reset();
 		mScore = 0u;
 		mSum4Merged = 0u;
 		mMaxNumber = 0u;

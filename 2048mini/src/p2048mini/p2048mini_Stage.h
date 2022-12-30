@@ -50,7 +50,7 @@ namespace p2048mini
 		//
 		//
 		//
-		void ClearAll();
+		void Reset();
 		void Add( const uint32_t linear_index, const uint32_t val );
 		void Add( const uint32_t x, const uint32_t y, const uint32_t val );
 		void Remove( const uint32_t x, const uint32_t y );

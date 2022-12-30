@@ -15,16 +15,16 @@
 
 namespace test_p2048mini_stageviewnode
 {
-	r2cm::iItem::TitleFunctionT Generate::GetTitleFunction() const
+	r2cm::TitleFunctionT Generate::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "StageViewNode : Generate";
 		};
 	}
-	r2cm::iItem::DoFunctionT Generate::GetDoFunction() const
+	r2cm::DoFunctionT Generate::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2cm::eDoLeaveAction
 		{
 			std::cout << r2cm::split;
 
@@ -49,22 +49,22 @@ namespace test_p2048mini_stageviewnode
 
 			std::cout << r2cm::split;
 
-			return r2cm::eItemLeaveAction::Pause;
+			return r2cm::eDoLeaveAction::Pause;
 		};
 	}
 
 
 
-	r2cm::iItem::TitleFunctionT Setup_Render::GetTitleFunction() const
+	r2cm::TitleFunctionT Setup_Render::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "StageViewNode : Setup And Render";
 		};
 	}
-	r2cm::iItem::DoFunctionT Setup_Render::GetDoFunction() const
+	r2cm::DoFunctionT Setup_Render::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2cm::eDoLeaveAction
 		{
 			std::cout << r2cm::split;
 
@@ -102,22 +102,22 @@ namespace test_p2048mini_stageviewnode
 
 			std::cout << r2cm::split;
 
-			return r2cm::eItemLeaveAction::Pause;
+			return r2cm::eDoLeaveAction::Pause;
 		};
 	}
 
 
 
-	r2cm::iItem::TitleFunctionT UpdateView::GetTitleFunction() const
+	r2cm::TitleFunctionT UpdateView::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "StageViewNode : UpdateView";
 		};
 	}
-	r2cm::iItem::DoFunctionT UpdateView::GetDoFunction() const
+	r2cm::DoFunctionT UpdateView::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2cm::eDoLeaveAction
 		{
 			std::cout << r2cm::split;
 
@@ -156,7 +156,7 @@ namespace test_p2048mini_stageviewnode
 
 			std::cout << r2cm::split;
 
-			return r2cm::eItemLeaveAction::Pause;
+			return r2cm::eDoLeaveAction::Pause;
 		};
 	}
 }

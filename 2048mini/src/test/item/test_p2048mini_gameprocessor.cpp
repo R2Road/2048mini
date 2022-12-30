@@ -36,16 +36,16 @@ namespace test_p2048mini_gameprocessor
 
 
 
-	r2cm::iItem::TitleFunctionT MoveReadyTest::GetTitleFunction() const
+	r2cm::TitleFunctionT MoveReadyTest::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "GameProcessor : Move Ready";
 		};
 	}
-	r2cm::iItem::DoFunctionT MoveReadyTest::GetDoFunction() const
+	r2cm::DoFunctionT MoveReadyTest::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2cm::eDoLeaveAction
 		{
 			std::cout << r2cm::split;
 
@@ -147,22 +147,22 @@ namespace test_p2048mini_gameprocessor
 
 			std::cout << r2cm::split;
 
-			return r2cm::eItemLeaveAction::None;
+			return r2cm::eDoLeaveAction::None;
 		};
 	}
 
 
 
-	r2cm::iItem::TitleFunctionT MoveTest::GetTitleFunction() const
+	r2cm::TitleFunctionT MoveTest::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "GameProcessor : Move";
 		};
 	}
-	r2cm::iItem::DoFunctionT MoveTest::GetDoFunction() const
+	r2cm::DoFunctionT MoveTest::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2cm::eDoLeaveAction
 		{
 			std::cout << r2cm::split;
 
@@ -226,22 +226,22 @@ namespace test_p2048mini_gameprocessor
 
 			std::cout << r2cm::split;
 
-			return r2cm::eItemLeaveAction::None;
+			return r2cm::eDoLeaveAction::None;
 		};
 	}
 
 
 
-	r2cm::iItem::TitleFunctionT MergeTest::GetTitleFunction() const
+	r2cm::TitleFunctionT MergeTest::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "GameProcessor : Merge";
 		};
 	}
-	r2cm::iItem::DoFunctionT MergeTest::GetDoFunction() const
+	r2cm::DoFunctionT MergeTest::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2cm::eDoLeaveAction
 		{
 			std::cout << r2cm::split;
 
@@ -313,22 +313,22 @@ namespace test_p2048mini_gameprocessor
 
 			std::cout << r2cm::split;
 
-			return r2cm::eItemLeaveAction::Pause;
+			return r2cm::eDoLeaveAction::Pause;
 		};
 	}
 
 
 
-	r2cm::iItem::TitleFunctionT MovableCheck::GetTitleFunction() const
+	r2cm::TitleFunctionT MovableCheck::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "GameProcessor : Movable Check";
 		};
 	}
-	r2cm::iItem::DoFunctionT MovableCheck::GetDoFunction() const
+	r2cm::DoFunctionT MovableCheck::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2cm::eDoLeaveAction
 		{
 			std::cout << r2cm::split;
 
@@ -396,7 +396,7 @@ namespace test_p2048mini_gameprocessor
 
 			std::cout << r2cm::split;
 
-			return r2cm::eItemLeaveAction::Pause;
+			return r2cm::eDoLeaveAction::Pause;
 		};
 	}
 }

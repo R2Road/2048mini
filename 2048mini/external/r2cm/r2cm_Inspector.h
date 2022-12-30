@@ -85,6 +85,8 @@ do {																											\
 	{																											\
 		R2CM_DEBUG_BREAK;																						\
 		printf( "\x1B[91m" "[FAILED]" "\033[0m" " EXPECT_GT( %s > %s )\n", #condition_1, #condition_2 );		\
+		OUTPUT_VALUE( ( condition_1 ) );																		\
+		OUTPUT_VALUE( ( condition_2 ) );																		\
 	}																											\
 } while( false )
 
@@ -98,6 +100,8 @@ do {																											\
 	{																											\
 		R2CM_DEBUG_BREAK;																						\
 		printf( "\x1B[91m" "[FAILED]" "\033[0m" " EXPECT_LT( %s < %s )\n", #condition_1, #condition_2 );		\
+		OUTPUT_VALUE( ( condition_1 ) );																		\
+		OUTPUT_VALUE( ( condition_2 ) );																		\
 	}																											\
 } while( false )
 
@@ -111,6 +115,8 @@ do {																											\
 	{																											\
 		R2CM_DEBUG_BREAK;																						\
 		printf( "\x1B[91m" "[FAILED]" "\033[0m" " EXPECT_GE( %s >= %s )\n", #condition_1, #condition_2 );		\
+		OUTPUT_VALUE( ( condition_1 ) );																		\
+		OUTPUT_VALUE( ( condition_2 ) );																		\
 	}																											\
 } while( false )
 
@@ -124,6 +130,8 @@ do {																											\
 	{																											\
 		R2CM_DEBUG_BREAK;																						\
 		printf( "\x1B[91m" "[FAILED]" "\033[0m" " EXPECT_LE( %s <= %s )\n", #condition_1, #condition_2 );		\
+		OUTPUT_VALUE( ( condition_1 ) );																		\
+		OUTPUT_VALUE( ( condition_2 ) );																		\
 	}																											\
 } while( false )
 

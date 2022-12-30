@@ -1,19 +1,21 @@
 #pragma once
 
-#include "r2cm_Menu.h"
+#include "r2cm_MenuProcessor.h"
 
 namespace r2cm
 {
+	class iMenu;
+
 	class Director
 	{
 	public:
 		Director();
 
-		void Setup( MenuUp menu );
+		void Setup( const iMenu& menu );
 
 		void Run();
 
 	private:
-		MenuUp mMenu;
+		MenuProcessor mMenuProcessor;
 	};
 }

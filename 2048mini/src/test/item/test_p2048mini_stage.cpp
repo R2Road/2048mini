@@ -33,16 +33,16 @@ namespace test_p2048mini_stage
 
 
 
-	r2cm::iItem::TitleFunctionT Generate::GetTitleFunction() const
+	r2cm::TitleFunctionT Generate::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Stage : Generate";
 		};
 	}
-	r2cm::iItem::DoFunctionT Generate::GetDoFunction() const
+	r2cm::DoFunctionT Generate::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2cm::eDoLeaveAction
 		{
 			std::cout << r2cm::split;
 
@@ -72,22 +72,22 @@ namespace test_p2048mini_stage
 
 			std::cout << r2cm::split;
 
-			return r2cm::eItemLeaveAction::Pause;
+			return r2cm::eDoLeaveAction::Pause;
 		};
 	}
 
 
 
-	r2cm::iItem::TitleFunctionT Add_Remove_ClearAll::GetTitleFunction() const
+	r2cm::TitleFunctionT Add_Remove_ClearAll::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Stage : Add, Remove, ClearAll";
 		};
 	}
-	r2cm::iItem::DoFunctionT Add_Remove_ClearAll::GetDoFunction() const
+	r2cm::DoFunctionT Add_Remove_ClearAll::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2cm::eDoLeaveAction
 		{
 			std::cout << r2cm::split;
 
@@ -140,22 +140,22 @@ namespace test_p2048mini_stage
 
 			std::cout << r2cm::split;
 
-			return r2cm::eItemLeaveAction::Pause;
+			return r2cm::eDoLeaveAction::Pause;
 		};
 	}
 
 
 
-	r2cm::iItem::TitleFunctionT IsIn::GetTitleFunction() const
+	r2cm::TitleFunctionT IsIn::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Stage : IsIn";
 		};
 	}
-	r2cm::iItem::DoFunctionT IsIn::GetDoFunction() const
+	r2cm::DoFunctionT IsIn::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2cm::eDoLeaveAction
 		{
 			std::cout << r2cm::split;
 
@@ -187,22 +187,22 @@ namespace test_p2048mini_stage
 
 			std::cout << r2cm::split;
 
-			return r2cm::eItemLeaveAction::Pause;
+			return r2cm::eDoLeaveAction::Pause;
 		};
 	}
 
 
 
-	r2cm::iItem::TitleFunctionT NumberCount_EmptyCount_IsFull::GetTitleFunction() const
+	r2cm::TitleFunctionT NumberCount_EmptyCount_IsFull::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Stage : NumberCount, EmptyCount, IsFull";
 		};
 	}
-	r2cm::iItem::DoFunctionT NumberCount_EmptyCount_IsFull::GetDoFunction() const
+	r2cm::DoFunctionT NumberCount_EmptyCount_IsFull::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2cm::eDoLeaveAction
 		{
 			std::cout << r2cm::split;
 
@@ -270,22 +270,22 @@ namespace test_p2048mini_stage
 
 			std::cout << r2cm::split;
 
-			return r2cm::eItemLeaveAction::Pause;
+			return r2cm::eDoLeaveAction::Pause;
 		};
 	}
 
 
 
-	r2cm::iItem::TitleFunctionT Lock::GetTitleFunction() const
+	r2cm::TitleFunctionT Lock::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Stage : Lock";
 		};
 	}
-	r2cm::iItem::DoFunctionT Lock::GetDoFunction() const
+	r2cm::DoFunctionT Lock::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2cm::eDoLeaveAction
 		{
 			std::cout << r2cm::split;
 
@@ -354,22 +354,22 @@ namespace test_p2048mini_stage
 
 			std::cout << r2cm::split;
 
-			return r2cm::eItemLeaveAction::Pause;
+			return r2cm::eDoLeaveAction::Pause;
 		};
 	}
 
 
 
-	r2cm::iItem::TitleFunctionT Newcomer::GetTitleFunction() const
+	r2cm::TitleFunctionT Newcomer::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Stage : Newcomer";
 		};
 	}
-	r2cm::iItem::DoFunctionT Newcomer::GetDoFunction() const
+	r2cm::DoFunctionT Newcomer::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2cm::eDoLeaveAction
 		{
 			std::cout << r2cm::split;
 
@@ -438,7 +438,7 @@ namespace test_p2048mini_stage
 
 			std::cout << r2cm::split;
 
-			return r2cm::eItemLeaveAction::Pause;
+			return r2cm::eDoLeaveAction::Pause;
 		};
 	}
 }

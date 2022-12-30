@@ -14,30 +14,31 @@
 
 #include "test/TestMenu.h"
 
-const char* DevelopmentMenu::GetTitle()
+r2cm::TitleFunctionT DevelopmentMenu::GetTitleFunction() const
 {
-	static const std::string ret =
-		std::string( "Development Menu" )
-		+ " : <" + r2cm::VersionInfo.String4Version + ">"
-		+ " : <" + r2base::VersionInfo.String4Version + ">"
-		+ " : <" + p2048mini::VersionInfo.String4Version + ">";
-	return ret.c_str();
+	return []()->const char*
+	{
+		static const std::string ret =
+			std::string( "Development Menu" )
+			+ " : <" + r2cm::VersionInfo.String4Version + ">"
+			+ " : <" + r2base::VersionInfo.String4Version + ">"
+			+ " : <" + p2048mini::VersionInfo.String4Version + ">";
+		return ret.c_str();
+	};
 }
-
-r2cm::MenuUp DevelopmentMenu::Create( r2cm::Director& director )
+r2cm::DescriptionFunctionT DevelopmentMenu::GetDescriptionFunction() const
 {
-	r2cm::MenuUp ret( new ( std::nothrow ) r2cm::Menu(
-		director
-		, GetTitle()
-		, p2048mini::VersionInfo.String4SubjectOfAProject
-	) );
-
+	return []()->const char* { return ""; };
+}
+r2cm::WriteFunctionT DevelopmentMenu::GetWriteFunction() const
+{
+	return []( r2cm::MenuProcessor* ret )
 	{
 		ret->AddItem(
 			'1'
 			, r2cm::eColor::FG_White
 			, []()->const char* { return "Test"; }
-			, []()->r2cm::eItemLeaveAction
+			, []()->r2cm::eDoLeaveAction
 			{
 				// 2022.04.11 by R2Road
 				// 인자로 넘어온 director 를 사용해도 되지만 아래 코드와의 일관성을 위해 새 r2cm::Director를 만들어 돌린다.
@@ -46,14 +47,14 @@ r2cm::MenuUp DevelopmentMenu::Create( r2cm::Director& director )
 				// Setup
 				//
 				r2cm::Director director;
-				director.Setup( TestMenu::Create( director ) );
+				director.Setup( TestMenu() );
 
 				//
 				// Process
 				//
 				director.Run();
 
-				return r2cm::eItemLeaveAction::None;
+				return r2cm::eDoLeaveAction::None;
 			}
 		);
 
@@ -67,7 +68,7 @@ r2cm::MenuUp DevelopmentMenu::Create( r2cm::Director& director )
 			32
 			, r2cm::eColor::BG_Blue
 			, []()->const char* { return "2048mini"; }
-			, []()->r2cm::eItemLeaveAction
+			, []()->r2cm::eDoLeaveAction
 			{
 				r2cm::WindowUtility::Resize( 562, 800 );
 				r2cm::WindowUtility::Move( 0, 0 );
@@ -98,7 +99,7 @@ r2cm::MenuUp DevelopmentMenu::Create( r2cm::Director& director )
 				r2cm::WindowUtility::MaximizeButtonEnable( true );
 				r2cm::WindowUtility::ResizingByDraggingEnable( true );
 
-				return r2cm::eItemLeaveAction::None;
+				return r2cm::eDoLeaveAction::None;
 			}
 		);
 
@@ -110,12 +111,10 @@ r2cm::MenuUp DevelopmentMenu::Create( r2cm::Director& director )
 			27
 			, r2cm::eColor::FG_White
 			, []()->const char* { return "Exit"; }
-			, []()->r2cm::eItemLeaveAction
+			, []()->r2cm::eDoLeaveAction
 			{
-				return r2cm::eItemLeaveAction::Exit;
+				return r2cm::eDoLeaveAction::Exit;
 			}
 		);
-	}
-
-	return ret;
+	};
 }

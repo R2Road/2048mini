@@ -1,132 +1,63 @@
 #pragma once
 
-#include <iostream>
+#include "r2cm_ColorModifier.h"
 
 namespace r2cm
 {
-	enum eColor
-	{
-		None = 0,
-
-		FG_Black = 30,
-		FG_Red,
-		FG_Green,
-		FG_Yellow,
-		FG_Blue,
-		FG_Purple,
-		FG_Aqua,
-		FG_White,
-
-		FG_Gray = 90,
-		FG_LightLed,
-		FG_LightGreen,
-		FG_LightYellow,
-		FG_LightBlue,
-		FG_LightPurple,
-		FG_LightAqua,
-		FG_BrightWhite,
-
-		BG_Black = 40,
-		BG_Red,
-		BG_Green,
-		BG_Yellow,
-		BG_Blue,
-		BG_Purple,
-		BG_Aqua,
-		BG_White,
-
-		BG_Gray = 100,
-		BG_LightLed,
-		BG_LightGreen,
-		BG_LightYellow,
-		BG_LightBlue,
-		BG_LightPurple,
-		BG_LightAqua,
-		BG_BrightWhite,
-	};
-	//
-	// REF : https://stackoverflow.com/questions/2616906/how-do-i-output-coloured-text-to-a-linux-terminal
-	// 1과 2를 생각해 놓고 위 REF에 있는 3에 도달하지 못했다. Link를 남기는 것이 어떤 의미로는 굴욕이구만. - 2022.05.24 by R2Road
-	//
-	class ColorModifier
-	{
-	public:
-		ColorModifier() : mColor( eColor::None ) {}
-		ColorModifier( const eColor color_fg ) : mColor( color_fg ) {}
-
-		friend std::ostream& operator<<( std::ostream& os, const ColorModifier& mf )
-		{
-			//
-			// 2022.07.10 by R
-			// - std::hex 등이 쓰이면 " << mf.mColor " 가 정상작동하지 않는다.
-			// - 문자 변환해서 기록하면 해결되지만 성능이 신경쓰이므로 방치하기로 하자.
-			//
-
-			static const char* header = "\033[";
-			static const char* tail = "m";
-			return os << header << mf.mColor << tail;
-		}
-
-	private:
-		eColor mColor;
-	};
-	using clm = ColorModifier;
-
-
 	template<class _Elem, class _Traits>
-	inline std::basic_ostream<_Elem, _Traits>& linefeed( std::basic_ostream<_Elem, _Traits>& _Ostr )
+	inline std::basic_ostream<_Elem, _Traits>& linefeed( std::basic_ostream<_Elem, _Traits>& os )
 	{
 		// insert newline
-		_Ostr.put( _Ostr.widen( '\n' ) );
-		return ( _Ostr );
+		os.put( os.widen( '\n' ) );
+		return ( os );
 	}
 
 	template<class _Elem, class _Traits>
-	inline std::basic_ostream<_Elem, _Traits>& linefeed2( std::basic_ostream<_Elem, _Traits>& _Ostr )
+	inline std::basic_ostream<_Elem, _Traits>& linefeed2( std::basic_ostream<_Elem, _Traits>& os )
 	{
-		return _Ostr << r2cm::linefeed << r2cm::linefeed;
+		return os << r2cm::linefeed << r2cm::linefeed;
 	}
 
 	template<class _Elem, class _Traits>
-	inline std::basic_ostream<_Elem, _Traits>& linefeed3( std::basic_ostream<_Elem, _Traits>& _Ostr )
+	inline std::basic_ostream<_Elem, _Traits>& linefeed3( std::basic_ostream<_Elem, _Traits>& os )
 	{
-		return _Ostr << r2cm::linefeed << r2cm::linefeed << r2cm::linefeed;
+		return os << r2cm::linefeed << r2cm::linefeed << r2cm::linefeed;
 	}
 
 
 
 	template<class _Elem, class _Traits>
-	inline std::basic_ostream<_Elem, _Traits>& split( std::basic_ostream<_Elem, _Traits>& _Ostr )
+	inline std::basic_ostream<_Elem, _Traits>& split( std::basic_ostream<_Elem, _Traits>& os )
 	{
-		_Ostr << r2cm::linefeed << "====================================================================" << r2cm::linefeed << r2cm::linefeed;
-		return ( _Ostr );
+		os << r2cm::linefeed << "====================================================================" << r2cm::linefeed << r2cm::linefeed;
+		return ( os );
 	}
 
 	template<class _Elem, class _Traits>
-	inline std::basic_ostream<_Elem, _Traits>& tab( std::basic_ostream<_Elem, _Traits>& _Ostr )
+	inline std::basic_ostream<_Elem, _Traits>& tab( std::basic_ostream<_Elem, _Traits>& os )
 	{
-		_Ostr.put( _Ostr.widen( '\t' ) );
-		return ( _Ostr );
+		os.put( os.widen( '\t' ) );
+		return ( os );
 	}
 
 	template<class _Elem, class _Traits>
-	inline std::basic_ostream<_Elem, _Traits>& tab2( std::basic_ostream<_Elem, _Traits>& _Ostr )
+	inline std::basic_ostream<_Elem, _Traits>& tab2( std::basic_ostream<_Elem, _Traits>& os )
 	{
-		_Ostr << r2cm::tab << r2cm::tab;
-		return ( _Ostr );
+		os << r2cm::tab << r2cm::tab;
+		return ( os );
 	}
 
 	template<class _Elem, class _Traits>
-	inline std::basic_ostream<_Elem, _Traits>& tab3( std::basic_ostream<_Elem, _Traits>& _Ostr )
+	inline std::basic_ostream<_Elem, _Traits>& tab3( std::basic_ostream<_Elem, _Traits>& os )
 	{
-		_Ostr << r2cm::tab << r2cm::tab << r2cm::tab;
-		return ( _Ostr );
+		os << r2cm::tab << r2cm::tab << r2cm::tab;
+		return ( os );
 	}
 
 	template<class _Elem, class _Traits>
-	inline std::basic_ostream<_Elem, _Traits>& tab4( std::basic_ostream<_Elem, _Traits>& _Ostr )
+	inline std::basic_ostream<_Elem, _Traits>& tab4( std::basic_ostream<_Elem, _Traits>& os )
 	{
-		_Ostr << r2cm::tab << r2cm::tab << r2cm::tab << r2cm::tab;
-		return ( _Ostr );
+		os << r2cm::tab << r2cm::tab << r2cm::tab << r2cm::tab;
+		return ( os );
 	}
 }

@@ -12,16 +12,16 @@
 
 namespace test_p2048mini_numbernode
 {
-	r2cm::iItem::TitleFunctionT Generate::GetTitleFunction() const
+	r2cm::TitleFunctionT Generate::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "NumberNode : Generate";
 		};
 	}
-	r2cm::iItem::DoFunctionT Generate::GetDoFunction() const
+	r2cm::DoFunctionT Generate::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2cm::eDoLeaveAction
 		{
 			std::cout << r2cm::split;
 
@@ -46,22 +46,22 @@ namespace test_p2048mini_numbernode
 
 			std::cout << r2cm::split;
 
-			return r2cm::eItemLeaveAction::Pause;
+			return r2cm::eDoLeaveAction::Pause;
 		};
 	}
 
 
 
-	r2cm::iItem::TitleFunctionT SetNumber::GetTitleFunction() const
+	r2cm::TitleFunctionT SetNumber::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "NumberNode : SetNumber";
 		};
 	}
-	r2cm::iItem::DoFunctionT SetNumber::GetDoFunction() const
+	r2cm::DoFunctionT SetNumber::GetDoFunction() const
 	{
-		return []()->r2cm::eItemLeaveAction
+		return []()->r2cm::eDoLeaveAction
 		{
 			std::cout << r2cm::split;
 
@@ -106,7 +106,7 @@ namespace test_p2048mini_numbernode
 
 			std::cout << r2cm::split;
 
-			return r2cm::eItemLeaveAction::Pause;
+			return r2cm::eDoLeaveAction::Pause;
 		};
 	}
 }

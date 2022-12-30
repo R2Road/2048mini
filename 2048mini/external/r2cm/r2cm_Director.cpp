@@ -1,19 +1,17 @@
 #include "r2cm_Director.h"
 
 #include <conio.h>
-#include <utility>
 
-#include "r2cm_iItem.h"
-#include "r2cm_ostream.h"
+#include "r2cm_iMenu.h"
 
 namespace r2cm
 {
-	Director::Director() : mMenu()
+	Director::Director() : mMenuProcessor( *this )
 	{}
 
-	void Director::Setup( MenuUp menu )
+	void Director::Setup( const iMenu& menu )
 	{
-		mMenu = std::move( menu );
+		mMenuProcessor.Reset( menu.GetTitleFunction(), menu.GetDescriptionFunction(), menu.GetWriteFunction() );
 	}
 
 	void Director::Run()
@@ -23,22 +21,22 @@ namespace r2cm
 		{
 			system( "cls" );
 
-			mMenu->ShowTitle();
-			mMenu->ShowDescription();
-			mMenu->ShowItems();
+			mMenuProcessor.ShowTitle();
+			mMenuProcessor.ShowDescription();
+			mMenuProcessor.ShowItems();
 			input = _getch();
 
 			system( "cls" );
 
-			switch( mMenu->Do( input ) )
+			switch( mMenuProcessor.Do( input ) )
 			{
-			//case eItemLeaveAction::None: break;
+			//case eDoLeaveAction::None: break;
 
-			case eItemLeaveAction::Pause:
+			case eDoLeaveAction::Pause:
 				system( "pause" );				
 				break;
 
-			case eItemLeaveAction::Exit:
+			case eDoLeaveAction::Exit:
 				return;
 			}
 		}

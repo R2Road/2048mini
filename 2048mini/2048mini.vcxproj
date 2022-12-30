@@ -60,7 +60,7 @@
     <ClCompile Include="external\r2bix\r2utility_InputUtil.cpp" />
     <ClCompile Include="external\r2bix\r2utility_StringBuilder.cpp" />
     <ClCompile Include="external\r2cm\r2cm_Director.cpp" />
-    <ClCompile Include="external\r2cm\r2cm_Menu.cpp" />
+    <ClCompile Include="external\r2cm\r2cm_MenuProcessor.cpp" />
     <ClCompile Include="external\r2cm\r2cm_PrintBinary.cpp" />
     <ClCompile Include="external\r2cm\r2cm_PrintFile.cpp" />
     <ClCompile Include="external\r2cm\r2cm_StopWatch.cpp" />
@@ -138,10 +138,13 @@
     <ClInclude Include="external\r2bix\r2render_TextureFrame.h" />
     <ClInclude Include="external\r2bix\r2utility_InputUtil.h" />
     <ClInclude Include="external\r2bix\r2utility_StringBuilder.h" />
+    <ClInclude Include="external\r2cm\r2cm_ColorModifier.h" />
     <ClInclude Include="external\r2cm\r2cm_Director.h" />
     <ClInclude Include="external\r2cm\r2cm_iItem.h" />
+    <ClInclude Include="external\r2cm\r2cm_iMenu.h" />
     <ClInclude Include="external\r2cm\r2cm_Inspector.h" />
-    <ClInclude Include="external\r2cm\r2cm_Menu.h" />
+    <ClInclude Include="external\r2cm\r2cm_MenuConstant.h" />
+    <ClInclude Include="external\r2cm\r2cm_MenuProcessor.h" />
     <ClInclude Include="external\r2cm\r2cm_ostream.h" />
     <ClInclude Include="external\r2cm\r2cm_PrintBinary.h" />
     <ClInclude Include="external\r2cm\r2cm_PrintFile.h" />

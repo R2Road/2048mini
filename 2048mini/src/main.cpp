@@ -42,7 +42,7 @@ int main()
 	// Setup & Run
 	//
 	r2cm::Director director;
-	director.Setup( DevelopmentMenu::Create( director ) );
+	director.Setup( DevelopmentMenu() );
 	director.Run();
 
 #else

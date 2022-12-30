@@ -221,7 +221,7 @@
     <ClCompile Include="external\r2cm\r2cm_Director.cpp">
       <Filter>external\r2cm</Filter>
     </ClCompile>
-    <ClCompile Include="external\r2cm\r2cm_Menu.cpp">
+    <ClCompile Include="external\r2cm\r2cm_MenuProcessor.cpp">
       <Filter>external\r2cm</Filter>
     </ClCompile>
     <ClCompile Include="external\r2cm\r2cm_PrintBinary.cpp">
@@ -470,16 +470,31 @@
     <ClInclude Include="src\p2048mini\p2048mini_GameSceneComponent.h">
       <Filter>project_2048mini</Filter>
     </ClInclude>
+    <ClInclude Include="external\r2\r2_SingletonWithStaticVariable.h">
+      <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_NoneCopyable.h">
+      <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2cm\r2cm_ColorModifier.h">
+      <Filter>external\r2cm</Filter>
+    </ClInclude>
     <ClInclude Include="external\r2cm\r2cm_Director.h">
       <Filter>external\r2cm</Filter>
     </ClInclude>
     <ClInclude Include="external\r2cm\r2cm_iItem.h">
       <Filter>external\r2cm</Filter>
     </ClInclude>
+    <ClInclude Include="external\r2cm\r2cm_iMenu.h">
+      <Filter>external\r2cm</Filter>
+    </ClInclude>
     <ClInclude Include="external\r2cm\r2cm_Inspector.h">
       <Filter>external\r2cm</Filter>
     </ClInclude>
-    <ClInclude Include="external\r2cm\r2cm_Menu.h">
+    <ClInclude Include="external\r2cm\r2cm_MenuConstant.h">
+      <Filter>external\r2cm</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2cm\r2cm_MenuProcessor.h">
       <Filter>external\r2cm</Filter>
     </ClInclude>
     <ClInclude Include="external\r2cm\r2cm_ostream.h">
@@ -499,12 +514,6 @@
     </ClInclude>
     <ClInclude Include="external\r2cm\r2cm_WindowUtility.h">
       <Filter>external\r2cm</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2\r2_SingletonWithStaticVariable.h">
-      <Filter>external\r2</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2\r2_NoneCopyable.h">
-      <Filter>external\r2</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

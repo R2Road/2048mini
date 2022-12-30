@@ -40,8 +40,7 @@ namespace p2048mini
 		mCurrentNumberCount = 0;
 		for( auto& cell : mContainer )
 		{
-			cell.number = 0;
-			cell.merge_lock = false;
+			cell = Cell{};
 		}
 	}
 

@@ -30,7 +30,7 @@ r2cm::TitleFunctionT DevelopmentMenu::GetTitleFunction() const
 }
 r2cm::DescriptionFunctionT DevelopmentMenu::GetDescriptionFunction() const
 {
-	return []()->const char* { return ""; };
+	return []()->const char* { return p2048mini::VersionInfo.String4SubjectOfAProject; };
 }
 r2cm::WriteFunctionT DevelopmentMenu::GetWriteFunction() const
 {

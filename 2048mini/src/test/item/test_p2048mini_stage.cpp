@@ -419,25 +419,6 @@ namespace test_p2048mini_stage
 
 			std::cout << r2cm::split;
 
-			{
-				std::cout << r2cm::tab << "+ ClearAll" << r2cm::linefeed2;
-
-				PROCESS_MAIN( stage.Lock( 0, 0 ) );
-				PROCESS_MAIN( stage.Lock( 0, 1 ) );
-				PROCESS_MAIN( stage.Lock( 1, 1 ) );
-				PROCESS_MAIN( stage.Lock( 1, 0 ) );
-				PROCESS_MAIN( stage.ClearAll() );
-
-				std::cout << r2cm::linefeed;
-
-				EXPECT_FALSE( stage.IsLock( 0, 0 ) );
-				EXPECT_FALSE( stage.IsLock( 1, 0 ) );
-				EXPECT_FALSE( stage.IsLock( 1, 1 ) );
-				EXPECT_FALSE( stage.IsLock( 0, 1 ) );
-			}
-
-			std::cout << r2cm::split;
-
 			return r2cm::eDoLeaveAction::Pause;
 		};
 	}

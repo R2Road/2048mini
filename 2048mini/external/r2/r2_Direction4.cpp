@@ -56,4 +56,12 @@ namespace r2
 
 		return out_point;
 	}
+	r2::PointInt::ValueT Direction4::GetX() const
+	{
+		return GetPoint().GetX();
+	}
+	r2::PointInt::ValueT Direction4::GetY() const
+	{
+		return GetPoint().GetY();
+	}
 }

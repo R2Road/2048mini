@@ -99,7 +99,7 @@ namespace test_p2048mini_gameprocessor
 
 					{
 						{
-							PROCESS_MAIN( temp = r2::PointInt( center.GetX() * move_dir.GetPoint().GetX(), center.GetY() * move_dir.GetPoint().GetY() ) );
+							PROCESS_MAIN( temp = r2::PointInt( center.GetX() * move_dir.GetX(), center.GetY() * move_dir.GetY() ) );
 							OUTPUT_VALUE( temp );
 
 							PROCESS_MAIN( pivot_1 = center + temp );
@@ -110,7 +110,7 @@ namespace test_p2048mini_gameprocessor
 						std::cout << r2cm::linefeed;
 
 						{
-							PROCESS_MAIN( pivot_2.Set( pivot_1.GetX() * std::abs( move_dir.GetPoint().GetX() ), pivot_1.GetY() * std::abs( move_dir.GetPoint().GetY() ) ) );
+							PROCESS_MAIN( pivot_2.Set( pivot_1.GetX() * std::abs( move_dir.GetX() ), pivot_1.GetY() * std::abs( move_dir.GetY() ) ) );
 						}
 
 						std::cout << r2cm::linefeed;
@@ -200,7 +200,7 @@ namespace test_p2048mini_gameprocessor
 					if( bRun )
 					{
 						{
-							PROCESS_MAIN( pivot_point_1 = center_point + r2::PointInt( center_point.GetX() * move_dir.GetPoint().GetX(), center_point.GetY() * move_dir.GetPoint().GetY() ) );
+							PROCESS_MAIN( pivot_point_1 = center_point + r2::PointInt( center_point.GetX() * move_dir.GetX(), center_point.GetY() * move_dir.GetY() ) );
 							PROCESS_MAIN( pivot_point_1.SetX( std::clamp( pivot_point_1.GetX(), 0, static_cast<int32_t>( stage.GetMaxX() ) ) ) );
 							PROCESS_MAIN( pivot_point_1.SetY( std::clamp( pivot_point_1.GetY(), 0, static_cast<int32_t>( stage.GetMaxY() ) ) ) );
 						}
@@ -208,7 +208,7 @@ namespace test_p2048mini_gameprocessor
 						std::cout << r2cm::linefeed;
 
 						{
-							PROCESS_MAIN( pivot_point_2.Set( pivot_point_1.GetX() * std::abs( move_dir.GetPoint().GetX() ), pivot_point_1.GetY() * std::abs( move_dir.GetPoint().GetY() ) ) );
+							PROCESS_MAIN( pivot_point_2.Set( pivot_point_1.GetX() * std::abs( move_dir.GetX() ), pivot_point_1.GetY() * std::abs( move_dir.GetY() ) ) );
 						}
 
 						std::cout << r2cm::linefeed;
@@ -232,7 +232,7 @@ namespace test_p2048mini_gameprocessor
 							{
 								for( uint32_t x = 0; stage.GetWidth() > x; ++x )
 								{
-									r2::PointInt temp_point( x * std::abs( move_dir.GetPoint().GetX() ), y * std::abs( move_dir.GetPoint().GetY() ) );
+									r2::PointInt temp_point( x * std::abs( move_dir.GetX() ), y * std::abs( move_dir.GetY() ) );
 
 									if( pivot_point_2.GetX() == temp_point.GetX() && pivot_point_2.GetY() == temp_point.GetY() )
 									{

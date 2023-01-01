@@ -30,6 +30,8 @@ namespace r2
 		void Rotate( const bool rotate_right );
 
 		r2::PointInt GetPoint() const;
+		r2::PointInt::ValueT GetX() const;
+		r2::PointInt::ValueT GetY() const;
 
 	private:
 		eState mState;

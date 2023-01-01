@@ -54,9 +54,9 @@ namespace test_p2048mini_gameprocessor
 			std::cout << r2cm::split;
 
 			DECLARATION_MAIN( r2::Direction4 move_dir );
-			DECLARATION_MAIN( const r2::PointInt center_point( stage.GetWidth() / 2, stage.GetHeight() / 2 ) );
-			DECLARATION_MAIN( r2::PointInt pivot_point_1 );
-			DECLARATION_MAIN( r2::PointInt pivot_point_2 );
+			DECLARATION_MAIN( const r2::PointInt center( stage.GetWidth() / 2, stage.GetHeight() / 2 ) );
+			DECLARATION_MAIN( r2::PointInt pivot_1 );
+			DECLARATION_MAIN( r2::PointInt pivot_2 );
 
 			std::cout << r2cm::split;
 
@@ -90,23 +90,23 @@ namespace test_p2048mini_gameprocessor
 
 					{
 						{
-							PROCESS_MAIN( pivot_point_1 = center_point + r2::PointInt( center_point.GetX() * move_dir.GetPoint().GetX(), center_point.GetY() * move_dir.GetPoint().GetY() ) );
-							PROCESS_MAIN( pivot_point_1.SetX( std::clamp( pivot_point_1.GetX(), 0, static_cast<int32_t>( stage.GetMaxX() ) ) ) );
-							PROCESS_MAIN( pivot_point_1.SetY( std::clamp( pivot_point_1.GetY(), 0, static_cast<int32_t>( stage.GetMaxY() ) ) ) );
+							PROCESS_MAIN( pivot_1 = center + r2::PointInt( center.GetX() * move_dir.GetPoint().GetX(), center.GetY() * move_dir.GetPoint().GetY() ) );
+							PROCESS_MAIN( pivot_1.SetX( std::clamp( pivot_1.GetX(), 0, static_cast<int32_t>( stage.GetMaxX() ) ) ) );
+							PROCESS_MAIN( pivot_1.SetY( std::clamp( pivot_1.GetY(), 0, static_cast<int32_t>( stage.GetMaxY() ) ) ) );
 						}
 
 						std::cout << r2cm::linefeed;
 
 						{
-							PROCESS_MAIN( pivot_point_2.Set( pivot_point_1.GetX() * std::abs( move_dir.GetPoint().GetX() ), pivot_point_1.GetY() * std::abs( move_dir.GetPoint().GetY() ) ) );
+							PROCESS_MAIN( pivot_2.Set( pivot_1.GetX() * std::abs( move_dir.GetPoint().GetX() ), pivot_1.GetY() * std::abs( move_dir.GetPoint().GetY() ) ) );
 						}
 
 						std::cout << r2cm::linefeed;
 
 						stage.Reset();
-						PROCESS_MAIN( stage.Add( pivot_point_1.GetX(), pivot_point_1.GetY(), 1 ) );
-						PROCESS_MAIN( stage.Add( pivot_point_2.GetX(), pivot_point_2.GetY(), 2 ) );
-						PROCESS_MAIN( stage.Add( center_point.GetX(), center_point.GetY(), 7 ) );
+						PROCESS_MAIN( stage.Add( pivot_1.GetX(), pivot_1.GetY(), 1 ) );
+						PROCESS_MAIN( stage.Add( pivot_2.GetX(), pivot_2.GetY(), 2 ) );
+						PROCESS_MAIN( stage.Add( center.GetX(), center.GetY(), 7 ) );
 					}
 
 					PROCESS_MAIN( PrintStage( stage ) );

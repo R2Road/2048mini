@@ -34,10 +34,11 @@ r2cm::WriteFunctionT TestMenu::GetWriteFunction() const
 		ret->AddLineFeed();
 
 		ret->AddItem( 'q', test_p2048mini_gameprocessor::MoveReady_Pivot_1() );
-		ret->AddItem( 'w', test_p2048mini_gameprocessor::MoveReadyTest() );
-		ret->AddItem( 'e', test_p2048mini_gameprocessor::MoveTest() );
-		ret->AddItem( 'r', test_p2048mini_gameprocessor::MergeTest() );
-		ret->AddItem( 't', test_p2048mini_gameprocessor::MovableCheck() );
+		ret->AddItem( 'w', test_p2048mini_gameprocessor::MoveReady_Pivot_2() );
+		ret->AddItem( 'e', test_p2048mini_gameprocessor::MoveReadyTest() );
+		ret->AddItem( 'r', test_p2048mini_gameprocessor::MoveTest() );
+		ret->AddItem( 't', test_p2048mini_gameprocessor::MergeTest() );
+		ret->AddItem( 'y', test_p2048mini_gameprocessor::MovableCheck() );
 
 		ret->AddLineFeed();
 

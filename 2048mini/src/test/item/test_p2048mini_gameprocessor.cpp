@@ -62,6 +62,103 @@ namespace test_p2048mini_gameprocessor
 			DECLARATION_MAIN( const r2::PointInt center( stage.GetWidth() / 2, stage.GetHeight() / 2 ) );
 			OUTPUT_VALUE( center );
 			DECLARATION_MAIN( r2::PointInt pivot_1 );
+			DECLARATION_MAIN( r2::PointInt temp );
+
+			std::cout << r2cm::split;
+
+			{
+				const auto pivot_cursor_point = r2cm::WindowUtility::GetCursorPoint();
+				int input = 0;
+				do
+				{
+
+					r2cm::WindowUtility::MoveCursorPointWithClearBuffer( pivot_cursor_point );
+
+					switch( input )
+					{
+					case 97: // L
+						PROCESS_MAIN( move_dir.SetState( r2::Direction4::eState::Left ) );
+						break;
+					case 100: // R
+						PROCESS_MAIN( move_dir.SetState( r2::Direction4::eState::Right ) );
+						break;
+					case 119: // U
+						PROCESS_MAIN( move_dir.SetState( r2::Direction4::eState::Down ) ); // swap D 4 ez look
+						break;
+					case 115: // D
+						PROCESS_MAIN( move_dir.SetState( r2::Direction4::eState::Up ) ); // swap U 4 ez look
+						break;
+
+					default:
+						PROCESS_MAIN( move_dir.SetState( r2::Direction4::eState::Up ) );
+						break;
+					}
+
+					std::cout << r2cm::linefeed;
+
+					{
+						{
+							PROCESS_MAIN( temp = r2::PointInt( center.GetX() * move_dir.GetX(), center.GetY() * move_dir.GetY() ) );
+							OUTPUT_VALUE( temp );
+
+							std::cout << r2cm::linefeed;
+
+							PROCESS_MAIN( pivot_1 = center + temp );
+							OUTPUT_VALUE( pivot_1 );
+
+							std::cout << r2cm::linefeed;
+
+							PROCESS_MAIN( pivot_1.SetX( std::clamp( pivot_1.GetX(), 0, static_cast<int32_t>( stage.GetMaxX() ) ) ) );
+							PROCESS_MAIN( pivot_1.SetY( std::clamp( pivot_1.GetY(), 0, static_cast<int32_t>( stage.GetMaxY() ) ) ) );
+							OUTPUT_VALUE( pivot_1 );
+						}
+
+						std::cout << r2cm::linefeed;
+
+						stage.Reset();
+						PROCESS_MAIN( stage.Add( center.GetX(), center.GetY(), 7 ) );
+						PROCESS_MAIN( stage.Add( pivot_1.GetX(), pivot_1.GetY(), 1 ) );
+					}
+
+					PROCESS_MAIN( PrintStage( stage ) );
+
+					std::cout << r2cm::linefeed;
+
+					std::cout << "Press [W, A, S, D]";
+					input = _getch();
+
+				} while( 27 != input );
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eDoLeaveAction::None;
+		};
+	}
+
+
+
+	r2cm::TitleFunctionT MoveReady_Pivot_2::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "GameProcessor : Move Ready - Pivot 2";
+		};
+	}
+	r2cm::DoFunctionT MoveReady_Pivot_2::GetDoFunction() const
+	{
+		return []()->r2cm::eDoLeaveAction
+		{
+			std::cout << r2cm::split;
+
+			DECLARATION_MAIN( p2048mini::Stage stage( 4, 4 ) );
+
+			std::cout << r2cm::split;
+
+			DECLARATION_MAIN( r2::Direction4 move_dir );
+			DECLARATION_MAIN( const r2::PointInt center( stage.GetWidth() / 2, stage.GetHeight() / 2 ) );
+			OUTPUT_VALUE( center );
+			DECLARATION_MAIN( r2::PointInt pivot_1 );
 			DECLARATION_MAIN( r2::PointInt pivot_2 );
 			DECLARATION_MAIN( r2::PointInt temp );
 

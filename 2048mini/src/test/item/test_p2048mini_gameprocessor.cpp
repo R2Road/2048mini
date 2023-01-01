@@ -98,6 +98,10 @@ namespace test_p2048mini_gameprocessor
 
 					{
 						{
+							OUTPUT_NOTE( "center를 입력 방향의 끝으로 보내자" );
+
+							std::cout << r2cm::linefeed;
+
 							PROCESS_MAIN( temp = r2::PointInt( center.GetX() * move_dir.GetX(), center.GetY() * move_dir.GetY() ) );
 							OUTPUT_VALUE( temp );
 

@@ -34,6 +34,11 @@ namespace test_p2048mini_gameprocessor
 		}
 	}
 
+	std::ostream& operator<<( std::ostream& o, const r2::PointInt& value )
+	{
+		return o << "x : " << value.GetX() << "   " "y : " << value.GetY() << r2cm::linefeed;
+	}
+
 
 
 	r2cm::TitleFunctionT MoveReady_Pivot_1::GetTitleFunction() const
@@ -55,8 +60,10 @@ namespace test_p2048mini_gameprocessor
 
 			DECLARATION_MAIN( r2::Direction4 move_dir );
 			DECLARATION_MAIN( const r2::PointInt center( stage.GetWidth() / 2, stage.GetHeight() / 2 ) );
+			OUTPUT_VALUE( center );
 			DECLARATION_MAIN( r2::PointInt pivot_1 );
 			DECLARATION_MAIN( r2::PointInt pivot_2 );
+			DECLARATION_MAIN( r2::PointInt temp );
 
 			std::cout << r2cm::split;
 
@@ -88,9 +95,14 @@ namespace test_p2048mini_gameprocessor
 						break;
 					}
 
+					std::cout << r2cm::linefeed;
+
 					{
 						{
-							PROCESS_MAIN( pivot_1 = center + r2::PointInt( center.GetX() * move_dir.GetPoint().GetX(), center.GetY() * move_dir.GetPoint().GetY() ) );
+							PROCESS_MAIN( temp = r2::PointInt( center.GetX() * move_dir.GetPoint().GetX(), center.GetY() * move_dir.GetPoint().GetY() ) );
+							OUTPUT_VALUE( temp );
+
+							PROCESS_MAIN( pivot_1 = center + temp );
 							PROCESS_MAIN( pivot_1.SetX( std::clamp( pivot_1.GetX(), 0, static_cast<int32_t>( stage.GetMaxX() ) ) ) );
 							PROCESS_MAIN( pivot_1.SetY( std::clamp( pivot_1.GetY(), 0, static_cast<int32_t>( stage.GetMaxY() ) ) ) );
 						}

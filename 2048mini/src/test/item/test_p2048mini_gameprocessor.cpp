@@ -53,23 +53,22 @@ namespace test_p2048mini_gameprocessor
 
 			std::cout << r2cm::split;
 
+			DECLARATION_MAIN( r2::Direction4 move_dir );
+			DECLARATION_MAIN( const r2::PointInt center_point( stage.GetWidth() / 2, stage.GetHeight() / 2 ) );
+			DECLARATION_MAIN( r2::PointInt pivot_point_1 );
+			DECLARATION_MAIN( r2::PointInt pivot_point_2 );
+
+			std::cout << r2cm::split;
+
 			{
-				DECLARATION_MAIN( r2::Direction4 move_dir );
-				DECLARATION_MAIN( const r2::PointInt center_point( stage.GetWidth() / 2, stage.GetHeight() / 2 ) );
-				DECLARATION_MAIN( r2::PointInt pivot_point_1 );
-				DECLARATION_MAIN( r2::PointInt pivot_point_2 );
-
-				std::cout << r2cm::linefeed;
-
-				const auto pivot_coord = r2cm::WindowUtility::GetCursorPoint();
-				bool bRun = true;
+				const auto pivot_cursor_point = r2cm::WindowUtility::GetCursorPoint();
+				int input = 0;
 				do
 				{
-					r2cm::WindowUtility::MoveCursorPoint( pivot_coord );
 
-					std::cout << "Press [W, A, S, D]" << r2cm::linefeed2;
+					r2cm::WindowUtility::MoveCursorPointWithClearBuffer( pivot_cursor_point );
 
-					switch( _getch() )
+					switch( input )
 					{
 					case 97: // L
 						PROCESS_MAIN( move_dir.SetState( r2::Direction4::eState::Left ) );
@@ -84,17 +83,11 @@ namespace test_p2048mini_gameprocessor
 						PROCESS_MAIN( move_dir.SetState( r2::Direction4::eState::Up ) ); // swap U 4 ez look
 						break;
 
-					case 27: // ESC
-						bRun = false;
-						break;
-
 					default:
-						continue;
+						PROCESS_MAIN( move_dir.SetState( r2::Direction4::eState::Up ) );
+						break;
 					}
 
-					std::cout << r2cm::linefeed;
-
-					if( bRun )
 					{
 						{
 							PROCESS_MAIN( pivot_point_1 = center_point + r2::PointInt( center_point.GetX() * move_dir.GetPoint().GetX(), center_point.GetY() * move_dir.GetPoint().GetY() ) );
@@ -114,13 +107,16 @@ namespace test_p2048mini_gameprocessor
 						PROCESS_MAIN( stage.Add( pivot_point_1.GetX(), pivot_point_1.GetY(), 1 ) );
 						PROCESS_MAIN( stage.Add( pivot_point_2.GetX(), pivot_point_2.GetY(), 2 ) );
 						PROCESS_MAIN( stage.Add( center_point.GetX(), center_point.GetY(), 7 ) );
-						PROCESS_MAIN( PrintStage( stage ) );
-
-						std::cout << r2cm::linefeed;
-
-						stage.Reset();
 					}
-				} while( bRun );
+
+					PROCESS_MAIN( PrintStage( stage ) );
+
+					std::cout << r2cm::linefeed;
+
+					std::cout << "Press [W, A, S, D]";
+					input = _getch();
+
+				} while( 27 != input );
 			}
 
 			std::cout << r2cm::split;

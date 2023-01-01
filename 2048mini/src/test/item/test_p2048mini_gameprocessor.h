@@ -4,6 +4,13 @@
 
 namespace test_p2048mini_gameprocessor
 {
+	class MoveReady_Pivot_1 : public r2cm::iItem
+	{
+	public:
+		r2cm::TitleFunctionT GetTitleFunction() const override;
+		r2cm::DoFunctionT GetDoFunction() const override;
+	};
+
 	class MoveReadyTest : public r2cm::iItem
 	{
 	public:

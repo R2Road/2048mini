@@ -101,6 +101,7 @@ namespace test_p2048mini_gameprocessor
 					std::cout << r2cm::linefeed;
 
 					OUTPUT_NOTE( "center를 입력 방향의 끝으로 보내자" );
+					OUTPUT_NOTE( "pivot_1이 이동 처리 시작의 기준점이 된다." );
 
 					std::cout << r2cm::linefeed;
 
@@ -218,6 +219,12 @@ namespace test_p2048mini_gameprocessor
 						pivot_1.SetY( std::clamp( pivot_1.GetY(), 0, static_cast<int32_t>( stage.GetMaxY() ) ) );
 						OUTPUT_VALUE( pivot_1 );
 					}
+
+					std::cout << r2cm::linefeed;
+
+					OUTPUT_NOTE( "기준점인 pivot_1 에 abs( move_dir )을 곱해서 pivot_2를 만든다." );
+					OUTPUT_NOTE( "pivot_2는 현재 처리할 줄 인지 확인하기 위한 값이다." );
+					OUTPUT_NOTE( "각 좌표에 abs( move_dir )을 곱해서 pivot_2와 비교하면 현재 처리할 줄 인지 확인된다." );
 
 					std::cout << r2cm::linefeed;
 

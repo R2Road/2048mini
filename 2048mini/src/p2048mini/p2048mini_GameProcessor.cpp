@@ -57,7 +57,7 @@ namespace p2048mini
 		MoveResult move_result;
 
 
-		const r2::PointInt center_point( mStage->GetWidth() / 2, mStage->GetHeight() );
+		const r2::PointInt center_point( mStage->GetWidth() / 2, mStage->GetHeight() / 2 );
 
 		const r2::Direction4 move_dir( direction_state );
 		r2::Direction4 reverse_dir = move_dir;

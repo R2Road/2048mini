@@ -348,20 +348,25 @@ namespace test_p2048mini_gameprocessor
 						PROCESS_MAIN( PrintStage( stage ) );
 					}
 
+					std::cout << r2cm::linefeed;
+
+					OUTPUT_NOTE( "pivot_1 이 있는 줄 부터 reverse_dir 방향으로 처리한다." );
 
 					std::cout << r2cm::linefeed;
 
 					{
-						stage.Reset();
-
 						r2::PointInt temp_point;
-						auto reverse_dir = move_dir;
-						reverse_dir.Rotate( true );
-						reverse_dir.Rotate( true );
+						DECLARATION_MAIN( auto reverse_dir = move_dir );
+						PROCESS_MAIN( reverse_dir.Rotate( true ) );
+						PROCESS_MAIN( reverse_dir.Rotate( true ) );
+						OUTPUT_VALUE( reverse_dir.GetPoint() );
+
+						std::cout << r2cm::linefeed;
 
 						//
 						// loop_count 1당 stage 한 줄이 처리된다.
 						//
+						stage.Reset();
 						for( int loop_count = 0; stage.IsIn( pivot_2.GetX(), pivot_2.GetY() ); ++loop_count )
 						{
 							for( uint32_t y = 0; stage.GetHeight() > y; ++y )

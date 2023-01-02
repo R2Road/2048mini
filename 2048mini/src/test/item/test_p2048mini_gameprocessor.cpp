@@ -520,14 +520,14 @@ namespace test_p2048mini_gameprocessor
 
 
 
-	r2cm::TitleFunctionT MergeTest::GetTitleFunction() const
+	r2cm::TitleFunctionT Merge::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "GameProcessor : Merge";
 		};
 	}
-	r2cm::DoFunctionT MergeTest::GetDoFunction() const
+	r2cm::DoFunctionT Merge::GetDoFunction() const
 	{
 		return []()->r2cm::eDoLeaveAction
 		{

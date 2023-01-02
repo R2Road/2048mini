@@ -32,7 +32,7 @@ namespace test_p2048mini_gameprocessor
 		r2cm::DoFunctionT GetDoFunction() const override;
 	};
 
-	class MergeTest : public r2cm::iItem
+	class Merge : public r2cm::iItem
 	{
 	public:
 		r2cm::TitleFunctionT GetTitleFunction() const override;

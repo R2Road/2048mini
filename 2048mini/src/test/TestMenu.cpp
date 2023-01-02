@@ -37,7 +37,7 @@ r2cm::WriteFunctionT TestMenu::GetWriteFunction() const
 		ret->AddItem( 'w', test_p2048mini_gameprocessor::MoveReady_Pivot_2() );
 		ret->AddItem( 'e', test_p2048mini_gameprocessor::MoveReady_Pivot_3() );
 		ret->AddItem( 'r', test_p2048mini_gameprocessor::Move() );
-		ret->AddItem( 't', test_p2048mini_gameprocessor::MergeTest() );
+		ret->AddItem( 't', test_p2048mini_gameprocessor::Merge() );
 		ret->AddItem( 'y', test_p2048mini_gameprocessor::MovableCheck() );
 
 		ret->AddLineFeed();

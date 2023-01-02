@@ -60,13 +60,16 @@ namespace test_p2048mini_gameprocessor
 
 			DECLARATION_MAIN( r2::Direction4 move_dir );
 			DECLARATION_MAIN( const r2::PointInt center( stage.GetWidth() / 2, stage.GetHeight() / 2 ) );
-			OUTPUT_VALUE( center );
 			DECLARATION_MAIN( r2::PointInt pivot_1 );
 			DECLARATION_MAIN( r2::PointInt temp );
 
 			std::cout << r2cm::split;
 
 			{
+				OUTPUT_VALUE( center );
+
+				std::cout << r2cm::linefeed;
+
 				const auto pivot_cursor_point = r2cm::WindowUtility::GetCursorPoint();
 				int input = 0;
 				do
@@ -165,7 +168,6 @@ namespace test_p2048mini_gameprocessor
 
 			DECLARATION_MAIN( r2::Direction4 move_dir );
 			DECLARATION_MAIN( const r2::PointInt center( stage.GetWidth() / 2, stage.GetHeight() / 2 ) );
-			OUTPUT_VALUE( center );
 			DECLARATION_MAIN( r2::PointInt pivot_1 );
 			DECLARATION_MAIN( r2::PointInt pivot_2 );
 			DECLARATION_MAIN( r2::PointInt temp );
@@ -173,6 +175,10 @@ namespace test_p2048mini_gameprocessor
 			std::cout << r2cm::split;
 
 			{
+				OUTPUT_VALUE( center );
+
+				std::cout << r2cm::linefeed;
+
 				const auto pivot_cursor_point = r2cm::WindowUtility::GetCursorPoint();
 				int input = 0;
 				do
@@ -266,7 +272,6 @@ namespace test_p2048mini_gameprocessor
 
 			DECLARATION_MAIN( r2::Direction4 move_dir );
 			DECLARATION_MAIN( const r2::PointInt center( stage.GetWidth() / 2, stage.GetHeight() / 2 ) );
-			OUTPUT_VALUE( center );
 			DECLARATION_MAIN( r2::PointInt pivot_1 );
 			DECLARATION_MAIN( r2::PointInt pivot_2 );
 			DECLARATION_MAIN( r2::PointInt temp );
@@ -274,6 +279,10 @@ namespace test_p2048mini_gameprocessor
 			std::cout << r2cm::split;
 
 			{
+				OUTPUT_VALUE( center );
+
+				std::cout << r2cm::linefeed;
+
 				const auto pivot_cursor_point = r2cm::WindowUtility::GetCursorPoint();
 				int input = 0;
 				do

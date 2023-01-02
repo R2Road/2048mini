@@ -392,8 +392,8 @@ namespace test_p2048mini_gameprocessor
 
 							pivot_2 += reverse_dir.GetPoint();
 						}
+						PROCESS_MAIN( PrintStage( stage ) );
 					}
-					PROCESS_MAIN( PrintStage( stage ) );
 
 					std::cout << r2cm::linefeed;
 

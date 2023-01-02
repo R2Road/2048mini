@@ -97,35 +97,38 @@ namespace test_p2048mini_gameprocessor
 
 					std::cout << r2cm::linefeed;
 
+					OUTPUT_NOTE( "center를 입력 방향의 끝으로 보내자" );
+
+					std::cout << r2cm::linefeed;
+
 					{
-						{
-							OUTPUT_NOTE( "center를 입력 방향의 끝으로 보내자" );
+						PROCESS_MAIN( temp = r2::PointInt( center.GetX() * move_dir.GetX(), center.GetY() * move_dir.GetY() ) );
+						OUTPUT_VALUE( temp );
+					}
 
-							std::cout << r2cm::linefeed;
+					std::cout << r2cm::linefeed;
 
-							PROCESS_MAIN( temp = r2::PointInt( center.GetX() * move_dir.GetX(), center.GetY() * move_dir.GetY() ) );
-							OUTPUT_VALUE( temp );
+					{
+						PROCESS_MAIN( pivot_1 = center + temp );
+						OUTPUT_VALUE( pivot_1 );
+					}
 
-							std::cout << r2cm::linefeed;
+					std::cout << r2cm::linefeed;
 
-							PROCESS_MAIN( pivot_1 = center + temp );
-							OUTPUT_VALUE( pivot_1 );
+					{
+						PROCESS_MAIN( pivot_1.SetX( std::clamp( pivot_1.GetX(), 0, static_cast<int32_t>( stage.GetMaxX() ) ) ) );
+						PROCESS_MAIN( pivot_1.SetY( std::clamp( pivot_1.GetY(), 0, static_cast<int32_t>( stage.GetMaxY() ) ) ) );
+						OUTPUT_VALUE( pivot_1 );
+					}
 
-							std::cout << r2cm::linefeed;
+					std::cout << r2cm::linefeed;
 
-							PROCESS_MAIN( pivot_1.SetX( std::clamp( pivot_1.GetX(), 0, static_cast<int32_t>( stage.GetMaxX() ) ) ) );
-							PROCESS_MAIN( pivot_1.SetY( std::clamp( pivot_1.GetY(), 0, static_cast<int32_t>( stage.GetMaxY() ) ) ) );
-							OUTPUT_VALUE( pivot_1 );
-						}
-
-						std::cout << r2cm::linefeed;
-
+					{
 						stage.Reset();
 						PROCESS_MAIN( stage.Add( center.GetX(), center.GetY(), 7 ) );
 						PROCESS_MAIN( stage.Add( pivot_1.GetX(), pivot_1.GetY(), 1 ) );
+						PROCESS_MAIN( PrintStage( stage ) );
 					}
-
-					PROCESS_MAIN( PrintStage( stage ) );
 
 					std::cout << r2cm::linefeed;
 

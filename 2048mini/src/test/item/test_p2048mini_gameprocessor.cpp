@@ -338,16 +338,25 @@ namespace test_p2048mini_gameprocessor
 					{
 						stage.Reset();
 
+						r2::PointInt temp_point;
 						auto reverse_dir = move_dir;
 						reverse_dir.Rotate( true );
 						reverse_dir.Rotate( true );
+
+						//
+						// loop_count 1당 stage 한 줄이 처리된다.
+						//
 						for( int loop_count = 0; stage.IsIn( pivot_2.GetX(), pivot_2.GetY() ); ++loop_count )
 						{
 							for( uint32_t y = 0; stage.GetHeight() > y; ++y )
 							{
 								for( uint32_t x = 0; stage.GetWidth() > x; ++x )
 								{
-									r2::PointInt temp_point( x * std::abs( move_dir.GetX() ), y * std::abs( move_dir.GetY() ) );
+									//
+									// pivot_2를 만드는 것과 같은 방식으로 x, y 를 단순화 한다.
+									// 단순화 된 값이 pivot_2 와 같다면 처리 대상이다.
+									//
+									temp_point.Set( x * std::abs( move_dir.GetX() ), y * std::abs( move_dir.GetY() ) );
 
 									if( pivot_2.GetX() == temp_point.GetX() && pivot_2.GetY() == temp_point.GetY() )
 									{

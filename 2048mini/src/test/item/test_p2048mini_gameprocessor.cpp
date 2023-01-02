@@ -438,14 +438,14 @@ namespace test_p2048mini_gameprocessor
 
 
 
-	r2cm::TitleFunctionT MoveTest::GetTitleFunction() const
+	r2cm::TitleFunctionT Move::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "GameProcessor : Move";
 		};
 	}
-	r2cm::DoFunctionT MoveTest::GetDoFunction() const
+	r2cm::DoFunctionT Move::GetDoFunction() const
 	{
 		return []()->r2cm::eDoLeaveAction
 		{

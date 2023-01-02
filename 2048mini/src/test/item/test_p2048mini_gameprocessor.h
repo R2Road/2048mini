@@ -25,7 +25,7 @@ namespace test_p2048mini_gameprocessor
 		r2cm::DoFunctionT GetDoFunction() const override;
 	};
 
-	class MoveTest : public r2cm::iItem
+	class Move : public r2cm::iItem
 	{
 	public:
 		r2cm::TitleFunctionT GetTitleFunction() const override;

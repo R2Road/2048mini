@@ -242,9 +242,9 @@ namespace test_p2048mini_gameprocessor
 			return r2cm::eDoLeaveAction::None;
 		};
 	}
-	
-	
-	
+
+
+
 	r2cm::TitleFunctionT MoveReady_Pivot_3::GetTitleFunction() const
 	{
 		return []()->const char*
@@ -262,23 +262,24 @@ namespace test_p2048mini_gameprocessor
 
 			std::cout << r2cm::split;
 
+			DECLARATION_MAIN( r2::Direction4 move_dir );
+			DECLARATION_MAIN( const r2::PointInt center( stage.GetWidth() / 2, stage.GetHeight() / 2 ) );
+			OUTPUT_VALUE( center );
+			DECLARATION_MAIN( r2::PointInt pivot_1 );
+			DECLARATION_MAIN( r2::PointInt pivot_2 );
+			DECLARATION_MAIN( r2::PointInt temp );
+
+			std::cout << r2cm::split;
+
 			{
-				DECLARATION_MAIN( r2::Direction4 move_dir );
-				DECLARATION_MAIN( const r2::PointInt center_point( stage.GetWidth() / 2, stage.GetHeight() / 2 ) );
-				DECLARATION_MAIN( r2::PointInt pivot_point_1 );
-				DECLARATION_MAIN( r2::PointInt pivot_point_2 );
-
-				std::cout << r2cm::linefeed;
-
-				const auto pivot_coord = r2cm::WindowUtility::GetCursorPoint();
-				bool bRun = true;
+				const auto pivot_cursor_point = r2cm::WindowUtility::GetCursorPoint();
+				int input = 0;
 				do
 				{
-					r2cm::WindowUtility::MoveCursorPoint( pivot_coord );
 
-					std::cout << "Press [W, A, S, D]" << r2cm::linefeed2;
+					r2cm::WindowUtility::MoveCursorPointWithClearBuffer( pivot_cursor_point );
 
-					switch( _getch() )
+					switch( input )
 					{
 					case 97: // L
 						PROCESS_MAIN( move_dir.SetState( r2::Direction4::eState::Left ) );
@@ -287,52 +288,58 @@ namespace test_p2048mini_gameprocessor
 						PROCESS_MAIN( move_dir.SetState( r2::Direction4::eState::Right ) );
 						break;
 					case 119: // U
-						PROCESS_MAIN( move_dir.SetState( r2::Direction4::eState::Down ) ); // swap D 4 ez look
+						PROCESS_MAIN( move_dir.SetState( r2::Direction4::eState::Down ) );
 						break;
 					case 115: // D
-						PROCESS_MAIN( move_dir.SetState( r2::Direction4::eState::Up ) ); // swap U 4 ez look
-						break;
-
-					case 27: // ESC
-						bRun = false;
+						PROCESS_MAIN( move_dir.SetState( r2::Direction4::eState::Up ) );
 						break;
 
 					default:
-						continue;
+						PROCESS_MAIN( move_dir.SetState( r2::Direction4::eState::Up ) );
+						break;
 					}
+					OUTPUT_VALUE( move_dir.GetPoint() );
 
 					std::cout << r2cm::linefeed;
 
-					if( bRun )
 					{
 						{
-							PROCESS_MAIN( pivot_point_1 = center_point + r2::PointInt( center_point.GetX() * move_dir.GetX(), center_point.GetY() * move_dir.GetY() ) );
-							PROCESS_MAIN( pivot_point_1.SetX( std::clamp( pivot_point_1.GetX(), 0, static_cast<int32_t>( stage.GetMaxX() ) ) ) );
-							PROCESS_MAIN( pivot_point_1.SetY( std::clamp( pivot_point_1.GetY(), 0, static_cast<int32_t>( stage.GetMaxY() ) ) ) );
+							temp = r2::PointInt( center.GetX() * move_dir.GetX(), center.GetY() * move_dir.GetY() );
+
+							pivot_1 = center + temp;
+
+							pivot_1.SetX( std::clamp( pivot_1.GetX(), 0, static_cast<int32_t>( stage.GetMaxX() ) ) );
+							pivot_1.SetY( std::clamp( pivot_1.GetY(), 0, static_cast<int32_t>( stage.GetMaxY() ) ) );
+							OUTPUT_VALUE( pivot_1 );
 						}
 
 						std::cout << r2cm::linefeed;
 
 						{
-							PROCESS_MAIN( pivot_point_2.Set( pivot_point_1.GetX() * std::abs( move_dir.GetX() ), pivot_point_1.GetY() * std::abs( move_dir.GetY() ) ) );
+							pivot_2.SetX( pivot_1.GetX() * std::abs( move_dir.GetX() ) );
+							pivot_2.SetY( pivot_1.GetY() * std::abs( move_dir.GetY() ) );
+							OUTPUT_VALUE( pivot_2 );
 						}
 
 						std::cout << r2cm::linefeed;
 
 						stage.Reset();
-						PROCESS_MAIN( stage.Add( pivot_point_1.GetX(), pivot_point_1.GetY(), 1 ) );
-						PROCESS_MAIN( stage.Add( pivot_point_2.GetX(), pivot_point_2.GetY(), 2 ) );
-						PROCESS_MAIN( stage.Add( center_point.GetX(), center_point.GetY(), 7 ) );
-						PROCESS_MAIN( PrintStage( stage ) );
+						stage.Add( pivot_1.GetX(), pivot_1.GetY(), 1 );
+						stage.Add( pivot_2.GetX(), pivot_2.GetY(), 2 );
+						PROCESS_MAIN( stage.Add( center.GetX(), center.GetY(), 7 ) );
+					}
 
-						std::cout << r2cm::linefeed;
+					PROCESS_MAIN( PrintStage( stage ) );
 
+					std::cout << r2cm::linefeed;
+
+					{
 						stage.Reset();
 
 						auto reverse_dir = move_dir;
 						reverse_dir.Rotate( true );
 						reverse_dir.Rotate( true );
-						for( int loop_count = 0; stage.IsIn( pivot_point_2.GetX(), pivot_point_2.GetY() ); ++loop_count )
+						for( int loop_count = 0; stage.IsIn( pivot_2.GetX(), pivot_2.GetY() ); ++loop_count )
 						{
 							for( uint32_t y = 0; stage.GetHeight() > y; ++y )
 							{
@@ -340,18 +347,24 @@ namespace test_p2048mini_gameprocessor
 								{
 									r2::PointInt temp_point( x * std::abs( move_dir.GetX() ), y * std::abs( move_dir.GetY() ) );
 
-									if( pivot_point_2.GetX() == temp_point.GetX() && pivot_point_2.GetY() == temp_point.GetY() )
+									if( pivot_2.GetX() == temp_point.GetX() && pivot_2.GetY() == temp_point.GetY() )
 									{
-										PROCESS_MAIN( stage.Add( x, y, loop_count ) );
+										stage.Add( x, y, loop_count );
 									}
 								}
 							}
 
-							pivot_point_2 += reverse_dir.GetPoint();
+							pivot_2 += reverse_dir.GetPoint();
 						}
-						PROCESS_MAIN( PrintStage( stage ) );
 					}
-				} while( bRun );
+					PROCESS_MAIN( PrintStage( stage ) );
+
+					std::cout << r2cm::linefeed;
+
+					std::cout << "Press [W, A, S, D]";
+					input = _getch();
+
+				} while( 27 != input );
 			}
 
 			std::cout << r2cm::split;

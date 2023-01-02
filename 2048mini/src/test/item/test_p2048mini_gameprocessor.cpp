@@ -246,6 +246,33 @@ namespace test_p2048mini_gameprocessor
 
 					std::cout << r2cm::linefeed;
 
+					{
+						OUTPUT_NOTE( "판별 결과" );
+
+						std::cout << r2cm::linefeed;
+
+						stage.Reset();
+						for( uint32_t y = 0; stage.GetHeight() > y; ++y )
+						{
+							for( uint32_t x = 0; stage.GetWidth() > x; ++x )
+							{
+								//
+								// pivot_2를 만드는 것과 같은 방식으로 x, y 를 단순화 한다.
+								//
+								// 단순화 된 값이 pivot_2 와 같다면 처리 대상이다.
+								//
+								// pivot_1을 만드는 과정은 신경 쓸 필요 없다.
+								// 유효한 pivot_2를 만들기 위해 기준이 될 위치까지 이동시킨 것 이다.
+								//
+								const r2::PointInt temp_point( x * std::abs( move_dir.GetX() ), y * std::abs( move_dir.GetY() ) );
+								stage.Add( x, y, pivot_2.GetX() == temp_point.GetX() && pivot_2.GetY() == temp_point.GetY() );
+							}
+						}
+						PROCESS_MAIN( PrintStage( stage ) );
+					}
+
+					std::cout << r2cm::linefeed;
+
 					std::cout << "Press [ W, A, S, D | ESC ]";
 					input = _getch();
 

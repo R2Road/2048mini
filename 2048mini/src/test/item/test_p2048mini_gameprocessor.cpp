@@ -462,23 +462,21 @@ namespace test_p2048mini_gameprocessor
 				PROCESS_MAIN( stage.Add( 3, 0, 3 ) );
 				PROCESS_MAIN( stage.Add( 0, 3, 4 ) );
 				PROCESS_MAIN( stage.Add( 3, 3, 8 ) );
-				PROCESS_MAIN( PrintStage( stage ) );
 			}
 
 			std::cout << r2cm::split;
 
 
 			{
-				const auto pivot_coord = r2cm::WindowUtility::GetCursorPoint();
+				const auto pivot_cursor_point = r2cm::WindowUtility::GetCursorPoint();
 				bool bRun = true;
+				int input = 0;
 				do
 				{
-					r2cm::WindowUtility::MoveCursorPoint( pivot_coord );
-
-					std::cout << "Press [W, A, S, D]" << r2cm::linefeed2;
+					r2cm::WindowUtility::MoveCursorPointWithClearBuffer( pivot_cursor_point );
 
 					bool has_moved = false;
-					switch( _getch() )
+					switch( input )
 					{
 					case 97: // L
 						PROCESS_MAIN( has_moved = game_processor.Move( r2::Direction4::eState::Left ).has_moved );
@@ -493,20 +491,25 @@ namespace test_p2048mini_gameprocessor
 						PROCESS_MAIN( has_moved = game_processor.Move( r2::Direction4::eState::Up ).has_moved ); // swap U 4 ez look
 						break;
 
-					case 27: // ESC
-						bRun = false;
-						break;
-
 					default:
-						continue;
+						std::cout << "Input Empty" << r2cm::linefeed;
 					}
 
 					std::cout << r2cm::linefeed;
 
 					PROCESS_MAIN( PrintStage( stage ) );
+
+					std::cout << r2cm::linefeed;
+
 					std::cout << ( has_moved ? "Move Success" : "Move Failed" ) << r2cm::linefeed;
 
-				} while( bRun );
+					std::cout << r2cm::linefeed;
+
+					std::cout << "Press [ W, A, S, D | ESC ]" << r2cm::linefeed2;
+
+					input = _getch();
+
+				} while( 27 != input );
 			}
 
 			std::cout << r2cm::split;

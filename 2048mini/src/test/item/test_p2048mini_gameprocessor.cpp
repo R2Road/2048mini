@@ -204,33 +204,32 @@ namespace test_p2048mini_gameprocessor
 					std::cout << r2cm::linefeed;
 
 					{
-						{
-							temp = r2::PointInt( center.GetX() * move_dir.GetX(), center.GetY() * move_dir.GetY() );
+						temp = r2::PointInt( center.GetX() * move_dir.GetX(), center.GetY() * move_dir.GetY() );
 
-							pivot_1 = center + temp;
+						pivot_1 = center + temp;
 
-							pivot_1.SetX( std::clamp( pivot_1.GetX(), 0, static_cast<int32_t>( stage.GetMaxX() ) ) );
-							pivot_1.SetY( std::clamp( pivot_1.GetY(), 0, static_cast<int32_t>( stage.GetMaxY() ) ) );
-							OUTPUT_VALUE( pivot_1 );
-						}
+						pivot_1.SetX( std::clamp( pivot_1.GetX(), 0, static_cast<int32_t>( stage.GetMaxX() ) ) );
+						pivot_1.SetY( std::clamp( pivot_1.GetY(), 0, static_cast<int32_t>( stage.GetMaxY() ) ) );
+						OUTPUT_VALUE( pivot_1 );
+					}
 
-						std::cout << r2cm::linefeed;
+					std::cout << r2cm::linefeed;
 
-						{
-							PROCESS_MAIN( pivot_2.SetX( pivot_1.GetX() * std::abs( move_dir.GetX() ) ) );
-							PROCESS_MAIN( pivot_2.SetY( pivot_1.GetY() * std::abs( move_dir.GetY() ) ) );
-							OUTPUT_VALUE( pivot_2 );
-						}
+					{
+						PROCESS_MAIN( pivot_2.SetX( pivot_1.GetX() * std::abs( move_dir.GetX() ) ) );
+						PROCESS_MAIN( pivot_2.SetY( pivot_1.GetY() * std::abs( move_dir.GetY() ) ) );
+						OUTPUT_VALUE( pivot_2 );
+					}
 
-						std::cout << r2cm::linefeed;
+					std::cout << r2cm::linefeed;
 
+					{
 						stage.Reset();
 						PROCESS_MAIN( stage.Add( pivot_1.GetX(), pivot_1.GetY(), 1 ) );
 						PROCESS_MAIN( stage.Add( pivot_2.GetX(), pivot_2.GetY(), 2 ) );
 						PROCESS_MAIN( stage.Add( center.GetX(), center.GetY(), 7 ) );
+						PROCESS_MAIN( PrintStage( stage ) );
 					}
-
-					PROCESS_MAIN( PrintStage( stage ) );
 
 					std::cout << r2cm::linefeed;
 

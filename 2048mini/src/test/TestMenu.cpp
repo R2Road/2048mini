@@ -57,6 +57,7 @@ r2cm::WriteFunctionT TestMenu::GetWriteFunction() const
 
 		ret->AddItem(
 			27
+			, r2cm::eColor::BG_Purple
 			, []()->const char* { return "Exit"; }
 			, []()->r2cm::eDoLeaveAction
 			{

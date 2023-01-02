@@ -242,17 +242,17 @@ namespace test_p2048mini_gameprocessor
 			return r2cm::eDoLeaveAction::None;
 		};
 	}
-
-
-
-	r2cm::TitleFunctionT MoveReadyTest::GetTitleFunction() const
+	
+	
+	
+	r2cm::TitleFunctionT MoveReady_Pivot_3::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "GameProcessor : Move Ready";
+			return "GameProcessor : Move Ready - Pivot 3";
 		};
 	}
-	r2cm::DoFunctionT MoveReadyTest::GetDoFunction() const
+	r2cm::DoFunctionT MoveReady_Pivot_3::GetDoFunction() const
 	{
 		return []()->r2cm::eDoLeaveAction
 		{

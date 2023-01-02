@@ -354,7 +354,11 @@ namespace test_p2048mini_gameprocessor
 								{
 									//
 									// pivot_2를 만드는 것과 같은 방식으로 x, y 를 단순화 한다.
+									//
 									// 단순화 된 값이 pivot_2 와 같다면 처리 대상이다.
+									//
+									// pivot_1을 만드는 과정은 신경 쓸 필요 없다.
+									// 유효한 pivot_2를 만들기 위해 기준이 될 위치까지 이동시킨 것 이다.
 									//
 									temp_point.Set( x * std::abs( move_dir.GetX() ), y * std::abs( move_dir.GetY() ) );
 

@@ -135,7 +135,7 @@ namespace test_p2048mini_gameprocessor
 
 					std::cout << r2cm::linefeed;
 
-					std::cout << "Press [W, A, S, D]";
+					std::cout << "Press [ W, A, S, D | ESC ]";
 					input = _getch();
 
 				} while( 27 != input );
@@ -239,7 +239,7 @@ namespace test_p2048mini_gameprocessor
 
 					std::cout << r2cm::linefeed;
 
-					std::cout << "Press [W, A, S, D]";
+					std::cout << "Press [ W, A, S, D | ESC ]";
 					input = _getch();
 
 				} while( 27 != input );
@@ -385,7 +385,7 @@ namespace test_p2048mini_gameprocessor
 
 					std::cout << r2cm::linefeed;
 
-					std::cout << "Press [W, A, S, D]";
+					std::cout << "Press [ W, A, S, D | ESC ]";
 					input = _getch();
 
 				} while( 27 != input );

@@ -83,16 +83,17 @@ namespace test_p2048mini_gameprocessor
 						PROCESS_MAIN( move_dir.SetState( r2::Direction4::eState::Right ) );
 						break;
 					case 119: // U
-						PROCESS_MAIN( move_dir.SetState( r2::Direction4::eState::Down ) ); // swap D 4 ez look
+						PROCESS_MAIN( move_dir.SetState( r2::Direction4::eState::Down ) );
 						break;
 					case 115: // D
-						PROCESS_MAIN( move_dir.SetState( r2::Direction4::eState::Up ) ); // swap U 4 ez look
+						PROCESS_MAIN( move_dir.SetState( r2::Direction4::eState::Up ) );
 						break;
 
 					default:
 						PROCESS_MAIN( move_dir.SetState( r2::Direction4::eState::Up ) );
 						break;
 					}
+					OUTPUT_VALUE( move_dir.GetPoint() );
 
 					std::cout << r2cm::linefeed;
 
@@ -185,33 +186,28 @@ namespace test_p2048mini_gameprocessor
 						PROCESS_MAIN( move_dir.SetState( r2::Direction4::eState::Right ) );
 						break;
 					case 119: // U
-						PROCESS_MAIN( move_dir.SetState( r2::Direction4::eState::Down ) ); // swap D 4 ez look
+						PROCESS_MAIN( move_dir.SetState( r2::Direction4::eState::Down ) );
 						break;
 					case 115: // D
-						PROCESS_MAIN( move_dir.SetState( r2::Direction4::eState::Up ) ); // swap U 4 ez look
+						PROCESS_MAIN( move_dir.SetState( r2::Direction4::eState::Up ) );
 						break;
 
 					default:
 						PROCESS_MAIN( move_dir.SetState( r2::Direction4::eState::Up ) );
 						break;
 					}
+					OUTPUT_VALUE( move_dir.GetPoint() );
 
 					std::cout << r2cm::linefeed;
 
 					{
 						{
-							PROCESS_MAIN( temp = r2::PointInt( center.GetX() * move_dir.GetX(), center.GetY() * move_dir.GetY() ) );
-							OUTPUT_VALUE( temp );
+							temp = r2::PointInt( center.GetX() * move_dir.GetX(), center.GetY() * move_dir.GetY() );
 
-							std::cout << r2cm::linefeed;
+							pivot_1 = center + temp;
 
-							PROCESS_MAIN( pivot_1 = center + temp );
-							OUTPUT_VALUE( pivot_1 );
-
-							std::cout << r2cm::linefeed;
-
-							PROCESS_MAIN( pivot_1.SetX( std::clamp( pivot_1.GetX(), 0, static_cast<int32_t>( stage.GetMaxX() ) ) ) );
-							PROCESS_MAIN( pivot_1.SetY( std::clamp( pivot_1.GetY(), 0, static_cast<int32_t>( stage.GetMaxY() ) ) ) );
+							pivot_1.SetX( std::clamp( pivot_1.GetX(), 0, static_cast<int32_t>( stage.GetMaxX() ) ) );
+							pivot_1.SetY( std::clamp( pivot_1.GetY(), 0, static_cast<int32_t>( stage.GetMaxY() ) ) );
 							OUTPUT_VALUE( pivot_1 );
 						}
 

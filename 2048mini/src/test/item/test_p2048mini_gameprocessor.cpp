@@ -469,7 +469,6 @@ namespace test_p2048mini_gameprocessor
 
 			{
 				const auto pivot_cursor_point = r2cm::WindowUtility::GetCursorPoint();
-				bool bRun = true;
 				int input = 0;
 				do
 				{

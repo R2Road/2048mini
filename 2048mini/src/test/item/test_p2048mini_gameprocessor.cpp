@@ -30,7 +30,7 @@ namespace test_p2048mini_gameprocessor
 				std::cout << r2cm::tab;
 			}
 
-			std::cout << r2cm::linefeed;
+			LF();
 		}
 	}
 
@@ -52,23 +52,23 @@ namespace test_p2048mini_gameprocessor
 	{
 		return []()->r2cm::eDoLeaveAction
 		{
-			std::cout << r2cm::split;
+			LS();
 
 			DECLARATION_MAIN( p2048mini::Stage stage( 4, 4 ) );
 
-			std::cout << r2cm::split;
+			LS();
 
 			DECLARATION_MAIN( r2::Direction4 move_dir );
 			DECLARATION_MAIN( const r2::PointInt center( stage.GetWidth() / 2, stage.GetHeight() / 2 ) );
 			DECLARATION_MAIN( r2::PointInt pivot_1 );
 			DECLARATION_MAIN( r2::PointInt temp );
 
-			std::cout << r2cm::split;
+			LS();
 
 			{
 				OUTPUT_VALUE( center );
 
-				std::cout << r2cm::linefeed;
+				LF();
 
 				const auto pivot_cursor_point = r2cm::WindowUtility::GetCursorPoint();
 				int input = 0;
@@ -98,26 +98,26 @@ namespace test_p2048mini_gameprocessor
 					}
 					OUTPUT_VALUE( move_dir.GetPoint() );
 
-					std::cout << r2cm::linefeed;
+					LF();
 
 					OUTPUT_NOTE( "center를 입력 방향의 끝으로 보내자" );
 					OUTPUT_NOTE( "pivot_1이 이동 처리 시작의 기준점이 된다." );
 
-					std::cout << r2cm::linefeed;
+					LF();
 
 					{
 						PROCESS_MAIN( temp = r2::PointInt( center.GetX() * move_dir.GetX(), center.GetY() * move_dir.GetY() ) );
 						OUTPUT_VALUE( temp );
 					}
 
-					std::cout << r2cm::linefeed;
+					LF();
 
 					{
 						PROCESS_MAIN( pivot_1 = center + temp );
 						OUTPUT_VALUE( pivot_1 );
 					}
 
-					std::cout << r2cm::linefeed;
+					LF();
 
 					{
 						PROCESS_MAIN( pivot_1.SetX( std::clamp( pivot_1.GetX(), 0, static_cast<int32_t>( stage.GetMaxX() ) ) ) );
@@ -125,7 +125,7 @@ namespace test_p2048mini_gameprocessor
 						OUTPUT_VALUE( pivot_1 );
 					}
 
-					std::cout << r2cm::linefeed;
+					LF();
 
 					{
 						stage.Reset();
@@ -134,7 +134,7 @@ namespace test_p2048mini_gameprocessor
 						PROCESS_MAIN( PrintStage( stage ) );
 					}
 
-					std::cout << r2cm::linefeed;
+					LF();
 
 					std::cout << "Press [ W, A, S, D | ESC ]";
 					input = _getch();
@@ -142,7 +142,7 @@ namespace test_p2048mini_gameprocessor
 				} while( 27 != input );
 			}
 
-			std::cout << r2cm::split;
+			LS();
 
 			return r2cm::eDoLeaveAction::None;
 		};
@@ -161,11 +161,11 @@ namespace test_p2048mini_gameprocessor
 	{
 		return []()->r2cm::eDoLeaveAction
 		{
-			std::cout << r2cm::split;
+			LS();
 
 			DECLARATION_MAIN( p2048mini::Stage stage( 4, 4 ) );
 
-			std::cout << r2cm::split;
+			LS();
 
 			DECLARATION_MAIN( r2::Direction4 move_dir );
 			DECLARATION_MAIN( const r2::PointInt center( stage.GetWidth() / 2, stage.GetHeight() / 2 ) );
@@ -173,12 +173,12 @@ namespace test_p2048mini_gameprocessor
 			DECLARATION_MAIN( r2::PointInt pivot_2 );
 			DECLARATION_MAIN( r2::PointInt temp );
 
-			std::cout << r2cm::split;
+			LS();
 
 			{
 				OUTPUT_VALUE( center );
 
-				std::cout << r2cm::linefeed;
+				LF();
 
 				const auto pivot_cursor_point = r2cm::WindowUtility::GetCursorPoint();
 				int input = 0;
@@ -208,7 +208,7 @@ namespace test_p2048mini_gameprocessor
 					}
 					OUTPUT_VALUE( move_dir.GetPoint() );
 
-					std::cout << r2cm::linefeed;
+					LF();
 
 					{
 						temp = r2::PointInt( center.GetX() * move_dir.GetX(), center.GetY() * move_dir.GetY() );
@@ -220,13 +220,13 @@ namespace test_p2048mini_gameprocessor
 						OUTPUT_VALUE( pivot_1 );
 					}
 
-					std::cout << r2cm::linefeed;
+					LF();
 
 					OUTPUT_NOTE( "기준점인 pivot_1 에 abs( move_dir )을 곱해서 pivot_2를 만든다." );
 					OUTPUT_NOTE( "pivot_2는 현재 처리할 줄 인지 확인하기 위한 값이다." );
 					OUTPUT_NOTE( "각 좌표에 abs( move_dir )을 곱해서 pivot_2와 비교하면 현재 처리할 줄 인지 확인된다." );
 
-					std::cout << r2cm::linefeed;
+					LF();
 
 					{
 						PROCESS_MAIN( pivot_2.SetX( pivot_1.GetX() * std::abs( move_dir.GetX() ) ) );
@@ -234,7 +234,7 @@ namespace test_p2048mini_gameprocessor
 						OUTPUT_VALUE( pivot_2 );
 					}
 
-					std::cout << r2cm::linefeed;
+					LF();
 
 					{
 						stage.Reset();
@@ -244,12 +244,12 @@ namespace test_p2048mini_gameprocessor
 						PROCESS_MAIN( PrintStage( stage ) );
 					}
 
-					std::cout << r2cm::linefeed;
+					LF();
 
 					{
 						OUTPUT_NOTE( "판별 결과" );
 
-						std::cout << r2cm::linefeed;
+						LF();
 
 						stage.Reset();
 						for( uint32_t y = 0; stage.GetHeight() > y; ++y )
@@ -271,7 +271,7 @@ namespace test_p2048mini_gameprocessor
 						PROCESS_MAIN( PrintStage( stage ) );
 					}
 
-					std::cout << r2cm::linefeed;
+					LF();
 
 					std::cout << "Press [ W, A, S, D | ESC ]";
 					input = _getch();
@@ -279,7 +279,7 @@ namespace test_p2048mini_gameprocessor
 				} while( 27 != input );
 			}
 
-			std::cout << r2cm::split;
+			LS();
 
 			return r2cm::eDoLeaveAction::None;
 		};
@@ -298,11 +298,11 @@ namespace test_p2048mini_gameprocessor
 	{
 		return []()->r2cm::eDoLeaveAction
 		{
-			std::cout << r2cm::split;
+			LS();
 
 			DECLARATION_MAIN( p2048mini::Stage stage( 4, 4 ) );
 
-			std::cout << r2cm::split;
+			LS();
 
 			DECLARATION_MAIN( r2::Direction4 move_dir );
 			DECLARATION_MAIN( const r2::PointInt center( stage.GetWidth() / 2, stage.GetHeight() / 2 ) );
@@ -310,12 +310,12 @@ namespace test_p2048mini_gameprocessor
 			DECLARATION_MAIN( r2::PointInt pivot_2 );
 			DECLARATION_MAIN( r2::PointInt temp );
 
-			std::cout << r2cm::split;
+			LS();
 
 			{
 				OUTPUT_VALUE( center );
 
-				std::cout << r2cm::linefeed;
+				LF();
 
 				const auto pivot_cursor_point = r2cm::WindowUtility::GetCursorPoint();
 				int input = 0;
@@ -345,7 +345,7 @@ namespace test_p2048mini_gameprocessor
 					}
 					OUTPUT_VALUE( move_dir.GetPoint() );
 
-					std::cout << r2cm::linefeed;
+					LF();
 
 					{
 						temp = r2::PointInt( center.GetX() * move_dir.GetX(), center.GetY() * move_dir.GetY() );
@@ -357,7 +357,7 @@ namespace test_p2048mini_gameprocessor
 						OUTPUT_VALUE( pivot_1 );
 					}
 
-					std::cout << r2cm::linefeed;
+					LF();
 
 					{
 						pivot_2.SetX( pivot_1.GetX() * std::abs( move_dir.GetX() ) );
@@ -365,7 +365,7 @@ namespace test_p2048mini_gameprocessor
 						OUTPUT_VALUE( pivot_2 );
 					}
 
-					std::cout << r2cm::linefeed;
+					LF();
 
 					{
 						stage.Reset();
@@ -375,11 +375,11 @@ namespace test_p2048mini_gameprocessor
 						PROCESS_MAIN( PrintStage( stage ) );
 					}
 
-					std::cout << r2cm::linefeed;
+					LF();
 
 					OUTPUT_NOTE( "pivot_1 이 있는 줄 부터 reverse_dir 방향으로 처리한다." );
 
-					std::cout << r2cm::linefeed;
+					LF();
 
 					{
 						r2::PointInt temp_point;
@@ -388,7 +388,7 @@ namespace test_p2048mini_gameprocessor
 						PROCESS_MAIN( reverse_dir.Rotate( true ) );
 						OUTPUT_VALUE( reverse_dir.GetPoint() );
 
-						std::cout << r2cm::linefeed;
+						LF();
 
 						//
 						// loop_count 1당 stage 한 줄이 처리된다.
@@ -422,7 +422,7 @@ namespace test_p2048mini_gameprocessor
 						PROCESS_MAIN( PrintStage( stage ) );
 					}
 
-					std::cout << r2cm::linefeed;
+					LF();
 
 					std::cout << "Press [ W, A, S, D | ESC ]";
 					input = _getch();
@@ -430,7 +430,7 @@ namespace test_p2048mini_gameprocessor
 				} while( 27 != input );
 			}
 
-			std::cout << r2cm::split;
+			LS();
 
 			return r2cm::eDoLeaveAction::None;
 		};
@@ -449,12 +449,12 @@ namespace test_p2048mini_gameprocessor
 	{
 		return []()->r2cm::eDoLeaveAction
 		{
-			std::cout << r2cm::split;
+			LS();
 
 			DECLARATION_MAIN( p2048mini::Stage stage( 4, 4 ) );
 			DECLARATION_MAIN( p2048mini::GameProcessor game_processor( &stage ) );
 
-			std::cout << r2cm::split;
+			LS();
 
 			{
 				PROCESS_MAIN( stage.Add( 0, 0, 1 ) );
@@ -464,7 +464,7 @@ namespace test_p2048mini_gameprocessor
 				PROCESS_MAIN( stage.Add( 3, 3, 8 ) );
 			}
 
-			std::cout << r2cm::split;
+			LS();
 
 
 			{
@@ -494,15 +494,15 @@ namespace test_p2048mini_gameprocessor
 						std::cout << "Input Empty" << r2cm::linefeed;
 					}
 
-					std::cout << r2cm::linefeed;
+					LF();
 
 					PROCESS_MAIN( PrintStage( stage ) );
 
-					std::cout << r2cm::linefeed;
+					LF();
 
 					std::cout << ( has_moved ? "Move Success" : "Move Failed" ) << r2cm::linefeed;
 
-					std::cout << r2cm::linefeed;
+					LF();
 
 					std::cout << "Press [ W, A, S, D | ESC ]" << r2cm::linefeed2;
 
@@ -511,7 +511,7 @@ namespace test_p2048mini_gameprocessor
 				} while( 27 != input );
 			}
 
-			std::cout << r2cm::split;
+			LS();
 
 			return r2cm::eDoLeaveAction::None;
 		};
@@ -530,12 +530,12 @@ namespace test_p2048mini_gameprocessor
 	{
 		return []()->r2cm::eDoLeaveAction
 		{
-			std::cout << r2cm::split;
+			LS();
 
 			DECLARATION_MAIN( p2048mini::Stage stage( 4, 1 ) );
 			DECLARATION_MAIN( p2048mini::GameProcessor game_processor( &stage ) );
 
-			std::cout << r2cm::split;
+			LS();
 
 			{
 				stage.Add( 0, 0, 2 );
@@ -544,38 +544,38 @@ namespace test_p2048mini_gameprocessor
 				PROCESS_MAIN( PrintStage( stage ) );
 			}
 
-			std::cout << r2cm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( const auto move_result = game_processor.Move( r2::Direction4::eState::Right ) );
 				PROCESS_MAIN( PrintStage( stage ) );
 
-				std::cout << r2cm::linefeed;
+				LF();
 
 				EXPECT_EQ( 2, stage.GetNumber( 2, 0 ) );
 				EXPECT_EQ( 2, stage.GetNumber( 3, 0 ) );
 
-				std::cout << r2cm::linefeed;
+				LF();
 
 				EXPECT_EQ( 2, game_processor.GetSum4Merged() );
 			}
 
-			std::cout << r2cm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( const auto move_result = game_processor.Move( r2::Direction4::eState::Right ) );
 				PROCESS_MAIN( PrintStage( stage ) );
 
-				std::cout << r2cm::linefeed;
+				LF();
 
 				EXPECT_EQ( 4, stage.GetNumber( 3, 0 ) );
 
-				std::cout << r2cm::linefeed;
+				LF();
 
 				EXPECT_EQ( 4, game_processor.GetSum4Merged() );
 			}
 
-			std::cout << r2cm::split;
+			LS();
 
 			{
 				PROCESS_MAIN( stage.Add( 0, 0, 4 ) );
@@ -583,22 +583,22 @@ namespace test_p2048mini_gameprocessor
 				PROCESS_MAIN( stage.Add( 2, 0, 4 ) );
 				PROCESS_MAIN( PrintStage( stage ) );
 
-				std::cout << r2cm::linefeed;
+				LF();
 
 				DECLARATION_MAIN( const auto move_result = game_processor.Move( r2::Direction4::eState::Right ) );
 				PROCESS_MAIN( PrintStage( stage ) );
 
-				std::cout << r2cm::linefeed;
+				LF();
 
 				EXPECT_EQ( 8, stage.GetNumber( 2, 0 ) );
 				EXPECT_EQ( 8, stage.GetNumber( 3, 0 ) );
 
-				std::cout << r2cm::linefeed;
+				LF();
 
 				EXPECT_EQ( 16, game_processor.GetSum4Merged() );
 			}
 
-			std::cout << r2cm::split;
+			LS();
 
 			return r2cm::eDoLeaveAction::Pause;
 		};
@@ -617,16 +617,16 @@ namespace test_p2048mini_gameprocessor
 	{
 		return []()->r2cm::eDoLeaveAction
 		{
-			std::cout << r2cm::split;
+			LS();
 
-			std::cout << r2cm::tab << "+ Node : 주변의 숫자가 0 이거나 같다면 이동 한다." << r2cm::linefeed;
+			OUTPUT_NOTE( "주변의 숫자가 0 이거나 같다면 이동 한다." );
 
-			std::cout << r2cm::split;
+			LS();
 
 			DECLARATION_MAIN( p2048mini::Stage stage( 2, 2 ) );
 			DECLARATION_MAIN( p2048mini::GameProcessor game_processor( &stage ) );
 
-			std::cout << r2cm::split;
+			LS();
 
 			{
 				stage.Add( 0, 0, 7 );
@@ -637,7 +637,7 @@ namespace test_p2048mini_gameprocessor
 				EXPECT_TRUE( game_processor.IsMovable() );
 			}
 
-			std::cout << r2cm::split;
+			LS();
 
 			{
 				stage.Add( 0, 0, 1 );
@@ -648,7 +648,7 @@ namespace test_p2048mini_gameprocessor
 				EXPECT_TRUE( game_processor.IsMovable() );
 			}
 
-			std::cout << r2cm::split;
+			LS();
 
 			{
 				stage.Add( 0, 0, 1 );
@@ -659,7 +659,7 @@ namespace test_p2048mini_gameprocessor
 				EXPECT_TRUE( game_processor.IsMovable() );
 			}
 
-			std::cout << r2cm::split;
+			LS();
 
 			{
 				stage.Add( 0, 0, 1 );
@@ -670,7 +670,7 @@ namespace test_p2048mini_gameprocessor
 				EXPECT_FALSE( game_processor.IsMovable() );
 			}
 
-			std::cout << r2cm::split;
+			LS();
 
 			{
 				stage.Add( 0, 0, 1 );
@@ -681,7 +681,7 @@ namespace test_p2048mini_gameprocessor
 				EXPECT_TRUE( game_processor.IsMovable() );
 			}
 
-			std::cout << r2cm::split;
+			LS();
 
 			return r2cm::eDoLeaveAction::Pause;
 		};

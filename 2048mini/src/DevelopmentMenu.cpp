@@ -109,14 +109,6 @@ r2cm::WriteFunctionT DevelopmentMenu::GetWriteFunction() const
 		ret->AddSplit();
 
 
-		ret->AddItem(
-			27
-			, r2cm::eColor::BG_Purple
-			, []()->const char* { return "Exit"; }
-			, []()->r2cm::eDoLeaveAction
-			{
-				return r2cm::eDoLeaveAction::Exit;
-			}
-		);
+		ret->AddExit( 27 );
 	};
 }

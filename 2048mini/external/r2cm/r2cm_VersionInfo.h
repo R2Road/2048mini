@@ -14,35 +14,57 @@ namespace r2cm
 
 		const char VersionNumber_1 = '1';
 		const char VersionNumber_2 = '0';
-		const char VersionNumber_3 = '5';
+		const char VersionNumber_3 = '6';
+		const char VersionNumber_4 = '0';
 
-		const char String4Version[14] = { 'r', '2', 'c', 'm', ' ', ':', ' ', 'v', VersionNumber_1, '.', VersionNumber_2, '.', VersionNumber_3, '\0' };
 
 
+		const char* const String4VersionRule =
+					"### Version Rule ###"
+			"\n"
+			"\n"	"> " "1.0.0.0"  " : "  "완성?"
+			"\n"	"> " "0.1.0.0"  " : "  "하위 버전 숫자가 10에 도달"
+			"\n"	"> " "0.0.1.0"  " : "  "Road 완료"
+			"\n"	"> " "0.0.0.1"  " : "  "사용자가 변경 사항을 몰라도 되는 변화"
+		;
+
+
+
+		const char String4Version[16] = { 'r', '2', 'c', 'm', ' ', ':', ' ', 'v', VersionNumber_1, '.', VersionNumber_2, '.', VersionNumber_3, '.', VersionNumber_4, '\0' };
+
+
+		const char* const String4Road2Version_1_0_7 =
+			"### Road 2 Version 1.0.7 ###"
+			"\n"
+			"\n"	"[ ] " "..."
+		;
+
+		const char* const String4Road2Version_1_0_6 =
+					"### Road 2 Version 1.0.6 ###"
+			"\n"
+			"\n"	"[o] " "update inspector : Add - OUTPUT_SUBJECT"
+			"\n"	"[o] " "update inspector : Add - OUTPUT_SIZE"
+			"\n"	"[o] " "update ostream : Add - LF(), LF2(), LF3(), LS()"
+			"\n"	"[o] " "update menuprocessor : Add - AddExit"
+			"\n"	"[o] " "update inspector : Apply Color - OUTPUT_NOTE, OUTPUT_SUBJECT, OUTPUT_COMMENT, OUTPUT_CODE"
+		;
 
 		const char* const String4Road2Version_1_0_5 =
-			"### Version Rule ###"
-			"\n"
-			"\n"	"> " "1.0.0"  " : "  "완성?"
-			"\n"	"> " "0.1.0"  " : "  "하위 버전 숫자가 10에 도달"
-			"\n"	"> " "0.0.1"  " : "  "사용자에게 코드 변경을 요구한다."
-			"\n"
-			"\n"
-			"\n"	"### Road 2 Version 1.0.5 ###"
+					"### Road 2 Version 1.0.5 ###"
 			"\n"
 			"\n"	"[o] " "update inspector : EXPECT_GT, EXPECT_LT, EXPECT_GE, EXPECT_LE - 실패시 값 출력"
 			"\n"	"[o] " "Split Menu And MenuProcessor"
-		; 
+		;
 		
 		const char* const String4Road2Version_1_0_4 =
-			"### Road 2 Version 1.0.4 ###"
+					"### Road 2 Version 1.0.4 ###"
 			"\n"
 			"\n"	"[o] " "update method : apply const - r2cm::iItem::GetDoFunction"
 			"\n"	"[o] " "remove class : r2cm::SingleTon"
-		; 
+		;
 		
 		const char* const String4Road2Version_1_0_3 =
-			"### Road 2 Version 1.0.3 ###"
+					"### Road 2 Version 1.0.3 ###"
 			"\n"
 			"\n"	"[o] " "update inspector : EXPECT_EQ, EXPECT_NE - 실패시 값 출력"
 			"\n"	"[o] " "update inspector : OUTPUT_BINARY - 가시성 개선"
@@ -51,19 +73,19 @@ namespace r2cm
 			"\n"	"[o] " "update inspector : Add - OUTPUT_COMMENT"
 			"\n"	"[o] " "update inspector : OUTPUT_FILE 에서 line index 출력"
 			"\n"	"[o] " "update inspector : Add - OUTPUT_FILE_RANGE"
-		; 
+		;
 		
 		const char* const String4Road2Version_1_0_2 =
-			"### Road 2 Version 1.0.2 ###"
+					"### Road 2 Version 1.0.2 ###"
 			"\n"
 			"\n"	"[o] " "add method : r2cm::WindowUtility::ScrollBarVisible"
 			"\n"	"[o] " "add method : r2cm::WindowUtility::MaximizeButtonEnable"
 			"\n"	"[o] " "add method : r2cm::WindowUtility::ResizingByDraggingEnable"
 			"\n"	"[o] " "add method : r2cm::WindowUtility::QuickEditEnable"
-		; 
+		;
 		
 		const char* const String4Road2Version_1_0_1 =
-			"### Road 2 Version 1.0.1 ###"
+					"### Road 2 Version 1.0.1 ###"
 			"\n"
 			"\n"	"[o] " "add class : r2cm::StopWatch"
 			"\n"	"[o] " "update method : r2cm::Menu::AddItem - Item 제목에 컬러 적용"

@@ -216,8 +216,30 @@ do {																						\
 //
 #define	OUTPUT_CODE( condition )															\
 do {																						\
-	printf( "[CODE]" " %s" "\n", #condition );												\
+	printf( "[CODE]"  "\x1B[90m"  " %s"  "\033[0m"  "\n", #condition );						\
 } while( false )
+
+
+
+
+//
+// Output Size
+//
+#if _WIN64 == 1
+
+#define	OUTPUT_SIZE( condition )															\
+do {																						\
+	printf( "[SIZE]" " %s" "\n" "\t> %llu" "\n", #condition, sizeof( condition ) );			\
+} while( false )
+
+#else
+
+#define	OUTPUT_SIZE( condition )															\
+do {																						\
+	printf( "[SIZE]" " %s" "\n" "\t> %u" "\n", #condition, sizeof( condition ) );			\
+} while( false )
+
+#endif
 
 
 
@@ -227,12 +249,17 @@ do {																						\
 //
 #define	OUTPUT_NOTE( str )																	\
 do {																						\
-	printf( "\t" "+ Note : " "%s" "\n", str );												\
+	printf( "\t"  "\x1B[91m"  "+ NOTE : "  "%s"  "\033[0m"  "\n", str );					\
+} while( false )
+
+#define	OUTPUT_SUBJECT( str )																\
+do {																						\
+	printf( "\t"  "\x1B[92m"  "+ "  "%s"  "\033[0m"  "\n", str );							\
 } while( false )
 
 #define	OUTPUT_COMMENT( str )																\
 do {																						\
-	printf( "\t" "> " "%s" "\n", str );														\
+	printf( "\t"  "\x1B[93m"  "> " "%s"  "\033[0m"  "\n", str );							\
 } while( false )
 
 

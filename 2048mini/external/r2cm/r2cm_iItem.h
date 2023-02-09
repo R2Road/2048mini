@@ -9,7 +9,7 @@ namespace r2cm
 	public:
 		virtual ~iItem() {}
 
-		virtual r2cm::TitleFunctionT GetTitleFunction() const = 0;
-		virtual r2cm::DoFunctionT GetDoFunction() const = 0;
+		virtual TitleFunctionT GetTitleFunction() const = 0;
+		virtual DoFunctionT GetDoFunction() const = 0;
 	};
 }

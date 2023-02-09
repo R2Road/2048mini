@@ -19,8 +19,8 @@ namespace r2cm
 			ItemInfo(
 				const char key_code
 				, const int color_code
-				, const r2cm::TitleFunctionT& title_function
-				, const r2cm::DoFunctionT& do_function
+				, const TitleFunctionT& title_function
+				, const DoFunctionT& do_function
 			) :
 				KeyCode( key_code )
 				, ColorCode( color_code )
@@ -30,8 +30,8 @@ namespace r2cm
 
 			char KeyCode;
 			int ColorCode;
-			r2cm::TitleFunctionT TitleFunction;
-			r2cm::DoFunctionT DoFunction;
+			TitleFunctionT TitleFunction;
+			DoFunctionT DoFunction;
 		};
 
 		using ItemContainerT = std::vector<ItemInfo>;
@@ -51,14 +51,17 @@ namespace r2cm
 		//
 		//
 		//
-		void Reset( const r2cm::TitleFunctionT& title_function, const DescriptionFunctionT& description_function, const WriteFunctionT& write_function );
+		void Reset( const TitleFunctionT& title_function, const DescriptionFunctionT& description_function, const WriteFunctionT& write_function );
 
 		//
 		//
 		//
-		void AddItem( const char key_code, const int color_code, const r2cm::TitleFunctionT& func_title, const r2cm::DoFunctionT& func_do );
-		void AddItem( const char key_code, const r2cm::TitleFunctionT& func_title, const r2cm::DoFunctionT& func_do );
+		void AddItem( const char key_code, const int color_code, const TitleFunctionT& func_title, const DoFunctionT& func_do );
+		void AddItem( const char key_code, const TitleFunctionT& func_title, const DoFunctionT& func_do );
 		void AddItem( const char key_code, const iItem& item_obj );
+
+		void AddExit( const char key_code, const int color_code );
+		void AddExit( const char key_code );
 
 		void AddMenu( const char key_code, const iMenu& menu_obj );
 

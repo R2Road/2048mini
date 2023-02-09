@@ -61,3 +61,21 @@ namespace r2cm
 		return ( os );
 	}
 }
+
+inline void LF()
+{
+	std::cout << r2cm::linefeed;
+}
+inline void LF2()
+{
+	std::cout << r2cm::linefeed2;
+}
+inline void LF3()
+{
+	std::cout << r2cm::linefeed3;
+}
+
+inline void LS()
+{
+	std::cout << r2cm::split;
+}

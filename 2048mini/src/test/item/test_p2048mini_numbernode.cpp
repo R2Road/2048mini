@@ -23,28 +23,28 @@ namespace test_p2048mini_numbernode
 	{
 		return []()->r2cm::eDoLeaveAction
 		{
-			std::cout << r2cm::split;
+			LS();
 
 			DECLARATION_SUB( r2render::Camera camera( { 0, 0 }, { 21, 11 } ) );
 			DECLARATION_SUB( r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
 			DECLARATION_SUB( r2base::Director dummy_director );
 
-			std::cout << r2cm::split;
+			LS();
 
 			DECLARATION_MAIN( auto number_node = p2048mini::NumberNode::Create( dummy_director ) );
 			EXPECT_NE( nullptr, number_node->GetComponent<p2048mini::NumberComponent>() );
 
-			std::cout << r2cm::split;
+			LS();
 
 			{
 				PROCESS_MAIN( number_node->Render( &camera, &render_target, r2::PointInt::GetZERO() ) );
 
-				std::cout << r2cm::linefeed;
+				LF();
 
 				Utility4Test::DrawTexture( render_target );
 			}
 
-			std::cout << r2cm::split;
+			LS();
 
 			return r2cm::eDoLeaveAction::Pause;
 		};
@@ -63,14 +63,14 @@ namespace test_p2048mini_numbernode
 	{
 		return []()->r2cm::eDoLeaveAction
 		{
-			std::cout << r2cm::split;
+			LS();
 
 			DECLARATION_SUB( r2render::Camera camera( { 0, 0 }, { 11, 5 } ) );
 			DECLARATION_SUB( r2render::Texture render_target( camera.GetWidth(), camera.GetHeight(), '=' ) );
 			DECLARATION_SUB( r2base::Director dummy_director );
 			DECLARATION_MAIN( auto number_node = p2048mini::NumberNode::Create( dummy_director ) );
 
-			std::cout << r2cm::split;
+			LS();
 
 			{
 				PROCESS_MAIN( number_node->GetComponent<p2048mini::NumberComponent>()->SetNumber( 2048, false, false ) );
@@ -104,7 +104,7 @@ namespace test_p2048mini_numbernode
 				EXPECT_EQ( r2base::BG_Black | r2base::FG_LightYellow, render_target.GetColor( 6, 2 ) );
 			}
 
-			std::cout << r2cm::split;
+			LS();
 
 			return r2cm::eDoLeaveAction::Pause;
 		};

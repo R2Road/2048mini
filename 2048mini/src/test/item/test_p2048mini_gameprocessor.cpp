@@ -176,6 +176,13 @@ namespace test_p2048mini_gameprocessor
 			LS();
 
 			{
+				std::cout << "[     ESC    ] Exit" << r2cm::linefeed;
+				std::cout << "[ W, A, S, D ] Move" << r2cm::linefeed;
+			}
+
+			LS();
+
+			{
 				OUTPUT_VALUE( center );
 
 				LF();
@@ -271,9 +278,6 @@ namespace test_p2048mini_gameprocessor
 						PROCESS_MAIN( PrintStage( stage ) );
 					}
 
-					LF();
-
-					std::cout << "Press [ W, A, S, D | ESC ]";
 					input = _getch();
 
 				} while( 27 != input );

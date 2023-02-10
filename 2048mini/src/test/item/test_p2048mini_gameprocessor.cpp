@@ -466,6 +466,12 @@ namespace test_p2048mini_gameprocessor
 
 			LS();
 
+			{
+				std::cout << "Press [ W, A, S, D | ESC ]" << r2cm::linefeed;
+			}
+
+			LS();
+
 
 			{
 				const auto pivot_cursor_point = r2cm::WindowUtility::GetCursorPoint();
@@ -501,10 +507,6 @@ namespace test_p2048mini_gameprocessor
 					LF();
 
 					std::cout << ( has_moved ? "Move Success" : "Move Failed" ) << r2cm::linefeed;
-
-					LF();
-
-					std::cout << "Press [ W, A, S, D | ESC ]" << r2cm::linefeed2;
 
 					input = _getch();
 

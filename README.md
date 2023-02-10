@@ -7,7 +7,7 @@
 
 
 ## 개괄 | Overview
-- [r2bix_console_framework]( https://github.com/R2Road/r2_console_menu ) 의 test 를 위해 만들었다. | It was made for the test of [r2bix_console_framework]( https://github.com/R2Road/r2_console_menu ).
+- [r2bix]( https://github.com/R2Road/r2bix_console_framework ) 의 test 를 위해 만들었다. | It was made for the test of [r2bix]( https://github.com/R2Road/r2bix_console_framework ).
 - Saming's 2048 을 기반으로 만들어졌다. | Game is based on Saming's 2048
 - 룰은 [https://play2048.co/]( https://play2048.co/ ) 이곳에서 플레이 하면서 얻었다. | I got the rules by playing here. [https://play2048.co/]( https://play2048.co/ )
 - 모든 코드는 직접 작성했다. | All the code was written by myself.
@@ -26,7 +26,7 @@
 - external library
   - [vld]( https://kinddragon.github.io/vld/ )
   - [r2_console_menu]( https://github.com/R2Road/r2_console_menu )
-  - [r2bix_console_framework]( https://github.com/R2Road/r2bix_console_framework )
+  - [r2bix]( https://github.com/R2Road/r2bix_console_framework )
 
 
 ## License

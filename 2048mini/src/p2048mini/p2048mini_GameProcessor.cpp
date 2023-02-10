@@ -131,7 +131,7 @@ namespace p2048mini
 				{
 					r2::PointInt check_point( x * std::abs( move_dir.GetPoint().GetX() ), y * std::abs( move_dir.GetPoint().GetY() ) );
 
-					if( pivot_point_2.GetX() != check_point.GetX() || pivot_point_2.GetY() != check_point.GetY() )
+					if( pivot_point_2 != check_point )
 					{
 						continue;
 					}

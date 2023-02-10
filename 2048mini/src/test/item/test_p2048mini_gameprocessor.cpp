@@ -265,7 +265,7 @@ namespace test_p2048mini_gameprocessor
 								// 유효한 pivot_2를 만들기 위해 기준이 될 위치까지 이동시킨 것 이다.
 								//
 								const r2::PointInt temp_point( x * std::abs( move_dir.GetX() ), y * std::abs( move_dir.GetY() ) );
-								stage.Add( x, y, pivot_2.GetX() == temp_point.GetX() && pivot_2.GetY() == temp_point.GetY() );
+								stage.Add( x, y, pivot_2 == temp_point );
 							}
 						}
 						PROCESS_MAIN( PrintStage( stage ) );
@@ -410,7 +410,7 @@ namespace test_p2048mini_gameprocessor
 									//
 									temp_point.Set( x * std::abs( move_dir.GetX() ), y * std::abs( move_dir.GetY() ) );
 
-									if( pivot_2.GetX() == temp_point.GetX() && pivot_2.GetY() == temp_point.GetY() )
+									if( pivot_2 == temp_point )
 									{
 										stage.Add( x, y, loop_count );
 									}

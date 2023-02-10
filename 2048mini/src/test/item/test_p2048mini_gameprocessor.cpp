@@ -467,7 +467,8 @@ namespace test_p2048mini_gameprocessor
 			LS();
 
 			{
-				std::cout << "Press [ W, A, S, D | ESC ]" << r2cm::linefeed;
+				std::cout << "[     ESC    ] Exit" << r2cm::linefeed;
+				std::cout << "[ W, A, S, D ] Move" << r2cm::linefeed;
 			}
 
 			LS();

@@ -14,7 +14,7 @@ namespace p2048mini
 		};
 		static const NodeConfig& GetNodeConfig()
 		{
-			const static NodeConfig ret;
+			static const NodeConfig ret;
 			return ret;
 		}
 	};

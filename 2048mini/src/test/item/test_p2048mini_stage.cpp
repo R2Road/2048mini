@@ -67,6 +67,11 @@ namespace test_p2048mini_stage
 
 				LF();
 
+				EXPECT_EQ( 0, stage.GetNumberSpaceCount() );
+				EXPECT_EQ( 12, stage.GetEmptySpaceCount() );
+
+				LF();
+
 				OUTPUT_BINARY( stage );
 			}
 

@@ -111,6 +111,19 @@ namespace test_p2048mini_stage
 			LS();
 
 			{
+				OUTPUT_SUBJECT( "Overwrite" );
+
+				LF();
+
+				PROCESS_MAIN( stage.Add( 2, 2, 32 ) );
+				EXPECT_EQ( 32, stage.GetNumber( 2, 2 ) );
+
+				PrintStage( stage );
+			}
+
+			LS();
+
+			{
 				OUTPUT_SUBJECT( "Remove" );
 
 				LF();
@@ -128,11 +141,13 @@ namespace test_p2048mini_stage
 
 				LF();
 
-				PROCESS_MAIN( stage.Add( 1, 1, 1 ) );
-				PROCESS_MAIN( stage.Add( 1, 2, 1 ) );
-				PROCESS_MAIN( stage.Add( 1, 3, 1 ) );
+				PROCESS_MAIN( stage.Add( 2, 3, 1 ) );
 
 				PrintStage( stage );
+
+				LF();
+
+				OUTPUT_NOTE( "각 좌표가 r2::GridIndexConverter에 의해서 유효 범위 이내로 Clamp 처리된다." );
 			}
 
 			LS();

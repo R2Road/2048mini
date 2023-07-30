@@ -48,6 +48,9 @@ namespace test_p2048mini_stage
 
 			DECLARATION_MAIN( const uint32_t width = 4 );
 			DECLARATION_MAIN( const uint32_t height = 3 );
+
+			LS();
+
 			DECLARATION_MAIN( p2048mini::Stage stage( width, height ) );
 
 			LS();
@@ -55,20 +58,18 @@ namespace test_p2048mini_stage
 			{
 				EXPECT_EQ( width, stage.GetWidth() );
 				EXPECT_EQ( height, stage.GetHeight() );
+
+				LF();
+
+				EXPECT_EQ( width - 1, stage.GetMaxX() );
+				EXPECT_EQ( height - 1, stage.GetMaxY() );
+				EXPECT_EQ( width * height, stage.Size() );
 			}
 
 			LS();
 
 			{
 				PROCESS_MAIN( PrintStage( stage ) );
-			}
-
-			LS();
-
-			{
-				EXPECT_EQ( width - 1, stage.GetMaxX() );
-				EXPECT_EQ( height - 1, stage.GetMaxY() );
-				EXPECT_EQ( width * height, stage.Size() );
 			}
 
 			LS();

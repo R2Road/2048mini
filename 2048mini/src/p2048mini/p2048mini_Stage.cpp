@@ -12,10 +12,14 @@ namespace p2048mini
 		, mCurrentNumberCount( 0 )
 	{}
 
+
+
 	bool Stage::IsIn( const int32_t x, const int32_t y ) const
 	{
 		return ( 0 <= x && 0 <= y && static_cast<int>( GetWidth() ) > x && static_cast<int>( GetHeight() ) > y );
 	}
+
+
 
 	const Stage::Cell Stage::Get( const uint32_t linear_index ) const
 	{
@@ -34,6 +38,8 @@ namespace p2048mini
 	{
 		return GetNumber( mGridIndexConverter.To_Linear( x, y ) );
 	}
+
+
 
 	void Stage::Reset()
 	{
@@ -69,6 +75,8 @@ namespace p2048mini
 		--mCurrentNumberCount;
 		Get( linear_index ).number = 0;
 	}
+
+
 
 	void Stage::ClearAllFlags()
 	{

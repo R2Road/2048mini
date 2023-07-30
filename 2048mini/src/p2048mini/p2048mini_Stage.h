@@ -16,16 +16,23 @@ namespace p2048mini
 			bool merge_lock = false;
 			bool newcomer = false;
 		};
+
 		using ContainerT = std::vector<Cell>;
 		using ConstIteratorT = typename ContainerT::const_iterator;
 
+
+
 		Stage( const uint32_t width, const uint32_t height );
+
+
 
 		//
 		// Iteration
 		//
 		ConstIteratorT begin() const { return mContainer.begin(); }
 		ConstIteratorT end() const { return mContainer.end(); }
+
+
 
 		//
 		// Getter
@@ -37,6 +44,8 @@ namespace p2048mini
 		uint32_t Size() const { return static_cast<uint32_t>( mContainer.size() ); }
 		bool IsIn( const int32_t x, const int32_t y ) const;
 
+
+
 	private:
 		const Cell Get( const uint32_t linear_index ) const;
 		Cell& Get( const uint32_t linear_index );
@@ -47,6 +56,8 @@ namespace p2048mini
 		int32_t GetEmptySpaceCount() const { return static_cast<int32_t>( mContainer.size() ) - GetNumberSpaceCount(); }
 		bool IsFull() const { return mContainer.size() == mCurrentNumberCount; }
 
+
+
 		//
 		//
 		//
@@ -54,6 +65,8 @@ namespace p2048mini
 		void Add( const uint32_t linear_index, const uint32_t val );
 		void Add( const uint32_t x, const uint32_t y, const uint32_t val );
 		void Remove( const uint32_t x, const uint32_t y );
+
+
 
 		//
 		//
@@ -64,6 +77,8 @@ namespace p2048mini
 		void SetNewcomer( const uint32_t linear_index );
 		void SetNewcomer( const uint32_t x, const uint32_t y );
 		bool IsNewcomer( const uint32_t x, const uint32_t y ) const;
+
+
 
 	private:
 		r2::GridIndexConverter mGridIndexConverter;

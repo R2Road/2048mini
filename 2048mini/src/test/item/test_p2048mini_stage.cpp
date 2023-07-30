@@ -64,6 +64,10 @@ namespace test_p2048mini_stage
 				EXPECT_EQ( width - 1, stage.GetMaxX() );
 				EXPECT_EQ( height - 1, stage.GetMaxY() );
 				EXPECT_EQ( width * height, stage.Size() );
+
+				LF();
+
+				OUTPUT_BINARY( stage );
 			}
 
 			LS();

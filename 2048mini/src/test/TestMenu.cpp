@@ -1,27 +1,27 @@
 #include "TestMenu.h"
 
-#include "r2cm/r2cm_Director.h"
-#include "r2cm/r2cm_ostream.h"
+#include "r2tm/r2tm_Director.h"
+#include "r2tm/r2tm_ostream.h"
 
 #include "test/item/test_p2048mini_gameprocessor.h"
 #include "test/item/test_p2048mini_numbernode.h"
 #include "test/item/test_p2048mini_stage.h"
 #include "test/item/test_p2048mini_stageviewnode.h"
 
-r2cm::TitleFunctionT TestMenu::GetTitleFunction() const
+r2tm::TitleFunctionT TestMenu::GetTitleFunction() const
 {
 	return []()->const char*
 	{
 		return "Test Menu";
 	};
 }
-r2cm::DescriptionFunctionT TestMenu::GetDescriptionFunction() const
+r2tm::DescriptionFunctionT TestMenu::GetDescriptionFunction() const
 {
 	return []()->const char* { return ""; };
 }
-r2cm::WriteFunctionT TestMenu::GetWriteFunction() const
+r2tm::WriteFunctionT TestMenu::GetWriteFunction() const
 {
-	return []( r2cm::MenuProcessor* ret )
+	return []( r2tm::MenuProcessor* ret )
 	{
 		ret->AddItem( '1', test_p2048mini_stage::Generate() );
 		ret->AddItem( '2', test_p2048mini_stage::Add_Remove() );
@@ -57,11 +57,11 @@ r2cm::WriteFunctionT TestMenu::GetWriteFunction() const
 
 		ret->AddItem(
 			27
-			, r2cm::eColor::BG_Purple
+			, r2tm::eColor::BG_Purple
 			, []()->const char* { return "Exit"; }
-			, []()->r2cm::eDoLeaveAction
+			, []()->r2tm::eDoLeaveAction
 			{
-				return r2cm::eDoLeaveAction::Exit;
+				return r2tm::eDoLeaveAction::Exit;
 			}
 		);
 	};

@@ -2,7 +2,7 @@
 
 #include <chrono>
 
-namespace r2cm
+namespace r2tm
 {
 	class StopWatch
 	{
@@ -23,7 +23,9 @@ namespace r2cm
 		void PrintElapsedTime_NanoSeconds();
 		void PrintElapsedTime_All();
 
-		void PrintMinAndMaxTime();
+		void PrintMinAndMaxTime_MilliSeconds();
+		void PrintMinAndMaxTime_MicroSeconds();
+		void PrintMinAndMaxTime_NanoSeconds();
 
 	private:
 		std::chrono::steady_clock::time_point mStartTime;

@@ -3,9 +3,9 @@
 #include <string_view>
 #include <vector>
 
-#include "r2cm_MenuConstant.h"
+#include "r2tm_MenuConstant.h"
 
-namespace r2cm
+namespace r2tm
 {
 	class Director;
 	class iItem;
@@ -18,18 +18,21 @@ namespace r2cm
 		{
 			ItemInfo(
 				const char key_code
-				, const int color_code
+				, const int message_color_code
+				, const int background_color_code
 				, const TitleFunctionT& title_function
 				, const DoFunctionT& do_function
 			) :
 				KeyCode( key_code )
-				, ColorCode( color_code )
+				, MessageColorCode( message_color_code )
+				, BackgroundColorCode( background_color_code )
 				, TitleFunction( title_function )
 				, DoFunction( do_function )
 			{}
 
 			char KeyCode;
-			int ColorCode;
+			int MessageColorCode;
+			int BackgroundColorCode;
 			TitleFunctionT TitleFunction;
 			DoFunctionT DoFunction;
 		};
@@ -56,17 +59,22 @@ namespace r2cm
 		//
 		//
 		//
-		void AddItem( const char key_code, const int color_code, const TitleFunctionT& func_title, const DoFunctionT& func_do );
+		void AddItem( const char key_code, const int message_color_code, const int background_color_code, const TitleFunctionT& func_title, const DoFunctionT& func_do );
+		void AddItem( const char key_code, const int message_color_code, const TitleFunctionT& func_title, const DoFunctionT& func_do );
 		void AddItem( const char key_code, const TitleFunctionT& func_title, const DoFunctionT& func_do );
 		void AddItem( const char key_code, const iItem& item_obj );
 
-		void AddExit( const char key_code, const int color_code );
+		void AddExit( const char key_code, const int message_color_code, const int background_color_code );
+		void AddExit( const char key_code, const int message_color_code );
 		void AddExit( const char key_code );
 
 		void AddMenu( const char key_code, const iMenu& menu_obj );
 
 		void AddLineFeed();
 		void AddSplit();
+
+		void AddMessage( const char* const message, const int message_color_code, const int background_color_code );
+		void AddMessage( const char* const message, const int message_color_code );
 		void AddMessage( const char* const message );
 
 	protected:

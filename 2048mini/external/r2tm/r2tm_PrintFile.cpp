@@ -1,8 +1,8 @@
-#include "r2cm_PrintFile.h"
+#include "r2tm_PrintFile.h"
 
 #include <stdio.h>
 
-namespace r2cm
+namespace r2tm
 {
 	const char* GetLine( FILE* fp )
 	{

@@ -1,10 +1,10 @@
-#include "r2cm_StopWatch.h"
+#include "r2tm_StopWatch.h"
 
 #include <numeric>
 
-#include "r2cm/r2cm_ostream.h"
+#include "r2tm/r2tm_ostream.h"
 
-namespace r2cm
+namespace r2tm
 {
 	StopWatch::StopWatch() :
 		mStartTime( std::chrono::nanoseconds::duration( 0 ) )
@@ -61,16 +61,28 @@ namespace r2cm
 	void StopWatch::PrintElapsedTime_All()
 	{
 		PrintElapsedTime_MilliSeconds();
-		std::cout << r2cm::tab;
+		std::cout << "     ";
 		PrintElapsedTime_MicroSeconds();
-		std::cout << r2cm::tab;
+		std::cout << "     ";
 		PrintElapsedTime_NanoSeconds();
 	}
 
-	void StopWatch::PrintMinAndMaxTime()
+	void StopWatch::PrintMinAndMaxTime_MilliSeconds()
+	{
+		std::cout << "Min : " << std::chrono::duration_cast<std::chrono::milliseconds>( std::chrono::nanoseconds::duration( mMinTime ) ).count() << "ms";
+		std::cout << "     ";
+		std::cout << "Max : " << std::chrono::duration_cast<std::chrono::milliseconds>( std::chrono::nanoseconds::duration( mMaxTime ) ).count() << "ms";
+	}
+	void StopWatch::PrintMinAndMaxTime_MicroSeconds()
+	{
+		std::cout << "Min : " << std::chrono::duration_cast<std::chrono::microseconds>( std::chrono::nanoseconds::duration( mMinTime ) ).count() << "¥ìs";
+		std::cout << "     ";
+		std::cout << "Max : " << std::chrono::duration_cast<std::chrono::microseconds>( std::chrono::nanoseconds::duration( mMaxTime ) ).count() << "¥ìs";
+	}
+	void StopWatch::PrintMinAndMaxTime_NanoSeconds()
 	{
 		std::cout << "Min : " << mMinTime << "ns";
-		std::cout << r2cm::tab;
+		std::cout << "     ";
 		std::cout << "Max : " << mMaxTime << "ns";
 	}
 }

@@ -1,10 +1,10 @@
-#include "r2cm_MenuProcessor.h"
+#include "r2tm_MenuProcessor.h"
 
 #include <cctype> // std::toupper
 
-#include "r2cm_iItem.h"
-#include "r2cm_iMenu.h"
-#include "r2cm_ostream.h"
+#include "r2tm_iItem.h"
+#include "r2tm_iMenu.h"
+#include "r2tm_ostream.h"
 
 
 namespace
@@ -14,7 +14,7 @@ namespace
 	const char KEYCODE_4_MESSAGE = '(';
 }
 
-namespace r2cm
+namespace r2tm
 {
 	MenuProcessor::MenuProcessor( Director& director ) :
 		mDirector( director )
@@ -25,22 +25,23 @@ namespace r2cm
 
 	void MenuProcessor::ShowTitle() const
 	{
-		std::cout << "# " << mTitleString << " #" << r2cm::linefeed;
-		std::cout << r2cm::split;
+		std::cout << "# " << mTitleString << " #" << r2tm::linefeed;
+
+		LS();
 	}
 	void MenuProcessor::ShowDescription() const
 	{
 		if( !mDescriptionString.empty() )
 		{
-			std::cout << clm( r2cm::eColor::FG_LightGreen ) << mDescriptionString << clm() << r2cm::linefeed;
+			std::cout << clm( r2tm::eColor::FG_LightGreen ) << mDescriptionString << clm() << r2tm::linefeed;
 
-			std::cout << r2cm::split;
+			LS();
 		}
 	}
 
 	void MenuProcessor::ShowItems() const
 	{
-		std::cout << "+ Menu" << r2cm::linefeed2;
+		std::cout << "+ Menu" << r2tm::linefeed2;
 
 		for( const auto t : mItemContainer )
 		{
@@ -49,17 +50,22 @@ namespace r2cm
 			//
 			if( KEYCODE_4_SPLIT == t.KeyCode ) // *
 			{
-				std::cout << r2cm::split;
+				LS();
 				continue;
 			}
 			if( KEYCODE_4_LINEFEED == t.KeyCode ) // @
 			{
-				std::cout << r2cm::linefeed;
+				LF();
 				continue;
 			}
 			if( KEYCODE_4_MESSAGE == t.KeyCode ) // (
 			{
-				std::cout << t.TitleFunction() << r2cm::linefeed;
+				std::cout
+					<< clm( static_cast<r2tm::eColor>( t.MessageColorCode ) )
+					<< clm( static_cast<r2tm::eColor>( t.BackgroundColorCode ) )
+					<< t.TitleFunction()
+					<< clm()
+					<< r2tm::linefeed;
 				continue;
 			}
 
@@ -86,10 +92,15 @@ namespace r2cm
 			//
 			// Title
 			//
-			std::cout << clm( static_cast<r2cm::eColor>( t.ColorCode ) ) << t.TitleFunction() << clm() << r2cm::linefeed;
+			std::cout
+				<< clm( static_cast<r2tm::eColor>( t.MessageColorCode) )
+				<< clm( static_cast<r2tm::eColor>( t.BackgroundColorCode ) )
+				<< t.TitleFunction()
+				<< clm()
+				<< r2tm::linefeed;
 		}
 
-		std::cout << r2cm::split << "Select Menu";
+		std::cout << r2tm::split << "Select Menu";
 	}
 
 	eDoLeaveAction MenuProcessor::Do( const int key_code )
@@ -98,7 +109,7 @@ namespace r2cm
 		{
 			if( key_code == i.KeyCode )
 			{
-				std::cout << "# " << i.TitleFunction() << " #" << r2cm::linefeed;
+				std::cout << "# " << i.TitleFunction() << " #" << r2tm::linefeed;
 
 				//
 				// # 2022.12.25 by R
@@ -127,36 +138,45 @@ namespace r2cm
 		write_function( this );
 	}
 
-	void MenuProcessor::AddItem( const char key_code, const int color_code, const TitleFunctionT& func_title, const DoFunctionT& func_do )
+	void MenuProcessor::AddItem( const char key_code, const int message_color_code, const int background_color_code, const TitleFunctionT& func_title, const DoFunctionT& func_do )
 	{
-		mItemContainer.emplace_back( key_code, color_code, func_title, func_do );
+		mItemContainer.emplace_back( key_code, message_color_code, background_color_code, func_title, func_do );
+	}
+	void MenuProcessor::AddItem( const char key_code, const int message_color_code, const TitleFunctionT& func_title, const DoFunctionT& func_do )
+	{
+		AddItem( key_code, message_color_code, r2tm::eColor::BG_Black, func_title, func_do );
 	}
 	void MenuProcessor::AddItem( const char key_code, const TitleFunctionT& func_title, const DoFunctionT& func_do )
 	{
-		mItemContainer.emplace_back( key_code, r2cm::eColor::FG_White, func_title, func_do );
+		AddItem( key_code, r2tm::eColor::FG_White, r2tm::eColor::BG_Black, func_title, func_do );
 	}
 	void MenuProcessor::AddItem( const char key_code, const iItem& item_obj )
 	{
-		AddItem( key_code, r2cm::eColor::FG_White, item_obj.GetTitleFunction(), item_obj.GetDoFunction() );
+		AddItem( key_code, r2tm::eColor::FG_White, r2tm::eColor::BG_Black, item_obj.GetTitleFunction(), item_obj.GetDoFunction() );
 	}
 
-	void MenuProcessor::AddExit( const char key_code, const int color_code )
+	void MenuProcessor::AddExit( const char key_code, const int message_color_code, const int background_color_code )
 	{
 		AddItem(
-			key_code
-			, color_code
+			  key_code
+			, message_color_code
+			, background_color_code
 			, []()->const char* { return "Exit"; }
-			, []()->r2cm::eDoLeaveAction { return r2cm::eDoLeaveAction::Exit; }
+			, []()->r2tm::eDoLeaveAction { return r2tm::eDoLeaveAction::Exit; }
 		);
+	}
+	void MenuProcessor::AddExit( const char key_code, const int message_color_code )
+	{
+		AddExit( key_code, message_color_code, r2tm::eColor::BG_Purple );
 	}
 	void MenuProcessor::AddExit( const char key_code )
 	{
-		AddExit( key_code, r2cm::eColor::BG_Purple );
+		AddExit( key_code, r2tm::eColor::FG_White, r2tm::eColor::BG_Purple );
 	}
 
 	void MenuProcessor::AddMenu( const char key_code, const iMenu& menu_obj )
 	{
-		AddItem( key_code, r2cm::eColor::FG_Aqua, menu_obj.GetTitleFunction()
+		AddItem( key_code, r2tm::eColor::FG_Aqua, menu_obj.GetTitleFunction()
 			, [
 				this
 				, title_function = menu_obj.GetTitleFunction()
@@ -176,20 +196,29 @@ namespace r2cm
 		static const TitleFunctionT func_title = []()->const char* { return ""; };
 		static const DoFunctionT func_do = []()->const eDoLeaveAction { return eDoLeaveAction::Pause; };
 
-		AddItem( KEYCODE_4_LINEFEED, r2cm::eColor::FG_White, func_title, func_do );
+		AddItem( KEYCODE_4_LINEFEED, r2tm::eColor::FG_White, func_title, func_do );
 	}
 	void MenuProcessor::AddSplit()
 	{
 		static const TitleFunctionT func_title = []()->const char* { return ""; };
 		static const DoFunctionT func_do = []()->const eDoLeaveAction { return eDoLeaveAction::Pause; };
 
-		AddItem( KEYCODE_4_SPLIT, r2cm::eColor::FG_White, func_title, func_do );
+		AddItem( KEYCODE_4_SPLIT, r2tm::eColor::FG_White, func_title, func_do );
 	}
-	void MenuProcessor::AddMessage( const char* const message )
+
+	void MenuProcessor::AddMessage( const char* const message, const int message_color_code, const int background_color_code )
 	{
 		const TitleFunctionT func_title = [message]()->const char* { return message; };
 		static const DoFunctionT func_do = []()->const eDoLeaveAction { return eDoLeaveAction::Pause; };
 
-		AddItem( KEYCODE_4_MESSAGE, r2cm::eColor::FG_White, func_title, func_do );
+		AddItem( KEYCODE_4_MESSAGE, message_color_code, background_color_code, func_title, func_do );
+	}
+	void MenuProcessor::AddMessage( const char* const message, const int message_color_code )
+	{
+		AddMessage( message, message_color_code, r2tm::eColor::BG_Black );
+	}
+	void MenuProcessor::AddMessage( const char* const message )
+	{
+		AddMessage( message, r2tm::eColor::FG_White );
 	}
 }

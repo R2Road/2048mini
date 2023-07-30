@@ -4,17 +4,17 @@
 
 #include "r2bix/r2base_Director.h"
 #include "r2bix/r2base_VersionInfo.h"
-#include "r2cm/r2cm_ostream.h"
-#include "r2cm/r2cm_Director.h"
-#include "r2cm/r2cm_VersionInfo.h"
-#include "r2cm/r2cm_WindowUtility.h"
+#include "r2tm/r2tm_ostream.h"
+#include "r2tm/r2tm_Director.h"
+#include "r2tm/r2tm_VersionInfo.h"
+#include "r2tm/r2tm_WindowUtility.h"
 
 #include "p2048mini/p2048mini_GameScene.h"
 #include "p2048mini/p2048mini_VersionInfo.h"
 
 #include "test/TestMenu.h"
 
-r2cm::TitleFunctionT DevelopmentMenu::GetTitleFunction() const
+r2tm::TitleFunctionT DevelopmentMenu::GetTitleFunction() const
 {
 	return []()->const char*
 	{
@@ -22,33 +22,33 @@ r2cm::TitleFunctionT DevelopmentMenu::GetTitleFunction() const
 			std::string( "Development Menu" )
 			+ " : " "<" + "C++17" + ">"
 			+ ", " "<" + "MS C/C++ : " + std::to_string( _MSC_VER ) + ">"
-			+ ", " "<" + r2cm::VersionInfo.String4Version + ">"
+			+ ", " "<" + r2tm::VersionInfo.String4Version + ">"
 			+ ", " "<" + r2base::VersionInfo.String4Version + ">"
 			+ ", " "<" + p2048mini::VersionInfo.String4Version + ">";
 		return ret.c_str();
 	};
 }
-r2cm::DescriptionFunctionT DevelopmentMenu::GetDescriptionFunction() const
+r2tm::DescriptionFunctionT DevelopmentMenu::GetDescriptionFunction() const
 {
 	return []()->const char* { return p2048mini::VersionInfo.String4SubjectOfAProject; };
 }
-r2cm::WriteFunctionT DevelopmentMenu::GetWriteFunction() const
+r2tm::WriteFunctionT DevelopmentMenu::GetWriteFunction() const
 {
-	return []( r2cm::MenuProcessor* ret )
+	return []( r2tm::MenuProcessor* ret )
 	{
 		ret->AddItem(
 			'1'
-			, r2cm::eColor::FG_White
+			, r2tm::eColor::FG_White
 			, []()->const char* { return "Test"; }
-			, []()->r2cm::eDoLeaveAction
+			, []()->r2tm::eDoLeaveAction
 			{
 				// 2022.04.11 by R2Road
-				// 인자로 넘어온 director 를 사용해도 되지만 아래 코드와의 일관성을 위해 새 r2cm::Director를 만들어 돌린다.
+				// 인자로 넘어온 director 를 사용해도 되지만 아래 코드와의 일관성을 위해 새 r2tm::Director를 만들어 돌린다.
 
 				//
 				// Setup
 				//
-				r2cm::Director director;
+				r2tm::Director director;
 				director.Setup( TestMenu() );
 
 				//
@@ -56,7 +56,7 @@ r2cm::WriteFunctionT DevelopmentMenu::GetWriteFunction() const
 				//
 				director.Run();
 
-				return r2cm::eDoLeaveAction::None;
+				return r2tm::eDoLeaveAction::None;
 			}
 		);
 
@@ -68,12 +68,12 @@ r2cm::WriteFunctionT DevelopmentMenu::GetWriteFunction() const
 
 		ret->AddItem(
 			32
-			, r2cm::eColor::BG_Blue
+			, r2tm::eColor::BG_Blue
 			, []()->const char* { return "2048mini"; }
-			, []()->r2cm::eDoLeaveAction
+			, []()->r2tm::eDoLeaveAction
 			{
-				r2cm::WindowUtility::Resize( 562, 800 );
-				r2cm::WindowUtility::Move( 0, 0 );
+				r2tm::WindowUtility::Resize( 562, 800 );
+				r2tm::WindowUtility::Move( 0, 0 );
 
 				{
 					//
@@ -85,9 +85,9 @@ r2cm::WriteFunctionT DevelopmentMenu::GetWriteFunction() const
 					//
 					// Environment : ScrollBar | Maximize Button
 					//
-					r2cm::WindowUtility::ScrollBarVisible( false );
-					r2cm::WindowUtility::MaximizeButtonEnable( false );
-					r2cm::WindowUtility::ResizingByDraggingEnable( false );
+					r2tm::WindowUtility::ScrollBarVisible( false );
+					r2tm::WindowUtility::MaximizeButtonEnable( false );
+					r2tm::WindowUtility::ResizingByDraggingEnable( false );
 
 					//
 					// Process
@@ -95,13 +95,13 @@ r2cm::WriteFunctionT DevelopmentMenu::GetWriteFunction() const
 					director.Run();
 				}
 
-				r2cm::WindowUtility::Resize( 960, 960 );
-				r2cm::WindowUtility::Move( 0, 0 );
-				r2cm::WindowUtility::ScrollBarVisible( true );
-				r2cm::WindowUtility::MaximizeButtonEnable( true );
-				r2cm::WindowUtility::ResizingByDraggingEnable( true );
+				r2tm::WindowUtility::Resize( 960, 960 );
+				r2tm::WindowUtility::Move( 0, 0 );
+				r2tm::WindowUtility::ScrollBarVisible( true );
+				r2tm::WindowUtility::MaximizeButtonEnable( true );
+				r2tm::WindowUtility::ResizingByDraggingEnable( true );
 
-				return r2cm::eDoLeaveAction::None;
+				return r2tm::eDoLeaveAction::None;
 			}
 		);
 

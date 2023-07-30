@@ -2,8 +2,8 @@
 
 #include "r2bix/r2base_Director.h"
 #include "r2bix/r2render_Camera.h"
-#include "r2cm/r2cm_ostream.h"
-#include "r2cm/r2cm_Inspector.h"
+#include "r2tm/r2tm_ostream.h"
+#include "r2tm/r2tm_Inspector.h"
 
 #include "p2048mini/p2048mini_NumberComponent.h"
 #include "p2048mini/p2048mini_NumberNode.h"
@@ -12,16 +12,16 @@
 
 namespace test_p2048mini_numbernode
 {
-	r2cm::TitleFunctionT Generate::GetTitleFunction() const
+	r2tm::TitleFunctionT Generate::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "NumberNode : Generate";
 		};
 	}
-	r2cm::DoFunctionT Generate::GetDoFunction() const
+	r2tm::DoFunctionT Generate::GetDoFunction() const
 	{
-		return []()->r2cm::eDoLeaveAction
+		return []()->r2tm::eDoLeaveAction
 		{
 			LS();
 
@@ -46,22 +46,22 @@ namespace test_p2048mini_numbernode
 
 			LS();
 
-			return r2cm::eDoLeaveAction::Pause;
+			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
 
 
 
-	r2cm::TitleFunctionT SetNumber::GetTitleFunction() const
+	r2tm::TitleFunctionT SetNumber::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "NumberNode : SetNumber";
 		};
 	}
-	r2cm::DoFunctionT SetNumber::GetDoFunction() const
+	r2tm::DoFunctionT SetNumber::GetDoFunction() const
 	{
-		return []()->r2cm::eDoLeaveAction
+		return []()->r2tm::eDoLeaveAction
 		{
 			LS();
 
@@ -79,7 +79,7 @@ namespace test_p2048mini_numbernode
 				EXPECT_EQ( r2base::BG_Black, render_target.GetColor( 1, 1 ) );
 				EXPECT_EQ( r2base::BG_Black | r2base::FG_Aqua, render_target.GetColor( 6, 2 ) );
 
-				std::cout << r2cm::linefeed2;
+				std::cout << r2tm::linefeed2;
 
 				PROCESS_MAIN( number_node->GetComponent<p2048mini::NumberComponent>()->SetNumber( 1024, true, false ) );
 				number_node->Render( &camera, &render_target, r2::PointInt::GetZERO() );
@@ -87,7 +87,7 @@ namespace test_p2048mini_numbernode
 				EXPECT_EQ( r2base::BG_Aqua, render_target.GetColor( 1, 1 ) );
 				EXPECT_EQ( r2base::BG_Aqua | r2base::FG_Black, render_target.GetColor( 6, 2 ) );
 
-				std::cout << r2cm::linefeed2;
+				std::cout << r2tm::linefeed2;
 
 				PROCESS_MAIN( number_node->GetComponent<p2048mini::NumberComponent>()->SetNumber( 512, true, true ) );
 				number_node->Render( &camera, &render_target, r2::PointInt::GetZERO() );
@@ -95,7 +95,7 @@ namespace test_p2048mini_numbernode
 				EXPECT_EQ( r2base::BG_Aqua, render_target.GetColor( 1, 1 ) );
 				EXPECT_EQ( r2base::BG_Aqua | r2base::FG_Black, render_target.GetColor( 6, 2 ) );
 
-				std::cout << r2cm::linefeed2;
+				std::cout << r2tm::linefeed2;
 
 				PROCESS_MAIN( number_node->GetComponent<p2048mini::NumberComponent>()->SetNumber( 4096, false, true ) );
 				number_node->Render( &camera, &render_target, r2::PointInt::GetZERO() );
@@ -106,7 +106,7 @@ namespace test_p2048mini_numbernode
 
 			LS();
 
-			return r2cm::eDoLeaveAction::Pause;
+			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
 }

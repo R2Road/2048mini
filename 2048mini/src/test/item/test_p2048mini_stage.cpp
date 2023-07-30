@@ -4,8 +4,8 @@
 #include <iomanip>
 
 #include "r2bix/r2base_Director.h"
-#include "r2cm/r2cm_ostream.h"
-#include "r2cm/r2cm_Inspector.h"
+#include "r2tm/r2tm_ostream.h"
+#include "r2tm/r2tm_Inspector.h"
 
 #include "p2048mini/p2048mini_Stage.h"
 
@@ -24,7 +24,7 @@ namespace test_p2048mini_stage
 				std::cout << std::setw( 2 ) << std::right << val;
 				std::cout << std::setw( 1 ) << std::left; // roll back
 
-				std::cout << r2cm::tab;
+				std::cout << r2tm::tab;
 			}
 
 			LF();
@@ -33,16 +33,16 @@ namespace test_p2048mini_stage
 
 
 
-	r2cm::TitleFunctionT Generate::GetTitleFunction() const
+	r2tm::TitleFunctionT Generate::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Stage : Generate";
 		};
 	}
-	r2cm::DoFunctionT Generate::GetDoFunction() const
+	r2tm::DoFunctionT Generate::GetDoFunction() const
 	{
-		return []()->r2cm::eDoLeaveAction
+		return []()->r2tm::eDoLeaveAction
 		{
 			LS();
 
@@ -73,22 +73,22 @@ namespace test_p2048mini_stage
 
 			LS();
 
-			return r2cm::eDoLeaveAction::Pause;
+			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
 
 
 
-	r2cm::TitleFunctionT Add_Remove::GetTitleFunction() const
+	r2tm::TitleFunctionT Add_Remove::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Stage : Add, Remove";
 		};
 	}
-	r2cm::DoFunctionT Add_Remove::GetDoFunction() const
+	r2tm::DoFunctionT Add_Remove::GetDoFunction() const
 	{
-		return []()->r2cm::eDoLeaveAction
+		return []()->r2tm::eDoLeaveAction
 		{
 			LS();
 
@@ -136,22 +136,22 @@ namespace test_p2048mini_stage
 
 			LS();
 
-			return r2cm::eDoLeaveAction::Pause;
+			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
 
 
 
-	r2cm::TitleFunctionT IsIn::GetTitleFunction() const
+	r2tm::TitleFunctionT IsIn::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Stage : IsIn";
 		};
 	}
-	r2cm::DoFunctionT IsIn::GetDoFunction() const
+	r2tm::DoFunctionT IsIn::GetDoFunction() const
 	{
-		return []()->r2cm::eDoLeaveAction
+		return []()->r2tm::eDoLeaveAction
 		{
 			LS();
 
@@ -183,22 +183,22 @@ namespace test_p2048mini_stage
 
 			LS();
 
-			return r2cm::eDoLeaveAction::Pause;
+			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
 
 
 
-	r2cm::TitleFunctionT NumberCount_EmptyCount_IsFull::GetTitleFunction() const
+	r2tm::TitleFunctionT NumberCount_EmptyCount_IsFull::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Stage : NumberCount, EmptyCount, IsFull";
 		};
 	}
-	r2cm::DoFunctionT NumberCount_EmptyCount_IsFull::GetDoFunction() const
+	r2tm::DoFunctionT NumberCount_EmptyCount_IsFull::GetDoFunction() const
 	{
-		return []()->r2cm::eDoLeaveAction
+		return []()->r2tm::eDoLeaveAction
 		{
 			LS();
 
@@ -274,22 +274,22 @@ namespace test_p2048mini_stage
 
 			LS();
 
-			return r2cm::eDoLeaveAction::Pause;
+			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
 
 
 
-	r2cm::TitleFunctionT Lock::GetTitleFunction() const
+	r2tm::TitleFunctionT Lock::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Stage : Lock";
 		};
 	}
-	r2cm::DoFunctionT Lock::GetDoFunction() const
+	r2tm::DoFunctionT Lock::GetDoFunction() const
 	{
-		return []()->r2cm::eDoLeaveAction
+		return []()->r2tm::eDoLeaveAction
 		{
 			LS();
 
@@ -343,22 +343,22 @@ namespace test_p2048mini_stage
 
 			LS();
 
-			return r2cm::eDoLeaveAction::Pause;
+			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
 
 
 
-	r2cm::TitleFunctionT Newcomer::GetTitleFunction() const
+	r2tm::TitleFunctionT Newcomer::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Stage : Newcomer";
 		};
 	}
-	r2cm::DoFunctionT Newcomer::GetDoFunction() const
+	r2tm::DoFunctionT Newcomer::GetDoFunction() const
 	{
-		return []()->r2cm::eDoLeaveAction
+		return []()->r2tm::eDoLeaveAction
 		{
 			LS();
 
@@ -412,22 +412,22 @@ namespace test_p2048mini_stage
 
 			LS();
 
-			return r2cm::eDoLeaveAction::Pause;
+			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
 
 
 
-	r2cm::TitleFunctionT Reset::GetTitleFunction() const
+	r2tm::TitleFunctionT Reset::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "Stage : Reset";
 		};
 	}
-	r2cm::DoFunctionT Reset::GetDoFunction() const
+	r2tm::DoFunctionT Reset::GetDoFunction() const
 	{
-		return []()->r2cm::eDoLeaveAction
+		return []()->r2tm::eDoLeaveAction
 		{
 			LS();
 
@@ -472,7 +472,7 @@ namespace test_p2048mini_stage
 
 			LS();
 
-			return r2cm::eDoLeaveAction::Pause;
+			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
 }

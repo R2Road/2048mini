@@ -1,6 +1,6 @@
 #pragma once
 
-namespace r2cm
+namespace r2tm
 {
 	void PrintFile( const char* const path );
 

@@ -2,7 +2,7 @@
 
 #include <functional>
 
-namespace r2cm
+namespace r2tm
 {
 	class MenuProcessor;
 

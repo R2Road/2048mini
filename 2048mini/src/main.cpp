@@ -2,14 +2,14 @@
 	#include "vld/include/vld.h"
 #endif
 
-#include "r2cm/r2cm_WindowUtility.h"
+#include "r2tm/r2tm_WindowUtility.h"
 #include "p2048mini/p2048mini_VersionInfo.h"
 
 #define DEVELOPMENT_2048MINI 1
 
 #if defined( DEVELOPMENT_2048MINI ) && ( DEVELOPMENT_2048MINI == 1 )
 
-	#include "r2cm/r2cm_Director.h"
+	#include "r2tm/r2tm_Director.h"
 	#include "DevelopmentMenu.h"
 
 #else
@@ -24,24 +24,24 @@ int main()
 	//
 	// Environment : Title
 	//
-	r2cm::WindowUtility::ChangeTitle( p2048mini::VersionInfo.String4Version );
+	r2tm::WindowUtility::ChangeTitle( p2048mini::VersionInfo.String4Version );
 
 #if defined( DEVELOPMENT_2048MINI ) && ( DEVELOPMENT_2048MINI == 1 )
 
 	//
 	// Environment : Size
 	//
-	r2cm::WindowUtility::Resize( 960, 960 );
+	r2tm::WindowUtility::Resize( 960, 960 );
 
 	//
 	// Environment : Position
 	//
-	r2cm::WindowUtility::Move( 0, 0 );
+	r2tm::WindowUtility::Move( 0, 0 );
 
 	//
 	// Setup & Run
 	//
-	r2cm::Director director;
+	r2tm::Director director;
 	director.Setup( DevelopmentMenu() );
 	director.Run();
 
@@ -50,12 +50,12 @@ int main()
 	//
 	// Environment : Size
 	//
-	r2cm::WindowUtility::Resize( 562, 800 );
+	r2tm::WindowUtility::Resize( 562, 800 );
 
 	//
 	// Environment : Position
 	//
-	r2cm::WindowUtility::Move( 0, 0 );
+	r2tm::WindowUtility::Move( 0, 0 );
 
 	//
 	// Setup
@@ -66,10 +66,10 @@ int main()
 	//
 	// Environment : ScrollBar | Maximize Button | Frame Lock
 	//
-	r2cm::WindowUtility::ScrollBarVisible( false );
-	r2cm::WindowUtility::MaximizeButtonEnable( false );
-	r2cm::WindowUtility::ResizingByDraggingEnable( false );
-	r2cm::WindowUtility::QuickEditEnable( false );
+	r2tm::WindowUtility::ScrollBarVisible( false );
+	r2tm::WindowUtility::MaximizeButtonEnable( false );
+	r2tm::WindowUtility::ResizingByDraggingEnable( false );
+	r2tm::WindowUtility::QuickEditEnable( false );
 
 	//
 	// Run

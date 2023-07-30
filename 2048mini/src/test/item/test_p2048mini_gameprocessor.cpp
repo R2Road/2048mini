@@ -4,13 +4,13 @@
 #include <iomanip>
 
 #include "r2bix/r2base_Director.h"
-#include "r2cm/r2cm_Inspector.h"
-#include "r2cm/r2cm_ostream.h"
+#include "r2tm/r2tm_Inspector.h"
+#include "r2tm/r2tm_ostream.h"
 
 #include "p2048mini/p2048mini_GameProcessor.h"
 #include "p2048mini/p2048mini_Stage.h"
 
-#include "r2cm/r2cm_WindowUtility.h"
+#include "r2tm/r2tm_WindowUtility.h"
 
 
 namespace test_p2048mini_gameprocessor
@@ -27,7 +27,7 @@ namespace test_p2048mini_gameprocessor
 				std::cout << std::setw( 2 ) << std::right << val;
 				std::cout << std::setw( 1 ) << std::left; // roll back
 
-				std::cout << r2cm::tab;
+				std::cout << r2tm::tab;
 			}
 
 			LF();
@@ -41,16 +41,16 @@ namespace test_p2048mini_gameprocessor
 
 
 
-	r2cm::TitleFunctionT MoveReady_Pivot_1::GetTitleFunction() const
+	r2tm::TitleFunctionT MoveReady_Pivot_1::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "GameProcessor : Move Ready - Pivot 1";
 		};
 	}
-	r2cm::DoFunctionT MoveReady_Pivot_1::GetDoFunction() const
+	r2tm::DoFunctionT MoveReady_Pivot_1::GetDoFunction() const
 	{
-		return []()->r2cm::eDoLeaveAction
+		return []()->r2tm::eDoLeaveAction
 		{
 			LS();
 
@@ -66,8 +66,8 @@ namespace test_p2048mini_gameprocessor
 			LS();
 
 			{
-				std::cout << "[     ESC    ] Exit" << r2cm::linefeed;
-				std::cout << "[ W, A, S, D ] Move" << r2cm::linefeed;
+				std::cout << "[     ESC    ] Exit" << r2tm::linefeed;
+				std::cout << "[ W, A, S, D ] Move" << r2tm::linefeed;
 			}
 
 			LS();
@@ -77,12 +77,12 @@ namespace test_p2048mini_gameprocessor
 
 				LF();
 
-				const auto pivot_cursor_point = r2cm::WindowUtility::GetCursorPoint();
+				const auto pivot_cursor_point = r2tm::WindowUtility::GetCursorPoint();
 				int input = 0;
 				do
 				{
 
-					r2cm::WindowUtility::MoveCursorPointWithClearBuffer( pivot_cursor_point );
+					r2tm::WindowUtility::MoveCursorPointWithClearBuffer( pivot_cursor_point );
 
 					switch( input )
 					{
@@ -148,22 +148,22 @@ namespace test_p2048mini_gameprocessor
 
 			LS();
 
-			return r2cm::eDoLeaveAction::None;
+			return r2tm::eDoLeaveAction::None;
 		};
 	}
 
 
 
-	r2cm::TitleFunctionT MoveReady_Pivot_2::GetTitleFunction() const
+	r2tm::TitleFunctionT MoveReady_Pivot_2::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "GameProcessor : Move Ready - Pivot 2";
 		};
 	}
-	r2cm::DoFunctionT MoveReady_Pivot_2::GetDoFunction() const
+	r2tm::DoFunctionT MoveReady_Pivot_2::GetDoFunction() const
 	{
-		return []()->r2cm::eDoLeaveAction
+		return []()->r2tm::eDoLeaveAction
 		{
 			LS();
 
@@ -180,8 +180,8 @@ namespace test_p2048mini_gameprocessor
 			LS();
 
 			{
-				std::cout << "[     ESC    ] Exit" << r2cm::linefeed;
-				std::cout << "[ W, A, S, D ] Move" << r2cm::linefeed;
+				std::cout << "[     ESC    ] Exit" << r2tm::linefeed;
+				std::cout << "[ W, A, S, D ] Move" << r2tm::linefeed;
 			}
 
 			LS();
@@ -191,12 +191,12 @@ namespace test_p2048mini_gameprocessor
 
 				LF();
 
-				const auto pivot_cursor_point = r2cm::WindowUtility::GetCursorPoint();
+				const auto pivot_cursor_point = r2tm::WindowUtility::GetCursorPoint();
 				int input = 0;
 				do
 				{
 
-					r2cm::WindowUtility::MoveCursorPointWithClearBuffer( pivot_cursor_point );
+					r2tm::WindowUtility::MoveCursorPointWithClearBuffer( pivot_cursor_point );
 
 					switch( input )
 					{
@@ -289,22 +289,22 @@ namespace test_p2048mini_gameprocessor
 
 			LS();
 
-			return r2cm::eDoLeaveAction::None;
+			return r2tm::eDoLeaveAction::None;
 		};
 	}
 
 
 
-	r2cm::TitleFunctionT MoveReady_Pivot_3::GetTitleFunction() const
+	r2tm::TitleFunctionT MoveReady_Pivot_3::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "GameProcessor : Move Ready - Pivot 3";
 		};
 	}
-	r2cm::DoFunctionT MoveReady_Pivot_3::GetDoFunction() const
+	r2tm::DoFunctionT MoveReady_Pivot_3::GetDoFunction() const
 	{
-		return []()->r2cm::eDoLeaveAction
+		return []()->r2tm::eDoLeaveAction
 		{
 			LS();
 
@@ -321,8 +321,8 @@ namespace test_p2048mini_gameprocessor
 			LS();
 
 			{
-				std::cout << "[     ESC    ] Exit" << r2cm::linefeed;
-				std::cout << "[ W, A, S, D ] Move" << r2cm::linefeed;
+				std::cout << "[     ESC    ] Exit" << r2tm::linefeed;
+				std::cout << "[ W, A, S, D ] Move" << r2tm::linefeed;
 			}
 
 			LS();
@@ -332,12 +332,12 @@ namespace test_p2048mini_gameprocessor
 
 				LF();
 
-				const auto pivot_cursor_point = r2cm::WindowUtility::GetCursorPoint();
+				const auto pivot_cursor_point = r2tm::WindowUtility::GetCursorPoint();
 				int input = 0;
 				do
 				{
 
-					r2cm::WindowUtility::MoveCursorPointWithClearBuffer( pivot_cursor_point );
+					r2tm::WindowUtility::MoveCursorPointWithClearBuffer( pivot_cursor_point );
 
 					switch( input )
 					{
@@ -444,22 +444,22 @@ namespace test_p2048mini_gameprocessor
 
 			LS();
 
-			return r2cm::eDoLeaveAction::None;
+			return r2tm::eDoLeaveAction::None;
 		};
 	}
 
 
 
-	r2cm::TitleFunctionT Move::GetTitleFunction() const
+	r2tm::TitleFunctionT Move::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "GameProcessor : Move";
 		};
 	}
-	r2cm::DoFunctionT Move::GetDoFunction() const
+	r2tm::DoFunctionT Move::GetDoFunction() const
 	{
-		return []()->r2cm::eDoLeaveAction
+		return []()->r2tm::eDoLeaveAction
 		{
 			LS();
 
@@ -479,19 +479,19 @@ namespace test_p2048mini_gameprocessor
 			LS();
 
 			{
-				std::cout << "[     ESC    ] Exit" << r2cm::linefeed;
-				std::cout << "[ W, A, S, D ] Move" << r2cm::linefeed;
+				std::cout << "[     ESC    ] Exit" << r2tm::linefeed;
+				std::cout << "[ W, A, S, D ] Move" << r2tm::linefeed;
 			}
 
 			LS();
 
 
 			{
-				const auto pivot_cursor_point = r2cm::WindowUtility::GetCursorPoint();
+				const auto pivot_cursor_point = r2tm::WindowUtility::GetCursorPoint();
 				int input = 0;
 				do
 				{
-					r2cm::WindowUtility::MoveCursorPointWithClearBuffer( pivot_cursor_point );
+					r2tm::WindowUtility::MoveCursorPointWithClearBuffer( pivot_cursor_point );
 
 					bool has_moved = false;
 					switch( input )
@@ -510,7 +510,7 @@ namespace test_p2048mini_gameprocessor
 						break;
 
 					default:
-						std::cout << "Input Empty" << r2cm::linefeed;
+						std::cout << "Input Empty" << r2tm::linefeed;
 					}
 
 					LF();
@@ -519,7 +519,7 @@ namespace test_p2048mini_gameprocessor
 
 					LF();
 
-					std::cout << ( has_moved ? "Move Success" : "Move Failed" ) << r2cm::linefeed;
+					std::cout << ( has_moved ? "Move Success" : "Move Failed" ) << r2tm::linefeed;
 
 					input = _getch();
 
@@ -528,22 +528,22 @@ namespace test_p2048mini_gameprocessor
 
 			LS();
 
-			return r2cm::eDoLeaveAction::None;
+			return r2tm::eDoLeaveAction::None;
 		};
 	}
 
 
 
-	r2cm::TitleFunctionT Merge::GetTitleFunction() const
+	r2tm::TitleFunctionT Merge::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "GameProcessor : Merge";
 		};
 	}
-	r2cm::DoFunctionT Merge::GetDoFunction() const
+	r2tm::DoFunctionT Merge::GetDoFunction() const
 	{
-		return []()->r2cm::eDoLeaveAction
+		return []()->r2tm::eDoLeaveAction
 		{
 			LS();
 
@@ -615,22 +615,22 @@ namespace test_p2048mini_gameprocessor
 
 			LS();
 
-			return r2cm::eDoLeaveAction::Pause;
+			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
 
 
 
-	r2cm::TitleFunctionT MovableCheck::GetTitleFunction() const
+	r2tm::TitleFunctionT MovableCheck::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "GameProcessor : Movable Check";
 		};
 	}
-	r2cm::DoFunctionT MovableCheck::GetDoFunction() const
+	r2tm::DoFunctionT MovableCheck::GetDoFunction() const
 	{
-		return []()->r2cm::eDoLeaveAction
+		return []()->r2tm::eDoLeaveAction
 		{
 			LS();
 
@@ -698,7 +698,7 @@ namespace test_p2048mini_gameprocessor
 
 			LS();
 
-			return r2cm::eDoLeaveAction::Pause;
+			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
 }

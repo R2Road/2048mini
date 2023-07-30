@@ -1,8 +1,8 @@
-#include "r2cm_WindowUtility.h"
+#include "r2tm_WindowUtility.h"
 
 #include <Windows.h>
 
-namespace r2cm
+namespace r2tm
 {
 	void WindowUtility::ChangeTitle( const char* title_string )
 	{
@@ -59,6 +59,8 @@ namespace r2cm
 		SetWindowLong( GetConsoleWindow(), GWL_STYLE, window_style );
 	}
 
+
+
 	void WindowUtility::QuickEditEnable( const bool enable )
 	{
 		DWORD console_mode = 0;
@@ -76,6 +78,8 @@ namespace r2cm
 		SetConsoleMode( GetStdHandle( STD_INPUT_HANDLE ), console_mode );
 	}
 
+
+
 	WindowUtility::CursorPoint WindowUtility::GetCursorPoint()
 	{
 		CONSOLE_SCREEN_BUFFER_INFO csbi{};
@@ -88,6 +92,11 @@ namespace r2cm
 		const CursorPoint fixed_new_cursor_point{ ( 0 > new_cursor_point.x ? 0 : new_cursor_point.x ), ( 0 > new_cursor_point.y ? 0 : new_cursor_point.y ) };
 		SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), COORD{ fixed_new_cursor_point.x, fixed_new_cursor_point.y } );
 	}
+	void WindowUtility::MoveCursorPoint( const short x, const short y )
+	{
+		MoveCursorPoint( { x, y } );
+	}
+
 	void WindowUtility::MoveCursorPointWithClearBuffer( const CursorPoint new_cursor_point )
 	{
 		const auto last_cursor_point = GetCursorPoint();
@@ -110,29 +119,101 @@ namespace r2cm
 			}
 		}
 	}
+	void WindowUtility::MoveCursorPointWithClearBuffer( const short x, const short y )
+	{
+		MoveCursorPointWithClearBuffer( { x, y } );
+	}
+
+
+
+	void WindowUtility::FillColor( const CursorPoint point, const short c, const int size )
+	{
+		DWORD out_result;
+		FillConsoleOutputAttribute( GetStdHandle( STD_OUTPUT_HANDLE ), c, size, { point.x, point.y }, &out_result );
+	}
+	void WindowUtility::FillColor( const CursorPoint point, const short c )
+	{
+		FillColor( point, c, 1 );
+	}
+	void WindowUtility::FillColor( const int x, const int y, const short c, const int size )
+	{
+		FillColor( { short( x ), short( y ) }, c, size );
+	}
+	void WindowUtility::FillColor( const int x, const int y, const short c )
+	{
+		FillColor( { short( x ), short( y ) }, c, 1 );
+	}
+
+
 
 	void WindowUtility::FillCharacter( const CursorPoint point, const char c )
 	{
 		DWORD out_result;
 		FillConsoleOutputCharacterA( GetStdHandle( STD_OUTPUT_HANDLE ), c, 1, { point.x, point.y }, &out_result );
 	}
+	void WindowUtility::FillCharacter( const CursorPoint point, const char c, const short color )
+	{
+		FillCharacter( point, c );
+		FillColor( point, color );
+	}
 	void WindowUtility::FillCharacter( const int x, const int y, const char c )
 	{
 		FillCharacter( { short( x ), short( y ) }, c );
 	}
+	void WindowUtility::FillCharacter( const int x, const int y, const char c, const short color )
+	{
+		FillCharacter( { short( x ), short( y ) }, c );
+		FillColor( { short( x ), short( y ) }, color );
+	}
 
-	void WindowUtility::FillColor( const CursorPoint point, const short c )
+
+
+	void WindowUtility::FillString( const CursorPoint point, const char* str, const int size )
 	{
 		DWORD out_result;
-		FillConsoleOutputAttribute( GetStdHandle( STD_OUTPUT_HANDLE ), c, 1, { point.x, point.y }, &out_result );
+		WriteConsoleOutputCharacterA( GetStdHandle( STD_OUTPUT_HANDLE ), str, size, { point.x, point.y }, &out_result );
 	}
-	void WindowUtility::FillColor( const int x, const int y, const short c )
+	void WindowUtility::FillString( const CursorPoint point, const char* str, const int size, const short color )
 	{
-		FillColor( { short( x ), short( y ) }, c );
+		FillString( point, str, size );
+		for( int cur = 0; size > cur; ++cur )
+		{
+			FillColor( { short( point.x + cur ), short( point.y ) }, color );
+		}
+	}
+	void WindowUtility::FillString( const int x, const int y, const char* str, const int size )
+	{
+		FillString( { short( x ), short( y ) }, str, size );
+	}
+	void WindowUtility::FillString( const int x, const int y, const char* str, const int size, const short color )
+	{
+		FillString( { short( x ), short( y ) }, str, size, color );
 	}
 
-	void WindowUtility::RequestSleep( const uint32_t m )
+	void WindowUtility::FillString( const CursorPoint point, const char c, const int size )
 	{
-		Sleep( m );
+		DWORD out_result;
+		FillConsoleOutputCharacterA( GetStdHandle( STD_OUTPUT_HANDLE ), c, size, { point.x, point.y }, &out_result );
+	}
+	void WindowUtility::FillString( const CursorPoint point, const char c, const int size, const short color )
+	{
+		FillString( point, c, size );
+		FillColor( point, color, size );
+	}
+	void WindowUtility::FillString( const int x, const int y, const char c, const int size )
+	{
+		FillString( { short( x ), short( y ) }, c, size );
+	}
+	void WindowUtility::FillString( const int x, const int y, const char c, const int size, const short color )
+	{
+		FillString( { short( x ), short( y ) }, c, size );
+		FillColor( { short( x ), short( y ) }, color, size );
+	}
+
+
+
+	void WindowUtility::RequestSleep( const uint32_t milli_seconds )
+	{
+		Sleep( milli_seconds );
 	}
 }

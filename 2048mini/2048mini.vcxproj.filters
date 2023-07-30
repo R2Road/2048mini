@@ -19,7 +19,7 @@
     <Filter Include="external\r2bix">
       <UniqueIdentifier>{56c407ac-3cd0-4e36-9350-1d558861105b}</UniqueIdentifier>
     </Filter>
-    <Filter Include="external\r2cm">
+    <Filter Include="external\r2tm">
       <UniqueIdentifier>{332270fb-7af5-4a37-a62b-23bc3e6c6758}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -218,23 +218,23 @@
     <ClCompile Include="src\p2048mini\p2048mini_GameSceneComponent.cpp">
       <Filter>project_2048mini</Filter>
     </ClCompile>
-    <ClCompile Include="external\r2cm\r2cm_Director.cpp">
-      <Filter>external\r2cm</Filter>
+    <ClCompile Include="external\r2tm\r2tm_Director.cpp">
+      <Filter>external\r2tm</Filter>
     </ClCompile>
-    <ClCompile Include="external\r2cm\r2cm_MenuProcessor.cpp">
-      <Filter>external\r2cm</Filter>
+    <ClCompile Include="external\r2tm\r2tm_MenuProcessor.cpp">
+      <Filter>external\r2tm</Filter>
     </ClCompile>
-    <ClCompile Include="external\r2cm\r2cm_PrintBinary.cpp">
-      <Filter>external\r2cm</Filter>
+    <ClCompile Include="external\r2tm\r2tm_PrintBinary.cpp">
+      <Filter>external\r2tm</Filter>
     </ClCompile>
-    <ClCompile Include="external\r2cm\r2cm_PrintFile.cpp">
-      <Filter>external\r2cm</Filter>
+    <ClCompile Include="external\r2tm\r2tm_PrintFile.cpp">
+      <Filter>external\r2tm</Filter>
     </ClCompile>
-    <ClCompile Include="external\r2cm\r2cm_StopWatch.cpp">
-      <Filter>external\r2cm</Filter>
+    <ClCompile Include="external\r2tm\r2tm_StopWatch.cpp">
+      <Filter>external\r2tm</Filter>
     </ClCompile>
-    <ClCompile Include="external\r2cm\r2cm_WindowUtility.cpp">
-      <Filter>external\r2cm</Filter>
+    <ClCompile Include="external\r2tm\r2tm_WindowUtility.cpp">
+      <Filter>external\r2tm</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -476,44 +476,44 @@
     <ClInclude Include="external\r2\r2_NoneCopyable.h">
       <Filter>external\r2</Filter>
     </ClInclude>
-    <ClInclude Include="external\r2cm\r2cm_ColorModifier.h">
-      <Filter>external\r2cm</Filter>
+    <ClInclude Include="external\r2tm\r2tm_ColorModifier.h">
+      <Filter>external\r2tm</Filter>
     </ClInclude>
-    <ClInclude Include="external\r2cm\r2cm_Director.h">
-      <Filter>external\r2cm</Filter>
+    <ClInclude Include="external\r2tm\r2tm_Director.h">
+      <Filter>external\r2tm</Filter>
     </ClInclude>
-    <ClInclude Include="external\r2cm\r2cm_iItem.h">
-      <Filter>external\r2cm</Filter>
+    <ClInclude Include="external\r2tm\r2tm_iItem.h">
+      <Filter>external\r2tm</Filter>
     </ClInclude>
-    <ClInclude Include="external\r2cm\r2cm_iMenu.h">
-      <Filter>external\r2cm</Filter>
+    <ClInclude Include="external\r2tm\r2tm_iMenu.h">
+      <Filter>external\r2tm</Filter>
     </ClInclude>
-    <ClInclude Include="external\r2cm\r2cm_Inspector.h">
-      <Filter>external\r2cm</Filter>
+    <ClInclude Include="external\r2tm\r2tm_Inspector.h">
+      <Filter>external\r2tm</Filter>
     </ClInclude>
-    <ClInclude Include="external\r2cm\r2cm_MenuConstant.h">
-      <Filter>external\r2cm</Filter>
+    <ClInclude Include="external\r2tm\r2tm_MenuConstant.h">
+      <Filter>external\r2tm</Filter>
     </ClInclude>
-    <ClInclude Include="external\r2cm\r2cm_MenuProcessor.h">
-      <Filter>external\r2cm</Filter>
+    <ClInclude Include="external\r2tm\r2tm_MenuProcessor.h">
+      <Filter>external\r2tm</Filter>
     </ClInclude>
-    <ClInclude Include="external\r2cm\r2cm_ostream.h">
-      <Filter>external\r2cm</Filter>
+    <ClInclude Include="external\r2tm\r2tm_ostream.h">
+      <Filter>external\r2tm</Filter>
     </ClInclude>
-    <ClInclude Include="external\r2cm\r2cm_PrintBinary.h">
-      <Filter>external\r2cm</Filter>
+    <ClInclude Include="external\r2tm\r2tm_PrintBinary.h">
+      <Filter>external\r2tm</Filter>
     </ClInclude>
-    <ClInclude Include="external\r2cm\r2cm_PrintFile.h">
-      <Filter>external\r2cm</Filter>
+    <ClInclude Include="external\r2tm\r2tm_PrintFile.h">
+      <Filter>external\r2tm</Filter>
     </ClInclude>
-    <ClInclude Include="external\r2cm\r2cm_StopWatch.h">
-      <Filter>external\r2cm</Filter>
+    <ClInclude Include="external\r2tm\r2tm_StopWatch.h">
+      <Filter>external\r2tm</Filter>
     </ClInclude>
-    <ClInclude Include="external\r2cm\r2cm_VersionInfo.h">
-      <Filter>external\r2cm</Filter>
+    <ClInclude Include="external\r2tm\r2tm_VersionInfo.h">
+      <Filter>external\r2tm</Filter>
     </ClInclude>
-    <ClInclude Include="external\r2cm\r2cm_WindowUtility.h">
-      <Filter>external\r2cm</Filter>
+    <ClInclude Include="external\r2tm\r2tm_WindowUtility.h">
+      <Filter>external\r2tm</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -1,8 +1,8 @@
 #include "test_p2048mini_stageviewnode.h"
 
 #include "r2bix/r2base_Director.h"
-#include "r2cm/r2cm_Inspector.h"
-#include "r2cm/r2cm_ostream.h"
+#include "r2tm/r2tm_Inspector.h"
+#include "r2tm/r2tm_ostream.h"
 #include "r2bix/r2render_Camera.h"
 
 #include "p2048mini/p2048mini_Stage.h"
@@ -11,20 +11,20 @@
 #include "p2048mini/p2048minitable_TextureTable.h"
 
 #include "test/Utility4Test.h"
-#include "r2cm/r2cm_WindowUtility.h"
+#include "r2tm/r2tm_WindowUtility.h"
 
 namespace test_p2048mini_stageviewnode
 {
-	r2cm::TitleFunctionT Generate::GetTitleFunction() const
+	r2tm::TitleFunctionT Generate::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "StageViewNode : Generate";
 		};
 	}
-	r2cm::DoFunctionT Generate::GetDoFunction() const
+	r2tm::DoFunctionT Generate::GetDoFunction() const
 	{
-		return []()->r2cm::eDoLeaveAction
+		return []()->r2tm::eDoLeaveAction
 		{
 			LS();
 
@@ -49,22 +49,22 @@ namespace test_p2048mini_stageviewnode
 
 			LS();
 
-			return r2cm::eDoLeaveAction::Pause;
+			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
 
 
 
-	r2cm::TitleFunctionT Setup_Render::GetTitleFunction() const
+	r2tm::TitleFunctionT Setup_Render::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "StageViewNode : Setup And Render";
 		};
 	}
-	r2cm::DoFunctionT Setup_Render::GetDoFunction() const
+	r2tm::DoFunctionT Setup_Render::GetDoFunction() const
 	{
-		return []()->r2cm::eDoLeaveAction
+		return []()->r2tm::eDoLeaveAction
 		{
 			LS();
 
@@ -102,22 +102,22 @@ namespace test_p2048mini_stageviewnode
 
 			LS();
 
-			return r2cm::eDoLeaveAction::Pause;
+			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
 
 
 
-	r2cm::TitleFunctionT UpdateView::GetTitleFunction() const
+	r2tm::TitleFunctionT UpdateView::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
 			return "StageViewNode : UpdateView";
 		};
 	}
-	r2cm::DoFunctionT UpdateView::GetDoFunction() const
+	r2tm::DoFunctionT UpdateView::GetDoFunction() const
 	{
-		return []()->r2cm::eDoLeaveAction
+		return []()->r2tm::eDoLeaveAction
 		{
 			LS();
 
@@ -156,7 +156,7 @@ namespace test_p2048mini_stageviewnode
 
 			LS();
 
-			return r2cm::eDoLeaveAction::Pause;
+			return r2tm::eDoLeaveAction::Pause;
 		};
 	}
 }

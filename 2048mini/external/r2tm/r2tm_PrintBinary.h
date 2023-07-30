@@ -6,7 +6,7 @@
 #include <stdint.h>
 #include <stdio.h>
 
-namespace r2cm
+namespace r2tm
 {
 	void PrintUint8Binary( const uint8_t value );
 

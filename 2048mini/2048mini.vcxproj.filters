@@ -4,9 +4,6 @@
     <Filter Include="test">
       <UniqueIdentifier>{1cd71849-42fd-4beb-8c36-ee216acfc014}</UniqueIdentifier>
     </Filter>
-    <Filter Include="project_2048mini">
-      <UniqueIdentifier>{612fabcb-2d0b-441a-af05-d37b95425bec}</UniqueIdentifier>
-    </Filter>
     <Filter Include="test\item">
       <UniqueIdentifier>{73b8ae37-fff3-4b18-94bd-671e7fec08ac}</UniqueIdentifier>
     </Filter>
@@ -22,6 +19,9 @@
     <Filter Include="external\r2tm">
       <UniqueIdentifier>{332270fb-7af5-4a37-a62b-23bc3e6c6758}</UniqueIdentifier>
     </Filter>
+    <Filter Include="p2048mini">
+      <UniqueIdentifier>{612fabcb-2d0b-441a-af05-d37b95425bec}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
@@ -30,28 +30,28 @@
     </ClCompile>
     <ClCompile Include="src\DevelopmentMenu.cpp" />
     <ClCompile Include="src\p2048mini\p2048mini_NumberComponent.cpp">
-      <Filter>project_2048mini</Filter>
+      <Filter>p2048mini</Filter>
     </ClCompile>
     <ClCompile Include="src\p2048mini\p2048mini_StageViewComponent.cpp">
-      <Filter>project_2048mini</Filter>
+      <Filter>p2048mini</Filter>
     </ClCompile>
     <ClCompile Include="src\p2048mini\p2048mini_Stage.cpp">
-      <Filter>project_2048mini</Filter>
+      <Filter>p2048mini</Filter>
     </ClCompile>
     <ClCompile Include="src\p2048mini\p2048mini_NumberNode.cpp">
-      <Filter>project_2048mini</Filter>
+      <Filter>p2048mini</Filter>
     </ClCompile>
     <ClCompile Include="src\p2048mini\p2048mini_StageViewNode.cpp">
-      <Filter>project_2048mini</Filter>
+      <Filter>p2048mini</Filter>
     </ClCompile>
     <ClCompile Include="src\p2048mini\p2048mini_GameScene.cpp">
-      <Filter>project_2048mini</Filter>
+      <Filter>p2048mini</Filter>
     </ClCompile>
     <ClCompile Include="src\p2048mini\p2048minitable_TextureTable.cpp">
-      <Filter>project_2048mini</Filter>
+      <Filter>p2048mini</Filter>
     </ClCompile>
     <ClCompile Include="src\p2048mini\p2048mini_GameProcessor.cpp">
-      <Filter>project_2048mini</Filter>
+      <Filter>p2048mini</Filter>
     </ClCompile>
     <ClCompile Include="src\test\TestMenu.cpp">
       <Filter>test</Filter>
@@ -216,7 +216,7 @@
       <Filter>external\r2bix</Filter>
     </ClCompile>
     <ClCompile Include="src\p2048mini\p2048mini_GameSceneComponent.cpp">
-      <Filter>project_2048mini</Filter>
+      <Filter>p2048mini</Filter>
     </ClCompile>
     <ClCompile Include="external\r2tm\r2tm_Director.cpp">
       <Filter>external\r2tm</Filter>
@@ -243,31 +243,31 @@
     </ClInclude>
     <ClInclude Include="src\DevelopmentMenu.h" />
     <ClInclude Include="src\p2048mini\p2048mini_Config.h">
-      <Filter>project_2048mini</Filter>
+      <Filter>p2048mini</Filter>
     </ClInclude>
     <ClInclude Include="src\p2048mini\p2048mini_NumberComponent.h">
-      <Filter>project_2048mini</Filter>
+      <Filter>p2048mini</Filter>
     </ClInclude>
     <ClInclude Include="src\p2048mini\p2048mini_StageViewComponent.h">
-      <Filter>project_2048mini</Filter>
+      <Filter>p2048mini</Filter>
     </ClInclude>
     <ClInclude Include="src\p2048mini\p2048mini_Stage.h">
-      <Filter>project_2048mini</Filter>
+      <Filter>p2048mini</Filter>
     </ClInclude>
     <ClInclude Include="src\p2048mini\p2048mini_NumberNode.h">
-      <Filter>project_2048mini</Filter>
+      <Filter>p2048mini</Filter>
     </ClInclude>
     <ClInclude Include="src\p2048mini\p2048mini_StageViewNode.h">
-      <Filter>project_2048mini</Filter>
+      <Filter>p2048mini</Filter>
     </ClInclude>
     <ClInclude Include="src\p2048mini\p2048mini_GameScene.h">
-      <Filter>project_2048mini</Filter>
+      <Filter>p2048mini</Filter>
     </ClInclude>
     <ClInclude Include="src\p2048mini\p2048minitable_TextureTable.h">
-      <Filter>project_2048mini</Filter>
+      <Filter>p2048mini</Filter>
     </ClInclude>
     <ClInclude Include="src\p2048mini\p2048mini_GameProcessor.h">
-      <Filter>project_2048mini</Filter>
+      <Filter>p2048mini</Filter>
     </ClInclude>
     <ClInclude Include="src\test\TestMenu.h">
       <Filter>test</Filter>
@@ -285,7 +285,7 @@
       <Filter>test\item</Filter>
     </ClInclude>
     <ClInclude Include="src\p2048mini\p2048mini_VersionInfo.h">
-      <Filter>project_2048mini</Filter>
+      <Filter>p2048mini</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_Assert.h">
       <Filter>external\r2</Filter>
@@ -468,7 +468,7 @@
       <Filter>external\r2bix</Filter>
     </ClInclude>
     <ClInclude Include="src\p2048mini\p2048mini_GameSceneComponent.h">
-      <Filter>project_2048mini</Filter>
+      <Filter>p2048mini</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2_SingletonWithStaticVariable.h">
       <Filter>external\r2</Filter>

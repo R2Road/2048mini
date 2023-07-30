@@ -167,7 +167,6 @@
     <ClInclude Include="external\r2\r2_Size_Int.h" />
     <ClInclude Include="external\r2\r2_Timer.h" />
     <ClInclude Include="external\r2\r2_Timer_Float.h" />
-    <ClInclude Include="external\r2\r2_UniqueIndex.h" />
     <ClInclude Include="src\DevelopmentMenu.h" />
     <ClInclude Include="src\p2048mini\p2048minitable_TextureTable.h" />
     <ClInclude Include="src\p2048mini\p2048mini_Config.h" />

@@ -329,9 +329,6 @@
     <ClInclude Include="external\r2\r2_Timer_Float.h">
       <Filter>external\r2</Filter>
     </ClInclude>
-    <ClInclude Include="external\r2\r2_UniqueIndex.h">
-      <Filter>external\r2</Filter>
-    </ClInclude>
     <ClInclude Include="external\r2bix\r2action_AnimationRequestAction.h">
       <Filter>external\r2bix</Filter>
     </ClInclude>

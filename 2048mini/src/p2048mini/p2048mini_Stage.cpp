@@ -14,13 +14,6 @@ namespace p2048mini
 
 
 
-	bool Stage::IsIn( const int32_t x, const int32_t y ) const
-	{
-		return ( 0 <= x && 0 <= y && static_cast<int>( GetWidth() ) > x && static_cast<int>( GetHeight() ) > y );
-	}
-
-
-
 	const Stage::Cell Stage::Get( const uint32_t linear_index ) const
 	{
 		return mContainer[linear_index];

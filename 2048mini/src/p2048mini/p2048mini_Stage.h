@@ -29,32 +29,74 @@ namespace p2048mini
 		//
 		// Iteration
 		//
-		ConstIteratorT begin() const { return mContainer.begin(); }
-		ConstIteratorT end() const { return mContainer.end(); }
+		ConstIteratorT begin() const
+		{
+			return mContainer.begin();
+		}
+		ConstIteratorT end() const
+		{
+			return mContainer.end();
+		}
 
 
 
 		//
 		// Getter
 		//
-		uint32_t GetWidth() const { return mGridIndexConverter.GetWidth(); }
-		uint32_t GetHeight() const { return mGridIndexConverter.GetHeight(); }
-		uint32_t GetMaxX() const { return mGridIndexConverter.GetWidth() - 1; }
-		uint32_t GetMaxY() const { return mGridIndexConverter.GetHeight() - 1; }
-		uint32_t Size() const { return static_cast<uint32_t>( mContainer.size() ); }
-		bool IsIn( const int32_t x, const int32_t y ) const;
+		uint32_t GetWidth() const
+		{
+			return mGridIndexConverter.GetWidth();
+		}
+		uint32_t GetHeight() const
+		{
+			return mGridIndexConverter.GetHeight();
+		}
+		uint32_t GetMaxX() const
+		{
+			return mGridIndexConverter.GetWidth() - 1;
+		}
+		uint32_t GetMaxY() const
+		{
+			return mGridIndexConverter.GetHeight() - 1;
+		}
+		uint32_t Size() const
+		{
+			return static_cast<uint32_t>( mContainer.size() );
+		}
+		bool IsIn( const int32_t x, const int32_t y ) const
+		{
+			return ( 0 <= x && 0 <= y && static_cast<int>( GetWidth() ) > x && static_cast<int>( GetHeight() ) > y );
+		}
 
 
 
+		//
+		//
+		//
+		int32_t GetNumberSpaceCount() const
+		{
+			return mCurrentNumberCount;
+		}
+		int32_t GetEmptySpaceCount() const
+		{
+			return static_cast<int32_t>( mContainer.size() ) - GetNumberSpaceCount();
+		}
+		bool IsFull() const
+		{
+			return mContainer.size() == mCurrentNumberCount;
+		}
+
+
+
+		//
+		//
+		//
 	private:
 		const Cell Get( const uint32_t linear_index ) const;
 		Cell& Get( const uint32_t linear_index );
 	public:
 		uint32_t GetNumber( const uint32_t linear_index ) const;
 		uint32_t GetNumber( const uint32_t x, const uint32_t y ) const;
-		int32_t GetNumberSpaceCount() const { return mCurrentNumberCount; }
-		int32_t GetEmptySpaceCount() const { return static_cast<int32_t>( mContainer.size() ) - GetNumberSpaceCount(); }
-		bool IsFull() const { return mContainer.size() == mCurrentNumberCount; }
 
 
 

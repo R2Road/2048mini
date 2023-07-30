@@ -4,7 +4,7 @@
 
 namespace test_p2048mini_stage
 {
-	class Generate : public r2tm::iItem
+	class Declaration : public r2tm::iItem
 	{
 	public:
 		r2tm::TitleFunctionT GetTitleFunction() const override;

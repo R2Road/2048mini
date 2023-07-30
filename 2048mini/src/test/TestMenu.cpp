@@ -23,7 +23,7 @@ r2tm::WriteFunctionT TestMenu::GetWriteFunction() const
 {
 	return []( r2tm::MenuProcessor* ret )
 	{
-		ret->AddItem( '1', test_p2048mini_stage::Generate() );
+		ret->AddItem( '1', test_p2048mini_stage::Declaration() );
 		ret->AddItem( '2', test_p2048mini_stage::Add_Remove() );
 		ret->AddItem( '3', test_p2048mini_stage::IsIn() );
 		ret->AddItem( '4', test_p2048mini_stage::NumberCount_EmptyCount_IsFull() );

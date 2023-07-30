@@ -33,14 +33,14 @@ namespace test_p2048mini_stage
 
 
 
-	r2tm::TitleFunctionT Generate::GetTitleFunction() const
+	r2tm::TitleFunctionT Declaration::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Stage : Generate";
+			return "Stage : Declaration";
 		};
 	}
-	r2tm::DoFunctionT Generate::GetDoFunction() const
+	r2tm::DoFunctionT Declaration::GetDoFunction() const
 	{
 		return []()->r2tm::eDoLeaveAction
 		{

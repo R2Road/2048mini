@@ -387,12 +387,17 @@ namespace test_p2048mini_stage
 		{
 			LS();
 
+			OUTPUT_SUBJECT( "더 나은 게임 경험을 위해서 새로 추가된 숫자는 강조 표시가 필요하다." );
+			OUTPUT_SUBJECT( "강조 표시를 위해 flag가 추가 되었다." );
+
+			LS();
+
 			DECLARATION_MAIN( p2048mini::Stage stage( 2, 2 ) );
 
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "Lock" );
+				OUTPUT_SUBJECT( "Newcomer" );
 
 				LF();
 

@@ -3,11 +3,13 @@
 #include <iomanip>
 #include <iostream>
 
+#include "r2/r2_NoneCopyable.h"
+
 #include "p2048mini/p2048mini_Stage.h"
 
 namespace p2048minihelper
 {
-	class STDPrinter4Stage
+	class STDPrinter4Stage : private r2::NoneCopyable
 	{
 	private:
 		STDPrinter4Stage() = delete;

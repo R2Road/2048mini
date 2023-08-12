@@ -8,32 +8,13 @@
 #include "r2tm/r2tm_ostream.h"
 
 #include "p2048mini/p2048mini_GameProcessor.h"
-#include "p2048mini/p2048mini_Stage.h"
+#include "p2048mini/p2048minihelper_STDPrinter4Stage.h"
 
 #include "r2tm/r2tm_WindowUtility.h"
 
 
 namespace test_p2048mini_gameprocessor
 {
-	void PrintStage( const p2048mini::Stage& stage )
-	{
-		int val = 0;
-		for( uint32_t y = 0; stage.GetHeight() > y; ++y )
-		{
-			for( uint32_t x = 0; stage.GetWidth() > x; ++x )
-			{
-				val = stage.GetNumber( x, y );
-
-				std::cout << std::setw( 2 ) << std::right << val;
-				std::cout << std::setw( 1 ) << std::left; // roll back
-
-				std::cout << r2tm::tab;
-			}
-
-			LF();
-		}
-	}
-
 	std::ostream& operator<<( std::ostream& o, const r2::PointInt& value )
 	{
 		return o << "x : " << value.GetX() << "   " "y : " << value.GetY();
@@ -138,7 +119,7 @@ namespace test_p2048mini_gameprocessor
 						stage.Reset();
 						PROCESS_MAIN( stage.Add( center.GetX(), center.GetY(), 7 ) );
 						PROCESS_MAIN( stage.Add( pivot_1.GetX(), pivot_1.GetY(), 1 ) );
-						PROCESS_MAIN( PrintStage( stage ) );
+						PROCESS_MAIN( p2048minihelper::STDPrinter4Stage::Print( stage ) );
 					}
 
 					input = _getch();
@@ -252,7 +233,7 @@ namespace test_p2048mini_gameprocessor
 						PROCESS_MAIN( stage.Add( pivot_1.GetX(), pivot_1.GetY(), 1 ) );
 						PROCESS_MAIN( stage.Add( pivot_2.GetX(), pivot_2.GetY(), 2 ) );
 						PROCESS_MAIN( stage.Add( center.GetX(), center.GetY(), 7 ) );
-						PROCESS_MAIN( PrintStage( stage ) );
+						PROCESS_MAIN( p2048minihelper::STDPrinter4Stage::Print( stage ) );
 					}
 
 					LF();
@@ -279,7 +260,7 @@ namespace test_p2048mini_gameprocessor
 								stage.Add( x, y, pivot_2 == temp_point );
 							}
 						}
-						PROCESS_MAIN( PrintStage( stage ) );
+						PROCESS_MAIN( p2048minihelper::STDPrinter4Stage::Print( stage ) );
 					}
 
 					input = _getch();
@@ -387,7 +368,7 @@ namespace test_p2048mini_gameprocessor
 						stage.Add( pivot_1.GetX(), pivot_1.GetY(), 1 );
 						stage.Add( pivot_2.GetX(), pivot_2.GetY(), 2 );
 						stage.Add( center.GetX(), center.GetY(), 7 );
-						PROCESS_MAIN( PrintStage( stage ) );
+						PROCESS_MAIN( p2048minihelper::STDPrinter4Stage::Print( stage ) );
 					}
 
 					LF();
@@ -434,7 +415,7 @@ namespace test_p2048mini_gameprocessor
 
 							pivot_2 += reverse_dir.GetPoint();
 						}
-						PROCESS_MAIN( PrintStage( stage ) );
+						PROCESS_MAIN( p2048minihelper::STDPrinter4Stage::Print( stage ) );
 					}
 
 					input = _getch();
@@ -515,7 +496,7 @@ namespace test_p2048mini_gameprocessor
 
 					LF();
 
-					PROCESS_MAIN( PrintStage( stage ) );
+					PROCESS_MAIN( p2048minihelper::STDPrinter4Stage::Print( stage ) );
 
 					LF();
 
@@ -556,14 +537,14 @@ namespace test_p2048mini_gameprocessor
 				stage.Add( 0, 0, 2 );
 				stage.Add( 1, 0, 1 );
 				stage.Add( 2, 0, 1 );
-				PROCESS_MAIN( PrintStage( stage ) );
+				PROCESS_MAIN( p2048minihelper::STDPrinter4Stage::Print( stage ) );
 			}
 
 			LS();
 
 			{
 				DECLARATION_MAIN( const auto move_result = game_processor.Move( r2::Direction4::eState::Right ) );
-				PROCESS_MAIN( PrintStage( stage ) );
+				PROCESS_MAIN( p2048minihelper::STDPrinter4Stage::Print( stage ) );
 
 				LF();
 
@@ -579,7 +560,7 @@ namespace test_p2048mini_gameprocessor
 
 			{
 				DECLARATION_MAIN( const auto move_result = game_processor.Move( r2::Direction4::eState::Right ) );
-				PROCESS_MAIN( PrintStage( stage ) );
+				PROCESS_MAIN( p2048minihelper::STDPrinter4Stage::Print( stage ) );
 
 				LF();
 
@@ -596,12 +577,12 @@ namespace test_p2048mini_gameprocessor
 				PROCESS_MAIN( stage.Add( 0, 0, 4 ) );
 				PROCESS_MAIN( stage.Add( 1, 0, 4 ) );
 				PROCESS_MAIN( stage.Add( 2, 0, 4 ) );
-				PROCESS_MAIN( PrintStage( stage ) );
+				PROCESS_MAIN( p2048minihelper::STDPrinter4Stage::Print( stage ) );
 
 				LF();
 
 				DECLARATION_MAIN( const auto move_result = game_processor.Move( r2::Direction4::eState::Right ) );
-				PROCESS_MAIN( PrintStage( stage ) );
+				PROCESS_MAIN( p2048minihelper::STDPrinter4Stage::Print( stage ) );
 
 				LF();
 
@@ -648,7 +629,7 @@ namespace test_p2048mini_gameprocessor
 				stage.Add( 0, 1, 7 );
 				stage.Add( 1, 0, 7 );
 				stage.Add( 1, 1, 7 );
-				PrintStage( stage );
+				p2048minihelper::STDPrinter4Stage::Print( stage );
 				EXPECT_TRUE( game_processor.IsMovable() );
 			}
 
@@ -659,7 +640,7 @@ namespace test_p2048mini_gameprocessor
 				stage.Add( 0, 1, 2 );
 				stage.Add( 1, 0, 7 );
 				stage.Add( 1, 1, 7 );
-				PrintStage( stage );
+				p2048minihelper::STDPrinter4Stage::Print( stage );
 				EXPECT_TRUE( game_processor.IsMovable() );
 			}
 
@@ -670,7 +651,7 @@ namespace test_p2048mini_gameprocessor
 				stage.Add( 0, 1, 7 );
 				stage.Add( 1, 0, 2 );
 				stage.Add( 1, 1, 7 );
-				PrintStage( stage );
+				p2048minihelper::STDPrinter4Stage::Print( stage );
 				EXPECT_TRUE( game_processor.IsMovable() );
 			}
 
@@ -681,7 +662,7 @@ namespace test_p2048mini_gameprocessor
 				stage.Add( 0, 1, 2 );
 				stage.Add( 1, 0, 3 );
 				stage.Add( 1, 1, 7 );
-				PrintStage( stage );
+				p2048minihelper::STDPrinter4Stage::Print( stage );
 				EXPECT_FALSE( game_processor.IsMovable() );
 			}
 
@@ -692,7 +673,7 @@ namespace test_p2048mini_gameprocessor
 				stage.Add( 0, 1, 2 );
 				stage.Add( 1, 0, 3 );
 				stage.Add( 1, 1, 0 );
-				PrintStage( stage );
+				p2048minihelper::STDPrinter4Stage::Print( stage );
 				EXPECT_TRUE( game_processor.IsMovable() );
 			}
 

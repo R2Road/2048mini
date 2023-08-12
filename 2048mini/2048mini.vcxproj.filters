@@ -512,5 +512,8 @@
     <ClInclude Include="external\r2tm\r2tm_WindowUtility.h">
       <Filter>external\r2tm</Filter>
     </ClInclude>
+    <ClInclude Include="src\p2048mini\p2048minihelper_STDPrinter4Stage.h">
+      <Filter>p2048mini</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

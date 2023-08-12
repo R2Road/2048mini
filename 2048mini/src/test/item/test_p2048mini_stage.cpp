@@ -7,32 +7,11 @@
 #include "r2tm/r2tm_ostream.h"
 #include "r2tm/r2tm_Inspector.h"
 
-#include "p2048mini/p2048mini_Stage.h"
+#include "p2048mini/p2048minihelper_STDPrinter4Stage.h"
 
 
 namespace test_p2048mini_stage
 {
-	void PrintStage( const p2048mini::Stage& stage )
-	{
-		int val = 0;
-		for( uint32_t y = 0; stage.GetHeight() > y; ++y )
-		{
-			for( uint32_t x = 0; stage.GetWidth() > x; ++x )
-			{
-				val = stage.GetNumber( x, y );
-
-				std::cout << std::setw( 2 ) << std::right << val;
-				std::cout << std::setw( 1 ) << std::left; // roll back
-
-				std::cout << r2tm::tab;
-			}
-
-			LF();
-		}
-	}
-
-
-
 	r2tm::TitleFunctionT Declaration::GetTitleFunction() const
 	{
 		return []()->const char*
@@ -78,7 +57,7 @@ namespace test_p2048mini_stage
 			LS();
 
 			{
-				PROCESS_MAIN( PrintStage( stage ) );
+				PROCESS_MAIN( p2048minihelper::STDPrinter4Stage::Print( stage ) );
 			}
 
 			LS();
@@ -114,7 +93,7 @@ namespace test_p2048mini_stage
 				PROCESS_MAIN( stage.Add( 2, 2, 64 ) );
 				EXPECT_EQ( 64, stage.GetNumber( 2, 2 ) );
 
-				PrintStage( stage );
+				p2048minihelper::STDPrinter4Stage::Print( stage );
 			}
 
 			LS();
@@ -127,7 +106,7 @@ namespace test_p2048mini_stage
 				PROCESS_MAIN( stage.Add( 2, 2, 32 ) );
 				EXPECT_EQ( 32, stage.GetNumber( 2, 2 ) );
 
-				PrintStage( stage );
+				p2048minihelper::STDPrinter4Stage::Print( stage );
 			}
 
 			LS();
@@ -140,7 +119,7 @@ namespace test_p2048mini_stage
 				PROCESS_MAIN( stage.Remove( 2, 2 ) );
 				EXPECT_EQ( 0, stage.GetNumber( 2, 2 ) );
 
-				PrintStage( stage );
+				p2048minihelper::STDPrinter4Stage::Print( stage );
 			}
 
 			LS();
@@ -152,7 +131,7 @@ namespace test_p2048mini_stage
 
 				PROCESS_MAIN( stage.Add( 2, 3, 1 ) );
 
-				PrintStage( stage );
+				p2048minihelper::STDPrinter4Stage::Print( stage );
 
 				LF();
 

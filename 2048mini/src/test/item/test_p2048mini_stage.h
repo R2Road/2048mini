@@ -25,7 +25,14 @@ namespace test_p2048mini_stage
 		r2tm::DoFunctionT GetDoFunction() const override;
 	};
 
-	class NumberCount_EmptyCount_IsFull : public r2tm::iItem
+	class NumberCount_EmptyCount : public r2tm::iItem
+	{
+	public:
+		r2tm::TitleFunctionT GetTitleFunction() const override;
+		r2tm::DoFunctionT GetDoFunction() const override;
+	};
+
+	class IsFull : public r2tm::iItem
 	{
 	public:
 		r2tm::TitleFunctionT GetTitleFunction() const override;

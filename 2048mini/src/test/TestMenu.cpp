@@ -26,10 +26,11 @@ r2tm::WriteFunctionT TestMenu::GetWriteFunction() const
 		ret->AddItem( '1', test_p2048mini_stage::Declaration() );
 		ret->AddItem( '2', test_p2048mini_stage::Add_Remove() );
 		ret->AddItem( '3', test_p2048mini_stage::IsIn() );
-		ret->AddItem( '4', test_p2048mini_stage::NumberCount_EmptyCount_IsFull() );
-		ret->AddItem( '5', test_p2048mini_stage::Lock() );
-		ret->AddItem( '6', test_p2048mini_stage::Newcomer() );
-		ret->AddItem( '7', test_p2048mini_stage::Reset() );
+		ret->AddItem( '4', test_p2048mini_stage::NumberCount_EmptyCount() );
+		ret->AddItem( '5', test_p2048mini_stage::IsFull() );
+		ret->AddItem( '6', test_p2048mini_stage::Lock() );
+		ret->AddItem( '7', test_p2048mini_stage::Newcomer() );
+		ret->AddItem( '8', test_p2048mini_stage::Reset() );
 
 		ret->AddLineFeed();
 

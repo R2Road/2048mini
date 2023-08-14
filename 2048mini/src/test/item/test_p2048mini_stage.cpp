@@ -193,14 +193,14 @@ namespace test_p2048mini_stage
 
 
 
-	r2tm::TitleFunctionT NumberCount_EmptyCount_IsFull::GetTitleFunction() const
+	r2tm::TitleFunctionT NumberCount_EmptyCount::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Stage : NumberCount, EmptyCount, IsFull";
+			return "Stage : NumberCount, EmptyCount";
 		};
 	}
-	r2tm::DoFunctionT NumberCount_EmptyCount_IsFull::GetDoFunction() const
+	r2tm::DoFunctionT NumberCount_EmptyCount::GetDoFunction() const
 	{
 		return []()->r2tm::eDoLeaveAction
 		{
@@ -254,26 +254,71 @@ namespace test_p2048mini_stage
 
 			LS();
 
+			return r2tm::eDoLeaveAction::Pause;
+		};
+	}
+
+
+
+	r2tm::TitleFunctionT IsFull::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Stage : IsFull";
+		};
+	}
+	r2tm::DoFunctionT IsFull::GetDoFunction() const
+	{
+		return []()->r2tm::eDoLeaveAction
+		{
+			LS();
+
+			DECLARATION_MAIN( p2048mini::Stage stage( 2, 2 ) );
+
+			LF();
+
+			EXPECT_EQ( 0, stage.GetNumberSpaceCount() );
+			EXPECT_EQ( 4, stage.GetEmptySpaceCount() );
+
+			LS();
+
 			{
 				OUTPUT_SUBJECT( "Full" );
 
 				LF();
 
+				PROCESS_MAIN( stage.Add( 0, 0, 7 ) );
+				PROCESS_MAIN( stage.Add( 1, 0, 7 ) );
 				PROCESS_MAIN( stage.Add( 0, 1, 7 ) );
 				PROCESS_MAIN( stage.Add( 1, 1, 7 ) );
-				EXPECT_EQ( 4, stage.GetNumberSpaceCount() );
-				EXPECT_EQ( 0, stage.GetEmptySpaceCount() );
 
 				LF();
 
 				EXPECT_TRUE( stage.IsFull() );
+
+				LF();
+
+				EXPECT_EQ( 4, stage.GetNumberSpaceCount() );
+				EXPECT_EQ( 0, stage.GetEmptySpaceCount() );
 			}
 
 			LS();
 
 			{
-				PROCESS_MAIN( stage.Remove( 0, 1 ) );
+				OUTPUT_SUBJECT( "Not" );
+
+				LF();
+
+				PROCESS_MAIN( stage.Remove( 0, 0 ) );
+
+				LF();
+
 				EXPECT_FALSE( stage.IsFull() );
+
+				LF();
+
+				EXPECT_EQ( 3, stage.GetNumberSpaceCount() );
+				EXPECT_EQ( 1, stage.GetEmptySpaceCount() );
 			}
 
 			LS();

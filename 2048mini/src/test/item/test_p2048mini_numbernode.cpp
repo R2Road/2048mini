@@ -32,7 +32,7 @@ namespace test_p2048mini_numbernode
 			LS();
 
 			DECLARATION_MAIN( auto number_node = p2048mini::NumberNode::Create( dummy_director ) );
-			EXPECT_NE( nullptr, number_node->GetComponent<p2048mini::NumberComponent>() );
+			EXPECT_TRUE( number_node->GetComponent<p2048mini::NumberComponent>() );
 
 			LS();
 

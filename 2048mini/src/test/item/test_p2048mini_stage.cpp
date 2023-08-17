@@ -309,10 +309,12 @@ namespace test_p2048mini_stage
 
 			DECLARATION_MAIN( p2048mini::Stage stage( 2, 2 ) );
 
-			LF();
+			LS();
 
-			EXPECT_EQ( 0, stage.GetNumberSpaceCount() );
-			EXPECT_EQ( 4, stage.GetEmptySpaceCount() );
+			{
+				EXPECT_EQ( 0, stage.GetNumberSpaceCount() );
+				EXPECT_EQ( 4, stage.GetEmptySpaceCount() );
+			}
 
 			LS();
 
@@ -334,6 +336,10 @@ namespace test_p2048mini_stage
 
 				EXPECT_EQ( 4, stage.GetNumberSpaceCount() );
 				EXPECT_EQ( 0, stage.GetEmptySpaceCount() );
+
+				LF();
+
+				p2048minihelper::STDPrinter4Stage::Print( stage );
 			}
 
 			LS();
@@ -353,6 +359,10 @@ namespace test_p2048mini_stage
 
 				EXPECT_EQ( 3, stage.GetNumberSpaceCount() );
 				EXPECT_EQ( 1, stage.GetEmptySpaceCount() );
+
+				LF();
+
+				p2048minihelper::STDPrinter4Stage::Print( stage );
 			}
 
 			LS();

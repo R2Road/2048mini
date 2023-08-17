@@ -163,7 +163,15 @@ namespace test_p2048mini_stage
 
 			LS();
 
+			p2048minihelper::STDPrinter4Stage::Print( stage );
+
+			LS();
+
 			{
+				OUTPUT_SUBJECT( "In" );
+
+				LF();
+
 				EXPECT_TRUE( stage.IsIn( 0, 0 ) );
 				EXPECT_TRUE( stage.IsIn( 1, 0 ) );
 				EXPECT_TRUE( stage.IsIn( 1, 1 ) );
@@ -173,16 +181,31 @@ namespace test_p2048mini_stage
 			LS();
 
 			{
-				EXPECT_FALSE( stage.IsIn( -1, -1 ) );
-				EXPECT_FALSE( stage.IsIn( -1, 2 ) );
-				EXPECT_FALSE( stage.IsIn( 2, -1 ) );
-				EXPECT_FALSE( stage.IsIn( 2, 2 ) );
+				OUTPUT_SUBJECT( "Out" );
 
 				LF();
 
+				EXPECT_FALSE( stage.IsIn( -1, -1 ) );
 				EXPECT_FALSE( stage.IsIn( -1, 0 ) );
-				EXPECT_FALSE( stage.IsIn( 2, 0 ) );
+				EXPECT_FALSE( stage.IsIn( 0, -1 ) );
+
+				LF();
+
+				EXPECT_FALSE( stage.IsIn( -1, 2 ) );
+				EXPECT_FALSE( stage.IsIn( -1, 1 ) );
 				EXPECT_FALSE( stage.IsIn( 0, 2 ) );
+
+				LF();
+
+				EXPECT_FALSE( stage.IsIn( 2, -1 ) );
+				EXPECT_FALSE( stage.IsIn( 2, 0 ) );
+				EXPECT_FALSE( stage.IsIn( 1, -1 ) );
+
+				LF();
+
+				EXPECT_FALSE( stage.IsIn( 2, 2 ) );
+				EXPECT_FALSE( stage.IsIn( 2, 1 ) );
+				EXPECT_FALSE( stage.IsIn( 1, 2 ) );
 			}
 
 			LS();

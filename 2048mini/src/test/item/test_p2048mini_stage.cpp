@@ -230,7 +230,13 @@ namespace test_p2048mini_stage
 			LS();
 
 			DECLARATION_MAIN( p2048mini::Stage stage( 2, 2 ) );
-			EXPECT_EQ( 0, stage.GetNumberSpaceCount() );
+
+			LS();
+
+			{
+				EXPECT_EQ( 0, stage.GetNumberSpaceCount() );
+				EXPECT_EQ( 4, stage.GetEmptySpaceCount() );
+			}
 
 			LS();
 
@@ -242,13 +248,18 @@ namespace test_p2048mini_stage
 				PROCESS_MAIN( stage.Add( 0, 0, 7 ) );
 				EXPECT_EQ( 1, stage.GetNumberSpaceCount() );
 				EXPECT_EQ( 3, stage.GetEmptySpaceCount() );
+			}
+
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "Add New" );
 
 				LF();
 
 				PROCESS_MAIN( stage.Add( 0, 1, 7 ) );
-				PROCESS_MAIN( stage.Add( 1, 0, 7 ) );
-				EXPECT_EQ( 3, stage.GetNumberSpaceCount() );
-				EXPECT_EQ( 1, stage.GetEmptySpaceCount() );
+				EXPECT_EQ( 2, stage.GetNumberSpaceCount() );
+				EXPECT_EQ( 2, stage.GetEmptySpaceCount() );
 			}
 
 			LS();
@@ -259,8 +270,8 @@ namespace test_p2048mini_stage
 				LF();
 
 				PROCESS_MAIN( stage.Add( 0, 1, 7 ) );
-				EXPECT_EQ( 3, stage.GetNumberSpaceCount() );
-				EXPECT_EQ( 1, stage.GetEmptySpaceCount() );
+				EXPECT_EQ( 2, stage.GetNumberSpaceCount() );
+				EXPECT_EQ( 2, stage.GetEmptySpaceCount() );
 			}
 
 			LS();
@@ -271,8 +282,8 @@ namespace test_p2048mini_stage
 				LF();
 
 				PROCESS_MAIN( stage.Remove( 0, 1 ) );
-				EXPECT_EQ( 2, stage.GetNumberSpaceCount() );
-				EXPECT_EQ( 2, stage.GetEmptySpaceCount() );
+				EXPECT_EQ( 1, stage.GetNumberSpaceCount() );
+				EXPECT_EQ( 3, stage.GetEmptySpaceCount() );
 			}
 
 			LS();

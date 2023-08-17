@@ -403,6 +403,12 @@ namespace test_p2048mini_stage
 				EXPECT_FALSE( stage.IsLock( 1, 0 ) );
 				EXPECT_FALSE( stage.IsLock( 1, 1 ) );
 				EXPECT_FALSE( stage.IsLock( 0, 1 ) );
+			}
+
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "Lock" );
 
 				LF();
 

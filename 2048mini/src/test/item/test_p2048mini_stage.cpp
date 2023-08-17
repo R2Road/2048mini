@@ -483,6 +483,12 @@ namespace test_p2048mini_stage
 				EXPECT_FALSE( stage.IsNewcomer( 1, 0 ) );
 				EXPECT_FALSE( stage.IsNewcomer( 1, 1 ) );
 				EXPECT_FALSE( stage.IsNewcomer( 0, 1 ) );
+			}
+
+			LS();
+
+			{
+				OUTPUT_SUBJECT( "Newcomer" );
 
 				LF();
 

@@ -10,7 +10,7 @@ namespace p2048mini
 	public:
 		struct NodeConfig
 		{
-			bool pivot = true;
+			bool pivot = false;
 		};
 		static const NodeConfig& GetNodeConfig()
 		{

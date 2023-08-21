@@ -36,19 +36,14 @@ namespace test_p2048mini_gameprocessor
 			LS();
 
 			DECLARATION_MAIN( p2048mini::Stage stage( 4, 4 ) );
-
-			LS();
-
 			DECLARATION_MAIN( r2::Direction4 move_dir );
 			DECLARATION_MAIN( const r2::PointInt center( stage.GetWidth() / 2, stage.GetHeight() / 2 ) );
-			DECLARATION_MAIN( r2::PointInt pivot_1 );
-			DECLARATION_MAIN( r2::PointInt temp );
+			DECLARATION_MAIN( r2::PointInt pivot_1; r2::PointInt temp );
 
 			LS();
 
 			{
-				std::cout << "[     ESC    ] Exit" << r2tm::linefeed;
-				std::cout << "[ W, A, S, D ] Move" << r2tm::linefeed;
+				OUTPUT_STRING( "[ ESC ] Exit            [ W, A, S, D ] Move" );
 			}
 
 			LS();
@@ -86,40 +81,36 @@ namespace test_p2048mini_gameprocessor
 					}
 					OUTPUT_VALUE( move_dir.GetPoint() );
 
-					LF();
-
-					OUTPUT_NOTE( "center를 입력 방향의 끝으로 보내자" );
-					OUTPUT_NOTE( "pivot_1이 이동 처리 시작의 기준점이 된다." );
-
-					LF();
+					SS();
 
 					{
-						PROCESS_MAIN( temp = r2::PointInt( center.GetX() * move_dir.GetX(), center.GetY() * move_dir.GetY() ) );
+						OUTPUT_SUBJECT( "center를 입력 방향의 끝으로 보내자" );
+
+						LF();
+
+						PROCESS_MAIN( temp = r2::PointInt( stage.GetWidth() * move_dir.GetX(), stage.GetHeight() * move_dir.GetY() ) );
 						OUTPUT_VALUE( temp );
-					}
 
-					LF();
+						LF();
 
-					{
 						PROCESS_MAIN( pivot_1 = center + temp );
 						OUTPUT_VALUE( pivot_1 );
-					}
 
-					LF();
+						LF();
 
-					{
 						PROCESS_MAIN( pivot_1.SetX( std::clamp( pivot_1.GetX(), 0, static_cast<int32_t>( stage.GetMaxX() ) ) ) );
 						PROCESS_MAIN( pivot_1.SetY( std::clamp( pivot_1.GetY(), 0, static_cast<int32_t>( stage.GetMaxY() ) ) ) );
 						OUTPUT_VALUE( pivot_1 );
 					}
 
-					LF();
+					SS();
 
 					{
 						stage.Reset();
 						PROCESS_MAIN( stage.Add( center.GetX(), center.GetY(), 7 ) );
 						PROCESS_MAIN( stage.Add( pivot_1.GetX(), pivot_1.GetY(), 1 ) );
-						PROCESS_MAIN( p2048minihelper::STDPrinter4Stage::Print( stage ) );
+
+						p2048minihelper::STDPrinter4Stage::Print( stage );
 					}
 
 					input = _getch();

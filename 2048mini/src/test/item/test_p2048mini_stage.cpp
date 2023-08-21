@@ -547,16 +547,13 @@ namespace test_p2048mini_stage
 
 			{
 				PROCESS_MAIN( stage.Add( 0, 0, 7 ) );
-				EXPECT_EQ( 7, stage.GetNumber( 0, 0 ) );
-
-				LF();
-
 				PROCESS_MAIN( stage.Lock( 1, 0 ) );
-				EXPECT_TRUE( stage.IsLock( 1, 0 ) );
+				PROCESS_MAIN( stage.SetNewcomer( 2, 0 ) );
 
 				LF();
 
-				PROCESS_MAIN( stage.SetNewcomer( 2, 0 ) );
+				EXPECT_EQ( 7, stage.GetNumber( 0, 0 ) );
+				EXPECT_TRUE( stage.IsLock( 1, 0 ) );
 				EXPECT_TRUE( stage.IsNewcomer( 2, 0 ) );
 			}
 
@@ -570,13 +567,7 @@ namespace test_p2048mini_stage
 
 			{
 				EXPECT_NE( 7, stage.GetNumber( 0, 0 ) );
-
-				LF();
-
 				EXPECT_FALSE( stage.IsLock( 1, 0 ) );
-
-				LF();
-
 				EXPECT_FALSE( stage.IsNewcomer( 2, 0 ) );
 			}
 

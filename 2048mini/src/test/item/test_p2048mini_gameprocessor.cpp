@@ -152,8 +152,7 @@ namespace test_p2048mini_gameprocessor
 			LS();
 
 			{
-				std::cout << "[     ESC    ] Exit" << r2tm::linefeed;
-				std::cout << "[ W, A, S, D ] Move" << r2tm::linefeed;
+				OUTPUT_STRING( "[ ESC ] Exit            [ W, A, S, D ] Move" );
 			}
 
 			LS();
@@ -293,8 +292,7 @@ namespace test_p2048mini_gameprocessor
 			LS();
 
 			{
-				std::cout << "[     ESC    ] Exit" << r2tm::linefeed;
-				std::cout << "[ W, A, S, D ] Move" << r2tm::linefeed;
+				OUTPUT_STRING( "[ ESC ] Exit            [ W, A, S, D ] Move" );
 			}
 
 			LS();
@@ -451,8 +449,7 @@ namespace test_p2048mini_gameprocessor
 			LS();
 
 			{
-				std::cout << "[     ESC    ] Exit" << r2tm::linefeed;
-				std::cout << "[ W, A, S, D ] Move" << r2tm::linefeed;
+				OUTPUT_STRING( "[ ESC ] Exit            [ W, A, S, D ] Move" );
 			}
 
 			LS();
